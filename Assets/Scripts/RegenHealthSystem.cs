@@ -24,7 +24,10 @@ public class RegenHealthSystem : MonoBehaviour
 
     private void OnValidate()
     {
-        UpdateRegenStats();
+        if (statsLevelSystem)
+        {
+            UpdateRegenStats();
+        }
     }
 
     private void OnEnable()
