@@ -168,11 +168,16 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 3428547358763375753}
+  - component: {fileID: 2202183796845890627}
+  - component: {fileID: 1493140411725393226}
+  - component: {fileID: 8400310695861748268}
   - component: {fileID: 4971876271230082136}
   - component: {fileID: 8029791342662139998}
   - component: {fileID: 1053058522295571634}
   - component: {fileID: 2178039369191698541}
   - component: {fileID: 6683214545558148761}
+  - component: {fileID: 7748928738805558556}
+  - component: {fileID: 5119287610799656840}
   m_Layer: 0
   m_Name: Character
   m_TagString: Untagged
@@ -197,6 +202,72 @@ Transform:
   - {fileID: 4496023209353763732}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &2202183796845890627
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861682774586081686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 2635205369
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
+--- !u!114 &1493140411725393226
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861682774586081686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: df2868252ab5c4d1da357e8f11f1b524, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  UseUnreliableDeltas: 0
+  SyncPositionX: 1
+  SyncPositionY: 1
+  SyncPositionZ: 1
+  SyncRotAngleX: 1
+  SyncRotAngleY: 1
+  SyncRotAngleZ: 1
+  SyncScaleX: 1
+  SyncScaleY: 1
+  SyncScaleZ: 1
+  PositionThreshold: 0.001
+  RotAngleThreshold: 0.01
+  ScaleThreshold: 0.01
+  UseQuaternionSynchronization: 0
+  UseQuaternionCompression: 0
+  UseHalfFloatPrecision: 0
+  InLocalSpace: 0
+  Interpolate: 1
+  SlerpPosition: 0
+--- !u!114 &8400310695861748268
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861682774586081686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ad8deae8091111f4eb30a56c1f4e0d3e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  TransitionStateInfoList: []
+  m_Animator: {fileID: 4359214319217399482}
 --- !u!114 &4971876271230082136
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -211,19 +282,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityLevelStatistiques: {fileID: 11400000, guid: e97abea1f83938745a3cb709270a109c,
     type: 2}
-  currentLevel: 100
-  currentXp: 27
+  currentLevel:
+    m_InternalValue: 0
+  currentXp:
+    m_InternalValue: 0
   baseStatistiques:
-    requiredXpForNextLevel: 5100
-    health: 2310
-    regenHealth: 21.000008
-    armor: 220
-    damage: 515
-    attackSpeed: 22.000011
-    critDamageMultiplier: 5.2000017
-    criticalChance: 1.0499994
-    pickupRange: 25.000023
-    moveSpeedMultiplier: 22.000011
+    requiredXpForNextLevel: 100
+    health: 310
+    regenHealth: 1
+    armor: 20
+    damage: 15
+    attackSpeed: 2
+    critDamageMultiplier: 0.2
+    criticalChance: 0.05
+    pickupRange: 5
+    moveSpeedMultiplier: 2
   onBaseStatsChange:
     m_PersistentCalls:
       m_Calls:
@@ -300,8 +373,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 4971876271230082136}
-  currentHealth: 2310
-  maxHealth: 2310
+  currentHealth:
+    m_InternalValue: 0
+  maxHealth: 310
 --- !u!114 &1053058522295571634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -317,7 +391,7 @@ MonoBehaviour:
   statsLevelSystem: {fileID: 4971876271230082136}
   healthSystem: {fileID: 8029791342662139998}
   regenSpeedInSecond: 1
-  regenHealthValue: 21.000008
+  regenHealthValue: 1
 --- !u!114 &2178039369191698541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -332,7 +406,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 4971876271230082136}
   characterAnimator: {fileID: 4359214319217399482}
-  moveSpeed: 22.000011
+  moveSpeed: 2
 --- !u!114 &6683214545558148761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -349,7 +423,40 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6613985244480515278, guid: 59a83a774cf10c7438284dcaab32e93d,
     type: 3}
   projectileSpawnPoint: {fileID: 4496023209353763732}
-  attackSpeed: 22.000011
+  attackSpeed: 2
+--- !u!95 &7748928738805558556
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861682774586081686}
+  m_Enabled: 0
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 0}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
+  m_WriteDefaultValuesOnDisable: 0
+--- !u!114 &5119287610799656840
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861682774586081686}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c70397867b2940248af17bcfa8f91476, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &6425324726171912386
 GameObject:
   m_ObjectHideFlags: 0

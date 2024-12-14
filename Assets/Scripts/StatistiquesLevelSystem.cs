@@ -1,14 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class StatistiquesLevelSystem : MonoBehaviour
+public class StatistiquesLevelSystem : NetworkBehaviour
 {
     [SerializeField] private EntityLevelStatistiquesSO entityLevelStatistiques;
 
-    [SerializeField, Range(0, 100)] private int currentLevel = 0;
-    [SerializeField] private int currentXp = 0;
+    [SerializeField, Range(0, 100)] private NetworkVariable<int> currentLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone);
+    [SerializeField] private NetworkVariable<int> currentXp = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone);
 
     [SerializeField] private EntityBaseStatistiques baseStatistiques;
 
@@ -18,12 +19,12 @@ public class StatistiquesLevelSystem : MonoBehaviour
 
     public int CurrentLevel
     {
-        get => currentLevel;
+        get => currentLevel.Value;
         set
         {
-            if (currentLevel != value)
+            if (currentLevel.Value != value)
             {
-                currentLevel = value;
+                currentLevel.Value = value;
                 UpdateLevelStat();
             }
         }
@@ -31,12 +32,12 @@ public class StatistiquesLevelSystem : MonoBehaviour
 
     public int CurrentXp
     {
-        get => currentXp;
+        get => currentXp.Value;
         set
         {
-            if (currentXp != value)
+            if (currentXp.Value != value)
             {
-                currentXp = value;
+                currentXp.Value = value;
                 TryLevelUp();
             }
         }
@@ -62,10 +63,10 @@ public class StatistiquesLevelSystem : MonoBehaviour
 
     private void TryLevelUp()
     {
-        int levelUpXpCost = entityLevelStatistiques.GetXpRequiredForNextLevel(currentLevel);
-        if (currentXp >= levelUpXpCost)
+        int levelUpXpCost = entityLevelStatistiques.GetXpRequiredForNextLevel(currentLevel.Value);
+        if (currentXp.Value >= levelUpXpCost)
         {
-            currentXp -= levelUpXpCost;
+            currentXp.Value -= levelUpXpCost;
             LevelUp();
         }
     }

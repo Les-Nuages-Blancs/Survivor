@@ -1,21 +1,22 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class HealthSystem : MonoBehaviour
+public class HealthSystem : NetworkBehaviour
 {
     [SerializeField] private StatistiquesLevelSystem statsLevelSystem;
-    [SerializeField] private float currentHealth;
+    [SerializeField] private NetworkVariable<float> currentHealth = new NetworkVariable<float>(0.0f, NetworkVariableReadPermission.Everyone);
     [SerializeField] private float maxHealth;
 
     public float CurrentHealth
     {
-        get => currentHealth;
+        get => currentHealth.Value;
         set
         {
-            if (currentHealth != value)
+            if (currentHealth.Value != value)
             {
-                currentHealth = value;
+                currentHealth.Value = value;
                 ClampHealth();
             }
         }
@@ -34,7 +35,7 @@ public class HealthSystem : MonoBehaviour
 
     private void ClampHealth()
     {
-        currentHealth = Mathf.Clamp(currentHealth, 0, maxHealth);
+        currentHealth.Value = Mathf.Clamp(currentHealth.Value, 0, maxHealth);
     }
 
     public void AddHp(float hp)

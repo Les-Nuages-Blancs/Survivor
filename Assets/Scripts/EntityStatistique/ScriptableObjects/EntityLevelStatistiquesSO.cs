@@ -5,6 +5,7 @@ using UnityEngine;
 [CreateAssetMenu(fileName = "EntityLevelStatistiques", menuName = "ScriptableObject/EntityLevelStatistiques")]
 public class EntityLevelStatistiquesSO : ScriptableObject
 {
+
     [LevelsStats]
     [SerializeField] public List<EntityBaseStatistiques> levelStatistiques = new List<EntityBaseStatistiques>();
 

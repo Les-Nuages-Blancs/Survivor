@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class MovementSystem : MonoBehaviour
+public class MovementSystem : NetworkBehaviour
 {
     [SerializeField] private StatistiquesLevelSystem statsLevelSystem;
     [SerializeField] private Animator characterAnimator;
@@ -28,6 +29,8 @@ public class MovementSystem : MonoBehaviour
 
     private void MoveCharacter()
     {
+        if (!IsOwner) return;
+        
         vertical = Input.GetAxis("Vertical");
         horizontal = Input.GetAxis("Horizontal");
         characterAnimator.SetBool(IsWalking, vertical != 0 || horizontal != 0);
@@ -39,6 +42,8 @@ public class MovementSystem : MonoBehaviour
 
     private void RotateTowardsCursor()
     {
+        if (!IsOwner) return;
+
         // Récupération de la position de la souris
         Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
 

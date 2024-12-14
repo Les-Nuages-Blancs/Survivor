@@ -1,6 +1,7 @@
+#if UNITY_EDITOR
+using UnityEditor;
 using System.Collections;
 using System.Collections.Generic;
-using UnityEditor;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "EntityLevelStatistiquesMaker", menuName = "ScriptableObject/EntityLevelStatistiquesMaker")]
@@ -82,3 +83,4 @@ public class EntityLevelStatistiquesMakerSO : ScriptableObject
         }
     }
 }
+#endif

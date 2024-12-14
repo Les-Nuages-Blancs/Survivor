@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class RegenHealthSystem : MonoBehaviour
+public class RegenHealthSystem : NetworkBehaviour
 {
     [SerializeField] private StatistiquesLevelSystem statsLevelSystem;
     [SerializeField] private HealthSystem healthSystem;
@@ -32,11 +33,15 @@ public class RegenHealthSystem : MonoBehaviour
 
     private void OnEnable()
     {
+        if (!IsOwner) return;
+
         regenCoroutine = StartCoroutine(ApplyRegen());
     }
 
     private void OnDisable()
     {
+        if (!IsOwner) return;
+
         if (regenCoroutine != null)
         {
             StopCoroutine(regenCoroutine);
