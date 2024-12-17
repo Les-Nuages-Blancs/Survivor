@@ -31,7 +31,7 @@ public class RegenHealthSystem : NetworkBehaviour
         }
     }
 
-    private void OnEnable()
+    public override void OnNetworkSpawn()
     {
         if (!IsOwner) return;
 

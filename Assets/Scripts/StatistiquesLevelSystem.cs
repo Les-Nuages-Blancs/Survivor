@@ -8,7 +8,7 @@ public class StatistiquesLevelSystem : NetworkBehaviour
 {
     [SerializeField] private EntityLevelStatistiquesSO entityLevelStatistiques;
 
-    [SerializeField, Range(0, 100)] private NetworkVariable<int> currentLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone);
+    [SerializeField] private NetworkVariable<int> currentLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone);
     [SerializeField] private NetworkVariable<int> currentXp = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone);
 
     [SerializeField] private EntityBaseStatistiques baseStatistiques;

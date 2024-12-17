@@ -9,6 +9,14 @@ public class ApplyPlayerSpawn : NetworkBehaviour
     {
         if (!IsOwner) return;
 
+        Camera.main.GetComponent<CameraFollowSystem>().target = transform;
+
+        ApplyPlayerSpawnServerRPC();
+    }
+    
+    [ServerRpc]
+    private void ApplyPlayerSpawnServerRPC()
+    {
         PlayerSpawnManager.Instance.ApplyPlayerSpawn(transform);
     }
 }

@@ -1,6 +1,7 @@
 using UnityEngine;
 using System.Collections;
 using Unity.Netcode;
+using System.Collections.Generic;
 
 public class AutoAttackSystem : NetworkBehaviour
 {
@@ -31,13 +32,17 @@ public class AutoAttackSystem : NetworkBehaviour
         }
     }
 
-    private void OnEnable()
+    public override void OnNetworkSpawn()
     {
+        if (!IsOwner) return;
+
         attackCoroutine = StartCoroutine(LaunchAttack());
     }
 
     private void OnDisable()
     {
+        if (!IsOwner) return;
+
         if (attackCoroutine != null)
         {
             StopCoroutine(attackCoroutine);
@@ -49,7 +54,15 @@ public class AutoAttackSystem : NetworkBehaviour
         while (true)
         {
             yield return new WaitForSeconds(1f / attackSpeed);
-            Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+
+            ShootServerRPC();
         }
+    }
+
+    [ServerRpc]
+    private void ShootServerRPC()
+    {
+        GameObject go = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
+        go.GetComponent<NetworkObject>().Spawn();
     }
 }

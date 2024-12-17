@@ -1,17 +1,14 @@
+using Unity.Netcode;
 using UnityEngine;
 
-public class Projectile : MonoBehaviour
+public class Projectile : NetworkBehaviour
 {
     public float speed = 10f; // Vitesse du projectile
-    public float maxLifeTime = 5f; // Temps avant destruction
 
     [SerializeField] private float damage = 5f;
     [SerializeField] private GameObject HitEffectPrefab;
 
-    void Start()
-    {
-        Destroy(gameObject, maxLifeTime); // Détruire après un certain temps
-    }
+    private bool isDespawning = false;
 
     void Update()
     {
@@ -20,11 +17,42 @@ public class Projectile : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if (HitEffectPrefab != null)
+        if (!IsServer) return;
+
+        if (isDespawning) return;
+        isDespawning = true;
+
+
+        OnTriggerEnterForwarder forwarder = other.GetComponent<OnTriggerEnterForwarder>();
+        if (forwarder)
         {
-            Instantiate(HitEffectPrefab, other.transform.position, other.transform.rotation);
+            HealthSystem healthSystem = forwarder.ForwardedGameObject.GetComponent<HealthSystem>();
+            if (healthSystem)
+            {
+                healthSystem.TakeDamage(damage);
+            }
         }
 
+        if (HitEffectPrefab != null)
+        {
+            SpawnParticleServerRPC();
+        }
+
+        DestroyServerRPC();
+    }
+
+    [ServerRpc]
+    private void SpawnParticleServerRPC()
+    {
+        GameObject go = Instantiate(HitEffectPrefab, transform.position, transform.rotation);
+        NetworkObject networkObject = go.GetComponent<NetworkObject>();
+        networkObject.Spawn();
+    }
+
+    [ServerRpc]
+    private void DestroyServerRPC()
+    {
+        GetComponent<NetworkObject>().Despawn();
         Destroy(gameObject);
     }
 }

@@ -10,7 +10,7 @@ public class PlayerSpawnManager : NetworkBehaviour
     public static PlayerSpawnManager Instance { get; private set; }
 
     [SerializeField] private List<Transform> playerSpawnTransforms = new List<Transform>();
-    private NetworkVariable<int> playerTransformIndex = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone);
+    private int playerTransformIndex = 0;
 
     private void Awake()
     {
@@ -31,11 +31,11 @@ public class PlayerSpawnManager : NetworkBehaviour
             return;
         }
 
-        Transform currentTransform = playerSpawnTransforms[playerTransformIndex.Value];
+        Transform currentTransform = playerSpawnTransforms[playerTransformIndex];
 
         transform.position = currentTransform.position;
         transform.eulerAngles = currentTransform.eulerAngles;
 
-        playerTransformIndex.Value = (playerTransformIndex.Value + 1) % playerSpawnTransforms.Count;
+        playerTransformIndex = (playerTransformIndex + 1) % playerSpawnTransforms.Count;
     }
 }

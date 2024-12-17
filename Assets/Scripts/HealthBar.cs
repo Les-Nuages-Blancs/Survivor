@@ -22,14 +22,9 @@ public class HealthBar : MonoBehaviour
         SetMaxHealth(statLevelSystem.BaseStatistiques.Health);
     }
 
-    private void Update()
+    public void SetHealth()
     {
-        SetHealth(healthSystem.CurrentHealth);
-    }
-
-    private void SetHealth(float health)
-    {
-        healthSlider.value = health;
+        healthSlider.value = healthSystem.CurrentHealth;
     }
 
     private void SetMaxHealth(float maxHealth)
