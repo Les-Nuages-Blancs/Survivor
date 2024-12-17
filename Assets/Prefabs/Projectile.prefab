@@ -145,7 +145,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   speed: 20
-  damage: 100
+  damage: 40
   HitEffectPrefab: {fileID: 0}
 --- !u!54 &9179213318214837890
 Rigidbody:

@@ -8,8 +8,8 @@ public class StatistiquesLevelSystem : NetworkBehaviour
 {
     [SerializeField] private EntityLevelStatistiquesSO entityLevelStatistiques;
 
-    [SerializeField] private NetworkVariable<int> currentLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone);
-    [SerializeField] private NetworkVariable<int> currentXp = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone);
+    [SerializeField] private int currentLevel = 0;
+    [SerializeField] private int currentXp = 0;
 
     [SerializeField] private EntityBaseStatistiques baseStatistiques;
 
@@ -19,12 +19,12 @@ public class StatistiquesLevelSystem : NetworkBehaviour
 
     public int CurrentLevel
     {
-        get => currentLevel.Value;
+        get => currentLevel;
         set
         {
-            if (currentLevel.Value != value)
+            if (currentLevel != value)
             {
-                currentLevel.Value = value;
+                currentLevel = value;
                 UpdateLevelStat();
             }
         }
@@ -32,12 +32,12 @@ public class StatistiquesLevelSystem : NetworkBehaviour
 
     public int CurrentXp
     {
-        get => currentXp.Value;
+        get => currentXp;
         set
         {
-            if (currentXp.Value != value)
+            if (currentXp != value)
             {
-                currentXp.Value = value;
+                currentXp = value;
                 TryLevelUp();
             }
         }
@@ -58,15 +58,18 @@ public class StatistiquesLevelSystem : NetworkBehaviour
     private void UpdateLevelStat()
     {
         baseStatistiques = entityLevelStatistiques.GetStatsOfLevel(CurrentLevel);
-        onBaseStatsChange?.Invoke();
+        if (Application.isPlaying)
+        {
+            onBaseStatsChange?.Invoke();
+        }
     }
 
     private void TryLevelUp()
     {
-        int levelUpXpCost = entityLevelStatistiques.GetXpRequiredForNextLevel(currentLevel.Value);
-        if (currentXp.Value >= levelUpXpCost)
+        int levelUpXpCost = entityLevelStatistiques.GetXpRequiredForNextLevel(currentLevel);
+        if (currentXp >= levelUpXpCost)
         {
-            currentXp.Value -= levelUpXpCost;
+            currentXp -= levelUpXpCost;
             LevelUp();
         }
     }

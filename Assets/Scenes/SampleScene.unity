@@ -2713,11 +2713,6 @@ PrefabInstance:
       propertyPath: GlobalObjectIdHash
       value: 2195415627
       objectReference: {fileID: 0}
-    - target: {fileID: 5005874938878269861, guid: b1b88bc23699a5344bd20938d5b11253,
-        type: 3}
-      propertyPath: InScenePlacedSourceGlobalObjectIdHash
-      value: 3009944485
-      objectReference: {fileID: 0}
     - target: {fileID: 8638970741247544176, guid: b1b88bc23699a5344bd20938d5b11253,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -2776,11 +2771,6 @@ PrefabInstance:
     - target: {fileID: 9157265311558657451, guid: b1b88bc23699a5344bd20938d5b11253,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 9157265311558657451, guid: b1b88bc23699a5344bd20938d5b11253,
-        type: 3}
-      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9196759531188599717, guid: b1b88bc23699a5344bd20938d5b11253,

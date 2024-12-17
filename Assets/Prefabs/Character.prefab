@@ -297,10 +297,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityLevelStatistiques: {fileID: 11400000, guid: e97abea1f83938745a3cb709270a109c,
     type: 2}
-  currentLevel:
-    m_InternalValue: 100
-  currentXp:
-    m_InternalValue: 0
+  currentLevel: 100
+  currentXp: 0
   baseStatistiques:
     requiredXpForNextLevel: 5100
     health: 2310
@@ -387,18 +385,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 2761121948453374079}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: 
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: 
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &8029791342662139998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -412,9 +398,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 4971876271230082136}
-  currentHealth:
-    m_InternalValue: 0
-  maxHealth: 2310
   onHealthChange:
     m_PersistentCalls:
       m_Calls:
@@ -432,7 +415,19 @@ MonoBehaviour:
         m_CallState: 2
   onMaxHealthChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1889264428218207302}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: UpdateMaxHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1053058522295571634
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -447,7 +442,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 4971876271230082136}
   healthSystem: {fileID: 8029791342662139998}
-  regenSpeedInSecond: 0.1
+  regenSpeedInSecond: 0.2
   regenHealthValue: 21.000008
 --- !u!114 &2178039369191698541
 MonoBehaviour:
@@ -821,18 +816,12 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 4773569444452508835}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2761121948453374079}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 203ed569be4e4854bb2db0c02e1ef199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
---- !u!1 &2761121948453374079 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 7236820427699989724, guid: 73a3abdd232dd5d4ba642a26b1672b58,
-    type: 3}
-  m_PrefabInstance: {fileID: 4773569444452508835}
-  m_PrefabAsset: {fileID: 0}
 --- !u!224 &4634757312351412475 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 175313995628643416, guid: 73a3abdd232dd5d4ba642a26b1672b58,

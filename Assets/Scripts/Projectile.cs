@@ -29,7 +29,7 @@ public class Projectile : NetworkBehaviour
             HealthSystem healthSystem = forwarder.ForwardedGameObject.GetComponent<HealthSystem>();
             if (healthSystem)
             {
-                healthSystem.TakeDamage(damage);
+                healthSystem.TakeDamageServerRPC(damage);
             }
         }
 

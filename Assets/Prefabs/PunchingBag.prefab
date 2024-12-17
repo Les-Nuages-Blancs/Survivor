@@ -168,8 +168,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3207379871
-  InScenePlacedSourceGlobalObjectIdHash: 0
+  GlobalObjectIdHash: 2195415627
+  InScenePlacedSourceGlobalObjectIdHash: 3009944485
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
   ActiveSceneSynchronization: 0
@@ -191,10 +191,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityLevelStatistiques: {fileID: 11400000, guid: e97abea1f83938745a3cb709270a109c,
     type: 2}
-  currentLevel:
-    m_InternalValue: 100
-  currentXp:
-    m_InternalValue: 0
+  currentLevel: 100
+  currentXp: 0
   baseStatistiques:
     requiredXpForNextLevel: 5100
     health: 2310
@@ -245,18 +243,6 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 1765356546253979869}
-        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
-        m_MethodName: UpdateMaxHealth
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
 --- !u!114 &2590741095361187622
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -270,9 +256,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 8684086574328008913}
-  currentHealth:
-    m_InternalValue: 0
-  maxHealth: 2310
   onHealthChange:
     m_PersistentCalls:
       m_Calls:
@@ -290,7 +273,19 @@ MonoBehaviour:
         m_CallState: 2
   onMaxHealthChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1765356546253979869}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: UpdateMaxHealth
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &2218942690045564494
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -305,7 +300,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 8684086574328008913}
   healthSystem: {fileID: 2590741095361187622}
-  regenSpeedInSecond: 0.01
+  regenSpeedInSecond: 0.1
   regenHealthValue: 21.000008
 --- !u!1001 &4645724211595929656
 PrefabInstance:
@@ -414,6 +409,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488901555891243554, guid: 73a3abdd232dd5d4ba642a26b1672b58,
+        type: 3}
+      propertyPath: m_Value
+      value: 2310
+      objectReference: {fileID: 0}
+    - target: {fileID: 4488901555891243554, guid: 73a3abdd232dd5d4ba642a26b1672b58,
+        type: 3}
+      propertyPath: m_MaxValue
+      value: 2310
       objectReference: {fileID: 0}
     - target: {fileID: 4570531053217680787, guid: 73a3abdd232dd5d4ba642a26b1672b58,
         type: 3}

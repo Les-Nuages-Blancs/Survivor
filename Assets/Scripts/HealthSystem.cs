@@ -7,15 +7,12 @@ using UnityEngine.Events;
 public class HealthSystem : NetworkBehaviour
 {
     [SerializeField] private StatistiquesLevelSystem statsLevelSystem;
-    [SerializeField] private NetworkVariable<float> currentHealth = new NetworkVariable<float>(0.0f, NetworkVariableReadPermission.Everyone);
-    [SerializeField] private float maxHealth;
 
-    [SerializeField] private UnityEvent onHealthChange;
-    [SerializeField] private UnityEvent onMaxHealthChange;
+    private NetworkVariable<float> currentHealth = new NetworkVariable<float>(0.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    private NetworkVariable<float> maxHealth = new NetworkVariable<float>(100.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
-#if UNITY_EDITOR
-    private float _previousHealth = 0.0f;
-#endif
+    [SerializeField] public UnityEvent onHealthChange;
+    [SerializeField] public UnityEvent onMaxHealthChange;
 
     public float CurrentHealth
     {
@@ -24,65 +21,91 @@ public class HealthSystem : NetworkBehaviour
         {
             if (currentHealth.Value != value)
             {
-                currentHealth.Value = value;
-                ClampHealth();
+                currentHealth.Value = Mathf.Clamp(value, 0, MaxHealth); ;
             }
         }
     }
+    public float MaxHealth => maxHealth.Value;
 
     private void Start()
     {
-        UpdateHealthStats();
-    }
-
-    public void UpdateHealthStats()
-    {
-        float newMaxHealth = statsLevelSystem.BaseStatistiques.Health;
-        if (maxHealth != newMaxHealth)
-        {
-            maxHealth = newMaxHealth;
-            onMaxHealthChange.Invoke();
-            ClampHealth();
-        }
-    }
-
-    private void ClampHealth()
-    {
-        currentHealth.Value = Mathf.Clamp(currentHealth.Value, 0, maxHealth);
-#if UNITY_EDITOR
-        _previousHealth = currentHealth.Value;
-#endif
-        onHealthChange.Invoke();
-    }
-
-    public void AddHp(float hp)
-    {
-        CurrentHealth += hp;
-    }
-
-    public void RegenAllHp()
-    {
-        CurrentHealth = maxHealth;
-    }
-
-    public void TakeDamage(float damage)
-    {
-        CurrentHealth -= damage;
-    }
-
-    private void OnValidate()
-    {
-        if (statsLevelSystem)
+        if (IsServer)
         {
             UpdateHealthStats();
         }
 
-#if UNITY_EDITOR
-        if (Application.isPlaying && currentHealth.Value != _previousHealth)
+        currentHealth.OnValueChanged += OnHealthChanged;
+        maxHealth.OnValueChanged += OnMaxHealthChanged;
+    }
+
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+
+        currentHealth.OnValueChanged -= OnHealthChanged;
+        maxHealth.OnValueChanged -= OnMaxHealthChanged;
+    }
+
+    private void OnHealthChanged(float oldValue, float newValue)
+    {
+        onHealthChange.Invoke();
+    }
+
+    private void OnMaxHealthChanged(float oldValue, float newValue)
+    {
+        onMaxHealthChange.Invoke();
+    }
+
+    public void UpdateHealthStats()
+    {
+        if (!IsServer) return;
+
+        float newMaxHealth = statsLevelSystem.BaseStatistiques.Health;
+
+        if (MaxHealth != newMaxHealth)
         {
-            _previousHealth = currentHealth.Value;
-            onHealthChange.Invoke();
+            UpdateMaxHealthServerRpc(newMaxHealth);
         }
-#endif
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void ClampHealthServerRPC()
+    {
+        float clampedHealth = Mathf.Clamp(CurrentHealth, 0, MaxHealth);
+        if (CurrentHealth != clampedHealth)
+        {
+            currentHealth.Value = clampedHealth;
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    private void UpdateMaxHealthServerRpc(float newMaxHealth)
+    {
+        maxHealth.Value = newMaxHealth;
+        ClampHealthServerRPC();
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void AddHpServerRPC(float hp)
+    {
+        CurrentHealth += hp;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void AddHpByPercentOfMaxHpServerRPC(float maxHpPercent)
+    {
+        CurrentHealth += maxHpPercent * MaxHealth;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void RegenAllHpServerRPC()
+    {
+        CurrentHealth = MaxHealth;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void TakeDamageServerRPC(float damage)
+    {
+        CurrentHealth -= damage;
     }
 }

@@ -53,7 +53,7 @@ public class RegenHealthSystem : NetworkBehaviour
         while (true)
         {
             yield return new WaitForSeconds(regenSpeedInSecond);
-            healthSystem.AddHp(regenHealthValue);
+            healthSystem.AddHpServerRPC(regenHealthValue);
         }
     }
 }
