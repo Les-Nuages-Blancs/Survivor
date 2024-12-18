@@ -108,4 +108,16 @@ public class HealthSystem : NetworkBehaviour
     {
         CurrentHealth -= damage;
     }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void TakeDamageByPercentOfMaxHpServerRPC(float maxHpPercent)
+    {
+        CurrentHealth -= maxHpPercent * MaxHealth;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    public void RemoveAllHpServerRPC()
+    {
+        CurrentHealth = 0;
+    }
 }

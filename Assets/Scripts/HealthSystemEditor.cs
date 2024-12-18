@@ -9,6 +9,7 @@ public class HealthSystemEditor : Editor
     private float addHpAmount = 10f;
     private float addHpPercent = 0.1f;
     private float damageAmount = 10f;
+    private float damageHpPercent = 0.1f;
 
     // Store references to HealthSystem to listen for changes
     private HealthSystem healthSystem;
@@ -83,6 +84,7 @@ public class HealthSystemEditor : Editor
             addHpAmount = EditorGUILayout.FloatField("Add HP Amount", addHpAmount);
             addHpPercent = EditorGUILayout.FloatField("Add HP By Percent of Max HP", addHpPercent);
             damageAmount = EditorGUILayout.FloatField("Damage Amount", damageAmount);
+            damageHpPercent = EditorGUILayout.FloatField("Take Damage By Percent of Max HP", damageHpPercent);
 
             // Action buttons with parameter input
             if (GUILayout.Button("Add HP"))
@@ -103,6 +105,16 @@ public class HealthSystemEditor : Editor
             if (GUILayout.Button("Take Damage"))
             {
                 healthSystem.TakeDamageServerRPC(damageAmount); // Use the user-defined damage value
+            }
+
+            if (GUILayout.Button("Take Damage By Percent of Max HP"))
+            {
+                healthSystem.TakeDamageByPercentOfMaxHpServerRPC(damageHpPercent); // Use the user-defined percentage
+            }
+
+            if (GUILayout.Button("Regen All HP"))
+            {
+                healthSystem.RemoveAllHpServerRPC(); // No parameters needed
             }
         }
     }
