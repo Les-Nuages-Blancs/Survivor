@@ -27,7 +27,7 @@ public class HealthSystem : NetworkBehaviour
     }
     public float MaxHealth => maxHealth.Value;
 
-    private void Start()
+    public override void OnNetworkSpawn()
     {
         if (IsServer)
         {
