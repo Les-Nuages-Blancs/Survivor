@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 [System.Serializable]
-public class EntityBaseStatistiques
+public class EntityBaseStatistiques: INetworkSerializable
 {
     [SerializeField, Range(0.0f, 5000.0f)] private int requiredXpForNextLevel = 0;
     [SerializeField, Range(0.0f, 5000.0f)] private float health = 0.0f;
@@ -19,12 +20,27 @@ public class EntityBaseStatistiques
     public int RequiredXpForNextLevel => requiredXpForNextLevel;
     public float Health => health;
     public float RegenHealth => regenHealth;
+    public float Armor => armor;
     public float Damage => damage;
     public float AttackSpeed => attackSpeed;
     public float CritDamageMultiplier => critDamageMultiplier;
     public float CriticalChance => criticalChance;
     public float PickupRange => pickupRange;
     public float MoveSpeedMultiplier => moveSpeedMultiplier;
+
+    public EntityBaseStatistiques()
+    {
+        requiredXpForNextLevel = 0;
+        health = 0.0f;
+        regenHealth = 0.0f;
+        armor = 0.0f;
+        damage = 0.0f;
+        attackSpeed = 0.0f;
+        critDamageMultiplier = 0.0f;
+        criticalChance = 0.0f;
+        pickupRange = 0.0f;
+        moveSpeedMultiplier = 0.0f;
+    }
 
     public EntityBaseStatistiques(
         int initRequiredXpForNextLevel = 0,
@@ -49,6 +65,21 @@ public class EntityBaseStatistiques
         criticalChance = initCriticalChance;
         pickupRange = initPickupRange;
         moveSpeedMultiplier = initMoveSpeedMultiplier;
+    }
+
+    // Implementing the INetworkSerializable interface
+    public void NetworkSerialize<T>(BufferSerializer<T> serializer) where T : IReaderWriter
+    {
+        serializer.SerializeValue(ref requiredXpForNextLevel);
+        serializer.SerializeValue(ref health);
+        serializer.SerializeValue(ref regenHealth);
+        serializer.SerializeValue(ref armor);
+        serializer.SerializeValue(ref damage);
+        serializer.SerializeValue(ref attackSpeed);
+        serializer.SerializeValue(ref critDamageMultiplier);
+        serializer.SerializeValue(ref criticalChance);
+        serializer.SerializeValue(ref pickupRange);
+        serializer.SerializeValue(ref moveSpeedMultiplier);
     }
 
     // Addition operator
@@ -101,4 +132,23 @@ public class EntityBaseStatistiques
             moveSpeedMultiplier
         );
     }
+
+    public override bool Equals(object obj)
+    {
+        if (obj is EntityBaseStatistiques other)
+        {
+            return requiredXpForNextLevel == other.requiredXpForNextLevel &&
+                   Mathf.Approximately(health, other.health) &&
+                   Mathf.Approximately(regenHealth, other.regenHealth) &&
+                   Mathf.Approximately(armor, other.armor) &&
+                   Mathf.Approximately(damage, other.damage) &&
+                   Mathf.Approximately(attackSpeed, other.attackSpeed) &&
+                   Mathf.Approximately(critDamageMultiplier, other.critDamageMultiplier) &&
+                   Mathf.Approximately(criticalChance, other.criticalChance) &&
+                   Mathf.Approximately(pickupRange, other.pickupRange) &&
+                   Mathf.Approximately(moveSpeedMultiplier, other.moveSpeedMultiplier);
+        }
+        return false;
+    }
+
 }

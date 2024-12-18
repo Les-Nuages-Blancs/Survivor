@@ -297,19 +297,18 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   entityLevelStatistiques: {fileID: 11400000, guid: e97abea1f83938745a3cb709270a109c,
     type: 2}
-  currentLevel: 100
-  currentXp: 0
   baseStatistiques:
-    requiredXpForNextLevel: 5100
-    health: 2310
-    regenHealth: 21.000008
-    armor: 220
-    damage: 515
-    attackSpeed: 22.000011
-    critDamageMultiplier: 5.2000017
-    criticalChance: 1.0499994
-    pickupRange: 25.000023
-    moveSpeedMultiplier: 22.000011
+    m_InternalValue:
+      requiredXpForNextLevel: 0
+      health: 0
+      regenHealth: 0
+      armor: 0
+      damage: 0
+      attackSpeed: 0
+      critDamageMultiplier: 0
+      criticalChance: 0
+      pickupRange: 0
+      moveSpeedMultiplier: 0
   onBaseStatsChange:
     m_PersistentCalls:
       m_Calls:
@@ -328,18 +327,6 @@ MonoBehaviour:
       - m_Target: {fileID: 8029791342662139998}
         m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
         m_MethodName: UpdateHealthStats
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
-      - m_Target: {fileID: 8029791342662139998}
-        m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
-        m_MethodName: RegenAllHp
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -385,6 +372,24 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onCurrentLevelChange:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 8029791342662139998}
+        m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
+        m_MethodName: RegenAllHpServerRPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onCurrentXpChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &8029791342662139998
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -442,8 +447,16 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 4971876271230082136}
   healthSystem: {fileID: 8029791342662139998}
-  regenSpeedInSecond: 0.2
-  regenHealthValue: 21.000008
+  regenSpeedInSecond:
+    m_InternalValue: 0.2
+  regenHealthValue:
+    m_InternalValue: 0
+  onRegenSpeedInSecondChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onRegenHealthValueChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &2178039369191698541
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -458,7 +471,11 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 4971876271230082136}
   characterAnimator: {fileID: 4359214319217399482}
-  moveSpeed: 22.000011
+  moveSpeed:
+    m_InternalValue: 0.2
+  onMoveSpeedChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &6683214545558148761
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -475,7 +492,11 @@ MonoBehaviour:
   projectilePrefab: {fileID: 6613985244480515278, guid: 59a83a774cf10c7438284dcaab32e93d,
     type: 3}
   projectileSpawnPoint: {fileID: 4496023209353763732}
-  attackSpeed: 22.000011
+  attackSpeed:
+    m_InternalValue: 0
+  onAttackSpeedChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!95 &7748928738805558556
 Animator:
   serializedVersion: 5

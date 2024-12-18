@@ -29,13 +29,10 @@ public class HealthSystem : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        if (IsServer)
-        {
-            UpdateHealthStats();
-        }
-
         currentHealth.OnValueChanged += OnHealthChanged;
         maxHealth.OnValueChanged += OnMaxHealthChanged;
+
+        UpdateHealthStats();
     }
 
     public override void OnDestroy()

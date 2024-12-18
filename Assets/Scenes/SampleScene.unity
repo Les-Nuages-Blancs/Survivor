@@ -1619,8 +1619,8 @@ MonoBehaviour:
   m_ProtocolType: 0
   m_MaxPacketQueueSize: 128
   m_MaxPayloadSize: 6144
-  m_HeartbeatTimeoutMS: 500
-  m_ConnectTimeoutMS: 1000
+  m_HeartbeatTimeoutMS: 0
+  m_ConnectTimeoutMS: 100
   m_MaxConnectAttempts: 60
   m_DisconnectTimeoutMS: 30000
   ConnectionData:
@@ -2771,6 +2771,11 @@ PrefabInstance:
     - target: {fileID: 9157265311558657451, guid: b1b88bc23699a5344bd20938d5b11253,
         type: 3}
       propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 9157265311558657451, guid: b1b88bc23699a5344bd20938d5b11253,
+        type: 3}
+      propertyPath: m_AnchorMin.x
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 9196759531188599717, guid: b1b88bc23699a5344bd20938d5b11253,

@@ -19,7 +19,10 @@ public class EntityLevelStatistiquesSO : ScriptableObject
         int xpRequired = 0;
         for (int i = startLevel; i <= endLevel; i++)
         {
-            xpRequired += levelStatistiques[i].RequiredXpForNextLevel;
+            if (levelStatistiques.Count > i)
+            {
+                xpRequired += levelStatistiques[i].RequiredXpForNextLevel;
+            }
         }
         return xpRequired;
     }

@@ -2,13 +2,28 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class MovementSystem : NetworkBehaviour
 {
     [SerializeField] private StatistiquesLevelSystem statsLevelSystem;
     [SerializeField] private Animator characterAnimator;
 
-    [SerializeField] private float moveSpeed;
+    [SerializeField] private NetworkVariable<float> moveSpeed = new NetworkVariable<float>(0.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
+    [SerializeField] public UnityEvent onMoveSpeedChange;
+
+    public float MoveSpeed
+    {
+        get => moveSpeed.Value;
+        set
+        {
+            if (moveSpeed.Value != value)
+            {
+                moveSpeed.Value = value;
+            }
+        }
+    }
 
     private float vertical;
     private float horizontal;
@@ -17,14 +32,29 @@ public class MovementSystem : NetworkBehaviour
 
     private static readonly int IsWalking = Animator.StringToHash("isWalking");
 
-    private void Start()
+    public override void OnNetworkSpawn()
     {
+        moveSpeed.OnValueChanged += OnMoveSpeedChange;
+
         UpdateMoveStats();
+    }
+
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+
+        moveSpeed.OnValueChanged -= OnMoveSpeedChange;
+    }
+
+    private void OnMoveSpeedChange(float oldValue, float newValue)
+    {
+        onMoveSpeedChange.Invoke();
     }
 
     public void UpdateMoveStats()
     {
-        moveSpeed = statsLevelSystem.BaseStatistiques.MoveSpeedMultiplier;
+        if (!IsServer) return;
+        moveSpeed.Value = statsLevelSystem.BaseStatistiques.MoveSpeedMultiplier;
     }
 
     private void MoveCharacter()
@@ -36,8 +66,7 @@ public class MovementSystem : NetworkBehaviour
         characterAnimator.SetBool(IsWalking, vertical != 0 || horizontal != 0);
         currentPosition = transform.position;
         targetPosition = currentPosition + new Vector3(horizontal, 0, vertical);
-        transform.position = Vector3.MoveTowards(currentPosition, targetPosition, moveSpeed * Time.fixedDeltaTime);
-
+        transform.position = Vector3.MoveTowards(currentPosition, targetPosition, MoveSpeed * Time.fixedDeltaTime);
     }
 
     private void RotateTowardsCursor()
