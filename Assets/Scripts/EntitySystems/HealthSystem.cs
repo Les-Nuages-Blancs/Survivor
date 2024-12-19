@@ -14,6 +14,10 @@ public class HealthSystem : NetworkBehaviour
     [SerializeField] public UnityEvent onHealthChange;
     [SerializeField] public UnityEvent onMaxHealthChange;
 
+    
+    [Tooltip("If not empty, gameObject will be destroyed and lootTable processed when hp goes below 1")]
+    [SerializeField] public LootTable lootTable;
+
     public float CurrentHealth
     {
         get => currentHealth.Value;
@@ -46,6 +50,10 @@ public class HealthSystem : NetworkBehaviour
     private void OnHealthChanged(float oldValue, float newValue)
     {
         onHealthChange.Invoke();
+        if(newValue < 1 && lootTable != null){
+            LootManager.Instance.ProcessLootTable(lootTable, transform.position);
+            Destroy(gameObject);
+        }
     }
 
     private void OnMaxHealthChanged(float oldValue, float newValue)

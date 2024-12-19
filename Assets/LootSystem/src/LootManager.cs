@@ -23,7 +23,10 @@ public class LootManager
             mult_fac += 0f; /* killer.RareDrop_boost_mult + global.RareDrop_boost_mult*/
             add_fac += 0f; /* killer.RareDrop_boost_mult + global.RareDrop_boost_mult*/
         }
-        return Random.value <= mult_fac * entry.dropChance + add_fac ;
+        float roll = Random.value;
+        float threshold = mult_fac * entry.dropChance + add_fac;
+        //Debug.Log("roll: "+roll +" seuil: "+ (mult_fac * entry.dropChance + add_fac));
+        return roll < threshold ;
     }
     
     //Il faut une référence vers le joueur qui prend le kill si on veut des bonus de drop individuel. C'est du mauvais game design de faire ça mais on se ferme pas la porte
