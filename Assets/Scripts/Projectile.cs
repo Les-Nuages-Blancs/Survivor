@@ -5,9 +5,6 @@ public class Projectile : NetworkBehaviour
 {
     public float speed = 10f; // Vitesse du projectile
 
-    [SerializeField] private float damage = 5f;
-    [SerializeField] private GameObject HitEffectPrefab;
-
     private bool isDespawning = false;
 
     void Update()
@@ -15,45 +12,19 @@ public class Projectile : NetworkBehaviour
         transform.Translate(Vector3.forward * speed * Time.deltaTime); // Déplacer vers l'avant
     }
 
-    void OnTriggerEnter(Collider other)
+    public void TryKillProjectile()
     {
-        if (!IsServer) return;
-
-        if (isDespawning) return;
-        isDespawning = true;
-
-
-        OnTriggerEnterForwarder forwarder = other.GetComponent<OnTriggerEnterForwarder>();
-        if (forwarder)
-        {
-            HealthSystem healthSystem = forwarder.ForwardedGameObject.GetComponent<HealthSystem>();
-            if (healthSystem)
-            {
-                healthSystem.TakeDamageServerRPC(damage);
-            }
-        }
-
-        if (HitEffectPrefab != null)
-        {
-            SpawnParticleServerRPC();
-        }
-
+        if (!NetworkObject.IsSpawned) return;
         DestroyServerRPC();
     }
 
     [ServerRpc]
-    private void SpawnParticleServerRPC()
+    public void DestroyServerRPC()
     {
-        GameObject go = Instantiate(HitEffectPrefab, transform.position, transform.rotation);
-        go.GetComponent<DamageValueForward>().SetDamageValue(damage);
-        NetworkObject networkObject = go.GetComponent<NetworkObject>();
-        networkObject.Spawn();
-    }
+        if (isDespawning) return;
+        isDespawning = true;
 
-    [ServerRpc]
-    private void DestroyServerRPC()
-    {
-        GetComponent<NetworkObject>().Despawn();
+        NetworkObject.Despawn();
         Destroy(gameObject);
     }
 }

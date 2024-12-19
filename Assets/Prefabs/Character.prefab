@@ -194,7 +194,7 @@ GameObject:
   - component: {fileID: 5119287610799656840}
   m_Layer: 0
   m_Name: Character
-  m_TagString: Untagged
+  m_TagString: Player
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -403,6 +403,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 4971876271230082136}
+  takeDamageCooldown: 0.2
   onHealthChange:
     m_PersistentCalls:
       m_Calls:
@@ -433,6 +434,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  lootTable: {fileID: 0}
 --- !u!114 &1053058522295571634
 MonoBehaviour:
   m_ObjectHideFlags: 0

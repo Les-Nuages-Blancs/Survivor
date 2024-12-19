@@ -12,12 +12,13 @@ GameObject:
   - component: {fileID: 1127600273200795295}
   - component: {fileID: 1895253109591943339}
   - component: {fileID: 6621579554216644304}
-  - component: {fileID: 1192996951434528473}
-  - component: {fileID: 2523721264117131506}
   - component: {fileID: 9179213318214837890}
+  - component: {fileID: 1192996951434528473}
   - component: {fileID: 3400545123622814378}
   - component: {fileID: 3848978872879962136}
+  - component: {fileID: 2523721264117131506}
   - component: {fileID: 2652126966048824509}
+  - component: {fileID: 3437298488761645135}
   m_Layer: 0
   m_Name: Projectile
   m_TagString: Untagged
@@ -111,43 +112,6 @@ SphereCollider:
   serializedVersion: 3
   m_Radius: 0.5
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &1192996951434528473
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6613985244480515278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3156540829
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
---- !u!114 &2523721264117131506
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 6613985244480515278}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0977370305280a9429819a399335311c, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  speed: 20
-  damage: 40
-  HitEffectPrefab: {fileID: 4762360838216595935, guid: 319a3d0518e60074b95d8be3df9d017b,
-    type: 3}
 --- !u!54 &9179213318214837890
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -175,6 +139,27 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
+--- !u!114 &1192996951434528473
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613985244480515278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 3156540829
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &3400545123622814378
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -218,6 +203,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6c0be61502bb534f922ebb746851216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &2523721264117131506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613985244480515278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0977370305280a9429819a399335311c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  speed: 20
 --- !u!114 &2652126966048824509
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -231,3 +229,38 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   maxLifeTime: 5
+--- !u!114 &3437298488761645135
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6613985244480515278}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5a98c92ef3227ec47b7c3875d9095493, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  damage: 40
+  damageDealedEffectPrefab: {fileID: 4762360838216595935, guid: 319a3d0518e60074b95d8be3df9d017b,
+    type: 3}
+  excludeDamageTags:
+  - Player
+  onTriggerEnter:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2523721264117131506}
+        m_TargetAssemblyTypeName: Projectile, Assembly-CSharp
+        m_MethodName: TryKillProjectile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTriggerExit:
+    m_PersistentCalls:
+      m_Calls: []

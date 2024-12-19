@@ -10,11 +10,14 @@ public class HealthSystem : NetworkBehaviour
 
     private NetworkVariable<float> currentHealth = new NetworkVariable<float>(0.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     private NetworkVariable<float> maxHealth = new NetworkVariable<float>(100.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    [SerializeField] private float takeDamageCooldown = 0.5f;
 
     [SerializeField] public UnityEvent onHealthChange;
     [SerializeField] public UnityEvent onMaxHealthChange;
 
-    
+    private bool isOnCooldown = false;
+    public bool IsOnCooldown => isOnCooldown;
+
     [Tooltip("If not empty, gameObject will be destroyed and lootTable processed when hp goes below 1")]
     [SerializeField] public LootTable lootTable;
 
@@ -37,6 +40,7 @@ public class HealthSystem : NetworkBehaviour
         maxHealth.OnValueChanged += OnMaxHealthChanged;
 
         UpdateHealthStats();
+        RegenAllHpServerRPC();
     }
 
     public override void OnDestroy()
@@ -108,15 +112,32 @@ public class HealthSystem : NetworkBehaviour
         CurrentHealth = MaxHealth;
     }
 
+    private void StartTakeDamageCooldown()
+    {
+        if (takeDamageCooldown == 0.0f) return;
+        StartCoroutine(ApplyCooldown());
+    }
+
+    private IEnumerator ApplyCooldown()
+    {
+        isOnCooldown = true;
+        yield return new WaitForSeconds(takeDamageCooldown);
+        isOnCooldown = false;
+    }
+
     [ServerRpc(RequireOwnership = false)]
     public void TakeDamageServerRPC(float damage)
     {
+        if (isOnCooldown) return;
+        StartTakeDamageCooldown();
         CurrentHealth -= damage;
     }
 
     [ServerRpc(RequireOwnership = false)]
     public void TakeDamageByPercentOfMaxHpServerRPC(float maxHpPercent)
     {
+        if (isOnCooldown) return;
+        StartTakeDamageCooldown();
         CurrentHealth -= maxHpPercent * MaxHealth;
     }
 
