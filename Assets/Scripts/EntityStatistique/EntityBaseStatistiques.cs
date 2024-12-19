@@ -151,4 +151,20 @@ public class EntityBaseStatistiques: INetworkSerializable
         return false;
     }
 
+    public override int GetHashCode()
+    {
+        int hash = 17;
+        hash = hash * 23 + requiredXpForNextLevel.GetHashCode();
+        hash = hash * 23 + health.GetHashCode();
+        hash = hash * 23 + regenHealth.GetHashCode();
+        hash = hash * 23 + armor.GetHashCode();
+        hash = hash * 23 + damage.GetHashCode();
+        hash = hash * 23 + attackSpeed.GetHashCode();
+        hash = hash * 23 + critDamageMultiplier.GetHashCode();
+        hash = hash * 23 + criticalChance.GetHashCode();
+        hash = hash * 23 + pickupRange.GetHashCode();
+        hash = hash * 23 + moveSpeedMultiplier.GetHashCode();
+        return hash;
+    }
+
 }
