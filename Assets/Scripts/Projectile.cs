@@ -45,6 +45,7 @@ public class Projectile : NetworkBehaviour
     private void SpawnParticleServerRPC()
     {
         GameObject go = Instantiate(HitEffectPrefab, transform.position, transform.rotation);
+        go.GetComponent<DamageValueForward>().SetDamageValue(damage);
         NetworkObject networkObject = go.GetComponent<NetworkObject>();
         networkObject.Spawn();
     }

@@ -123,7 +123,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3200158343
+  GlobalObjectIdHash: 3156540829
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -146,7 +146,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 20
   damage: 40
-  HitEffectPrefab: {fileID: 0}
+  HitEffectPrefab: {fileID: 4762360838216595935, guid: 319a3d0518e60074b95d8be3df9d017b,
+    type: 3}
 --- !u!54 &9179213318214837890
 Rigidbody:
   m_ObjectHideFlags: 0
