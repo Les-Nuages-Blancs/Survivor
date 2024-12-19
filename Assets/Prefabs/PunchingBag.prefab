@@ -410,6 +410,36 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  onDeath:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2590741095361187622}
+        m_TargetAssemblyTypeName: HealthSystem, Assembly-CSharp
+        m_MethodName: RegenAllHpServerRPC
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  onTakeDamage:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2218942690045564494}
+        m_TargetAssemblyTypeName: RegenHealthSystem, Assembly-CSharp
+        m_MethodName: StartCooldown
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   lootTable: {fileID: 0}
 --- !u!114 &2218942690045564494
 MonoBehaviour:
@@ -425,6 +455,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 8684086574328008913}
   healthSystem: {fileID: 2590741095361187622}
+  regenStartAfterNoDamageCooldown: 3
+  regenMultiplier: 10
   regenSpeedInSecond:
     m_InternalValue: 0.1
   regenHealthValue:

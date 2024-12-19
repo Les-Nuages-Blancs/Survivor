@@ -8,6 +8,9 @@ public class RegenHealthSystem : NetworkBehaviour
 {
     [SerializeField] private StatistiquesLevelSystem statsLevelSystem;
     [SerializeField] private HealthSystem healthSystem;
+    [SerializeField] private float regenStartAfterNoDamageCooldown = 3.0f;
+    [SerializeField] private float regenMultiplier = 1.0f;
+
 
     [SerializeField] private NetworkVariable<float> regenSpeedInSecond = new NetworkVariable<float>(1.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     [SerializeField] private NetworkVariable<float> regenHealthValue = new NetworkVariable<float>(0.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
@@ -16,6 +19,7 @@ public class RegenHealthSystem : NetworkBehaviour
     [SerializeField] public UnityEvent onRegenHealthValueChange;
 
     private Coroutine regenCoroutine;
+    private Coroutine cooldownCoroutine;
 
     public void UpdateRegenStats()
     {
@@ -50,6 +54,23 @@ public class RegenHealthSystem : NetworkBehaviour
         onRegenHealthValueChange.Invoke();
     }
 
+    public void StartCooldown()
+    {
+        if (!IsServer) return;
+        StopCooldown();
+        cooldownCoroutine = StartCoroutine(ApplyCooldown());
+    }
+
+    private void StopCooldown()
+    {
+        if (!IsServer) return;
+
+        if (cooldownCoroutine != null)
+        {
+            StopCoroutine(cooldownCoroutine);
+        }
+    }
+
     private void StartRegen()
     {
         if (!IsServer) return;
@@ -69,6 +90,14 @@ public class RegenHealthSystem : NetworkBehaviour
     private void OnDisable()
     {
         StopRegen();
+        StopCooldown();
+    }
+
+    private IEnumerator ApplyCooldown()
+    {
+        StopRegen();
+        yield return new WaitForSeconds(regenStartAfterNoDamageCooldown);
+        StartRegen();
     }
 
     private IEnumerator ApplyRegen()
@@ -76,7 +105,7 @@ public class RegenHealthSystem : NetworkBehaviour
         while (true)
         {
             yield return new WaitForSeconds(regenSpeedInSecond.Value);
-            healthSystem.AddHpServerRPC(regenHealthValue.Value);
+            healthSystem.AddHpServerRPC(regenHealthValue.Value * regenMultiplier);
         }
     }
 }

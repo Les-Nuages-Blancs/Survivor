@@ -148,9 +148,9 @@ GameObject:
   - component: {fileID: 2530154678455095593}
   - component: {fileID: 9069785192260872667}
   - component: {fileID: 6432335429833076326}
-  - component: {fileID: 6683851336240932178}
   - component: {fileID: 5504048452922734099}
   - component: {fileID: -773139850193281448}
+  - component: {fileID: 5412384318386616537}
   m_Layer: 5
   m_Name: DamageIndicator
   m_TagString: Untagged
@@ -275,19 +275,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &6683851336240932178
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4762360838216595935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c5f1417f66347b845acdd7d6c28b9fa1, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  delay: 0
 --- !u!114 &5504048452922734099
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -322,3 +309,16 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damageValueText: {fileID: 1948663555202984705}
+--- !u!114 &5412384318386616537
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4762360838216595935}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5cf6e006170b0934ba90bda5fa3af077, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  maxLifeTime: 1

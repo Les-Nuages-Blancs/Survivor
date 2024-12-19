@@ -97,7 +97,7 @@ public class DamageDealerSystem : NetworkBehaviour
     private void SpawnParticleServerRPC()
     {
         GameObject go = Instantiate(damageDealedEffectPrefab, transform.position, transform.rotation);
-        go.GetComponent<DamageValueForward>().SetDamageValue(damage);
+        go.GetComponent<DamageValueForward>().damageValue = damage;
         NetworkObject networkObject = go.GetComponent<NetworkObject>();
         networkObject.Spawn();
     }

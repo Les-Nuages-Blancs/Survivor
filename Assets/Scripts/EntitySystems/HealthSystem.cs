@@ -14,10 +14,14 @@ public class HealthSystem : NetworkBehaviour
 
     [SerializeField] public UnityEvent onHealthChange;
     [SerializeField] public UnityEvent onMaxHealthChange;
+    [SerializeField] public UnityEvent onDeath;
+    [SerializeField] public UnityEvent onTakeDamage;
 
     private bool isOnCooldown = false;
     public bool IsOnCooldown => isOnCooldown;
 
+
+    // Move loot table logic in another system
     [Tooltip("If not empty, gameObject will be destroyed and lootTable processed when hp goes below 1")]
     [SerializeField] public LootTable lootTable;
 
@@ -53,7 +57,13 @@ public class HealthSystem : NetworkBehaviour
 
     private void OnHealthChanged(float oldValue, float newValue)
     {
+        if (newValue == 0.0f)
+        {
+            onDeath.Invoke();
+        }
+
         onHealthChange.Invoke();
+
         if(newValue < 1 && lootTable != null){
             LootManager.Instance.ProcessLootTable(lootTable, transform.position);
             Destroy(gameObject);
@@ -131,6 +141,7 @@ public class HealthSystem : NetworkBehaviour
         if (isOnCooldown) return;
         StartTakeDamageCooldown();
         CurrentHealth -= damage;
+        onTakeDamage.Invoke();
     }
 
     [ServerRpc(RequireOwnership = false)]
@@ -139,6 +150,7 @@ public class HealthSystem : NetworkBehaviour
         if (isOnCooldown) return;
         StartTakeDamageCooldown();
         CurrentHealth -= maxHpPercent * MaxHealth;
+        onTakeDamage.Invoke();
     }
 
     [ServerRpc(RequireOwnership = false)]
