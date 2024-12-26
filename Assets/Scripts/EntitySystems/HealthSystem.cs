@@ -22,10 +22,6 @@ public class HealthSystem : NetworkBehaviour
     public bool IsOnCooldown => isOnCooldown;
 
 
-    // Move loot table logic in another system
-    [Tooltip("If not empty, gameObject will be destroyed and lootTable processed when hp goes below 1")]
-    [SerializeField] public LootTable lootTable;
-
     public float CurrentHealth
     {
         get => currentHealth.Value;
@@ -66,10 +62,6 @@ public class HealthSystem : NetworkBehaviour
 
         onHealthChange.Invoke();
 
-        if(newValue < 1 && lootTable != null){
-            LootManager.Instance.ProcessLootTable(lootTable, transform.position);
-            Destroy(gameObject);
-        }
     }
 
     private void OnMaxHealthChanged(float oldValue, float newValue)
