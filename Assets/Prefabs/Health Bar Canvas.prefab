@@ -299,6 +299,7 @@ MonoBehaviour:
   separatorPrefab: {fileID: 3804022216556874488, guid: 37e1014c147dd1a4194f92044a627870,
     type: 3}
   healthBarSeparatorContainer: {fileID: 4570531053217680787}
+  separatorRange: 1000
 --- !u!1 &8912979531404493688
 GameObject:
   m_ObjectHideFlags: 0

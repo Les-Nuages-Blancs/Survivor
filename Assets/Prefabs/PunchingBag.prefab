@@ -380,6 +380,21 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 8684086574328008913}
   takeDamageCooldown: 0.1
+  onNetworkSpawn:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1765356546253979869}
+        m_TargetAssemblyTypeName: HealthBar, Assembly-CSharp
+        m_MethodName: UpdateHealthBar
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onHealthChange:
     m_PersistentCalls:
       m_Calls:
@@ -599,6 +614,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_AnchorMin.x
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 5983349600174416774, guid: 73a3abdd232dd5d4ba642a26b1672b58,
+        type: 3}
+      propertyPath: GlobalObjectIdHash
+      value: 1609119643
       objectReference: {fileID: 0}
     - target: {fileID: 6343078056394647781, guid: 73a3abdd232dd5d4ba642a26b1672b58,
         type: 3}

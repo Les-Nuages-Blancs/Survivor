@@ -12,6 +12,7 @@ public class HealthSystem : NetworkBehaviour
     private NetworkVariable<float> maxHealth = new NetworkVariable<float>(100.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     [SerializeField] private float takeDamageCooldown = 0.5f;
 
+    [SerializeField] public UnityEvent onNetworkSpawn;
     [SerializeField] public UnityEvent onHealthChange;
     [SerializeField] public UnityEvent onMaxHealthChange;
     [SerializeField] public UnityEvent onDeath;
@@ -45,6 +46,7 @@ public class HealthSystem : NetworkBehaviour
 
         UpdateHealthStats();
         RegenAllHpServerRPC();
+        onNetworkSpawn.Invoke();
     }
 
     public override void OnDestroy()

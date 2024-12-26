@@ -1,6 +1,7 @@
 using System;
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -11,10 +12,17 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private GameObject separatorPrefab;
     [SerializeField] private Transform healthBarSeparatorContainer;
+    [SerializeField] private float separatorRange = 1000.0f;
 
     private void Start()
     {
         UpdateSeparators(healthSlider.maxValue);
+    }
+
+    public void UpdateHealthBar()
+    {
+        UpdateMaxHealth();
+        SetHealth();
     }
 
     public void UpdateMaxHealth()
@@ -41,7 +49,7 @@ public class HealthBar : MonoBehaviour
             Destroy(child.gameObject);
         }
 
-        var separatorCount = (int)maxHealth / 1000;
+        var separatorCount = (int)maxHealth / separatorRange;
         if (separatorCount <= 0) return;
         for (var i = 0; i < separatorCount; i++)
         {
