@@ -12,7 +12,7 @@ public class HealthBar : MonoBehaviour
     [SerializeField] private Slider healthSlider;
     [SerializeField] private GameObject separatorPrefab;
     [SerializeField] private Transform healthBarSeparatorContainer;
-    [SerializeField] private float separatorRange = 1000.0f;
+    [SerializeField] private int separatorRange = 1000;
 
     private void Start()
     {
@@ -53,7 +53,7 @@ public class HealthBar : MonoBehaviour
         if (separatorCount <= 0) return;
         for (var i = 0; i < separatorCount; i++)
         {
-            var posX = 1000 * (i + 1) / maxHealth * -0.95f;
+            var posX = separatorRange * (i + 1) / maxHealth * -0.95f;
             Instantiate(separatorPrefab, healthBarSeparatorContainer).GetComponent<RectTransform>().anchoredPosition = new Vector2(posX, 0);
         }
     }
