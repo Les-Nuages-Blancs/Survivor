@@ -11,8 +11,10 @@ public class DamageDealerSystem : NetworkBehaviour
     [SerializeField] private float damage = 5f;
     [SerializeField] private GameObject damageDealedEffectPrefab;
 
+    [SerializeField] private LayerMask includeTriggerLayers;
     [TagField]
-    [SerializeField] private List<string> excludeDamageTags = new List<string>();
+    [SerializeField] private List<string> includeDamageTags = new List<string>();
+
 
     [SerializeField] public UnityEvent onTriggerEnter;
     [SerializeField] public UnityEvent onTriggerExit;
@@ -52,13 +54,17 @@ public class DamageDealerSystem : NetworkBehaviour
     {
         if (!IsServer || !NetworkObject.IsSpawned) return;
 
+        bool shouldTrigger = false;
+
         OnTriggerEnterForwarder forwarder = other.GetComponent<OnTriggerEnterForwarder>();
         if (forwarder)
         {
             GameObject target = forwarder.ForwardedGameObject;
 
-            if (!excludeDamageTags.Contains(target.tag))
+            if (includeDamageTags.Contains(target.tag))
             {
+                shouldTrigger = true;
+
                 HealthSystem healthSystem = target.GetComponent<HealthSystem>();
                 if (healthSystem)
                 {
@@ -67,8 +73,14 @@ public class DamageDealerSystem : NetworkBehaviour
                 }
             }
         }
+        else if ((includeTriggerLayers.value & (1 << other.gameObject.layer)) != 0) 
+        { 
+            shouldTrigger = true;
+        }
 
-        onTriggerEnter.Invoke();
+        if (shouldTrigger) {
+            onTriggerEnter.Invoke();
+        }
     }
 
     private void OnTriggerExit(Collider other)
@@ -80,7 +92,7 @@ public class DamageDealerSystem : NetworkBehaviour
         {
             GameObject target = forwarder.ForwardedGameObject;
 
-            if (!excludeDamageTags.Contains(target.tag))
+            if (includeDamageTags.Contains(target.tag))
             {
                 HealthSystem healthSystem = target.GetComponent<HealthSystem>();
                 if (healthSystem)
