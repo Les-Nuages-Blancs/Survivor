@@ -313,7 +313,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d6c441bf61e9d4290b266835432a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xp: 2000
+  xp: 10000
   xpPickupEffectPrefab: {fileID: 0}
   pickupByTags:
   - Player
