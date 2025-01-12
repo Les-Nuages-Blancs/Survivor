@@ -1,15 +1,64 @@
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
-public class LootManager
+public class LootManager : NetworkBehaviour
 {
     // Singleton
     private static LootManager _instance;
     public static LootManager Instance => _instance ?? (_instance = new LootManager());
     private LootManager() { }
 
-    //références vers le reste du jeu
-    //private ... state;
+
+    // Dictionary to hold loot prefabs keyed by an identifier
+    [SerializeField] private List<GameObject> lootPrefabs;
+    
+    //we can't pass GameObject as RPC arguments I think this mess is pretty much requiered
+    private Dictionary<int, GameObject> hashmapID_GO; 
+    private Dictionary<GameObject, int> hashmapGO_ID;
+
+
+    private void InitializeDictionary()
+    {
+        hashmapID_GO = new Dictionary<int, GameObject>();
+        hashmapGO_ID = new Dictionary<GameObject, int>();
+        for (int i = 0; i < lootPrefabs.Count; i++){
+            hashmapID_GO.Add(i, lootPrefabs[i]);
+            hashmapGO_ID.Add(lootPrefabs[i], i);
+        }
+    }
+
+    GameObject hm_getGO(int id){
+        if (hashmapID_GO.TryGetValue(id, out GameObject prefab)){
+            return prefab;
+        }
+        else{
+            Debug.LogError($"Didn't found matching GO for given ID");
+            return null;
+        }
+    }
+    int hm_getID(GameObject go){
+        if (hashmapGO_ID.TryGetValue(go, out int id)){
+            return id;
+        }
+        else{
+            Debug.LogError($"Didn't found matching id for given GO");
+            return 0;
+        }
+    }
+
+    private void Awake(){
+        if (_instance == null)
+        {
+            _instance = this;
+            DontDestroyOnLoad(gameObject);
+            InitializeDictionary();
+        }
+        else
+        {
+            Destroy(gameObject);
+        }
+    }
 
     private bool DropAttempt(LootEntry entry/*, Player killer*/){
         float mult_fac = 1f;
@@ -60,8 +109,33 @@ public class LootManager
                     //todo il est très important de dire au joueur la probabilité qu'il avais de drop cette item, ça génère de la dopamine, (+formater mieux le texte)
                 }
                 
-                GameObject.Instantiate(entry.prefab, position, Quaternion.identity);
+                int prefabId = hm_getID(entry.prefab);
+                RequestLootInstantiation(prefabId, position);
             }
         }
+    }
+
+    // instantiate GO if server, ask server to instantiate GO if isn't server
+    public void RequestLootInstantiation(int prefabId, Vector3 position)    {
+        if (IsServer) {
+            InstantiateLootServerRPC(prefabId, position);
+        }
+        else{
+            InstantiateLootServerRPCServerRpc(prefabId, position);
+        }
+    }
+
+    [ServerRpc(RequireOwnership = false)]
+    void InstantiateLootServerRPC(int prefabId, Vector3 pos){
+        GameObject prefab = hm_getGO(prefabId);
+        GameObject go = Instantiate(prefab, pos, Quaternion.identity);
+        go.GetComponent<NetworkObject>().Spawn();
+    }
+
+    
+
+    [ServerRpc]
+    private void InstantiateLootServerRPCServerRpc(int prefabId, Vector3 pos){
+        InstantiateLootServerRPC(prefabId, pos);
     }
 }
