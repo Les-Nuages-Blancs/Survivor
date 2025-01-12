@@ -10,14 +10,19 @@ public class LookAtCursor : NetworkBehaviour
     {
         if (!IsOwner) return;
 
-        // Récupération de la position de la souris
-        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        const float offset = 0;
 
-        // Détection de la position sur le sol (plan horizontal)
-        if (Physics.Raycast(ray, out RaycastHit hitInfo, Mathf.Infinity))
+        // Rï¿½cupï¿½ration de la position de la souris
+        Ray ray = Camera.main.ScreenPointToRay(Input.mousePosition);
+        Plane plane = new Plane(Vector3.up, new Vector3(0,transform.position.y+offset,0));
+        float enter;
+
+        // Dï¿½tection de la position sur un plan horizontal Ã  la hauteur du joueur
+        if (plane.Raycast(ray, out enter))
         {
-            Vector3 lookAtPoint = hitInfo.point;
-            lookAtPoint.y = transform.position.y; // Garde la rotation uniquement sur l'axe Y
+            Vector3 lookAtPoint = ray.GetPoint(enter);
+            //lookAtPoint.y = transform.position.y; // Garde la rotation uniquement sur l'axe Y
+            //pas besoin de modifier la coordonnÃ© y on peut directement jouer dessus en modifiant l'offset
             transform.LookAt(lookAtPoint);
         }
     }
