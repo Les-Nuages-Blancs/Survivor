@@ -370,7 +370,7 @@ MonoBehaviour:
   entityLevelStatistiques: {fileID: 11400000, guid: e97abea1f83938745a3cb709270a109c,
     type: 2}
   currentLevel:
-    m_InternalValue: 0
+    m_InternalValue: 80
   baseStatistiques:
     m_InternalValue:
       requiredXpForNextLevel: 0
