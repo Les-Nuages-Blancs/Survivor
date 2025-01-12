@@ -187,6 +187,7 @@ GameObject:
   - component: {fileID: 1493140411725393226}
   - component: {fileID: 8400310695861748268}
   - component: {fileID: 350407759611834210}
+  - component: {fileID: 7906392229024775349}
   - component: {fileID: 2178039369191698541}
   - component: {fileID: 3750472086688114561}
   - component: {fileID: 4971876271230082136}
@@ -307,7 +308,7 @@ NavMeshAgent:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2861682774586081686}
-  m_Enabled: 1
+  m_Enabled: 0
   m_AgentTypeID: 0
   m_Radius: 0.5
   m_Speed: 3.5
@@ -322,7 +323,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &2178039369191698541
+--- !u!114 &7906392229024775349
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -330,6 +331,24 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2861682774586081686}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e53bdbe69acad54ea889109b7e261b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsLevelSystem: {fileID: 4971876271230082136}
+  moveSpeed:
+    m_InternalValue: 0
+  onMoveSpeedChange:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &2178039369191698541
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2861682774586081686}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf5f3ed21f7e91746a97cce7c2305e84, type: 3}
   m_Name: 
@@ -353,7 +372,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25568f57010cf774587e4fa5960eb1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSystem: {fileID: 2178039369191698541}
+  movementSystem: {fileID: 7906392229024775349}
   characterAnimator: {fileID: 4359214319217399482}
 --- !u!114 &4971876271230082136
 MonoBehaviour:
@@ -412,6 +431,18 @@ MonoBehaviour:
         m_CallState: 2
       - m_Target: {fileID: 2178039369191698541}
         m_TargetAssemblyTypeName: MovementSystem, Assembly-CSharp
+        m_MethodName: UpdateMoveStats
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 7906392229024775349}
+        m_TargetAssemblyTypeName: SimpleMovementSystem, Assembly-CSharp
         m_MethodName: UpdateMoveStats
         m_Mode: 1
         m_Arguments:

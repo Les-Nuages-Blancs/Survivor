@@ -6,7 +6,7 @@ using UnityEngine;
 
 public class MovementInputSystem : NetworkBehaviour
 {
-    [SerializeField] private MovementSystem movementSystem;
+    [SerializeField] private SimpleMovementSystem movementSystem;
     [SerializeField] private Animator characterAnimator;
 
     private static readonly int IsWalking = Animator.StringToHash("isWalking");

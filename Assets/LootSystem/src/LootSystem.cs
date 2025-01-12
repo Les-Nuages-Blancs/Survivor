@@ -17,7 +17,7 @@ public class LootSystem : MonoBehaviour
         }
     }
     public void processLootTable(){
-        LootManager.Instance.ProcessLootTable(lootTable, transform.position);
+        LootManager.Instance.ProcessLootTable(lootTable, this.gameObject);
         
         //If performance ever become an issue consider removing conditional statement from this script. There are several other ways to acheive one LootTable looting multiples times without destroying any gameObject. Notably, use directly the LootManager singleton for the best performance. The whole "system" architecture is made for us to be convenient to work with in the Unity editor
         if(destroyOnProcessLoot) Destroy(gameObject);
