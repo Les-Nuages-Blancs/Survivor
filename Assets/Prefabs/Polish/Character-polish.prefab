@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 9034993278145612933}
   - component: {fileID: 1959585595652620457}
   - component: {fileID: 8009326795347864653}
+  - component: {fileID: 6833407096566969320}
   - component: {fileID: 7735960736958508807}
   - component: {fileID: 8357140008822183161}
   - component: {fileID: 7663633407509845089}
@@ -149,7 +150,7 @@ NavMeshAgent:
   m_BaseOffset: 1
   m_WalkableMask: 4294967295
   m_ObstacleAvoidanceType: 4
---- !u!114 &7735960736958508807
+--- !u!114 &6833407096566969320
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -157,6 +158,24 @@ MonoBehaviour:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1881956038346639823}
   m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2e53bdbe69acad54ea889109b7e261b9, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statsLevelSystem: {fileID: 7663633407509845089}
+  moveSpeed:
+    m_InternalValue: 0
+  onMoveSpeedChange:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &7735960736958508807
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881956038346639823}
+  m_Enabled: 0
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cf5f3ed21f7e91746a97cce7c2305e84, type: 3}
   m_Name: 
@@ -180,7 +199,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 25568f57010cf774587e4fa5960eb1a9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  movementSystem: {fileID: 7735960736958508807}
+  movementSystem: {fileID: 6833407096566969320}
   characterAnimator: {fileID: 1724416807781074264}
 --- !u!114 &7663633407509845089
 MonoBehaviour:
@@ -237,8 +256,8 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-      - m_Target: {fileID: 7735960736958508807}
-        m_TargetAssemblyTypeName: MovementSystem, Assembly-CSharp
+      - m_Target: {fileID: 6833407096566969320}
+        m_TargetAssemblyTypeName: SimpleMovementSystem, Assembly-CSharp
         m_MethodName: UpdateMoveStats
         m_Mode: 1
         m_Arguments:
