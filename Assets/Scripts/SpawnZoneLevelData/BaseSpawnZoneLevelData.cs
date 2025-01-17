@@ -5,7 +5,7 @@ using UnityEngine;
 [System.Serializable]
 public class BaseSpawnZoneLevelData
 {
-    [SerializeField] private GameObject prefab;
+    [SerializeField] public GameObject prefab;
     [SerializeField, Range(0.0f, 100.0f)] private float probability = 100.0f;
     [SerializeField, Range(0.0f, 100.0f)] private float spawnCooldown = 2.0f;
     [SerializeField, Range(0, 100)] private int spawnAtLevel = 0;
@@ -56,10 +56,12 @@ public class BaseSpawnZoneLevelData
     // Clone method
     public BaseSpawnZoneLevelData Clone()
     {
-        return new BaseSpawnZoneLevelData(
+        BaseSpawnZoneLevelData newBaseData = new BaseSpawnZoneLevelData(
             probability,
             spawnCooldown,
             spawnAtLevel
         );
+        newBaseData.prefab = prefab;
+        return newBaseData;
     }
 }

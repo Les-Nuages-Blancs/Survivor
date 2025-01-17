@@ -11,11 +11,13 @@ public class SpawnZoneLevelDataMakerSO : ScriptableObject
     [SerializeField] private bool updateOnChange = true;
 
     [Header("Stats Maker Inputs")]
-    [SerializeField] private BaseSpawnZoneLevelData baseSpawnZoneLevelData = new BaseSpawnZoneLevelData();
+    [SerializeField] private List<BaseSpawnZoneLevelData> baseSpawnZoneLevelData = new List<BaseSpawnZoneLevelData> { 
+        new BaseSpawnZoneLevelData() 
+    };
+
     [SerializeField]
-    private List<SpawnZoneLevelRangeUpgrader> levelRangeUpgrader = new List<SpawnZoneLevelRangeUpgrader>
-    {
-        new SpawnZoneLevelRangeUpgrader()
+    private List<SpawnZoneLevelRangeGroup> levelRangeUpgrader = new List<SpawnZoneLevelRangeGroup> {
+        new SpawnZoneLevelRangeGroup()
     };
 
     [Header("Stats Maker Outputs")]
@@ -26,7 +28,7 @@ public class SpawnZoneLevelDataMakerSO : ScriptableObject
     {
         if (generatedSpawnZoneLevelDatas == null)
         {
-            string basePath = "Assets/ScriptableObjects/SpawnZoneLevelData/GeneratedSpawnZoneLevelStats";
+            string basePath = "Assets/ScriptableObjects/SpawnZoneLevelData/SpawnZoneLevelData/GeneratedSpawnZoneLevelStats";
             string extension = ".asset";
             string assetPath = basePath + extension;
 
@@ -56,20 +58,31 @@ public class SpawnZoneLevelDataMakerSO : ScriptableObject
         if (generatedSpawnZoneLevelDatas != null)
         {
             generatedSpawnZoneLevelDatas.levelDatas.Clear();
-            generatedSpawnZoneLevelDatas.levelDatas.Add(baseSpawnZoneLevelData.Clone());
-            BaseSpawnZoneLevelData currentStats = baseSpawnZoneLevelData;
 
-            foreach (SpawnZoneLevelRangeUpgrader entityLevelRangeUpgrader in levelRangeUpgrader)
+            for (int i = 0; i < levelRangeUpgrader.Count; i++)
             {
-                for (int i = 0; i < entityLevelRangeUpgrader.NumberOfLevel; i++)
+                List<SpawnZoneLevelRangeUpgrader> listOfSpawnZoneLevelRangeUpgrader = levelRangeUpgrader[i].levelRangeUpgraders;
+
+                BaseSpawnZoneLevelDataGroup levelDatas = new BaseSpawnZoneLevelDataGroup();
+                levelDatas.baseSpawnZoneLevelDatas.Add(baseSpawnZoneLevelData[i].Clone());
+
+                BaseSpawnZoneLevelData currentStats = baseSpawnZoneLevelData[i];
+
+                foreach (SpawnZoneLevelRangeUpgrader spawnZoneLevelRangeUpgrader in listOfSpawnZoneLevelRangeUpgrader)
                 {
-                    foreach (SpawnZoneLevelUpgraderMode entityLevelUpgraderMode in entityLevelRangeUpgrader.LevelUpgrader.EntityLevelUpgraderModes)
+
+                    for (int j = 0; j < spawnZoneLevelRangeUpgrader.NumberOfLevel; j++)
                     {
-                        BaseSpawnZoneLevelData upgradedStats = entityLevelUpgraderMode.ApplyOperation(baseSpawnZoneLevelData, currentStats);
-                        generatedSpawnZoneLevelDatas.levelDatas.Add(upgradedStats);
-                        currentStats = upgradedStats;
+                        foreach (SpawnZoneLevelUpgraderMode spawnZoneLevelRangeUpgraderMode in spawnZoneLevelRangeUpgrader.LevelUpgrader.SpawnZoneLevelUpgraderModes)
+                        {
+                            BaseSpawnZoneLevelData upgradedStats = spawnZoneLevelRangeUpgraderMode.ApplyOperation(baseSpawnZoneLevelData[i], currentStats);
+                            currentStats = upgradedStats;
+                        }
+                        levelDatas.baseSpawnZoneLevelDatas.Add(currentStats);
                     }
+                    
                 }
+                generatedSpawnZoneLevelDatas.levelDatas.Add(levelDatas);
             }
         }
     }

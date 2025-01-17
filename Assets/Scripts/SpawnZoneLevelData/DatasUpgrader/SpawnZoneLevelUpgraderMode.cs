@@ -53,6 +53,8 @@ public class SpawnZoneLevelUpgraderMode
                 break;
         }
 
+        newDatas.prefab = operationTarget.prefab;
+
         return newDatas;
     }
 }

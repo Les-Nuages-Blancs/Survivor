@@ -1,15 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.VisualScripting;
 using UnityEngine;
 
 [CreateAssetMenu(fileName = "SpawnZoneLevelStatistiques", menuName = "ScriptableObject/SpawnZoneLevelStatistiques")]
 public class SpawnZoneLevelDataSO : ScriptableObject
 {
-    [SpawnZoneLevel]
-    [SerializeField] public List<BaseSpawnZoneLevelData> levelDatas = new List<BaseSpawnZoneLevelData>();
+    [SerializeField] public List<BaseSpawnZoneLevelDataGroup> levelDatas = new List<BaseSpawnZoneLevelDataGroup> { new BaseSpawnZoneLevelDataGroup() };
 
-    public BaseSpawnZoneLevelData GetDatasOfLevel(int levelIndex)
+    public List<BaseSpawnZoneLevelData> GetDatasOfLevel(int levelIndex)
     {
-        return levelDatas[levelIndex].Clone();
+        List<BaseSpawnZoneLevelData> baseSpawnZoneLevelDatas = new List<BaseSpawnZoneLevelData>();
+        foreach (var levelData in levelDatas)
+        {
+            baseSpawnZoneLevelDatas.Add(levelData.baseSpawnZoneLevelDatas[levelIndex].Clone());
+        }
+        return baseSpawnZoneLevelDatas;
     }
 }

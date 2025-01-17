@@ -66,9 +66,9 @@ public class EntityLevelStatistiquesMakerSO : ScriptableObject
                     foreach (EntityLevelUpgraderMode entityLevelUpgraderMode in entityLevelRangeUpgrader.LevelUpgrader.EntityLevelUpgraderModes)
                     {
                         EntityBaseStatistiques upgradedStats = entityLevelUpgraderMode.ApplyOperation(baseStatistiques, currentStats);
-                        generatedEntityLevelStats.levelStatistiques.Add(upgradedStats);
                         currentStats = upgradedStats;
                     }
+                    generatedEntityLevelStats.levelStatistiques.Add(currentStats);
                 }
             }
         }

@@ -6,11 +6,11 @@ using UnityEngine;
 public class SpawnZoneLevelUpgrader
 {
     [SerializeField]
-    private List<SpawnZoneLevelUpgraderMode> entityLevelUpgraderModes = new List<SpawnZoneLevelUpgraderMode>
+    private List<SpawnZoneLevelUpgraderMode> spawnZoneLevelUpgraderModes = new List<SpawnZoneLevelUpgraderMode>
 {
     new SpawnZoneLevelUpgraderMode(),
 };
 
-    public List<SpawnZoneLevelUpgraderMode> EntityLevelUpgraderModes => entityLevelUpgraderModes;
+    public List<SpawnZoneLevelUpgraderMode> SpawnZoneLevelUpgraderModes => spawnZoneLevelUpgraderModes;
 }
 

@@ -6,9 +6,9 @@ using UnityEngine;
 
 public class PrefabSpawner : NetworkBehaviour
 {
-    [SerializeField] private GameObject prefab;
+    [SerializeField] protected GameObject prefab;
 
-    [SerializeField] private float spawnCooldown = 2.0f;
+    [SerializeField] protected float spawnCooldown = 2.0f;
 
     private Coroutine spawnCoroutine;
 
