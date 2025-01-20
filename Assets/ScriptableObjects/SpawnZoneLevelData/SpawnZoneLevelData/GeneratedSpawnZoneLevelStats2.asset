@@ -12,3 +12,216 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ff83bc0419363cd45b3eb1b92bcd7a49, type: 3}
   m_Name: GeneratedSpawnZoneLevelStats2
   m_EditorClassIdentifier: 
+  levelDatas:
+  - baseSpawnZoneLevelDatas:
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 20
+      spawnAtLevel: 20
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 22
+      spawnAtLevel: 22
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 24
+      spawnAtLevel: 24
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 26
+      spawnAtLevel: 26
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 28
+      spawnAtLevel: 28
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 30
+      spawnAtLevel: 30
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 32
+      spawnAtLevel: 32
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 34
+      spawnAtLevel: 34
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 36
+      spawnAtLevel: 36
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 38
+      spawnAtLevel: 38
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 40
+      spawnAtLevel: 40
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 42
+      spawnAtLevel: 42
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 44
+      spawnAtLevel: 44
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 46
+      spawnAtLevel: 46
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 48
+      spawnAtLevel: 48
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 50
+      spawnAtLevel: 50
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 52
+      spawnAtLevel: 52
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 54
+      spawnAtLevel: 54
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 56
+      spawnAtLevel: 56
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 58
+      spawnAtLevel: 58
+    - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+        type: 3}
+      probability: 100
+      spawnCooldown: 60
+      spawnAtLevel: 60
+  - baseSpawnZoneLevelDatas:
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 0.2
+      spawnAtLevel: 0
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 0.4
+      spawnAtLevel: 1
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 0.6
+      spawnAtLevel: 2
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 0.8
+      spawnAtLevel: 3
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 1
+      spawnAtLevel: 4
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 1.2
+      spawnAtLevel: 5
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 1.4000001
+      spawnAtLevel: 6
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 1.6000001
+      spawnAtLevel: 7
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 1.8000002
+      spawnAtLevel: 8
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 2.0000002
+      spawnAtLevel: 9
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 2.2000003
+      spawnAtLevel: 10
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 2.4000003
+      spawnAtLevel: 11
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 2.6000004
+      spawnAtLevel: 12
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 2.8000004
+      spawnAtLevel: 13
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 3.0000005
+      spawnAtLevel: 14
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 3.2000005
+      spawnAtLevel: 15
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 3.4000006
+      spawnAtLevel: 16
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 3.6000006
+      spawnAtLevel: 17
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 3.8000007
+      spawnAtLevel: 18
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 4.0000005
+      spawnAtLevel: 19
+    - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+        type: 3}
+      probability: 100
+      spawnCooldown: 4.2000003
+      spawnAtLevel: 20

@@ -24,7 +24,7 @@ public class DestroyAfterTime : NetworkBehaviour
     [ServerRpc]
     private void DestroyAfterTimeServerRPC()
     {
-        this.GetComponent<NetworkObject>().Despawn();
+        GetComponent<NetworkObject>().Despawn();
         Destroy(gameObject);
     }
 }

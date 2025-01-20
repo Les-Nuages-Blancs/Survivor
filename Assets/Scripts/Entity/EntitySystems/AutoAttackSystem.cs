@@ -108,6 +108,8 @@ public class AutoAttackSystem : NetworkBehaviour
     [ServerRpc(RequireOwnership = false)]
     private void ShootServerRPC()
     {
+        if (!LevelStateManager.Instance.EnableAutoAttack) return;
+
         GameObject go = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         go.GetComponent<NetworkObject>().Spawn();
     }

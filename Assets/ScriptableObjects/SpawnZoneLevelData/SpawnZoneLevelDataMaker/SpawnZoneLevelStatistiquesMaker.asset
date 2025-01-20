@@ -14,17 +14,19 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateOnChange: 1
   baseSpawnZoneLevelData:
-  - prefab: {fileID: 0}
+  - prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98,
+      type: 3}
     probability: 100
-    spawnCooldown: 2
-    spawnAtLevel: 0
-  - prefab: {fileID: 0}
+    spawnCooldown: 20
+    spawnAtLevel: 20
+  - prefab: {fileID: 5753121979501682831, guid: fdde87fb48ab2894787bf694a4fd94eb,
+      type: 3}
     probability: 100
-    spawnCooldown: 2
+    spawnCooldown: 0.6
     spawnAtLevel: 0
   levelRangeUpgrader:
   - levelRangeUpgraders:
-    - numberOfLevel: 23
+    - numberOfLevel: 20
       levelUpgrader:
         spawnZoneLevelUpgraderModes:
         - levelUpgraderOperationTarget: 1
@@ -32,30 +34,10 @@ MonoBehaviour:
           entityOperationStatistiques:
             prefab: {fileID: 0}
             probability: 0
-            spawnCooldown: -0.1
-            spawnAtLevel: 1
-    - numberOfLevel: 23
-      levelUpgrader:
-        spawnZoneLevelUpgraderModes:
-        - levelUpgraderOperationTarget: 1
-          levelUpgraderMode: 0
-          entityOperationStatistiques:
-            prefab: {fileID: 0}
-            probability: 0
-            spawnCooldown: -0.1
-            spawnAtLevel: 1
-    - numberOfLevel: 23
-      levelUpgrader:
-        spawnZoneLevelUpgraderModes:
-        - levelUpgraderOperationTarget: 1
-          levelUpgraderMode: 0
-          entityOperationStatistiques:
-            prefab: {fileID: 0}
-            probability: 0
-            spawnCooldown: -0.1
-            spawnAtLevel: 1
+            spawnCooldown: 2
+            spawnAtLevel: 2
   - levelRangeUpgraders:
-    - numberOfLevel: 45
+    - numberOfLevel: 20
       levelUpgrader:
         spawnZoneLevelUpgraderModes:
         - levelUpgraderOperationTarget: 1
@@ -63,27 +45,7 @@ MonoBehaviour:
           entityOperationStatistiques:
             prefab: {fileID: 0}
             probability: 0
-            spawnCooldown: -0.1
+            spawnCooldown: 0.2
             spawnAtLevel: 1
-    - numberOfLevel: 23
-      levelUpgrader:
-        spawnZoneLevelUpgraderModes:
-        - levelUpgraderOperationTarget: 1
-          levelUpgraderMode: 0
-          entityOperationStatistiques:
-            prefab: {fileID: 0}
-            probability: 0
-            spawnCooldown: -0.1
-            spawnAtLevel: 1
-    - numberOfLevel: 23
-      levelUpgrader:
-        spawnZoneLevelUpgraderModes:
-        - levelUpgraderOperationTarget: 1
-          levelUpgraderMode: 0
-          entityOperationStatistiques:
-            prefab: {fileID: 0}
-            probability: 0
-            spawnCooldown: -0.1
-            spawnAtLevel: 1
-  generatedSpawnZoneLevelDatas: {fileID: 11400000, guid: 1a3a2ec3adb290f458921a49a8521ef7,
+  generatedSpawnZoneLevelDatas: {fileID: 11400000, guid: baeee9ae512ef0941b444c039c5eed21,
     type: 2}

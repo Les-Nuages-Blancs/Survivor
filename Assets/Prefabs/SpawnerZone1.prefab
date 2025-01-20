@@ -1,6 +1,6 @@
 %YAML 1.1
 %TAG !u! tag:unity3d.com,2011:
---- !u!1 &59509305123399142
+--- !u!1 &8060539036442655882
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -8,45 +8,45 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 3144573054273143941}
-  - component: {fileID: 2712442844471215074}
-  - component: {fileID: 8067015275324946865}
-  - component: {fileID: 2896590214408521604}
+  - component: {fileID: 3764230151044837492}
+  - component: {fileID: 7263906989302416852}
+  - component: {fileID: 2297610778018481996}
+  - component: {fileID: 6890273883872719381}
   m_Layer: 0
-  m_Name: EntitySpawner
+  m_Name: SpawnerZone1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!4 &3144573054273143941
+--- !u!4 &3764230151044837492
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59509305123399142}
+  m_GameObject: {fileID: 8060539036442655882}
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: -21.400002, y: 0, z: -48.699997}
+  m_LocalPosition: {x: 30.622759, y: -10.9293785, z: 8.168707}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &2712442844471215074
+--- !u!114 &7263906989302416852
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59509305123399142}
+  m_GameObject: {fileID: 8060539036442655882}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1700741821
+  GlobalObjectIdHash: 799502777
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -55,26 +55,34 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
---- !u!114 &8067015275324946865
+--- !u!114 &2297610778018481996
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59509305123399142}
+  m_GameObject: {fileID: 8060539036442655882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e9a627b6d5dfc534692cbe2cb2377dc3, type: 3}
+  m_Script: {fileID: 11500000, guid: 293d1b1e3639466489d3af8d58bbae66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  prefab: {fileID: 1173583750492586891, guid: 1aa5ce7c79b318a41957af3c156f2e98, type: 3}
-  spawnCooldown: 1
-  OnWillSpawn:
+  prefabSpawnerEntity: {fileID: 59509305123399142, guid: 844bbaa3b8a329d4280e248ebfa80d06,
+    type: 3}
+  spawnerZoneLevelData: {fileID: 11400000, guid: baeee9ae512ef0941b444c039c5eed21,
+    type: 2}
+  baseSpawnZoneLevelDatas: []
+  playerZoneLevel:
+    m_InternalValue: 0
+  onPlayerZoneLevelChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onLevelMaxReached:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 2896590214408521604}
-        m_TargetAssemblyTypeName: OwnerSpawnerHelper, Assembly-CSharp
-        m_MethodName: UpdateSpawnPosition
+      - m_Target: {fileID: 6890273883872719381}
+        m_TargetAssemblyTypeName: PlayerSpawnerZoneTimeLevelUpgrader, Assembly-CSharp
+        m_MethodName: StopUpgrade
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -84,19 +92,31 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
-  spawnedAtlevel: 0
---- !u!114 &2896590214408521604
+--- !u!114 &6890273883872719381
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 59509305123399142}
+  m_GameObject: {fileID: 8060539036442655882}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: badb3d67e98b440449f0e4d7f76f1869, type: 3}
+  m_Script: {fileID: 11500000, guid: d029935c2e164a44eaa5aabb442dab1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  owner: {fileID: 0}
-  minDistance: 10
-  maxDistance: 25
+  surviveTime: 5.02
+  onUpgrade:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2297610778018481996}
+        m_TargetAssemblyTypeName: SpawnerZone, Assembly-CSharp
+        m_MethodName: LevelUp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2

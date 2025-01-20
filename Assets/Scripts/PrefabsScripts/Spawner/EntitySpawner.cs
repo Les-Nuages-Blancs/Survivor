@@ -16,6 +16,8 @@ public class EntitySpawner : PrefabSpawner
 
     protected override GameObject SpawnPrefabServer()
     {
+        if (!LevelStateManager.Instance.SpawnEntity) return null;
+
         GameObject go = base.SpawnPrefabServer();
 
         go.GetComponent<StatistiquesLevelSystem>().CurrentLevel = spawnedAtlevel;

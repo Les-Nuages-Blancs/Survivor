@@ -3,12 +3,15 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class PrefabSpawner : NetworkBehaviour
 {
     [SerializeField] protected GameObject prefab;
 
     [SerializeField] protected float spawnCooldown = 2.0f;
+
+    [SerializeField] public UnityEvent OnWillSpawn;
 
     private Coroutine spawnCoroutine;
 
@@ -67,6 +70,8 @@ public class PrefabSpawner : NetworkBehaviour
 
     protected virtual GameObject SpawnPrefabServer()
     {
+        OnWillSpawn.Invoke();
+
         GameObject go = Instantiate(prefab, transform.position, transform.rotation);
         go.GetComponent<NetworkObject>().Spawn();
 

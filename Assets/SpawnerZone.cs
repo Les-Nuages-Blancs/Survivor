@@ -3,38 +3,87 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
+using UnityEngine.Events;
+using static Cinemachine.DocumentationSortingAttribute;
 
-public class SpawnerZone : MonoBehaviour
+public class SpawnerZone : NetworkBehaviour
 {
     [SerializeField] private GameObject prefabSpawnerEntity;
     [SerializeField] private SpawnZoneLevelDataSO spawnerZoneLevelData;
-    [SerializeField] private int level = 0;
     [SerializeField] private List<BaseSpawnZoneLevelData> baseSpawnZoneLevelDatas = new List<BaseSpawnZoneLevelData>();
+    private List<GameObject> spawnedSpawner = new List<GameObject>();
 
-    private void Start()
+    [SerializeField] private NetworkVariable<int> playerZoneLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+
+    public int PlayerZoneLevel
     {
-        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        get => playerZoneLevel.Value;
+        set
+        {
+            if (playerZoneLevel.Value != value)
+            {
+                playerZoneLevel.Value = value;
+
+                UpdateSpawnerZone();
+            }
+        }
     }
 
-    private void OnClientConnected(ulong clientId)
+    [SerializeField] public UnityEvent onPlayerZoneLevelChange;
+    [SerializeField] public UnityEvent onLevelMaxReached;
+
+    public override void OnNetworkSpawn()
     {
-        // check if client as join as owner
-        if (clientId == NetworkManager.Singleton.LocalClientId || true)
+        playerZoneLevel.OnValueChanged += OnPlayerZoneLevelChange;
+
+        if (IsOwner)
         {
             UpdateSpawnerZone();
         }
     }
 
+    public void LevelUp()
+    {
+        int maxLevel = spawnerZoneLevelData.levelDatas[0].baseSpawnZoneLevelDatas.Count - 1;
+
+        playerZoneLevel.Value += 1;
+
+        bool levelMaxReached = PlayerZoneLevel > maxLevel;
+
+        if (levelMaxReached)
+        {
+            playerZoneLevel.Value = Mathf.Min(playerZoneLevel.Value, maxLevel);
+        }
+
+        UpdateSpawnerZone();
+
+        if (levelMaxReached) 
+        {
+            onLevelMaxReached.Invoke();
+        }
+    }
+
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+
+        playerZoneLevel.OnValueChanged -= OnPlayerZoneLevelChange;
+    }
+
+    private void OnPlayerZoneLevelChange(int oldValue, int newValue)
+    {
+        onPlayerZoneLevelChange.Invoke();
+    }
+
     public void UpdateSpawnerZone()
     {
         // update base spawn zone level datas based on level
-        baseSpawnZoneLevelDatas = spawnerZoneLevelData.GetDatasOfLevel(level);
+        baseSpawnZoneLevelDatas = spawnerZoneLevelData.GetDatasOfLevel(playerZoneLevel.Value);
+
+        if (!IsOwner) return;
 
         // Clean children
-        foreach (Transform child in transform)
-        {
-            Destroy(child.gameObject);
-        }
+        DestroyEntitySpawner();
 
 
         // create spawners as children
@@ -44,6 +93,7 @@ public class SpawnerZone : MonoBehaviour
 
             // Instantiate the prefab as a NetworkObject
             GameObject spawner = Instantiate(prefabSpawnerEntity, transform.position, Quaternion.identity, transform);
+            spawnedSpawner.Add(spawner);
 
             // Ensure the NetworkObject is spawned
             NetworkObject networkObject = spawner.GetComponent<NetworkObject>();
@@ -53,5 +103,23 @@ public class SpawnerZone : MonoBehaviour
             EntitySpawner entitySpawner = spawner.GetComponent<EntitySpawner>();
             entitySpawner.Initialize(baseSpawnZoneLevelData.SpawnAtLevel, baseSpawnZoneLevelData.Prefab, baseSpawnZoneLevelData.SpawnCooldown);
         }
+    }
+
+    private void DestroyEntitySpawner()
+    {
+        while (spawnedSpawner.Count > 0) 
+        {
+            GameObject spawner = spawnedSpawner[0];
+            spawnedSpawner.Remove(spawner);
+            spawner.GetComponent<NetworkObject>().Despawn();
+            Destroy(spawner);
+        }
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        if (!IsOwner) return;
+
+        DestroyEntitySpawner();
     }
 }
