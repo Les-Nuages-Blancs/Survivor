@@ -12,6 +12,8 @@ GameObject:
   - component: {fileID: 7263906989302416852}
   - component: {fileID: 2297610778018481996}
   - component: {fileID: 6890273883872719381}
+  - component: {fileID: 2354990916505278556}
+  - component: {fileID: 8254560545240401843}
   m_Layer: 0
   m_Name: SpawnerZone1
   m_TagString: Untagged
@@ -46,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 799502777
+  GlobalObjectIdHash: 1641838367
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -67,6 +69,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293d1b1e3639466489d3af8d58bbae66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  condition: {fileID: 8254560545240401843}
   prefabSpawnerEntity: {fileID: 59509305123399142, guid: 844bbaa3b8a329d4280e248ebfa80d06,
     type: 3}
   spawnerZoneLevelData: {fileID: 11400000, guid: baeee9ae512ef0941b444c039c5eed21,
@@ -120,3 +123,35 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &2354990916505278556
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8060539036442655882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 7d76b4077fcf4db4ea9684535963bd93, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  ownerIsInZone:
+    m_InternalValue: 0
+  zone: {fileID: 0}
+  onPresenceChange:
+    m_PersistentCalls:
+      m_Calls: []
+--- !u!114 &8254560545240401843
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8060539036442655882}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01264f5733fd7a4469ef0451cddd32a5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isOk: 0
+  ownerZonePresence: {fileID: 2354990916505278556}

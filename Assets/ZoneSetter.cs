@@ -19,7 +19,7 @@ public class ZoneSetter : MonoBehaviour
 
                 if (zoneHelper != null)
                 {
-                    zoneHelper.zone = zone;
+                    zoneHelper.Zone = zone;
                 }
             }
         }

@@ -1,0 +1,52 @@
+using System.Collections;
+using System.Collections.Generic;
+using Unity.Netcode;
+using UnityEngine;
+using UnityEngine.Events;
+
+public class OwnerZonePresence : NetworkBehaviour
+{
+    [SerializeField] private bool ownerIsInZone = false;
+    private ZoneHelper zoneHelper;
+    private Zone zone;
+
+    public Zone Zone
+    {
+        get => zone;
+        set
+        {
+            if (zone != value)
+            {
+                zone = value;
+                UpdateOwnerPresence();
+            }
+        }
+    }
+
+    [SerializeField] public UnityEvent onPresenceChange;
+
+
+    public bool OwnerIsInSpawner => ownerIsInZone;
+
+    public override void OnNetworkSpawn()
+    {
+        if (!IsOwner) return;
+
+        zoneHelper = NetworkManager.Singleton.LocalClient.PlayerObject.gameObject.GetComponent<ZoneHelper>();
+        zoneHelper.onZoneChange.AddListener(UpdateOwnerPresence);
+        UpdateOwnerPresence();
+    }
+
+    public override void OnNetworkDespawn()
+    {
+        if (!IsOwner) return;
+
+        zoneHelper.onZoneChange.RemoveListener(UpdateOwnerPresence);
+    }
+
+    public void UpdateOwnerPresence()
+    {
+        ownerIsInZone = (zoneHelper.Zone == zone);
+        onPresenceChange.Invoke();
+    }
+}

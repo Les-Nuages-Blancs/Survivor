@@ -13,6 +13,8 @@ public class PrefabSpawner : NetworkBehaviour
 
     [SerializeField] public UnityEvent OnWillSpawn;
 
+    [SerializeField] public List<SpawnCondition> spawnConditions = new List<SpawnCondition>();
+
     private Coroutine spawnCoroutine;
 
     private void OnEnable()
@@ -58,7 +60,10 @@ public class PrefabSpawner : NetworkBehaviour
         {
             yield return new WaitForSeconds(spawnCooldown);
 
-            SpawnPrefabServerRPC();
+            if (SpawnConditionOk())
+            {
+                SpawnPrefabServerRPC();
+            }
         }
     }
 
@@ -70,11 +75,28 @@ public class PrefabSpawner : NetworkBehaviour
 
     protected virtual GameObject SpawnPrefabServer()
     {
+
         OnWillSpawn.Invoke();
 
         GameObject go = Instantiate(prefab, transform.position, transform.rotation);
         go.GetComponent<NetworkObject>().Spawn();
 
         return go;
+    }
+
+    private bool SpawnConditionOk()
+    {
+        bool canSpawn = true;
+
+        foreach (SpawnCondition spawnCondtion in spawnConditions)
+        {
+            if (!spawnCondtion.IsOk)
+            {
+                canSpawn = false;
+                break;
+            }
+        }
+
+        return canSpawn;
     }
 }

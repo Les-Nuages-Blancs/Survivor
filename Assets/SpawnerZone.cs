@@ -8,6 +8,7 @@ using static Cinemachine.DocumentationSortingAttribute;
 
 public class SpawnerZone : NetworkBehaviour
 {
+    [SerializeField] private SpawnCondition condition;
     [SerializeField] private GameObject prefabSpawnerEntity;
     [SerializeField] private SpawnZoneLevelDataSO spawnerZoneLevelData;
     [SerializeField] private List<BaseSpawnZoneLevelData> baseSpawnZoneLevelDatas = new List<BaseSpawnZoneLevelData>();
@@ -102,6 +103,9 @@ public class SpawnerZone : NetworkBehaviour
             // Initialize the spawner with the data
             EntitySpawner entitySpawner = spawner.GetComponent<EntitySpawner>();
             entitySpawner.Initialize(baseSpawnZoneLevelData.SpawnAtLevel, baseSpawnZoneLevelData.Prefab, baseSpawnZoneLevelData.SpawnCooldown);
+
+            // add is inside condition;
+            entitySpawner.spawnConditions.Add(condition);
         }
     }
 

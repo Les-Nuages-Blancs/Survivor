@@ -4,10 +4,12 @@ using System.Globalization;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.AI;
+using UnityEngine.Events;
 
 public class Zone : NetworkBehaviour
 {
     [SerializeField] private GameObject prefabPlayerSpawner;
+
     private GameObject spawnedPrefab;
 
     public override void OnNetworkSpawn()
@@ -16,6 +18,7 @@ public class Zone : NetworkBehaviour
 
         spawnedPrefab = Instantiate(prefabPlayerSpawner, transform.position, transform.rotation);
         spawnedPrefab.GetComponent<NetworkObject>().Spawn();
+        spawnedPrefab.GetComponent<OwnerZonePresence>().Zone = this;
     }
 
     public override void OnNetworkDespawn()

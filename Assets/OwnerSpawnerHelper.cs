@@ -23,9 +23,9 @@ public class OwnerSpawnerHelper : NetworkBehaviour
 
         Vector3 spawnPosition = owner.transform.position;
 
-        if (zoneHelper != null && zoneHelper.zone != null)
+        if (zoneHelper != null && zoneHelper.Zone != null)
         {
-            spawnPosition = zoneHelper.zone.GetRandomPositionOnNavMesh(owner.transform, minDistance, maxDistance);
+            spawnPosition = zoneHelper.Zone.GetRandomPositionOnNavMesh(owner.transform, minDistance, maxDistance);
         }
 
         transform.position = spawnPosition;

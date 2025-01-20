@@ -1,0 +1,34 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8dccdd7c785614a498a31fbc7c2b397f, type: 3}
+  m_Name: Zone2Maker
+  m_EditorClassIdentifier: 
+  updateOnChange: 1
+  baseSpawnZoneLevelData:
+  - prefab: {fileID: 411272012990478587, guid: 4a9f5d5d090688f42a7a0da7a077c754, type: 3}
+    probability: 100
+    spawnCooldown: 2
+    spawnAtLevel: 0
+  levelRangeUpgrader:
+  - levelRangeUpgraders:
+    - numberOfLevel: 20
+      levelUpgrader:
+        spawnZoneLevelUpgraderModes:
+        - levelUpgraderOperationTarget: 1
+          levelUpgraderMode: 0
+          entityOperationStatistiques:
+            prefab: {fileID: 0}
+            probability: 0
+            spawnCooldown: 0
+            spawnAtLevel: 1
+  generatedSpawnZoneLevelDatas: {fileID: 11400000, guid: 350ef2e666462e445b319ad82adb444a,
+    type: 2}
