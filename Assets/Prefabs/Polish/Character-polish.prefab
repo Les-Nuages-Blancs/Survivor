@@ -522,6 +522,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zone: {fileID: 0}
+  onZoneChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1896168135251810572
 GameObject:
   m_ObjectHideFlags: 0
