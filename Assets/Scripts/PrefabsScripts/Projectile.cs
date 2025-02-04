@@ -7,6 +7,7 @@ public class Projectile : NetworkBehaviour
 
     void Update()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime); // Déplacer vers l'avant
+        if(!IsOwner) return;
+        transform.Translate(Vector3.forward * speed * Time.deltaTime); // Dï¿½placer vers l'avant
     }
 }

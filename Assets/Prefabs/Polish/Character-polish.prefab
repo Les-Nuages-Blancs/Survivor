@@ -63,7 +63,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 917001087
+  GlobalObjectIdHash: 2385815935
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -113,7 +113,7 @@ MonoBehaviour:
   UseQuaternionCompression: 0
   UseHalfFloatPrecision: 0
   InLocalSpace: 0
-  Interpolate: 1
+  Interpolate: 0
   SlerpPosition: 0
 --- !u!114 &1959585595652620457
 MonoBehaviour:
@@ -461,6 +461,7 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 3224707319485741082}
   attackSpeed:
     m_InternalValue: 0
+  predictionFac: 10
   onAttackSpeedChange:
     m_PersistentCalls:
       m_Calls: []
@@ -522,6 +523,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   zone: {fileID: 0}
+  onZoneChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!1 &1896168135251810572
 GameObject:
   m_ObjectHideFlags: 0
