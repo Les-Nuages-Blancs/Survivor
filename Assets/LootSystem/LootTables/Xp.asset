@@ -10,18 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 55973267c79bd3a4ba05297634e47f10, type: 3}
-  m_Name: CommonLoot
+  m_Name: Xp
   m_EditorClassIdentifier: 
   lootEntries:
-  - prefab: {fileID: 5349583729817840966, guid: 13f09eb9aca7a2047b2a48fdf34d744a,
-      type: 3}
-    dropChance: 0.2
-    category: 0
-  - prefab: {fileID: 6941535106888646788, guid: 4976d7851ab82244dab8688ca8fbeaff,
-      type: 3}
-    dropChance: 0.318
-    category: 0
-  - prefab: {fileID: 5223959951191603647, guid: f2bbff292e48a8f43bd90a8243f5cb36,
+  - prefab: {fileID: 5223959951191603647, guid: a2d31c057a71e094d8e1e57025fa41ac,
       type: 3}
     dropChance: 1
-    category: 0
+    category: 1

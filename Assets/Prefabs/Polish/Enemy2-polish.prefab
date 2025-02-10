@@ -125,6 +125,7 @@ GameObject:
   - component: {fileID: 2722548300316801975}
   - component: {fileID: 4885850573530563209}
   - component: {fileID: 3655037453384215697}
+  - component: {fileID: 6363706619145153891}
   m_Layer: 0
   m_Name: Enemy2-polish
   m_TagString: Enemy
@@ -361,6 +362,18 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6363706619145153891}
+        m_TargetAssemblyTypeName: LootSystem, Assembly-CSharp
+        m_MethodName: processLootTable
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTakeDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -431,6 +444,20 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementSystem: {fileID: 4885850573530563209}
   animator: {fileID: 0}
+--- !u!114 &6363706619145153891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753121979501682831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lootTable: {fileID: 11400000, guid: b26a559a8bd608c40a8bd0bcf4ff2756, type: 2}
+  destroyOnProcessLoot: 0
 --- !u!1001 &5479011342276310235
 PrefabInstance:
   m_ObjectHideFlags: 0
