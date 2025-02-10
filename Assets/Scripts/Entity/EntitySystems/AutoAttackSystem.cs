@@ -112,5 +112,6 @@ public class AutoAttackSystem : NetworkBehaviour
 
         GameObject go = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         go.GetComponent<NetworkObject>().Spawn();
+        go.transform.SetParent(LevelStateManager.Instance.ProjectileParent);
     }
 }

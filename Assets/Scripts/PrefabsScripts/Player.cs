@@ -6,6 +6,7 @@ using UnityEngine;
 public class Player : NetworkBehaviour
 {
     public static List<GameObject> playerList { get; private set; } = new List<GameObject>();
+    private bool isReparented = false;
 
     public override void OnNetworkSpawn()
     {
@@ -15,5 +16,15 @@ public class Player : NetworkBehaviour
     public override void OnNetworkDespawn()
     {
         playerList.Remove(gameObject);
+    }
+
+    private void Update()
+    {
+        if (!isReparented && IsSpawned)
+        {
+            isReparented = true;
+
+            transform.SetParent(LevelStateManager.Instance.PlayerParent);
+        }
     }
 }

@@ -99,6 +99,8 @@ public class SpawnerZone : NetworkBehaviour
             // Ensure the NetworkObject is spawned
             NetworkObject networkObject = spawner.GetComponent<NetworkObject>();
             networkObject.Spawn();
+            networkObject.transform.SetParent(transform);
+
 
             // Initialize the spawner with the data
             EntitySpawner entitySpawner = spawner.GetComponent<EntitySpawner>();

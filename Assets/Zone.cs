@@ -18,6 +18,7 @@ public class Zone : NetworkBehaviour
 
         spawnedPrefab = Instantiate(prefabPlayerSpawner, transform.position, transform.rotation);
         spawnedPrefab.GetComponent<NetworkObject>().Spawn();
+        spawnedPrefab.transform.SetParent(transform);
         spawnedPrefab.GetComponent<OwnerZonePresence>().Zone = this;
     }
 
