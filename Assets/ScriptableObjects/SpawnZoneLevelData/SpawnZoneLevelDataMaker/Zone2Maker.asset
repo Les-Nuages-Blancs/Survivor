@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   updateOnChange: 1
   baseSpawnZoneLevelData:
-  - prefab: {fileID: 411272012990478587, guid: 4a9f5d5d090688f42a7a0da7a077c754, type: 3}
+  - prefab: {fileID: 411272012990478587, guid: 7876b1984483bb74798d55a1ba90503d, type: 3}
     probability: 100
     spawnCooldown: 2
     spawnAtLevel: 0
