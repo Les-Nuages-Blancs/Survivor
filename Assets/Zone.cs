@@ -16,22 +16,17 @@ public class Zone : NetworkBehaviour
     {
         if (IsServer)
         {
-            Debug.Log("subscribe here <----------- XoXo");
-
             NetworkManager.Singleton.OnClientConnectedCallback += AddEnemySpawnerForNewPlayer;
         }
     }
 
     public void AddEnemySpawnerForNewPlayer(ulong clientId)
     {
-        Debug.Log("new connexion " + clientId);
-
         GameObject newSpawnedPrefab = Instantiate(prefabPlayerSpawner, transform.position, transform.rotation);
         spawnedPrefabs.Add(newSpawnedPrefab);
 
         NetworkObject networkObjectTarget = newSpawnedPrefab.GetComponent<NetworkObject>();
         networkObjectTarget.SpawnWithOwnership(clientId);
-        Debug.Log(" -> " + clientId);
 
         newSpawnedPrefab.transform.SetParent(transform);
         newSpawnedPrefab.GetComponent<OwnerZonePresence>().Zone = this;

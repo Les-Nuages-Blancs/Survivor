@@ -104,7 +104,6 @@ public class SpawnerZone : NetworkBehaviour
             // Ensure the NetworkObject is spawned
             NetworkObject networkObjectTarget = spawner.GetComponent<NetworkObject>();
             networkObjectTarget.SpawnWithOwnership(localClientId);
-            Debug.Log(" ---> " + localClientId);
             networkObjectTarget.transform.SetParent(transform);
 
 

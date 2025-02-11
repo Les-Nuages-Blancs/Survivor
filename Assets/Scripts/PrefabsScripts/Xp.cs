@@ -24,7 +24,6 @@ public class Xp : NetworkBehaviour
         if (forwarder)
         {
             GameObject target = forwarder.ForwardedGameObject;
-
             if (pickupByTags.Contains(target.tag))
             {
                 StatistiquesLevelSystem statistiquesLevelSystem = target.GetComponent<StatistiquesLevelSystem>();

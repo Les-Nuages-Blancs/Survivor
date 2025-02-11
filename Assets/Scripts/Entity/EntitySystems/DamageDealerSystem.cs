@@ -111,7 +111,13 @@ public class DamageDealerSystem : NetworkBehaviour
         foreach( var effect in EffectsPrefab)
         {
             GameObject go = Instantiate(effect, transform.position, transform.rotation);
-            go.GetComponent<DamageValueForward>().damageValue = damage;
+
+            DamageValueForward damageValueForward = go.GetComponent<DamageValueForward>();
+            if (damageValueForward != null)
+            {
+                damageValueForward.damageValue = damage;
+            }
+
             NetworkObject networkObject = go.GetComponent<NetworkObject>();
             networkObject.Spawn();
         }

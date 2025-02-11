@@ -72,7 +72,7 @@ MonoBehaviour:
   condition: {fileID: 309844371394526581}
   prefabSpawnerEntity: {fileID: 59509305123399142, guid: 844bbaa3b8a329d4280e248ebfa80d06,
     type: 3}
-  spawnerZoneLevelData: {fileID: 11400000, guid: 350ef2e666462e445b319ad82adb444a,
+  spawnerZoneLevelData: {fileID: 11400000, guid: 75f1229e0361f0b458c16a46b7876c96,
     type: 2}
   baseSpawnZoneLevelDatas: []
   playerZoneLevel:
