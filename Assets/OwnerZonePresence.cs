@@ -7,7 +7,7 @@ using UnityEngine.Events;
 public class OwnerZonePresence : NetworkBehaviour
 {
     [SerializeField] private bool ownerIsInZone = false;
-    private ZoneHelper zoneHelper;
+    public ZoneHelper zoneHelper;
     private Zone zone;
 
     public Zone Zone
@@ -30,16 +30,17 @@ public class OwnerZonePresence : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        if (!IsOwner) return;
+        if (!IsServer) return;
 
-        zoneHelper = NetworkManager.Singleton.LocalClient.PlayerObject.gameObject.GetComponent<ZoneHelper>();
+        zoneHelper = NetworkManager.Singleton.ConnectedClients[OwnerClientId].PlayerObject.GetComponent<ZoneHelper>();
+
         zoneHelper.onZoneChange.AddListener(UpdateOwnerPresence);
         UpdateOwnerPresence();
     }
 
     public override void OnNetworkDespawn()
     {
-        if (!IsOwner) return;
+        if (!IsServer) return;
 
         zoneHelper.onZoneChange.RemoveListener(UpdateOwnerPresence);
     }

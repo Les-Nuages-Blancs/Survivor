@@ -23,6 +23,8 @@ public class EntitySpawner : PrefabSpawner
         go.GetComponent<StatistiquesLevelSystem>().CurrentLevel = spawnedAtlevel;
         go.GetComponent<HealthSystem>().RegenAllHpServerRPC();
 
+        go.transform.SetParent(LevelStateManager.Instance.EnemyParent);
+
         return go;
     }
 }

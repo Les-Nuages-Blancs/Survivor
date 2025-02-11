@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1641838367
+  GlobalObjectIdHash: 799502777
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -107,7 +107,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d029935c2e164a44eaa5aabb442dab1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surviveTime: 5.02
+  surviveTime: 900
   onUpgrade:
     m_PersistentCalls:
       m_Calls:
@@ -135,9 +135,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7d76b4077fcf4db4ea9684535963bd93, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ownerIsInZone:
-    m_InternalValue: 0
-  zone: {fileID: 0}
+  ownerIsInZone: 0
   onPresenceChange:
     m_PersistentCalls:
       m_Calls: []

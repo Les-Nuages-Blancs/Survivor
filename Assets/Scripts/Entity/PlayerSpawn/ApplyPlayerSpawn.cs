@@ -17,6 +17,13 @@ public class ApplyPlayerSpawn : NetworkBehaviour
     [ServerRpc]
     private void ApplyPlayerSpawnServerRPC()
     {
-        PlayerSpawnManager.Instance.ApplyPlayerSpawn(transform);
+        PlayerSpawnManager.Instance.ApplyPlayerSpawn(this);
+    }
+
+    [ClientRpc]
+    public void ApplyPlayerSpawnClientRPC(Vector3 position, Vector3 eulerAngles)
+    {
+        transform.position = position;
+        transform.eulerAngles = eulerAngles;
     }
 }

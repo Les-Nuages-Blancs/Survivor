@@ -80,7 +80,6 @@ public class PrefabSpawner : NetworkBehaviour
 
         GameObject go = Instantiate(prefab, transform.position, transform.rotation);
         go.GetComponent<NetworkObject>().Spawn();
-        go.transform.SetParent(LevelStateManager.Instance.EnemyParent);
 
         return go;
     }

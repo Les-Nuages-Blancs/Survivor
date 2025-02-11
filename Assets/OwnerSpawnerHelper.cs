@@ -12,9 +12,9 @@ public class OwnerSpawnerHelper : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        if (!IsOwner) return;
+        if (!IsServer) return;
 
-        owner = NetworkManager.Singleton.LocalClient.PlayerObject.gameObject;
+        owner = NetworkManager.Singleton.ConnectedClients[OwnerClientId].PlayerObject.gameObject;
     }
 
     public void UpdateSpawnPosition()

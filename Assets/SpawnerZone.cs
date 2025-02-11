@@ -14,7 +14,7 @@ public class SpawnerZone : NetworkBehaviour
     [SerializeField] private List<BaseSpawnZoneLevelData> baseSpawnZoneLevelDatas = new List<BaseSpawnZoneLevelData>();
     private List<GameObject> spawnedSpawner = new List<GameObject>();
 
-    [SerializeField] private NetworkVariable<int> playerZoneLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    [SerializeField] private NetworkVariable<int> playerZoneLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     public int PlayerZoneLevel
     {
@@ -78,14 +78,19 @@ public class SpawnerZone : NetworkBehaviour
 
     public void UpdateSpawnerZone()
     {
+        if (!IsOwner) return;
+
+        UpdateSpawnerZoneServerRpc(NetworkManager.Singleton.LocalClientId);
+    }
+
+    [ServerRpc]
+    public void UpdateSpawnerZoneServerRpc(ulong localClientId)
+    {
         // update base spawn zone level datas based on level
         baseSpawnZoneLevelDatas = spawnerZoneLevelData.GetDatasOfLevel(playerZoneLevel.Value);
 
-        if (!IsOwner) return;
-
         // Clean children
         DestroyEntitySpawner();
-
 
         // create spawners as children
         for (int i = 0; i < baseSpawnZoneLevelDatas.Count; i++)
@@ -97,9 +102,10 @@ public class SpawnerZone : NetworkBehaviour
             spawnedSpawner.Add(spawner);
 
             // Ensure the NetworkObject is spawned
-            NetworkObject networkObject = spawner.GetComponent<NetworkObject>();
-            networkObject.Spawn();
-            networkObject.transform.SetParent(transform);
+            NetworkObject networkObjectTarget = spawner.GetComponent<NetworkObject>();
+            networkObjectTarget.SpawnWithOwnership(localClientId);
+            Debug.Log(" ---> " + localClientId);
+            networkObjectTarget.transform.SetParent(transform);
 
 
             // Initialize the spawner with the data

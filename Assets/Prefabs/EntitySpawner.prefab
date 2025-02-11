@@ -84,6 +84,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  spawnConditions: []
   spawnedAtlevel: 0
 --- !u!114 &2896590214408521604
 MonoBehaviour:
@@ -98,5 +99,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  minDistance: 10
-  maxDistance: 25
+  minDistance: 0.5
+  maxDistance: 1

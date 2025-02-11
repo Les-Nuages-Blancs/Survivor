@@ -26,6 +26,5 @@ public class ZoneHelper : NetworkBehaviour
     {
         zone = LevelStateManager.Instance.FirstZone;
         onZoneChange.Invoke();
-        Debug.Log("here -------- uwu");
     }
 }

@@ -10,24 +10,47 @@ public class Zone : NetworkBehaviour
 {
     [SerializeField] private GameObject prefabPlayerSpawner;
 
-    private GameObject spawnedPrefab;
+    private List<GameObject> spawnedPrefabs = new List<GameObject>();
 
     public override void OnNetworkSpawn()
     {
-        if (!IsOwner) return;
+        if (IsServer)
+        {
+            Debug.Log("subscribe here <----------- XoXo");
 
-        spawnedPrefab = Instantiate(prefabPlayerSpawner, transform.position, transform.rotation);
-        spawnedPrefab.GetComponent<NetworkObject>().Spawn();
-        spawnedPrefab.transform.SetParent(transform);
-        spawnedPrefab.GetComponent<OwnerZonePresence>().Zone = this;
+            NetworkManager.Singleton.OnClientConnectedCallback += AddEnemySpawnerForNewPlayer;
+        }
+    }
+
+    public void AddEnemySpawnerForNewPlayer(ulong clientId)
+    {
+        Debug.Log("new connexion " + clientId);
+
+        GameObject newSpawnedPrefab = Instantiate(prefabPlayerSpawner, transform.position, transform.rotation);
+        spawnedPrefabs.Add(newSpawnedPrefab);
+
+        NetworkObject networkObjectTarget = newSpawnedPrefab.GetComponent<NetworkObject>();
+        networkObjectTarget.SpawnWithOwnership(clientId);
+        Debug.Log(" -> " + clientId);
+
+        newSpawnedPrefab.transform.SetParent(transform);
+        newSpawnedPrefab.GetComponent<OwnerZonePresence>().Zone = this;
     }
 
     public override void OnNetworkDespawn()
     {
+        if (IsServer)
+        {
+            NetworkManager.Singleton.OnClientConnectedCallback -= AddEnemySpawnerForNewPlayer;
+        }
+
         if (!IsOwner) return;
 
-        spawnedPrefab.GetComponent<NetworkObject>().Despawn();
-        Destroy(spawnedPrefab);
+        foreach (GameObject spawnedPrefab in spawnedPrefabs)
+        {  
+            spawnedPrefab.GetComponent<NetworkObject>().Despawn();
+            Destroy(spawnedPrefab);
+        }
     }
 
     public Vector3 GetRandomPositionOnNavMesh(Transform originTransform, float minDistance = 5.0f, float maxDistance = 10.0f)
