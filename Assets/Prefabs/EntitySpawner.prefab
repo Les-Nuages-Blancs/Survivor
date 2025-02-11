@@ -99,5 +99,5 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   owner: {fileID: 0}
-  minDistance: 0.5
-  maxDistance: 1
+  minDistance: 20
+  maxDistance: 25

@@ -6,9 +6,9 @@ using UnityEngine;
 public class BaseSpawnZoneLevelData
 {
     [SerializeField] public GameObject prefab;
-    [SerializeField, Range(0.0f, 100.0f)] private float probability = 100.0f;
-    [SerializeField, Range(0.0f, 100.0f)] private float spawnCooldown = 2.0f;
-    [SerializeField, Range(0, 100)] private int spawnAtLevel = 0;
+    [SerializeField, Range(-100.0f, 100.0f)] private float probability = 100.0f;
+    [SerializeField, Range(-100.0f, 100.0f)] private float spawnCooldown = 2.0f;
+    [SerializeField, Range(-100, 100)] private int spawnAtLevel = 0;
 
     public GameObject Prefab => prefab;
     public float Probability => probability;
