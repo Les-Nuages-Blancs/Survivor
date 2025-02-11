@@ -68,8 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-  damageDealedEffectPrefab: {fileID: 4762360838216595935, guid: 319a3d0518e60074b95d8be3df9d017b,
-    type: 3}
+  EffectsPrefab: []
   includeTriggerLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -469,17 +468,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: d10b15832ecbce9498028f22c21544bd,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 1.36
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d10b15832ecbce9498028f22c21544bd,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 1.36
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d10b15832ecbce9498028f22c21544bd,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 1.36
+      value: 2.59
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d10b15832ecbce9498028f22c21544bd,
         type: 3}
@@ -716,7 +715,7 @@ PrefabInstance:
     - target: {fileID: 175313995628643416, guid: 73a3abdd232dd5d4ba642a26b1672b58,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 1.5650024
+      value: 3.15
       objectReference: {fileID: 0}
     - target: {fileID: 175313995628643416, guid: 73a3abdd232dd5d4ba642a26b1672b58,
         type: 3}

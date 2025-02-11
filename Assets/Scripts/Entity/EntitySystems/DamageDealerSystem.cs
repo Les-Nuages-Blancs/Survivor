@@ -9,7 +9,7 @@ using UnityEngine.Events;
 public class DamageDealerSystem : NetworkBehaviour
 {
     [SerializeField] private float damage = 5f;
-    [SerializeField] private GameObject damageDealedEffectPrefab;
+    [SerializeField] private List<GameObject> EffectsPrefab = new List<GameObject>();
 
     [SerializeField] private LayerMask includeTriggerLayers;
     [TagField]
@@ -42,7 +42,7 @@ public class DamageDealerSystem : NetworkBehaviour
         {
             healthSystem.TakeDamageServerRPC(damage);
 
-            if (damageDealedEffectPrefab != null)
+            if (EffectsPrefab != null)
             {
                 SpawnParticleServerRPC();
             }
@@ -108,9 +108,13 @@ public class DamageDealerSystem : NetworkBehaviour
     [ServerRpc]
     private void SpawnParticleServerRPC()
     {
-        GameObject go = Instantiate(damageDealedEffectPrefab, transform.position, transform.rotation);
-        go.GetComponent<DamageValueForward>().damageValue = damage;
-        NetworkObject networkObject = go.GetComponent<NetworkObject>();
-        networkObject.Spawn();
+        foreach( var effect in EffectsPrefab)
+        {
+            GameObject go = Instantiate(effect, transform.position, transform.rotation);
+            go.GetComponent<DamageValueForward>().damageValue = damage;
+            NetworkObject networkObject = go.GetComponent<NetworkObject>();
+            networkObject.Spawn();
+        }
+
     }
 }

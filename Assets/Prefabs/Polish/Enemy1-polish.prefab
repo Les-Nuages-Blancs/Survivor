@@ -36,7 +36,7 @@ Transform:
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children:
   - {fileID: 7483647217979795370}
   - {fileID: 5792362188187059983}
@@ -418,8 +418,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-  damageDealedEffectPrefab: {fileID: 4762360838216595935, guid: 319a3d0518e60074b95d8be3df9d017b,
-    type: 3}
+  EffectsPrefab: []
   includeTriggerLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -469,17 +468,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: 230918a3a3d60a148b0550e92181bdf0,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 71.43
+      value: 61.359997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 230918a3a3d60a148b0550e92181bdf0,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 71.43
+      value: 61.359997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 230918a3a3d60a148b0550e92181bdf0,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 71.43
+      value: 61.359997
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 230918a3a3d60a148b0550e92181bdf0,
         type: 3}
