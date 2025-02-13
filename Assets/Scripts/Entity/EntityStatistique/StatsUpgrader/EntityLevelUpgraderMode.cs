@@ -20,7 +20,7 @@ public class EntityLevelUpgraderMode
 
     [SerializeField] private LevelUpgraderOperationTarget levelUpgraderOperationTarget = LevelUpgraderOperationTarget.Current;
     [SerializeField] private LevelUpgraderMode levelUpgraderMode = LevelUpgraderMode.AddThenSet;
-    [SerializeField] private EntityBaseStatistiques entityOperationStatistiques = new EntityBaseStatistiques(50, 20.0f, 0.2f, 2.0f, 5.0f, 0.2f, 0.05f, 0.01f, 0.2f, 0.2f);
+    [SerializeField] private EntityBaseStatistiques entityOperationStatistiques = new EntityBaseStatistiques(50, 20.0f, 0.2f, 2.0f, 5.0f, 0.2f, 0.05f, 0.01f, 0.2f, 0.2f, 0.1f);
 
     public EntityBaseStatistiques ApplyOperation(EntityBaseStatistiques baseStats, EntityBaseStatistiques currentStats)
     {

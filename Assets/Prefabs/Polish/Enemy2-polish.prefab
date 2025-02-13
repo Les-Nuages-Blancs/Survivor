@@ -125,6 +125,8 @@ GameObject:
   - component: {fileID: 4885850573530563209}
   - component: {fileID: 3655037453384215697}
   - component: {fileID: 6363706619145153891}
+  - component: {fileID: 6375020660300772506}
+  - component: {fileID: 4701073465241956321}
   m_Layer: 0
   m_Name: Enemy2-polish
   m_TagString: Enemy
@@ -230,6 +232,7 @@ MonoBehaviour:
       criticalChance: 0
       pickupRange: 0
       moveSpeedMultiplier: 0
+      killPoint: 0
   onBaseStatsChange:
     m_PersistentCalls:
       m_Calls:
@@ -373,6 +376,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 6375020660300772506}
+        m_TargetAssemblyTypeName: KillPointForwarder, Assembly-CSharp
+        m_MethodName: ForwardKillPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 4701073465241956321}
+        m_TargetAssemblyTypeName: KillNumberForwarder, Assembly-CSharp
+        m_MethodName: ForwardOneKill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTakeDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -457,6 +484,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootTable: {fileID: 11400000, guid: b26a559a8bd608c40a8bd0bcf4ff2756, type: 2}
   destroyOnProcessLoot: 0
+--- !u!114 &6375020660300772506
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753121979501682831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4954f779ba5c61a4b9c6575e1e2277e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statistiqueLevelSystem: {fileID: 4025151031575396603}
+--- !u!114 &4701073465241956321
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5753121979501682831}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5f35cd637d44d4a81346048df6afb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1001 &5479011342276310235
 PrefabInstance:
   m_ObjectHideFlags: 0

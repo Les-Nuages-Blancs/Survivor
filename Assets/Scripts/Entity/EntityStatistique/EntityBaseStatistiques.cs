@@ -16,6 +16,7 @@ public class EntityBaseStatistiques: INetworkSerializable
     [SerializeField, Range(0.0f, 1.0f)] private float criticalChance = 0.0f;
     [SerializeField, Range(0.0f, 100.0f)] private float pickupRange = 0.0f;
     [SerializeField, Range(0.0f, 100.0f)] private float moveSpeedMultiplier = 0.0f;
+    [SerializeField, Range(0.0f, 100.0f)] private float killPoint = 0.0f;
 
     public int RequiredXpForNextLevel => requiredXpForNextLevel;
     public float Health => health;
@@ -27,6 +28,7 @@ public class EntityBaseStatistiques: INetworkSerializable
     public float CriticalChance => criticalChance;
     public float PickupRange => pickupRange;
     public float MoveSpeedMultiplier => moveSpeedMultiplier;
+    public float KillPoint => killPoint;
 
     public EntityBaseStatistiques()
     {
@@ -40,6 +42,7 @@ public class EntityBaseStatistiques: INetworkSerializable
         criticalChance = 0.0f;
         pickupRange = 0.0f;
         moveSpeedMultiplier = 0.0f;
+        killPoint = 0.0f;
     }
 
     public EntityBaseStatistiques(
@@ -52,7 +55,8 @@ public class EntityBaseStatistiques: INetworkSerializable
         float initCritDamageMultiplier = 0.0f,
         float initCriticalChance = 0.0f,
         float initPickupRange = 0.0f,
-        float initMoveSpeedMultiplier = 0.0f
+        float initMoveSpeedMultiplier = 0.0f,
+        float initKillPoint = 0.0f
     )
     {
         requiredXpForNextLevel = initRequiredXpForNextLevel;
@@ -65,6 +69,7 @@ public class EntityBaseStatistiques: INetworkSerializable
         criticalChance = initCriticalChance;
         pickupRange = initPickupRange;
         moveSpeedMultiplier = initMoveSpeedMultiplier;
+        killPoint = initKillPoint;
     }
 
     // Implementing the INetworkSerializable interface
@@ -80,6 +85,7 @@ public class EntityBaseStatistiques: INetworkSerializable
         serializer.SerializeValue(ref criticalChance);
         serializer.SerializeValue(ref pickupRange);
         serializer.SerializeValue(ref moveSpeedMultiplier);
+        serializer.SerializeValue(ref killPoint);
     }
 
     // Addition operator
@@ -95,7 +101,8 @@ public class EntityBaseStatistiques: INetworkSerializable
             a.critDamageMultiplier + b.critDamageMultiplier,
             a.criticalChance + b.criticalChance,
             a.pickupRange + b.pickupRange,
-            a.moveSpeedMultiplier + b.moveSpeedMultiplier
+            a.moveSpeedMultiplier + b.moveSpeedMultiplier,
+            a.killPoint + b.killPoint
         );
     }
 
@@ -112,7 +119,8 @@ public class EntityBaseStatistiques: INetworkSerializable
             a.critDamageMultiplier * b.critDamageMultiplier,
             a.criticalChance * b.criticalChance,
             a.pickupRange * b.pickupRange,
-            a.moveSpeedMultiplier * b.moveSpeedMultiplier
+            a.moveSpeedMultiplier * b.moveSpeedMultiplier,
+            a.killPoint * b.killPoint
         );
     }
 
@@ -129,7 +137,8 @@ public class EntityBaseStatistiques: INetworkSerializable
             critDamageMultiplier,
             criticalChance,
             pickupRange,
-            moveSpeedMultiplier
+            moveSpeedMultiplier,
+            killPoint
         );
     }
 
@@ -146,7 +155,8 @@ public class EntityBaseStatistiques: INetworkSerializable
                    Mathf.Approximately(critDamageMultiplier, other.critDamageMultiplier) &&
                    Mathf.Approximately(criticalChance, other.criticalChance) &&
                    Mathf.Approximately(pickupRange, other.pickupRange) &&
-                   Mathf.Approximately(moveSpeedMultiplier, other.moveSpeedMultiplier);
+                   Mathf.Approximately(moveSpeedMultiplier, other.moveSpeedMultiplier) &&
+                   Mathf.Approximately(killPoint, other.killPoint);
         }
         return false;
     }
@@ -164,7 +174,7 @@ public class EntityBaseStatistiques: INetworkSerializable
         hash = hash * 23 + criticalChance.GetHashCode();
         hash = hash * 23 + pickupRange.GetHashCode();
         hash = hash * 23 + moveSpeedMultiplier.GetHashCode();
+        hash = hash * 23 + killPoint.GetHashCode();
         return hash;
     }
-
 }

@@ -18,6 +18,8 @@ GameObject:
   - component: {fileID: 7054994076444672627}
   - component: {fileID: 3122691239759015784}
   - component: {fileID: 3913522002497407902}
+  - component: {fileID: 7584252854140367330}
+  - component: {fileID: 2752167026106060208}
   m_Layer: 0
   m_Name: Enemy1-polish
   m_TagString: Enemy
@@ -55,7 +57,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 179796429
+  GlobalObjectIdHash: 1011325193
   InScenePlacedSourceGlobalObjectIdHash: 3009944485
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -123,6 +125,7 @@ MonoBehaviour:
       criticalChance: 0
       pickupRange: 0
       moveSpeedMultiplier: 0
+      killPoint: 0
   onBaseStatsChange:
     m_PersistentCalls:
       m_Calls:
@@ -266,6 +269,30 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+      - m_Target: {fileID: 7584252854140367330}
+        m_TargetAssemblyTypeName: KillNumberForwarder, Assembly-CSharp
+        m_MethodName: ForwardOneKill
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 2752167026106060208}
+        m_TargetAssemblyTypeName: KillPointForwarder, Assembly-CSharp
+        m_MethodName: ForwardKillPoint
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTakeDamage:
     m_PersistentCalls:
       m_Calls: []
@@ -350,6 +377,31 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   lootTable: {fileID: 11400000, guid: b26a559a8bd608c40a8bd0bcf4ff2756, type: 2}
   destroyOnProcessLoot: 0
+--- !u!114 &7584252854140367330
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173583750492586891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5e5f35cd637d44d4a81346048df6afb8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!114 &2752167026106060208
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173583750492586891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4954f779ba5c61a4b9c6575e1e2277e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  statistiqueLevelSystem: {fileID: 4583465241725346298}
 --- !u!1 &3964795842181045602
 GameObject:
   m_ObjectHideFlags: 0

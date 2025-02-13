@@ -11,7 +11,7 @@ public class EntityLevelStatistiquesMakerSO : ScriptableObject
     [SerializeField] private bool updateOnChange = true;
 
     [Header("Stats Maker Inputs")]
-    [SerializeField] private EntityBaseStatistiques baseStatistiques = new EntityBaseStatistiques(100, 100.0f, 1.0f, 20.0f, 15.0f, 2.0f, 0.2f, 0.05f, 5.0f, 2.0f);
+    [SerializeField] private EntityBaseStatistiques baseStatistiques = new EntityBaseStatistiques(100, 100.0f, 1.0f, 20.0f, 15.0f, 2.0f, 0.2f, 0.05f, 5.0f, 2.0f, 1.0f);
     [SerializeField]
     private List<EntityLevelRangeUpgrader> levelRangeUpgrader = new List<EntityLevelRangeUpgrader>
     {

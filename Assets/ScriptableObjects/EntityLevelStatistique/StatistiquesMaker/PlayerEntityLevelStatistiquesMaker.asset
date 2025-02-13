@@ -23,7 +23,7 @@ MonoBehaviour:
     critDamageMultiplier: 0.2
     criticalChance: 0.05
     pickupRange: 5
-    moveSpeedMultiplier: 2
+    moveSpeedMultiplier: 10
   levelRangeUpgrader:
   - numberOfLevel: 100
     levelUpgrader:
@@ -40,6 +40,6 @@ MonoBehaviour:
           critDamageMultiplier: 0.05
           criticalChance: 0.01
           pickupRange: 0.2
-          moveSpeedMultiplier: 0.2
+          moveSpeedMultiplier: 0.1
   generatedEntityLevelStats: {fileID: 11400000, guid: e97abea1f83938745a3cb709270a109c,
     type: 2}
