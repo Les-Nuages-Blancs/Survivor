@@ -656,6 +656,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: kayle_correction
       objectReference: {fileID: 0}
+    - target: {fileID: 7951178540967508706, guid: 25cd985bba4bec148b03b299e43bae16,
+        type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
