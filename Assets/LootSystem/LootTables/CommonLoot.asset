@@ -13,15 +13,15 @@ MonoBehaviour:
   m_Name: CommonLoot
   m_EditorClassIdentifier: 
   lootEntries:
-  - prefab: {fileID: 5349583729817840966, guid: 13f09eb9aca7a2047b2a48fdf34d744a,
-      type: 3}
-    dropChance: 0.2
-    category: 0
-  - prefab: {fileID: 6941535106888646788, guid: 4976d7851ab82244dab8688ca8fbeaff,
-      type: 3}
-    dropChance: 0.318
-    category: 0
-  - prefab: {fileID: 5223959951191603647, guid: f2bbff292e48a8f43bd90a8243f5cb36,
+  - prefab: {fileID: 5223959951191603647, guid: a2d31c057a71e094d8e1e57025fa41ac,
       type: 3}
     dropChance: 1
-    category: 0
+    category: 1
+  - prefab: {fileID: 2947476394515406775, guid: 53c60c1623d51b247be42e270c8ff6e7,
+      type: 3}
+    dropChance: 0.03
+    category: 2
+  - prefab: {fileID: 1696255971976460481, guid: 7dbaa3481d6bb2946a2858aa81a7ad8f,
+      type: 3}
+    dropChance: 0.005
+    category: 2

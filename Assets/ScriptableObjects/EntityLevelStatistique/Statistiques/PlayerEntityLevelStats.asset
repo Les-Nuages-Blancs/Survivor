@@ -29,7 +29,7 @@ MonoBehaviour:
     regenHealth: 1.2
     armor: 22
     damage: 20
-    attackSpeed: 2.2
+    attackSpeed: 5
     critDamageMultiplier: 0.25
     criticalChance: 0.060000002
     pickupRange: 5.2
@@ -40,7 +40,7 @@ MonoBehaviour:
     regenHealth: 1.4000001
     armor: 24
     damage: 25
-    attackSpeed: 2.4
+    attackSpeed: 8
     critDamageMultiplier: 0.3
     criticalChance: 0.07
     pickupRange: 5.3999996
@@ -51,7 +51,7 @@ MonoBehaviour:
     regenHealth: 1.6000001
     armor: 26
     damage: 30
-    attackSpeed: 2.6000001
+    attackSpeed: 11
     critDamageMultiplier: 0.35000002
     criticalChance: 0.08
     pickupRange: 5.5999994
@@ -62,7 +62,7 @@ MonoBehaviour:
     regenHealth: 1.8000002
     armor: 28
     damage: 35
-    attackSpeed: 2.8000002
+    attackSpeed: 14
     critDamageMultiplier: 0.40000004
     criticalChance: 0.089999996
     pickupRange: 5.799999
@@ -73,1052 +73,1052 @@ MonoBehaviour:
     regenHealth: 2.0000002
     armor: 30
     damage: 40
-    attackSpeed: 3.0000002
+    attackSpeed: 17
     critDamageMultiplier: 0.45000005
     criticalChance: 0.099999994
     pickupRange: 5.999999
     moveSpeedMultiplier: 10.500002
     killPoint: 1.5000001
   - requiredXpForNextLevel: 400
-    health: 430
-    regenHealth: 2.2000003
+    health: 460
+    regenHealth: 2.4000003
     armor: 32
-    damage: 45
-    attackSpeed: 3.2000003
+    damage: 55
+    attackSpeed: 18
     critDamageMultiplier: 0.50000006
     criticalChance: 0.10999999
     pickupRange: 6.199999
     moveSpeedMultiplier: 10.600002
     killPoint: 1.6000001
   - requiredXpForNextLevel: 450
-    health: 450
-    regenHealth: 2.4000003
+    health: 510
+    regenHealth: 2.8000004
     armor: 34
-    damage: 50
-    attackSpeed: 3.4000003
+    damage: 70
+    attackSpeed: 19
     critDamageMultiplier: 0.5500001
     criticalChance: 0.11999999
     pickupRange: 6.3999987
     moveSpeedMultiplier: 10.700003
     killPoint: 1.7000002
   - requiredXpForNextLevel: 500
-    health: 470
-    regenHealth: 2.6000004
+    health: 560
+    regenHealth: 3.2000005
     armor: 36
-    damage: 55
-    attackSpeed: 3.6000004
+    damage: 85
+    attackSpeed: 20
     critDamageMultiplier: 0.6000001
     criticalChance: 0.13
     pickupRange: 6.5999985
     moveSpeedMultiplier: 10.800003
     killPoint: 1.8000002
   - requiredXpForNextLevel: 550
-    health: 490
-    regenHealth: 2.8000004
+    health: 610
+    regenHealth: 3.6000006
     armor: 38
-    damage: 60
-    attackSpeed: 3.8000004
+    damage: 100
+    attackSpeed: 21
     critDamageMultiplier: 0.6500001
     criticalChance: 0.14
     pickupRange: 6.7999983
     moveSpeedMultiplier: 10.900003
     killPoint: 1.9000002
   - requiredXpForNextLevel: 600
-    health: 510
-    regenHealth: 3.0000005
+    health: 660
+    regenHealth: 4.0000005
     armor: 40
-    damage: 65
-    attackSpeed: 4.0000005
+    damage: 115
+    attackSpeed: 22
     critDamageMultiplier: 0.7000001
     criticalChance: 0.15
     pickupRange: 6.999998
     moveSpeedMultiplier: 11.000004
     killPoint: 2.0000002
   - requiredXpForNextLevel: 650
-    health: 530
-    regenHealth: 3.2000005
+    health: 760
+    regenHealth: 4.5000005
     armor: 42
-    damage: 70
-    attackSpeed: 4.2000003
+    damage: 155
+    attackSpeed: 22.2
     critDamageMultiplier: 0.7500001
     criticalChance: 0.16000001
     pickupRange: 7.199998
     moveSpeedMultiplier: 11.100004
     killPoint: 2.1000001
   - requiredXpForNextLevel: 700
-    health: 550
-    regenHealth: 3.4000006
+    health: 860
+    regenHealth: 5.0000005
     armor: 44
-    damage: 75
-    attackSpeed: 4.4
+    damage: 195
+    attackSpeed: 22.400002
     critDamageMultiplier: 0.80000013
     criticalChance: 0.17000002
     pickupRange: 7.3999977
     moveSpeedMultiplier: 11.200005
     killPoint: 2.2
   - requiredXpForNextLevel: 750
-    health: 570
-    regenHealth: 3.6000006
+    health: 960
+    regenHealth: 5.5000005
     armor: 46
-    damage: 80
-    attackSpeed: 4.6
+    damage: 235
+    attackSpeed: 22.600002
     critDamageMultiplier: 0.85000014
     criticalChance: 0.18000002
     pickupRange: 7.5999975
     moveSpeedMultiplier: 11.300005
     killPoint: 2.3
   - requiredXpForNextLevel: 800
-    health: 590
-    regenHealth: 3.8000007
+    health: 1060
+    regenHealth: 6.0000005
     armor: 48
-    damage: 85
-    attackSpeed: 4.7999997
+    damage: 275
+    attackSpeed: 22.800003
     critDamageMultiplier: 0.90000015
     criticalChance: 0.19000003
     pickupRange: 7.7999973
     moveSpeedMultiplier: 11.400005
     killPoint: 2.3999999
   - requiredXpForNextLevel: 850
-    health: 610
-    regenHealth: 4.0000005
+    health: 1160
+    regenHealth: 6.5000005
     armor: 50
-    damage: 90
-    attackSpeed: 4.9999995
+    damage: 315
+    attackSpeed: 23.000004
     critDamageMultiplier: 0.95000017
     criticalChance: 0.20000003
     pickupRange: 7.999997
     moveSpeedMultiplier: 11.500006
     killPoint: 2.4999998
   - requiredXpForNextLevel: 900
-    health: 630
-    regenHealth: 4.2000003
+    health: 1260
+    regenHealth: 7.0000005
     armor: 52
-    damage: 95
-    attackSpeed: 5.1999993
+    damage: 355
+    attackSpeed: 23.200005
     critDamageMultiplier: 1.0000001
     criticalChance: 0.21000004
     pickupRange: 8.199997
     moveSpeedMultiplier: 11.600006
     killPoint: 2.5999997
   - requiredXpForNextLevel: 950
-    health: 650
-    regenHealth: 4.4
+    health: 1360
+    regenHealth: 7.5000005
     armor: 54
-    damage: 100
-    attackSpeed: 5.399999
+    damage: 395
+    attackSpeed: 23.400005
     critDamageMultiplier: 1.0500001
     criticalChance: 0.22000004
     pickupRange: 8.399997
     moveSpeedMultiplier: 11.7000065
     killPoint: 2.6999996
   - requiredXpForNextLevel: 1000
-    health: 670
-    regenHealth: 4.6
+    health: 1460
+    regenHealth: 8
     armor: 56
-    damage: 105
-    attackSpeed: 5.599999
+    damage: 435
+    attackSpeed: 23.600006
     critDamageMultiplier: 1.1
     criticalChance: 0.23000005
     pickupRange: 8.599997
     moveSpeedMultiplier: 11.800007
     killPoint: 2.7999995
   - requiredXpForNextLevel: 1050
-    health: 690
-    regenHealth: 4.7999997
+    health: 1560
+    regenHealth: 8.5
     armor: 58
-    damage: 110
-    attackSpeed: 5.7999988
+    damage: 475
+    attackSpeed: 23.800007
     critDamageMultiplier: 1.15
     criticalChance: 0.24000005
     pickupRange: 8.799996
     moveSpeedMultiplier: 11.900007
     killPoint: 2.8999994
   - requiredXpForNextLevel: 1100
-    health: 710
-    regenHealth: 4.9999995
+    health: 1660
+    regenHealth: 9
     armor: 60
-    damage: 115
-    attackSpeed: 5.9999986
+    damage: 515
+    attackSpeed: 24.000008
     critDamageMultiplier: 1.1999999
     criticalChance: 0.25000006
     pickupRange: 8.999996
     moveSpeedMultiplier: 12.000008
     killPoint: 2.9999993
   - requiredXpForNextLevel: 1150
-    health: 730
-    regenHealth: 5.1999993
+    health: 1760
+    regenHealth: 9.5
     armor: 62
-    damage: 120
-    attackSpeed: 6.1999984
+    damage: 555
+    attackSpeed: 24.200008
     critDamageMultiplier: 1.2499999
     criticalChance: 0.26000005
     pickupRange: 9.199996
     moveSpeedMultiplier: 12.100008
     killPoint: 3.0999992
   - requiredXpForNextLevel: 1200
-    health: 750
-    regenHealth: 5.399999
+    health: 1860
+    regenHealth: 10
     armor: 64
-    damage: 125
-    attackSpeed: 6.399998
+    damage: 595
+    attackSpeed: 24.40001
     critDamageMultiplier: 1.2999998
     criticalChance: 0.27000004
     pickupRange: 9.399996
     moveSpeedMultiplier: 12.200008
     killPoint: 3.199999
   - requiredXpForNextLevel: 1250
-    health: 770
-    regenHealth: 5.599999
+    health: 1960
+    regenHealth: 10.5
     armor: 66
-    damage: 130
-    attackSpeed: 6.599998
+    damage: 635
+    attackSpeed: 24.60001
     critDamageMultiplier: 1.3499998
     criticalChance: 0.28000003
     pickupRange: 9.599996
     moveSpeedMultiplier: 12.300009
     killPoint: 3.299999
   - requiredXpForNextLevel: 1300
-    health: 790
-    regenHealth: 5.7999988
+    health: 2060
+    regenHealth: 11
     armor: 68
-    damage: 135
-    attackSpeed: 6.799998
+    damage: 675
+    attackSpeed: 24.80001
     critDamageMultiplier: 1.3999997
     criticalChance: 0.29000002
     pickupRange: 9.799995
     moveSpeedMultiplier: 12.400009
     killPoint: 3.399999
   - requiredXpForNextLevel: 1350
-    health: 810
-    regenHealth: 5.9999986
+    health: 2160
+    regenHealth: 11.5
     armor: 70
-    damage: 140
-    attackSpeed: 6.9999976
+    damage: 715
+    attackSpeed: 25.000011
     critDamageMultiplier: 1.4499997
     criticalChance: 0.3
     pickupRange: 9.999995
     moveSpeedMultiplier: 12.50001
     killPoint: 3.4999988
   - requiredXpForNextLevel: 1400
-    health: 830
-    regenHealth: 6.1999984
+    health: 2260
+    regenHealth: 12
     armor: 72
-    damage: 145
-    attackSpeed: 7.1999974
+    damage: 755
+    attackSpeed: 25.200012
     critDamageMultiplier: 1.4999996
     criticalChance: 0.31
     pickupRange: 10.199995
     moveSpeedMultiplier: 12.60001
     killPoint: 3.5999987
   - requiredXpForNextLevel: 1450
-    health: 850
-    regenHealth: 6.399998
+    health: 2360
+    regenHealth: 12.5
     armor: 74
-    damage: 150
-    attackSpeed: 7.399997
+    damage: 795
+    attackSpeed: 25.400013
     critDamageMultiplier: 1.5499996
     criticalChance: 0.32
     pickupRange: 10.399995
     moveSpeedMultiplier: 12.70001
     killPoint: 3.6999986
   - requiredXpForNextLevel: 1500
-    health: 870
-    regenHealth: 6.599998
+    health: 2460
+    regenHealth: 13
     armor: 76
-    damage: 155
-    attackSpeed: 7.599997
+    damage: 835
+    attackSpeed: 25.600014
     critDamageMultiplier: 1.5999995
     criticalChance: 0.32999998
     pickupRange: 10.599995
     moveSpeedMultiplier: 12.800011
     killPoint: 3.7999985
   - requiredXpForNextLevel: 1550
-    health: 890
-    regenHealth: 6.799998
+    health: 2560
+    regenHealth: 13.5
     armor: 78
-    damage: 160
-    attackSpeed: 7.799997
+    damage: 875
+    attackSpeed: 25.800014
     critDamageMultiplier: 1.6499995
     criticalChance: 0.33999997
     pickupRange: 10.799994
     moveSpeedMultiplier: 12.900011
     killPoint: 3.8999984
   - requiredXpForNextLevel: 1600
-    health: 910
-    regenHealth: 6.9999976
+    health: 2660
+    regenHealth: 14
     armor: 80
-    damage: 165
-    attackSpeed: 7.9999967
+    damage: 915
+    attackSpeed: 26.000015
     critDamageMultiplier: 1.6999995
     criticalChance: 0.34999996
     pickupRange: 10.999994
     moveSpeedMultiplier: 13.000011
     killPoint: 3.9999983
   - requiredXpForNextLevel: 1650
-    health: 930
-    regenHealth: 7.1999974
+    health: 2760
+    regenHealth: 14.5
     armor: 82
-    damage: 170
-    attackSpeed: 8.199997
+    damage: 955
+    attackSpeed: 26.200016
     critDamageMultiplier: 1.7499994
     criticalChance: 0.35999995
     pickupRange: 11.199994
     moveSpeedMultiplier: 13.100012
     killPoint: 4.0999985
   - requiredXpForNextLevel: 1700
-    health: 950
-    regenHealth: 7.399997
+    health: 2860
+    regenHealth: 15
     armor: 84
-    damage: 175
-    attackSpeed: 8.399997
+    damage: 995
+    attackSpeed: 26.400017
     critDamageMultiplier: 1.7999994
     criticalChance: 0.36999995
     pickupRange: 11.399994
     moveSpeedMultiplier: 13.200012
     killPoint: 4.1999984
   - requiredXpForNextLevel: 1750
-    health: 970
-    regenHealth: 7.599997
+    health: 2960
+    regenHealth: 15.5
     armor: 86
-    damage: 180
-    attackSpeed: 8.599997
+    damage: 1035
+    attackSpeed: 26.600018
     critDamageMultiplier: 1.8499993
     criticalChance: 0.37999994
     pickupRange: 11.599994
     moveSpeedMultiplier: 13.300013
     killPoint: 4.2999983
   - requiredXpForNextLevel: 1800
-    health: 990
-    regenHealth: 7.799997
+    health: 3060
+    regenHealth: 16
     armor: 88
-    damage: 185
-    attackSpeed: 8.799996
+    damage: 1075
+    attackSpeed: 26.800018
     critDamageMultiplier: 1.8999993
     criticalChance: 0.38999993
     pickupRange: 11.7999935
     moveSpeedMultiplier: 13.400013
     killPoint: 4.399998
   - requiredXpForNextLevel: 1850
-    health: 1010
-    regenHealth: 7.9999967
+    health: 3160
+    regenHealth: 16.5
     armor: 90
-    damage: 190
-    attackSpeed: 8.999996
+    damage: 1115
+    attackSpeed: 27.00002
     critDamageMultiplier: 1.9499992
     criticalChance: 0.39999992
     pickupRange: 11.999993
     moveSpeedMultiplier: 13.500013
     killPoint: 4.499998
   - requiredXpForNextLevel: 1900
-    health: 1030
-    regenHealth: 8.199997
+    health: 3260
+    regenHealth: 17
     armor: 92
-    damage: 195
-    attackSpeed: 9.199996
+    damage: 1155
+    attackSpeed: 27.20002
     critDamageMultiplier: 1.9999992
     criticalChance: 0.4099999
     pickupRange: 12.199993
     moveSpeedMultiplier: 13.600014
     killPoint: 4.599998
   - requiredXpForNextLevel: 1950
-    health: 1050
-    regenHealth: 8.399997
+    health: 3360
+    regenHealth: 17.5
     armor: 94
-    damage: 200
-    attackSpeed: 9.399996
+    damage: 1195
+    attackSpeed: 27.40002
     critDamageMultiplier: 2.0499992
     criticalChance: 0.4199999
     pickupRange: 12.399993
     moveSpeedMultiplier: 13.700014
     killPoint: 4.699998
   - requiredXpForNextLevel: 2000
-    health: 1070
-    regenHealth: 8.599997
+    health: 3460
+    regenHealth: 18
     armor: 96
-    damage: 205
-    attackSpeed: 9.599996
+    damage: 1235
+    attackSpeed: 27.600021
     critDamageMultiplier: 2.0999992
     criticalChance: 0.4299999
     pickupRange: 12.599993
     moveSpeedMultiplier: 13.8000145
     killPoint: 4.799998
   - requiredXpForNextLevel: 2050
-    health: 1090
-    regenHealth: 8.799996
+    health: 3560
+    regenHealth: 18.5
     armor: 98
-    damage: 210
-    attackSpeed: 9.799995
+    damage: 1275
+    attackSpeed: 27.800022
     critDamageMultiplier: 2.1499991
     criticalChance: 0.43999988
     pickupRange: 12.799993
     moveSpeedMultiplier: 13.900015
     killPoint: 4.8999977
   - requiredXpForNextLevel: 2100
-    health: 1110
-    regenHealth: 8.999996
+    health: 3660
+    regenHealth: 19
     armor: 100
-    damage: 215
-    attackSpeed: 9.999995
+    damage: 1315
+    attackSpeed: 28.000023
     critDamageMultiplier: 2.199999
     criticalChance: 0.44999987
     pickupRange: 12.999992
     moveSpeedMultiplier: 14.000015
     killPoint: 4.9999976
   - requiredXpForNextLevel: 2150
-    health: 1130
-    regenHealth: 9.199996
+    health: 3760
+    regenHealth: 19.5
     armor: 102
-    damage: 220
-    attackSpeed: 10.199995
+    damage: 1355
+    attackSpeed: 28.200024
     critDamageMultiplier: 2.249999
     criticalChance: 0.45999986
     pickupRange: 13.199992
     moveSpeedMultiplier: 14.100016
     killPoint: 5.0999975
   - requiredXpForNextLevel: 2200
-    health: 1150
-    regenHealth: 9.399996
+    health: 3860
+    regenHealth: 20
     armor: 104
-    damage: 225
-    attackSpeed: 10.399995
+    damage: 1395
+    attackSpeed: 28.400024
     critDamageMultiplier: 2.299999
     criticalChance: 0.46999985
     pickupRange: 13.399992
     moveSpeedMultiplier: 14.200016
     killPoint: 5.1999974
   - requiredXpForNextLevel: 2250
-    health: 1170
-    regenHealth: 9.599996
+    health: 3960
+    regenHealth: 20.5
     armor: 106
-    damage: 230
-    attackSpeed: 10.599995
+    damage: 1435
+    attackSpeed: 28.600025
     critDamageMultiplier: 2.349999
     criticalChance: 0.47999984
     pickupRange: 13.599992
     moveSpeedMultiplier: 14.300016
     killPoint: 5.2999973
   - requiredXpForNextLevel: 2300
-    health: 1190
-    regenHealth: 9.799995
+    health: 4060
+    regenHealth: 21
     armor: 108
-    damage: 235
-    attackSpeed: 10.799994
+    damage: 1475
+    attackSpeed: 28.800026
     critDamageMultiplier: 2.399999
     criticalChance: 0.48999983
     pickupRange: 13.799992
     moveSpeedMultiplier: 14.400017
     killPoint: 5.399997
   - requiredXpForNextLevel: 2350
-    health: 1210
-    regenHealth: 9.999995
+    health: 4160
+    regenHealth: 21.5
     armor: 110
-    damage: 240
-    attackSpeed: 10.999994
+    damage: 1515
+    attackSpeed: 29.000027
     critDamageMultiplier: 2.4499989
     criticalChance: 0.49999982
     pickupRange: 13.999991
     moveSpeedMultiplier: 14.500017
     killPoint: 5.499997
   - requiredXpForNextLevel: 2400
-    health: 1230
-    regenHealth: 10.199995
+    health: 4260
+    regenHealth: 22
     armor: 112
-    damage: 245
-    attackSpeed: 11.199994
+    damage: 1555
+    attackSpeed: 29.200027
     critDamageMultiplier: 2.4999988
     criticalChance: 0.5099998
     pickupRange: 14.199991
     moveSpeedMultiplier: 14.600018
     killPoint: 5.599997
   - requiredXpForNextLevel: 2450
-    health: 1250
-    regenHealth: 10.399995
+    health: 4360
+    regenHealth: 22.5
     armor: 114
-    damage: 250
-    attackSpeed: 11.399994
+    damage: 1595
+    attackSpeed: 29.400028
     critDamageMultiplier: 2.5499988
     criticalChance: 0.5199998
     pickupRange: 14.399991
     moveSpeedMultiplier: 14.700018
     killPoint: 5.699997
   - requiredXpForNextLevel: 2500
-    health: 1270
-    regenHealth: 10.599995
+    health: 4460
+    regenHealth: 23
     armor: 116
-    damage: 255
-    attackSpeed: 11.599994
+    damage: 1635
+    attackSpeed: 29.600029
     critDamageMultiplier: 2.5999987
     criticalChance: 0.5299998
     pickupRange: 14.599991
     moveSpeedMultiplier: 14.800018
     killPoint: 5.799997
   - requiredXpForNextLevel: 2550
-    health: 1290
-    regenHealth: 10.799994
+    health: 4560
+    regenHealth: 23.5
     armor: 118
-    damage: 260
-    attackSpeed: 11.7999935
+    damage: 1675
+    attackSpeed: 29.80003
     critDamageMultiplier: 2.6499987
     criticalChance: 0.5399998
     pickupRange: 14.799991
     moveSpeedMultiplier: 14.900019
     killPoint: 5.8999968
   - requiredXpForNextLevel: 2600
-    health: 1310
-    regenHealth: 10.999994
+    health: 4660
+    regenHealth: 24
     armor: 120
-    damage: 265
-    attackSpeed: 11.999993
+    damage: 1715
+    attackSpeed: 30.00003
     critDamageMultiplier: 2.6999986
     criticalChance: 0.5499998
     pickupRange: 14.99999
     moveSpeedMultiplier: 15.000019
     killPoint: 5.9999967
   - requiredXpForNextLevel: 2650
-    health: 1330
-    regenHealth: 11.199994
+    health: 4760
+    regenHealth: 24.5
     armor: 122
-    damage: 270
-    attackSpeed: 12.199993
+    damage: 1755
+    attackSpeed: 30.200031
     critDamageMultiplier: 2.7499986
     criticalChance: 0.55999976
     pickupRange: 15.19999
     moveSpeedMultiplier: 15.100019
     killPoint: 6.0999966
   - requiredXpForNextLevel: 2700
-    health: 1350
-    regenHealth: 11.399994
+    health: 4860
+    regenHealth: 25
     armor: 124
-    damage: 275
-    attackSpeed: 12.399993
+    damage: 1795
+    attackSpeed: 30.400032
     critDamageMultiplier: 2.7999985
     criticalChance: 0.56999975
     pickupRange: 15.39999
     moveSpeedMultiplier: 15.20002
     killPoint: 6.1999965
   - requiredXpForNextLevel: 2750
-    health: 1370
-    regenHealth: 11.599994
+    health: 4960
+    regenHealth: 25.5
     armor: 126
-    damage: 280
-    attackSpeed: 12.599993
+    damage: 1835
+    attackSpeed: 30.600033
     critDamageMultiplier: 2.8499985
     criticalChance: 0.57999974
     pickupRange: 15.59999
     moveSpeedMultiplier: 15.30002
     killPoint: 6.2999964
   - requiredXpForNextLevel: 2800
-    health: 1390
-    regenHealth: 11.7999935
+    health: 5060
+    regenHealth: 26
     armor: 128
-    damage: 285
-    attackSpeed: 12.799993
+    damage: 1875
+    attackSpeed: 30.800034
     critDamageMultiplier: 2.8999984
     criticalChance: 0.58999974
     pickupRange: 15.79999
     moveSpeedMultiplier: 15.400021
     killPoint: 6.3999963
   - requiredXpForNextLevel: 2850
-    health: 1410
-    regenHealth: 11.999993
+    health: 5160
+    regenHealth: 26.5
     armor: 130
-    damage: 290
-    attackSpeed: 12.999992
+    damage: 1915
+    attackSpeed: 31.000034
     critDamageMultiplier: 2.9499984
     criticalChance: 0.5999997
     pickupRange: 15.9999895
     moveSpeedMultiplier: 15.500021
     killPoint: 6.499996
   - requiredXpForNextLevel: 2900
-    health: 1430
-    regenHealth: 12.199993
+    health: 5260
+    regenHealth: 27
     armor: 132
-    damage: 295
-    attackSpeed: 13.199992
+    damage: 1955
+    attackSpeed: 31.200035
     critDamageMultiplier: 2.9999983
     criticalChance: 0.6099997
     pickupRange: 16.19999
     moveSpeedMultiplier: 15.600021
     killPoint: 6.599996
   - requiredXpForNextLevel: 2950
-    health: 1450
-    regenHealth: 12.399993
+    health: 5360
+    regenHealth: 27.5
     armor: 134
-    damage: 300
-    attackSpeed: 13.399992
+    damage: 1995
+    attackSpeed: 31.400036
     critDamageMultiplier: 3.0499983
     criticalChance: 0.6199997
     pickupRange: 16.39999
     moveSpeedMultiplier: 15.700022
     killPoint: 6.699996
   - requiredXpForNextLevel: 3000
-    health: 1470
-    regenHealth: 12.599993
+    health: 5460
+    regenHealth: 28
     armor: 136
-    damage: 305
-    attackSpeed: 13.599992
+    damage: 2035
+    attackSpeed: 31.600037
     critDamageMultiplier: 3.0999982
     criticalChance: 0.6299997
     pickupRange: 16.59999
     moveSpeedMultiplier: 15.800022
     killPoint: 6.799996
   - requiredXpForNextLevel: 3050
-    health: 1490
-    regenHealth: 12.799993
+    health: 5560
+    regenHealth: 28.5
     armor: 138
-    damage: 310
-    attackSpeed: 13.799992
+    damage: 2075
+    attackSpeed: 31.800037
     critDamageMultiplier: 3.1499982
     criticalChance: 0.6399997
     pickupRange: 16.799992
     moveSpeedMultiplier: 15.9000225
     killPoint: 6.899996
   - requiredXpForNextLevel: 3100
-    health: 1510
-    regenHealth: 12.999992
+    health: 5660
+    regenHealth: 29
     armor: 140
-    damage: 315
-    attackSpeed: 13.999991
+    damage: 2115
+    attackSpeed: 32.00004
     critDamageMultiplier: 3.1999981
     criticalChance: 0.6499997
     pickupRange: 16.999992
     moveSpeedMultiplier: 16.000023
     killPoint: 6.9999957
   - requiredXpForNextLevel: 3150
-    health: 1530
-    regenHealth: 13.199992
+    health: 5760
+    regenHealth: 29.5
     armor: 142
-    damage: 320
-    attackSpeed: 14.199991
+    damage: 2155
+    attackSpeed: 32.20004
     critDamageMultiplier: 3.249998
     criticalChance: 0.65999967
     pickupRange: 17.199993
     moveSpeedMultiplier: 16.100023
     killPoint: 7.0999956
   - requiredXpForNextLevel: 3200
-    health: 1550
-    regenHealth: 13.399992
+    health: 5860
+    regenHealth: 30
     armor: 144
-    damage: 325
-    attackSpeed: 14.399991
+    damage: 2195
+    attackSpeed: 32.40004
     critDamageMultiplier: 3.299998
     criticalChance: 0.66999966
     pickupRange: 17.399994
     moveSpeedMultiplier: 16.200024
     killPoint: 7.1999955
   - requiredXpForNextLevel: 3250
-    health: 1570
-    regenHealth: 13.599992
+    health: 5960
+    regenHealth: 30.5
     armor: 146
-    damage: 330
-    attackSpeed: 14.599991
+    damage: 2235
+    attackSpeed: 32.60004
     critDamageMultiplier: 3.349998
     criticalChance: 0.67999965
     pickupRange: 17.599995
     moveSpeedMultiplier: 16.300024
     killPoint: 7.2999954
   - requiredXpForNextLevel: 3300
-    health: 1590
-    regenHealth: 13.799992
+    health: 6060
+    regenHealth: 31
     armor: 148
-    damage: 335
-    attackSpeed: 14.799991
+    damage: 2275
+    attackSpeed: 32.80004
     critDamageMultiplier: 3.399998
     criticalChance: 0.68999964
     pickupRange: 17.799995
     moveSpeedMultiplier: 16.400024
     killPoint: 7.3999953
   - requiredXpForNextLevel: 3350
-    health: 1610
-    regenHealth: 13.999991
+    health: 6160
+    regenHealth: 31.5
     armor: 150
-    damage: 340
-    attackSpeed: 14.99999
+    damage: 2315
+    attackSpeed: 33.000042
     critDamageMultiplier: 3.449998
     criticalChance: 0.69999963
     pickupRange: 17.999996
     moveSpeedMultiplier: 16.500025
     killPoint: 7.499995
   - requiredXpForNextLevel: 3400
-    health: 1630
-    regenHealth: 14.199991
+    health: 6260
+    regenHealth: 32
     armor: 152
-    damage: 345
-    attackSpeed: 15.19999
+    damage: 2355
+    attackSpeed: 33.200043
     critDamageMultiplier: 3.4999979
     criticalChance: 0.7099996
     pickupRange: 18.199997
     moveSpeedMultiplier: 16.600025
     killPoint: 7.599995
   - requiredXpForNextLevel: 3450
-    health: 1650
-    regenHealth: 14.399991
+    health: 6360
+    regenHealth: 32.5
     armor: 154
-    damage: 350
-    attackSpeed: 15.39999
+    damage: 2395
+    attackSpeed: 33.400043
     critDamageMultiplier: 3.5499978
     criticalChance: 0.7199996
     pickupRange: 18.399998
     moveSpeedMultiplier: 16.700026
     killPoint: 7.699995
   - requiredXpForNextLevel: 3500
-    health: 1670
-    regenHealth: 14.599991
+    health: 6460
+    regenHealth: 33
     armor: 156
-    damage: 355
-    attackSpeed: 15.59999
+    damage: 2435
+    attackSpeed: 33.600044
     critDamageMultiplier: 3.5999978
     criticalChance: 0.7299996
     pickupRange: 18.599998
     moveSpeedMultiplier: 16.800026
     killPoint: 7.799995
   - requiredXpForNextLevel: 3550
-    health: 1690
-    regenHealth: 14.799991
+    health: 6560
+    regenHealth: 33.5
     armor: 158
-    damage: 360
-    attackSpeed: 15.79999
+    damage: 2475
+    attackSpeed: 33.800045
     critDamageMultiplier: 3.6499977
     criticalChance: 0.7399996
     pickupRange: 18.8
     moveSpeedMultiplier: 16.900026
     killPoint: 7.899995
   - requiredXpForNextLevel: 3600
-    health: 1710
-    regenHealth: 14.99999
+    health: 6660
+    regenHealth: 34
     armor: 160
-    damage: 365
-    attackSpeed: 15.9999895
+    damage: 2515
+    attackSpeed: 34.000046
     critDamageMultiplier: 3.6999977
     criticalChance: 0.7499996
     pickupRange: 19
     moveSpeedMultiplier: 17.000027
     killPoint: 7.9999948
   - requiredXpForNextLevel: 3650
-    health: 1730
-    regenHealth: 15.19999
+    health: 6760
+    regenHealth: 34.5
     armor: 162
-    damage: 370
-    attackSpeed: 16.19999
+    damage: 2555
+    attackSpeed: 34.200047
     critDamageMultiplier: 3.7499976
     criticalChance: 0.7599996
     pickupRange: 19.2
     moveSpeedMultiplier: 17.100027
     killPoint: 8.099995
   - requiredXpForNextLevel: 3700
-    health: 1750
-    regenHealth: 15.39999
+    health: 6860
+    regenHealth: 35
     armor: 164
-    damage: 375
-    attackSpeed: 16.39999
+    damage: 2595
+    attackSpeed: 34.400047
     critDamageMultiplier: 3.7999976
     criticalChance: 0.76999956
     pickupRange: 19.400002
     moveSpeedMultiplier: 17.200027
     killPoint: 8.199995
   - requiredXpForNextLevel: 3750
-    health: 1770
-    regenHealth: 15.59999
+    health: 6960
+    regenHealth: 35.5
     armor: 166
-    damage: 380
-    attackSpeed: 16.59999
+    damage: 2635
+    attackSpeed: 34.600048
     critDamageMultiplier: 3.8499975
     criticalChance: 0.77999955
     pickupRange: 19.600002
     moveSpeedMultiplier: 17.300028
     killPoint: 8.299995
   - requiredXpForNextLevel: 3800
-    health: 1790
-    regenHealth: 15.79999
+    health: 7060
+    regenHealth: 36
     armor: 168
-    damage: 385
-    attackSpeed: 16.799992
+    damage: 2675
+    attackSpeed: 34.80005
     critDamageMultiplier: 3.8999975
     criticalChance: 0.78999954
     pickupRange: 19.800003
     moveSpeedMultiplier: 17.400028
     killPoint: 8.399996
   - requiredXpForNextLevel: 3850
-    health: 1810
-    regenHealth: 15.9999895
+    health: 7160
+    regenHealth: 36.5
     armor: 170
-    damage: 390
-    attackSpeed: 16.999992
+    damage: 2715
+    attackSpeed: 35.00005
     critDamageMultiplier: 3.9499974
     criticalChance: 0.79999954
     pickupRange: 20.000004
     moveSpeedMultiplier: 17.500029
     killPoint: 8.499996
   - requiredXpForNextLevel: 3900
-    health: 1830
-    regenHealth: 16.19999
+    health: 7260
+    regenHealth: 37
     armor: 172
-    damage: 395
-    attackSpeed: 17.199993
+    damage: 2755
+    attackSpeed: 35.20005
     critDamageMultiplier: 3.9999974
     criticalChance: 0.8099995
     pickupRange: 20.200005
     moveSpeedMultiplier: 17.600029
     killPoint: 8.599997
   - requiredXpForNextLevel: 3950
-    health: 1850
-    regenHealth: 16.39999
+    health: 7360
+    regenHealth: 37.5
     armor: 174
-    damage: 400
-    attackSpeed: 17.399994
+    damage: 2795
+    attackSpeed: 35.40005
     critDamageMultiplier: 4.0499973
     criticalChance: 0.8199995
     pickupRange: 20.400005
     moveSpeedMultiplier: 17.70003
     killPoint: 8.699997
   - requiredXpForNextLevel: 4000
-    health: 1870
-    regenHealth: 16.59999
+    health: 7460
+    regenHealth: 38
     armor: 176
-    damage: 405
-    attackSpeed: 17.599995
+    damage: 2835
+    attackSpeed: 35.60005
     critDamageMultiplier: 4.0999975
     criticalChance: 0.8299995
     pickupRange: 20.600006
     moveSpeedMultiplier: 17.80003
     killPoint: 8.799997
   - requiredXpForNextLevel: 4050
-    health: 1890
-    regenHealth: 16.799992
+    health: 7560
+    regenHealth: 38.5
     armor: 178
-    damage: 410
-    attackSpeed: 17.799995
+    damage: 2875
+    attackSpeed: 35.800053
     critDamageMultiplier: 4.1499977
     criticalChance: 0.8399995
     pickupRange: 20.800007
     moveSpeedMultiplier: 17.90003
     killPoint: 8.899998
   - requiredXpForNextLevel: 4100
-    health: 1910
-    regenHealth: 16.999992
+    health: 7660
+    regenHealth: 39
     armor: 180
-    damage: 415
-    attackSpeed: 17.999996
+    damage: 2915
+    attackSpeed: 36.000053
     critDamageMultiplier: 4.199998
     criticalChance: 0.8499995
     pickupRange: 21.000008
     moveSpeedMultiplier: 18.00003
     killPoint: 8.999998
   - requiredXpForNextLevel: 4150
-    health: 1930
-    regenHealth: 17.199993
+    health: 7760
+    regenHealth: 39.5
     armor: 182
-    damage: 420
-    attackSpeed: 18.199997
+    damage: 2955
+    attackSpeed: 36.200054
     critDamageMultiplier: 4.249998
     criticalChance: 0.8599995
     pickupRange: 21.200008
     moveSpeedMultiplier: 18.10003
     killPoint: 9.099998
   - requiredXpForNextLevel: 4200
-    health: 1950
-    regenHealth: 17.399994
+    health: 7860
+    regenHealth: 40
     armor: 184
-    damage: 425
-    attackSpeed: 18.399998
+    damage: 2995
+    attackSpeed: 36.400055
     critDamageMultiplier: 4.2999983
     criticalChance: 0.86999947
     pickupRange: 21.40001
     moveSpeedMultiplier: 18.200031
     killPoint: 9.199999
   - requiredXpForNextLevel: 4250
-    health: 1970
-    regenHealth: 17.599995
+    health: 7960
+    regenHealth: 40.5
     armor: 186
-    damage: 430
-    attackSpeed: 18.599998
+    damage: 3035
+    attackSpeed: 36.600056
     critDamageMultiplier: 4.3499985
     criticalChance: 0.87999946
     pickupRange: 21.60001
     moveSpeedMultiplier: 18.300032
     killPoint: 9.299999
   - requiredXpForNextLevel: 4300
-    health: 1990
-    regenHealth: 17.799995
+    health: 8060
+    regenHealth: 41
     armor: 188
-    damage: 435
-    attackSpeed: 18.8
+    damage: 3075
+    attackSpeed: 36.800056
     critDamageMultiplier: 4.3999987
     criticalChance: 0.88999945
     pickupRange: 21.80001
     moveSpeedMultiplier: 18.400032
     killPoint: 9.4
   - requiredXpForNextLevel: 4350
-    health: 2010
-    regenHealth: 17.999996
+    health: 8160
+    regenHealth: 41.5
     armor: 190
-    damage: 440
-    attackSpeed: 19
+    damage: 3115
+    attackSpeed: 37.000057
     critDamageMultiplier: 4.449999
     criticalChance: 0.89999944
     pickupRange: 22.000011
     moveSpeedMultiplier: 18.500032
     killPoint: 9.5
   - requiredXpForNextLevel: 4400
-    health: 2030
-    regenHealth: 18.199997
+    health: 8260
+    regenHealth: 42
     armor: 192
-    damage: 445
-    attackSpeed: 19.2
+    damage: 3155
+    attackSpeed: 37.200058
     critDamageMultiplier: 4.499999
     criticalChance: 0.90999943
     pickupRange: 22.200012
     moveSpeedMultiplier: 18.600033
     killPoint: 9.6
   - requiredXpForNextLevel: 4450
-    health: 2050
-    regenHealth: 18.399998
+    health: 8360
+    regenHealth: 42.5
     armor: 194
-    damage: 450
-    attackSpeed: 19.400002
+    damage: 3195
+    attackSpeed: 37.40006
     critDamageMultiplier: 4.549999
     criticalChance: 0.9199994
     pickupRange: 22.400013
     moveSpeedMultiplier: 18.700033
     killPoint: 9.700001
   - requiredXpForNextLevel: 4500
-    health: 2070
-    regenHealth: 18.599998
+    health: 8460
+    regenHealth: 43
     armor: 196
-    damage: 455
-    attackSpeed: 19.600002
+    damage: 3235
+    attackSpeed: 37.60006
     critDamageMultiplier: 4.5999994
     criticalChance: 0.9299994
     pickupRange: 22.600014
     moveSpeedMultiplier: 18.800034
     killPoint: 9.800001
   - requiredXpForNextLevel: 4550
-    health: 2090
-    regenHealth: 18.8
+    health: 8560
+    regenHealth: 43.5
     armor: 198
-    damage: 460
-    attackSpeed: 19.800003
+    damage: 3275
+    attackSpeed: 37.80006
     critDamageMultiplier: 4.6499996
     criticalChance: 0.9399994
     pickupRange: 22.800014
     moveSpeedMultiplier: 18.900034
     killPoint: 9.900002
   - requiredXpForNextLevel: 4600
-    health: 2110
-    regenHealth: 19
+    health: 8660
+    regenHealth: 44
     armor: 200
-    damage: 465
-    attackSpeed: 20.000004
+    damage: 3315
+    attackSpeed: 38.00006
     critDamageMultiplier: 4.7
     criticalChance: 0.9499994
     pickupRange: 23.000015
     moveSpeedMultiplier: 19.000034
     killPoint: 10.000002
   - requiredXpForNextLevel: 4650
-    health: 2130
-    regenHealth: 19.2
+    health: 8760
+    regenHealth: 44.5
     armor: 202
-    damage: 470
-    attackSpeed: 20.200005
+    damage: 3355
+    attackSpeed: 38.20006
     critDamageMultiplier: 4.75
     criticalChance: 0.9599994
     pickupRange: 23.200016
     moveSpeedMultiplier: 19.100035
     killPoint: 10.100002
   - requiredXpForNextLevel: 4700
-    health: 2150
-    regenHealth: 19.400002
+    health: 8860
+    regenHealth: 45
     armor: 204
-    damage: 475
-    attackSpeed: 20.400005
+    damage: 3395
+    attackSpeed: 38.400063
     critDamageMultiplier: 4.8
     criticalChance: 0.9699994
     pickupRange: 23.400017
     moveSpeedMultiplier: 19.200035
     killPoint: 10.200003
   - requiredXpForNextLevel: 4750
-    health: 2170
-    regenHealth: 19.600002
+    health: 8960
+    regenHealth: 45.5
     armor: 206
-    damage: 480
-    attackSpeed: 20.600006
+    damage: 3435
+    attackSpeed: 38.600063
     critDamageMultiplier: 4.8500004
     criticalChance: 0.97999936
     pickupRange: 23.600018
     moveSpeedMultiplier: 19.300035
     killPoint: 10.300003
   - requiredXpForNextLevel: 4800
-    health: 2190
-    regenHealth: 19.800003
+    health: 9060
+    regenHealth: 46
     armor: 208
-    damage: 485
-    attackSpeed: 20.800007
+    damage: 3475
+    attackSpeed: 38.800064
     critDamageMultiplier: 4.9000006
     criticalChance: 0.98999935
     pickupRange: 23.800018
     moveSpeedMultiplier: 19.400036
     killPoint: 10.400003
   - requiredXpForNextLevel: 4850
-    health: 2210
-    regenHealth: 20.000004
+    health: 9160
+    regenHealth: 46.5
     armor: 210
-    damage: 490
-    attackSpeed: 21.000008
+    damage: 3515
+    attackSpeed: 39.000065
     critDamageMultiplier: 4.950001
     criticalChance: 0.99999934
     pickupRange: 24.00002
     moveSpeedMultiplier: 19.500036
     killPoint: 10.500004
   - requiredXpForNextLevel: 4900
-    health: 2230
-    regenHealth: 20.200005
+    health: 9260
+    regenHealth: 47
     armor: 212
-    damage: 495
-    attackSpeed: 21.200008
+    damage: 3555
+    attackSpeed: 39.200066
     critDamageMultiplier: 5.000001
     criticalChance: 1.0099994
     pickupRange: 24.20002
     moveSpeedMultiplier: 19.600037
     killPoint: 10.600004
   - requiredXpForNextLevel: 4950
-    health: 2250
-    regenHealth: 20.400005
+    health: 9360
+    regenHealth: 47.5
     armor: 214
-    damage: 500
-    attackSpeed: 21.40001
+    damage: 3595
+    attackSpeed: 39.400066
     critDamageMultiplier: 5.050001
     criticalChance: 1.0199994
     pickupRange: 24.40002
     moveSpeedMultiplier: 19.700037
     killPoint: 10.700005
   - requiredXpForNextLevel: 5000
-    health: 2270
-    regenHealth: 20.600006
+    health: 9460
+    regenHealth: 48
     armor: 216
-    damage: 505
-    attackSpeed: 21.60001
+    damage: 3635
+    attackSpeed: 39.600067
     critDamageMultiplier: 5.1000013
     criticalChance: 1.0299994
     pickupRange: 24.600021
     moveSpeedMultiplier: 19.800037
     killPoint: 10.800005
   - requiredXpForNextLevel: 5050
-    health: 2290
-    regenHealth: 20.800007
+    health: 9560
+    regenHealth: 48.5
     armor: 218
-    damage: 510
-    attackSpeed: 21.80001
+    damage: 3675
+    attackSpeed: 39.800068
     critDamageMultiplier: 5.1500015
     criticalChance: 1.0399994
     pickupRange: 24.800022
     moveSpeedMultiplier: 19.900038
     killPoint: 10.900005
   - requiredXpForNextLevel: 5100
-    health: 2310
-    regenHealth: 21.000008
+    health: 9660
+    regenHealth: 49
     armor: 220
-    damage: 515
-    attackSpeed: 22.000011
+    damage: 3715
+    attackSpeed: 40.00007
     critDamageMultiplier: 5.2000017
     criticalChance: 1.0499994
     pickupRange: 25.000023

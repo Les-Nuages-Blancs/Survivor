@@ -217,7 +217,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90aff0032288cc74baed49b91ad2be16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityLevelStatistiques: {fileID: 11400000, guid: cfab55db8938f224ba2c7e7c6dc7a3db,
+  entityLevelStatistiques: {fileID: 11400000, guid: 271afa06b87784c40bc8f38171078e05,
     type: 2}
   currentLevel:
     m_InternalValue: 0
@@ -507,7 +507,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: b26a559a8bd608c40a8bd0bcf4ff2756, type: 2}
+  lootTable: {fileID: 11400000, guid: 1538dca05dc259147ba66208c66a264a, type: 2}
   destroyOnProcessLoot: 0
 --- !u!114 &6375020660300772506
 MonoBehaviour:

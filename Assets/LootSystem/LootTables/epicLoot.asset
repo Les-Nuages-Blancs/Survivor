@@ -1,0 +1,27 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 55973267c79bd3a4ba05297634e47f10, type: 3}
+  m_Name: epicLoot
+  m_EditorClassIdentifier: 
+  lootEntries:
+  - prefab: {fileID: 5223959951191603647, guid: a2d31c057a71e094d8e1e57025fa41ac,
+      type: 3}
+    dropChance: 1
+    category: 1
+  - prefab: {fileID: 2947476394515406775, guid: 53c60c1623d51b247be42e270c8ff6e7,
+      type: 3}
+    dropChance: 0.04
+    category: 2
+  - prefab: {fileID: 1696255971976460481, guid: 7dbaa3481d6bb2946a2858aa81a7ad8f,
+      type: 3}
+    dropChance: 0.0066
+    category: 2

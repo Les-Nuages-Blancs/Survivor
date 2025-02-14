@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 683884036
+  GlobalObjectIdHash: 2217593264
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -154,13 +154,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 8330517525875140146}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.46193978, y: 0.19134173, z: 0.19134173, w: 0.84462327}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 4134755411131598188}
-  m_LocalEulerAnglesHint: {x: 45, y: 45, z: 45}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!65 &1829124658723665812
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -180,8 +180,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1.09, y: 1.22, z: 1.15}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.7568106, y: 1.6993968, z: 0.6516174}
+  m_Center: {x: -0.005213529, y: 0.016612768, z: 0.021359205}
 --- !u!54 &8957006487943038208
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -221,11 +221,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90d6c441bf61e9d4290b266835432a76, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  xp: 50
-  xpPickupEffectPrefab: {fileID: 0}
+  pickupEffectPrefab: {fileID: 0}
   pickupByTags:
   - Player
-  onXpPickup:
+  onPickup:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 6589688484748927683}
@@ -240,6 +239,7 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+  xp: 50
 --- !u!1001 &1189483970404872868
 PrefabInstance:
   m_ObjectHideFlags: 0

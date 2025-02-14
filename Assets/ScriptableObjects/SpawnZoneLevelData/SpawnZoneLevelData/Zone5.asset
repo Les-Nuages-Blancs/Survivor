@@ -17,61 +17,61 @@ MonoBehaviour:
     - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
         type: 3}
       probability: 100
-      spawnCooldown: 1
-      spawnAtLevel: 0
+      spawnCooldown: 1.5
+      spawnAtLevel: 30
     - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
         type: 3}
       probability: 100
-      spawnCooldown: 0.85
-      spawnAtLevel: 1
+      spawnCooldown: 1.35
+      spawnAtLevel: 35
     - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
         type: 3}
       probability: 100
-      spawnCooldown: 0.70000005
-      spawnAtLevel: 2
+      spawnCooldown: 1.2
+      spawnAtLevel: 40
     - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
         type: 3}
       probability: 100
-      spawnCooldown: 0.5500001
-      spawnAtLevel: 3
+      spawnCooldown: 1.0500001
+      spawnAtLevel: 45
     - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
         type: 3}
       probability: 100
-      spawnCooldown: 0.40000007
-      spawnAtLevel: 4
+      spawnCooldown: 0.9000001
+      spawnAtLevel: 50
     - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
         type: 3}
       probability: 100
-      spawnCooldown: 0.25000006
-      spawnAtLevel: 5
+      spawnCooldown: 0.7500001
+      spawnAtLevel: 55
   - baseSpawnZoneLevelDatas:
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 50
-      spawnCooldown: 3
-      spawnAtLevel: 10
+      probability: 100
+      spawnCooldown: 1
+      spawnAtLevel: 50
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 50
-      spawnCooldown: 3
-      spawnAtLevel: 11
+      probability: 100
+      spawnCooldown: 1
+      spawnAtLevel: 52
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 50
-      spawnCooldown: 3
-      spawnAtLevel: 12
+      probability: 100
+      spawnCooldown: 1
+      spawnAtLevel: 54
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 50
-      spawnCooldown: 3
-      spawnAtLevel: 13
+      probability: 100
+      spawnCooldown: 1
+      spawnAtLevel: 56
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 50
-      spawnCooldown: 3
-      spawnAtLevel: 14
+      probability: 100
+      spawnCooldown: 1
+      spawnAtLevel: 58
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 50
-      spawnCooldown: 3
-      spawnAtLevel: 15
+      probability: 100
+      spawnCooldown: 1
+      spawnAtLevel: 60

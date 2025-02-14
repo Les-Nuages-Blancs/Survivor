@@ -110,7 +110,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 90aff0032288cc74baed49b91ad2be16, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  entityLevelStatistiques: {fileID: 11400000, guid: cfab55db8938f224ba2c7e7c6dc7a3db,
+  entityLevelStatistiques: {fileID: 11400000, guid: 3580c7e5389b8a646b2b63f067e1d650,
     type: 2}
   currentLevel:
     m_InternalValue: 0
@@ -400,7 +400,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lootTable: {fileID: 11400000, guid: b26a559a8bd608c40a8bd0bcf4ff2756, type: 2}
+  lootTable: {fileID: 11400000, guid: 2fa415258e20d4b4eb98f2fec12aa46c, type: 2}
   destroyOnProcessLoot: 0
 --- !u!114 &7427241238132367231
 MonoBehaviour:
@@ -508,8 +508,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 4.3910556, y: 3.8007083, z: 6.176237}
+  m_Center: {x: -0.01940322, y: 1.4003541, z: -0.21732283}
 --- !u!114 &9133035419503901638
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -884,8 +884,8 @@ BoxCollider:
   m_ProvidesContacts: 0
   m_Enabled: 1
   serializedVersion: 3
-  m_Size: {x: 9.29, y: 14.26, z: 9.9}
-  m_Center: {x: 0, y: 6.7, z: 0}
+  m_Size: {x: 6.6557784, y: 14.259999, z: 9.068137}
+  m_Center: {x: 0.0000012548346, y: 6.6999993, z: -0.34660622}
 --- !u!114 &7600669694024032755
 MonoBehaviour:
   m_ObjectHideFlags: 0

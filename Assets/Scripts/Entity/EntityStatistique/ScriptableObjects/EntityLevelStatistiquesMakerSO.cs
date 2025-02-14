@@ -26,7 +26,7 @@ public class EntityLevelStatistiquesMakerSO : ScriptableObject
     {
         if (generatedEntityLevelStats == null)
         {
-            string basePath = "Assets/ScriptableObjects/Statistiques/GeneratedEntityLevelStats";
+            string basePath = "Assets/ScriptableObjects/EntityLevelStatistique/Statistiques/GeneratedEntityLevelStats";
             string extension = ".asset";
             string assetPath = basePath + extension;
 

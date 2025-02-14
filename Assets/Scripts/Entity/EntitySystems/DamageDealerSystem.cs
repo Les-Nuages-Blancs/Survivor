@@ -8,7 +8,7 @@ using UnityEngine.Events;
 
 public class DamageDealerSystem : NetworkBehaviour
 {
-    [SerializeField] private float damage = 5f;
+    [SerializeField] public float damage = 5f;
     [SerializeField] private List<GameObject> EffectsPrefab = new List<GameObject>();
 
     [SerializeField] private LayerMask includeTriggerLayers;

@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 1160b5d9c0b9cfa479d28ef88cbda2c1, type: 3}
-  m_Name: EnemyEntityLevelStats
+  m_Name: Enemy1EntityLevelStats
   m_EditorClassIdentifier: 
   levelStatistiques:
   - requiredXpForNextLevel: 100

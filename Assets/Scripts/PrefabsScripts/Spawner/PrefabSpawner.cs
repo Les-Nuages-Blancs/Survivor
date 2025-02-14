@@ -58,7 +58,7 @@ public class PrefabSpawner : NetworkBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(spawnCooldown);
+            yield return new WaitForSeconds(spawnCooldown / LevelStateManager.Instance.EnemySpawnSpeedMultiplier);
 
             if (SpawnConditionOk())
             {
