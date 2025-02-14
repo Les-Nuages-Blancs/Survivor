@@ -18,6 +18,7 @@ GameObject:
   - component: {fileID: 8357140008822183161}
   - component: {fileID: 7663633407509845089}
   - component: {fileID: 6348382219916510936}
+  - component: {fileID: 6839970313703330378}
   - component: {fileID: 6047560052955884051}
   - component: {fileID: 4401972516784374418}
   - component: {fileID: 6295675316897186834}
@@ -402,7 +403,19 @@ MonoBehaviour:
         m_CallState: 2
   onDeath:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6839970313703330378}
+        m_TargetAssemblyTypeName: PlayerDeathSystem, Assembly-CSharp
+        m_MethodName: KillPlayer
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   onTakeDamage:
     m_PersistentCalls:
       m_Calls:
@@ -418,6 +431,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6839970313703330378
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881956038346639823}
+  m_Enabled: 0
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1dde95264b57b8b4abcaacf544f955d5, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  deathCanvasPrefab: {fileID: 3470483107669858619, guid: 1aa7502c1f8b28f4aa7082bd8d6b930d,
+    type: 3}
+  respawnCooldownSeconds: 15
+  healthSystem: {fileID: 6348382219916510936}
 --- !u!114 &6047560052955884051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -462,7 +491,12 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 3224707319485741082}
   attackSpeed:
     m_InternalValue: 0
+  attackDamage:
+    m_InternalValue: 0
   onAttackSpeedChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onAttackDamageChange:
     m_PersistentCalls:
       m_Calls: []
 --- !u!95 &6295675316897186834
