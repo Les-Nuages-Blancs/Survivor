@@ -32,7 +32,7 @@ public class CameraFollowSystem : MonoBehaviour
             // Raycast pour detecter si un objet de l'environement bloque la vue du joueur
             var ray = new Ray(targetPosition + direction * 2.0f, -direction);
             Physics.Raycast(ray, out var hit, distance + 1.0f);
-            while (hit.collider is not null && hit.collider.gameObject.layer == LayerMask.GetMask("Environment") && distance > 0.05f)
+            while (hit.collider is not null && hit.collider.gameObject.layer == 7 && distance > 0.05f)
             {
                 distance -= 0.01f;
                 targetPosition = target.position + direction * distance + 1.0f * Vector3.up;
