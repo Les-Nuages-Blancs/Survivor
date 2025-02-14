@@ -24,7 +24,22 @@ public class AutoAttackSystem : NetworkBehaviour
         }
     }
 
+    [SerializeField] private NetworkVariable<float> attackDamage = new NetworkVariable<float>(0.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    public float AttackDamage
+    {
+        get => attackDamage.Value;
+        set
+        {
+            if (attackDamage.Value != value)
+            {
+                attackDamage.Value = value;
+            }
+        }
+    }
+
     [SerializeField] public UnityEvent onAttackSpeedChange;
+
+    [SerializeField] public UnityEvent onAttackDamageChange;
 
     private Coroutine attackCoroutine;
 
@@ -33,6 +48,8 @@ public class AutoAttackSystem : NetworkBehaviour
         if (!IsServer) return;
 
         AttackSpeed = statsLevelSystem.BaseStatistiques.AttackSpeed;
+
+        AttackDamage = statsLevelSystem.BaseStatistiques.Damage;
 
         if (Application.isPlaying )
         {
@@ -51,6 +68,7 @@ public class AutoAttackSystem : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         attackSpeed.OnValueChanged += OnAttackSpeedChange;
+        attackDamage.OnValueChanged += OnAttackDamageChange;
 
         UpdateAttackStats();
     }
@@ -60,11 +78,17 @@ public class AutoAttackSystem : NetworkBehaviour
         base.OnDestroy();
 
         attackSpeed.OnValueChanged -= OnAttackSpeedChange;
+        attackDamage.OnValueChanged -= OnAttackDamageChange;
     }
 
     private void OnAttackSpeedChange(float oldValue, float newValue)
     {
         onAttackSpeedChange.Invoke();
+    }
+
+    private void OnAttackDamageChange(float oldValue, float newValue)
+    {
+        onAttackDamageChange.Invoke();
     }
 
     private void OnDisable()
@@ -113,5 +137,6 @@ public class AutoAttackSystem : NetworkBehaviour
         GameObject go = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation);
         go.GetComponent<NetworkObject>().Spawn();
         go.transform.SetParent(LevelStateManager.Instance.ProjectileParent);
+        go.GetComponent<DamageDealerSystem>().damage = AttackDamage * LevelStateManager.Instance.PlayerDamageMultiplier;
     }
 }

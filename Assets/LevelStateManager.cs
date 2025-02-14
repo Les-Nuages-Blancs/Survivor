@@ -15,6 +15,8 @@ public class LevelStateManager : NetworkBehaviour
     [SerializeField] private Transform projectileParent;
     [SerializeField] private Transform playerParent;
     [SerializeField] private Transform xpParent;
+    [SerializeField] private Transform bonusParent;
+    [SerializeField] private Transform otherParent;
 
     [Header("Debug Tools")]
     [SerializeField] private NetworkVariable<bool> spawnEntity = new NetworkVariable<bool>(true, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
@@ -24,6 +26,8 @@ public class LevelStateManager : NetworkBehaviour
     [SerializeField] private NetworkVariable<float> playerSpeedMultiplier = new NetworkVariable<float>(1.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     [SerializeField] private NetworkVariable<float> playerXpMultiplier = new NetworkVariable<float>(1.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
     [SerializeField] private NetworkVariable<float> playerFireRateMultiplier = new NetworkVariable<float>(1.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    [SerializeField] private NetworkVariable<float> playerDamageMultiplier = new NetworkVariable<float>(1.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    [SerializeField] private NetworkVariable<float> enemySpawnSpeedMultiplier = new NetworkVariable<float>(1.0f, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
 
     public Zone FirstZone => firstZone;
 
@@ -31,6 +35,8 @@ public class LevelStateManager : NetworkBehaviour
     public Transform ProjectileParent => projectileParent != null ? projectileParent : transform;
     public Transform PlayerParent => playerParent != null ? playerParent : transform;
     public Transform XpParent => xpParent != null ? xpParent : transform;
+    public Transform BonusParent => bonusParent != null ? bonusParent : transform;
+    public Transform OtherParent => otherParent != null ? otherParent : transform;
 
     public bool SpawnEntity => spawnEntity.Value;
     public bool EnableAutoAttack => enableAutoAttack.Value;
@@ -38,6 +44,8 @@ public class LevelStateManager : NetworkBehaviour
     public float PlayerSpeedMultiplier => playerSpeedMultiplier.Value;
     public float PlayerXpMultiplier => playerXpMultiplier.Value;
     public float PlayerFireRateMultiplier => playerFireRateMultiplier.Value;
+    public float PlayerDamageMultiplier => playerDamageMultiplier.Value;
+    public float EnemySpawnSpeedMultiplier => enemySpawnSpeedMultiplier.Value;
 
     private void Awake()
     {

@@ -98,6 +98,13 @@ public class StatistiquesLevelSystem : NetworkBehaviour
     }
 
     [ServerRpc(RequireOwnership = false)]
+    public void AddLevelAndResetXpServerRPC(int level)
+    {
+        CurrentLevel += level;
+        CurrentXp = 0;
+    }
+
+    [ServerRpc(RequireOwnership = false)]
     public void SetLevelServerRPC(int level)
     {
         CurrentLevel = level;

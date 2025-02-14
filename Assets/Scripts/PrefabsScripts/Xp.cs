@@ -5,46 +5,18 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class Xp : NetworkBehaviour
+public class Xp : Pickable
 {
     [SerializeField] private int xp = 10;
-    [SerializeField] private GameObject xpPickupEffectPrefab;
 
-    [TagField]
-    [SerializeField] private List<string> pickupByTags = new List<string>();
-
-
-    [SerializeField] public UnityEvent onXpPickup;
-
-    private void OnTriggerEnter(Collider other)
+    protected override void Pickup(GameObject target)
     {
-        if (!IsServer || !NetworkObject.IsSpawned) return;
-
-        OnTriggerEnterForwarder forwarder = other.GetComponent<OnTriggerEnterForwarder>();
-        if (forwarder)
+        StatistiquesLevelSystem statistiquesLevelSystem = target.GetComponent<StatistiquesLevelSystem>();
+        if (statistiquesLevelSystem)
         {
-            GameObject target = forwarder.ForwardedGameObject;
-            if (pickupByTags.Contains(target.tag))
-            {
-                StatistiquesLevelSystem statistiquesLevelSystem = target.GetComponent<StatistiquesLevelSystem>();
-                if (statistiquesLevelSystem)
-                {
-                    statistiquesLevelSystem.AddXpServerRPC((int)(xp * LevelStateManager.Instance.PlayerXpMultiplier));
-                }
-                SpawnParticleServerRPC();
-                onXpPickup.Invoke();
-            }
+            statistiquesLevelSystem.AddXpServerRPC((int)(xp * LevelStateManager.Instance.PlayerXpMultiplier));
         }
-    }
 
-    [ServerRpc]
-    private void SpawnParticleServerRPC()
-    {
-        if (xpPickupEffectPrefab)
-        {
-            GameObject go = Instantiate(xpPickupEffectPrefab, transform.position, transform.rotation);
-            NetworkObject networkObject = go.GetComponent<NetworkObject>();
-            networkObject.Spawn();
-        }
+        base.Pickup(target);
     }
 }

@@ -16,31 +16,31 @@ MonoBehaviour:
   - baseSpawnZoneLevelDatas:
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 100
-      spawnCooldown: 2
+      probability: 50
+      spawnCooldown: 4
       spawnAtLevel: 0
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 100
-      spawnCooldown: 1.75
+      probability: 60
+      spawnCooldown: 3.5
       spawnAtLevel: 1
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 100
-      spawnCooldown: 1.5
+      probability: 70
+      spawnCooldown: 3
       spawnAtLevel: 2
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 100
-      spawnCooldown: 1.25
+      probability: 80
+      spawnCooldown: 2.5
       spawnAtLevel: 3
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
-      probability: 100
-      spawnCooldown: 1
+      probability: 90
+      spawnCooldown: 2
       spawnAtLevel: 4
     - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
         type: 3}
       probability: 100
-      spawnCooldown: 0.75
+      spawnCooldown: 1.5
       spawnAtLevel: 5

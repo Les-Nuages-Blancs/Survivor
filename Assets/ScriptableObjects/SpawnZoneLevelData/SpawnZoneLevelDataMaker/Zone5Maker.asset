@@ -17,13 +17,13 @@ MonoBehaviour:
   - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
       type: 3}
     probability: 100
-    spawnCooldown: 1
-    spawnAtLevel: 0
+    spawnCooldown: 1.5
+    spawnAtLevel: 30
   - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
       type: 3}
-    probability: 50
-    spawnCooldown: 3
-    spawnAtLevel: 10
+    probability: 100
+    spawnCooldown: 1
+    spawnAtLevel: 50
   levelRangeUpgrader:
   - levelRangeUpgraders:
     - numberOfLevel: 5
@@ -35,7 +35,7 @@ MonoBehaviour:
             prefab: {fileID: 0}
             probability: 0
             spawnCooldown: -0.15
-            spawnAtLevel: 1
+            spawnAtLevel: 5
   - levelRangeUpgraders:
     - numberOfLevel: 5
       levelUpgrader:
@@ -46,6 +46,6 @@ MonoBehaviour:
             prefab: {fileID: 0}
             probability: 0
             spawnCooldown: 0
-            spawnAtLevel: 1
+            spawnAtLevel: 2
   generatedSpawnZoneLevelDatas: {fileID: 11400000, guid: 2f1f30f554698ac4a84db06eec9a529c,
     type: 2}
