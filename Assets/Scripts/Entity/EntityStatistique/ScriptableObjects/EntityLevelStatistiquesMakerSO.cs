@@ -71,6 +71,10 @@ public class EntityLevelStatistiquesMakerSO : ScriptableObject
                     generatedEntityLevelStats.levelStatistiques.Add(currentStats);
                 }
             }
+
+            // Mark the ScriptableObject as dirty so Unity knows it has changed
+            EditorUtility.SetDirty(generatedEntityLevelStats);
+            AssetDatabase.SaveAssets();  // Ensure it's saved to disk
         }
     }
 

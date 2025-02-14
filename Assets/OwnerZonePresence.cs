@@ -23,7 +23,7 @@ public class OwnerZonePresence : NetworkBehaviour
         }
     }
 
-    [SerializeField] public UnityEvent onPresenceChange;
+    [SerializeField] public UnityEvent<bool> onPresenceChange;
 
 
     public bool OwnerIsInSpawner => ownerIsInZone;
@@ -48,6 +48,6 @@ public class OwnerZonePresence : NetworkBehaviour
     public void UpdateOwnerPresence()
     {
         ownerIsInZone = (zoneHelper.Zone == zone);
-        onPresenceChange.Invoke();
+        onPresenceChange.Invoke(ownerIsInZone);
     }
 }

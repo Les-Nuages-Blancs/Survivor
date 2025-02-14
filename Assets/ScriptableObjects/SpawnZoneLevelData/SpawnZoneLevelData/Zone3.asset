@@ -13,4 +13,65 @@ MonoBehaviour:
   m_Name: Zone3
   m_EditorClassIdentifier: 
   levelDatas:
-  - baseSpawnZoneLevelDatas: []
+  - baseSpawnZoneLevelDatas:
+    - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
+        type: 3}
+      probability: 100
+      spawnCooldown: 1
+      spawnAtLevel: 0
+    - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
+        type: 3}
+      probability: 100
+      spawnCooldown: 0.85
+      spawnAtLevel: 1
+    - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
+        type: 3}
+      probability: 100
+      spawnCooldown: 0.70000005
+      spawnAtLevel: 2
+    - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
+        type: 3}
+      probability: 100
+      spawnCooldown: 0.5500001
+      spawnAtLevel: 3
+    - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
+        type: 3}
+      probability: 100
+      spawnCooldown: 0.40000007
+      spawnAtLevel: 4
+    - prefab: {fileID: 5753121979501682831, guid: 09b6e2abb4838d14e9fa11e3184d2a0b,
+        type: 3}
+      probability: 100
+      spawnCooldown: 0.25000006
+      spawnAtLevel: 5
+  - baseSpawnZoneLevelDatas:
+    - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
+        type: 3}
+      probability: 50
+      spawnCooldown: 3
+      spawnAtLevel: 10
+    - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
+        type: 3}
+      probability: 50
+      spawnCooldown: 3
+      spawnAtLevel: 11
+    - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
+        type: 3}
+      probability: 50
+      spawnCooldown: 3
+      spawnAtLevel: 12
+    - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
+        type: 3}
+      probability: 50
+      spawnCooldown: 3
+      spawnAtLevel: 13
+    - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
+        type: 3}
+      probability: 50
+      spawnCooldown: 3
+      spawnAtLevel: 14
+    - prefab: {fileID: 1173583750492586891, guid: 4485a33162f573240bbee3d088b2825e,
+        type: 3}
+      probability: 50
+      spawnCooldown: 3
+      spawnAtLevel: 15

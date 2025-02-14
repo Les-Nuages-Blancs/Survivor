@@ -20,6 +20,7 @@ GameObject:
   - component: {fileID: 3913522002497407902}
   - component: {fileID: 7584252854140367330}
   - component: {fileID: 2752167026106060208}
+  - component: {fileID: 3716657269123435109}
   m_Layer: 0
   m_Name: Enemy1-polish
   m_TagString: Enemy
@@ -57,7 +58,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1011325193
+  GlobalObjectIdHash: 179796429
   InScenePlacedSourceGlobalObjectIdHash: 3009944485
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -295,7 +296,31 @@ MonoBehaviour:
         m_CallState: 2
   onTakeDamage:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 3716657269123435109}
+        m_TargetAssemblyTypeName: HideHealthBarWhenNoHit, Assembly-CSharp
+        m_MethodName: RestartNoHitCoroutine
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3918716928667676555}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 1
+        m_CallState: 2
 --- !u!114 &1144240461480468893
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +427,34 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statistiqueLevelSystem: {fileID: 4583465241725346298}
+--- !u!114 &3716657269123435109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173583750492586891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 65fd110c9eafc6c449d77cd71335c1fd, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  noHitTime: 5
+  onHide:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 3918716928667676555}
+        m_TargetAssemblyTypeName: UnityEngine.GameObject, UnityEngine
+        m_MethodName: SetActive
+        m_Mode: 6
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &3964795842181045602
 GameObject:
   m_ObjectHideFlags: 0
@@ -802,12 +855,12 @@ PrefabInstance:
     - target: {fileID: 4570531053217680787, guid: 73a3abdd232dd5d4ba642a26b1672b58,
         type: 3}
       propertyPath: m_AnchorMax.x
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4570531053217680787, guid: 73a3abdd232dd5d4ba642a26b1672b58,
         type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4570531053217680787, guid: 73a3abdd232dd5d4ba642a26b1672b58,
         type: 3}
@@ -834,6 +887,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Health Bar Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7236820427699989724, guid: 73a3abdd232dd5d4ba642a26b1672b58,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 7694997813545725432, guid: 73a3abdd232dd5d4ba642a26b1672b58,
         type: 3}
       propertyPath: m_PresetInfoIsWorld
@@ -850,12 +908,18 @@ MonoBehaviour:
     type: 3}
   m_PrefabInstance: {fileID: 5912185756072461143}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 0}
+  m_GameObject: {fileID: 3918716928667676555}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 203ed569be4e4854bb2db0c02e1ef199, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!1 &3918716928667676555 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7236820427699989724, guid: 73a3abdd232dd5d4ba642a26b1672b58,
+    type: 3}
+  m_PrefabInstance: {fileID: 5912185756072461143}
+  m_PrefabAsset: {fileID: 0}
 --- !u!224 &5792362188187059983 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 175313995628643416, guid: 73a3abdd232dd5d4ba642a26b1672b58,

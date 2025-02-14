@@ -9,10 +9,10 @@ public class OwnerIsInZoneSpawnCondition : SpawnCondition
     private void Start()
     {
         ownerZonePresence.onPresenceChange.AddListener(UpdateCondtion);
-        UpdateCondtion();
+        UpdateCondtion(true);
     }
 
-    private void UpdateCondtion()
+    private void UpdateCondtion(bool newPresence)
     {
         isOk = ownerZonePresence.OwnerIsInSpawner;
     }

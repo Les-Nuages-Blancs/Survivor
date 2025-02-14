@@ -29,7 +29,7 @@ public class Xp : NetworkBehaviour
                 StatistiquesLevelSystem statistiquesLevelSystem = target.GetComponent<StatistiquesLevelSystem>();
                 if (statistiquesLevelSystem)
                 {
-                    statistiquesLevelSystem.AddXpServerRPC(xp);
+                    statistiquesLevelSystem.AddXpServerRPC((int)(xp * LevelStateManager.Instance.PlayerXpMultiplier));
                 }
                 SpawnParticleServerRPC();
                 onXpPickup.Invoke();

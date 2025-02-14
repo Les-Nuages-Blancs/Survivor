@@ -60,7 +60,7 @@ public class SimpleMovementSystem : NetworkBehaviour
 
         if (!targetPosition.HasValue || Vector3.Distance(transform.position, targetPosition.Value) <= 0.1f) return;
         var currentPosition = transform.position;
-        transform.position = Vector3.MoveTowards(currentPosition, targetPosition.Value, MoveSpeed * Time.fixedDeltaTime);
+        transform.position = Vector3.MoveTowards(currentPosition, targetPosition.Value, MoveSpeed * LevelStateManager.Instance.PlayerSpeedMultiplier * Time.fixedDeltaTime);
     }
 
     private void FixedUpdate()

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1746180208
+  GlobalObjectIdHash: 467924382
   InScenePlacedSourceGlobalObjectIdHash: 1641838367
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -82,19 +82,7 @@ MonoBehaviour:
       m_Calls: []
   onLevelMaxReached:
     m_PersistentCalls:
-      m_Calls:
-      - m_Target: {fileID: 38978658717461918}
-        m_TargetAssemblyTypeName: PlayerSpawnerZoneTimeLevelUpgrader, Assembly-CSharp
-        m_MethodName: StopUpgrade
-        m_Mode: 1
-        m_Arguments:
-          m_ObjectArgument: {fileID: 0}
-          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 0
-          m_FloatArgument: 0
-          m_StringArgument: 
-          m_BoolArgument: 0
-        m_CallState: 2
+      m_Calls: []
 --- !u!114 &38978658717461918
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -107,7 +95,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d029935c2e164a44eaa5aabb442dab1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  surviveTime: 30
+  surviveTime: 45
   onUpgrade:
     m_PersistentCalls:
       m_Calls:
@@ -139,7 +127,19 @@ MonoBehaviour:
   zoneHelper: {fileID: 0}
   onPresenceChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 38978658717461918}
+        m_TargetAssemblyTypeName: PlayerSpawnerZoneTimeLevelUpgrader, Assembly-CSharp
+        m_MethodName: ResumeBasedOnPresence
+        m_Mode: 0
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &309844371394526581
 MonoBehaviour:
   m_ObjectHideFlags: 0

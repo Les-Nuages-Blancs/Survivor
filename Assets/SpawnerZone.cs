@@ -13,6 +13,7 @@ public class SpawnerZone : NetworkBehaviour
     [SerializeField] private SpawnZoneLevelDataSO spawnerZoneLevelData;
     [SerializeField] private List<BaseSpawnZoneLevelData> baseSpawnZoneLevelDatas = new List<BaseSpawnZoneLevelData>();
     private List<GameObject> spawnedSpawner = new List<GameObject>();
+    private bool levelMaxIsReached = false;
 
     [SerializeField] private NetworkVariable<int> playerZoneLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
@@ -45,6 +46,8 @@ public class SpawnerZone : NetworkBehaviour
 
     public void LevelUp()
     {
+        if (levelMaxIsReached) return;
+
         int maxLevel = spawnerZoneLevelData.levelDatas[0].baseSpawnZoneLevelDatas.Count - 1;
 
         playerZoneLevel.Value += 1;
@@ -60,6 +63,8 @@ public class SpawnerZone : NetworkBehaviour
 
         if (levelMaxReached) 
         {
+            levelMaxIsReached = true;
+
             onLevelMaxReached.Invoke();
         }
     }
@@ -74,6 +79,7 @@ public class SpawnerZone : NetworkBehaviour
     private void OnPlayerZoneLevelChange(int oldValue, int newValue)
     {
         onPlayerZoneLevelChange.Invoke();
+        Debug.Log("level up ! " + gameObject.name);
     }
 
     public void UpdateSpawnerZone()

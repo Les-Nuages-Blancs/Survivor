@@ -22,7 +22,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.2
     criticalChance: 0.05
     pickupRange: 5
-    moveSpeedMultiplier: 2
+    moveSpeedMultiplier: 10
+    killPoint: 1
   - requiredXpForNextLevel: 150
     health: 330
     regenHealth: 1.2
@@ -32,7 +33,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.25
     criticalChance: 0.060000002
     pickupRange: 5.2
-    moveSpeedMultiplier: 2.2
+    moveSpeedMultiplier: 10.1
+    killPoint: 1.1
   - requiredXpForNextLevel: 200
     health: 350
     regenHealth: 1.4000001
@@ -42,7 +44,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.3
     criticalChance: 0.07
     pickupRange: 5.3999996
-    moveSpeedMultiplier: 2.4
+    moveSpeedMultiplier: 10.200001
+    killPoint: 1.2
   - requiredXpForNextLevel: 250
     health: 370
     regenHealth: 1.6000001
@@ -52,7 +55,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.35000002
     criticalChance: 0.08
     pickupRange: 5.5999994
-    moveSpeedMultiplier: 2.6000001
+    moveSpeedMultiplier: 10.300001
+    killPoint: 1.3000001
   - requiredXpForNextLevel: 300
     health: 390
     regenHealth: 1.8000002
@@ -62,7 +66,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.40000004
     criticalChance: 0.089999996
     pickupRange: 5.799999
-    moveSpeedMultiplier: 2.8000002
+    moveSpeedMultiplier: 10.400002
+    killPoint: 1.4000001
   - requiredXpForNextLevel: 350
     health: 410
     regenHealth: 2.0000002
@@ -72,7 +77,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.45000005
     criticalChance: 0.099999994
     pickupRange: 5.999999
-    moveSpeedMultiplier: 3.0000002
+    moveSpeedMultiplier: 10.500002
+    killPoint: 1.5000001
   - requiredXpForNextLevel: 400
     health: 430
     regenHealth: 2.2000003
@@ -82,7 +88,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.50000006
     criticalChance: 0.10999999
     pickupRange: 6.199999
-    moveSpeedMultiplier: 3.2000003
+    moveSpeedMultiplier: 10.600002
+    killPoint: 1.6000001
   - requiredXpForNextLevel: 450
     health: 450
     regenHealth: 2.4000003
@@ -92,7 +99,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.5500001
     criticalChance: 0.11999999
     pickupRange: 6.3999987
-    moveSpeedMultiplier: 3.4000003
+    moveSpeedMultiplier: 10.700003
+    killPoint: 1.7000002
   - requiredXpForNextLevel: 500
     health: 470
     regenHealth: 2.6000004
@@ -102,7 +110,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.6000001
     criticalChance: 0.13
     pickupRange: 6.5999985
-    moveSpeedMultiplier: 3.6000004
+    moveSpeedMultiplier: 10.800003
+    killPoint: 1.8000002
   - requiredXpForNextLevel: 550
     health: 490
     regenHealth: 2.8000004
@@ -112,7 +121,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.6500001
     criticalChance: 0.14
     pickupRange: 6.7999983
-    moveSpeedMultiplier: 3.8000004
+    moveSpeedMultiplier: 10.900003
+    killPoint: 1.9000002
   - requiredXpForNextLevel: 600
     health: 510
     regenHealth: 3.0000005
@@ -122,7 +132,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.7000001
     criticalChance: 0.15
     pickupRange: 6.999998
-    moveSpeedMultiplier: 4.0000005
+    moveSpeedMultiplier: 11.000004
+    killPoint: 2.0000002
   - requiredXpForNextLevel: 650
     health: 530
     regenHealth: 3.2000005
@@ -132,7 +143,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.7500001
     criticalChance: 0.16000001
     pickupRange: 7.199998
-    moveSpeedMultiplier: 4.2000003
+    moveSpeedMultiplier: 11.100004
+    killPoint: 2.1000001
   - requiredXpForNextLevel: 700
     health: 550
     regenHealth: 3.4000006
@@ -142,7 +154,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.80000013
     criticalChance: 0.17000002
     pickupRange: 7.3999977
-    moveSpeedMultiplier: 4.4
+    moveSpeedMultiplier: 11.200005
+    killPoint: 2.2
   - requiredXpForNextLevel: 750
     health: 570
     regenHealth: 3.6000006
@@ -152,7 +165,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.85000014
     criticalChance: 0.18000002
     pickupRange: 7.5999975
-    moveSpeedMultiplier: 4.6
+    moveSpeedMultiplier: 11.300005
+    killPoint: 2.3
   - requiredXpForNextLevel: 800
     health: 590
     regenHealth: 3.8000007
@@ -162,7 +176,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.90000015
     criticalChance: 0.19000003
     pickupRange: 7.7999973
-    moveSpeedMultiplier: 4.7999997
+    moveSpeedMultiplier: 11.400005
+    killPoint: 2.3999999
   - requiredXpForNextLevel: 850
     health: 610
     regenHealth: 4.0000005
@@ -172,7 +187,8 @@ MonoBehaviour:
     critDamageMultiplier: 0.95000017
     criticalChance: 0.20000003
     pickupRange: 7.999997
-    moveSpeedMultiplier: 4.9999995
+    moveSpeedMultiplier: 11.500006
+    killPoint: 2.4999998
   - requiredXpForNextLevel: 900
     health: 630
     regenHealth: 4.2000003
@@ -182,7 +198,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.0000001
     criticalChance: 0.21000004
     pickupRange: 8.199997
-    moveSpeedMultiplier: 5.1999993
+    moveSpeedMultiplier: 11.600006
+    killPoint: 2.5999997
   - requiredXpForNextLevel: 950
     health: 650
     regenHealth: 4.4
@@ -192,7 +209,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.0500001
     criticalChance: 0.22000004
     pickupRange: 8.399997
-    moveSpeedMultiplier: 5.399999
+    moveSpeedMultiplier: 11.7000065
+    killPoint: 2.6999996
   - requiredXpForNextLevel: 1000
     health: 670
     regenHealth: 4.6
@@ -202,7 +220,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.1
     criticalChance: 0.23000005
     pickupRange: 8.599997
-    moveSpeedMultiplier: 5.599999
+    moveSpeedMultiplier: 11.800007
+    killPoint: 2.7999995
   - requiredXpForNextLevel: 1050
     health: 690
     regenHealth: 4.7999997
@@ -212,7 +231,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.15
     criticalChance: 0.24000005
     pickupRange: 8.799996
-    moveSpeedMultiplier: 5.7999988
+    moveSpeedMultiplier: 11.900007
+    killPoint: 2.8999994
   - requiredXpForNextLevel: 1100
     health: 710
     regenHealth: 4.9999995
@@ -222,7 +242,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.1999999
     criticalChance: 0.25000006
     pickupRange: 8.999996
-    moveSpeedMultiplier: 5.9999986
+    moveSpeedMultiplier: 12.000008
+    killPoint: 2.9999993
   - requiredXpForNextLevel: 1150
     health: 730
     regenHealth: 5.1999993
@@ -232,7 +253,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.2499999
     criticalChance: 0.26000005
     pickupRange: 9.199996
-    moveSpeedMultiplier: 6.1999984
+    moveSpeedMultiplier: 12.100008
+    killPoint: 3.0999992
   - requiredXpForNextLevel: 1200
     health: 750
     regenHealth: 5.399999
@@ -242,7 +264,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.2999998
     criticalChance: 0.27000004
     pickupRange: 9.399996
-    moveSpeedMultiplier: 6.399998
+    moveSpeedMultiplier: 12.200008
+    killPoint: 3.199999
   - requiredXpForNextLevel: 1250
     health: 770
     regenHealth: 5.599999
@@ -252,7 +275,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.3499998
     criticalChance: 0.28000003
     pickupRange: 9.599996
-    moveSpeedMultiplier: 6.599998
+    moveSpeedMultiplier: 12.300009
+    killPoint: 3.299999
   - requiredXpForNextLevel: 1300
     health: 790
     regenHealth: 5.7999988
@@ -262,7 +286,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.3999997
     criticalChance: 0.29000002
     pickupRange: 9.799995
-    moveSpeedMultiplier: 6.799998
+    moveSpeedMultiplier: 12.400009
+    killPoint: 3.399999
   - requiredXpForNextLevel: 1350
     health: 810
     regenHealth: 5.9999986
@@ -272,7 +297,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.4499997
     criticalChance: 0.3
     pickupRange: 9.999995
-    moveSpeedMultiplier: 6.9999976
+    moveSpeedMultiplier: 12.50001
+    killPoint: 3.4999988
   - requiredXpForNextLevel: 1400
     health: 830
     regenHealth: 6.1999984
@@ -282,7 +308,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.4999996
     criticalChance: 0.31
     pickupRange: 10.199995
-    moveSpeedMultiplier: 7.1999974
+    moveSpeedMultiplier: 12.60001
+    killPoint: 3.5999987
   - requiredXpForNextLevel: 1450
     health: 850
     regenHealth: 6.399998
@@ -292,7 +319,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.5499996
     criticalChance: 0.32
     pickupRange: 10.399995
-    moveSpeedMultiplier: 7.399997
+    moveSpeedMultiplier: 12.70001
+    killPoint: 3.6999986
   - requiredXpForNextLevel: 1500
     health: 870
     regenHealth: 6.599998
@@ -302,7 +330,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.5999995
     criticalChance: 0.32999998
     pickupRange: 10.599995
-    moveSpeedMultiplier: 7.599997
+    moveSpeedMultiplier: 12.800011
+    killPoint: 3.7999985
   - requiredXpForNextLevel: 1550
     health: 890
     regenHealth: 6.799998
@@ -312,7 +341,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.6499995
     criticalChance: 0.33999997
     pickupRange: 10.799994
-    moveSpeedMultiplier: 7.799997
+    moveSpeedMultiplier: 12.900011
+    killPoint: 3.8999984
   - requiredXpForNextLevel: 1600
     health: 910
     regenHealth: 6.9999976
@@ -322,7 +352,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.6999995
     criticalChance: 0.34999996
     pickupRange: 10.999994
-    moveSpeedMultiplier: 7.9999967
+    moveSpeedMultiplier: 13.000011
+    killPoint: 3.9999983
   - requiredXpForNextLevel: 1650
     health: 930
     regenHealth: 7.1999974
@@ -332,7 +363,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.7499994
     criticalChance: 0.35999995
     pickupRange: 11.199994
-    moveSpeedMultiplier: 8.199997
+    moveSpeedMultiplier: 13.100012
+    killPoint: 4.0999985
   - requiredXpForNextLevel: 1700
     health: 950
     regenHealth: 7.399997
@@ -342,7 +374,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.7999994
     criticalChance: 0.36999995
     pickupRange: 11.399994
-    moveSpeedMultiplier: 8.399997
+    moveSpeedMultiplier: 13.200012
+    killPoint: 4.1999984
   - requiredXpForNextLevel: 1750
     health: 970
     regenHealth: 7.599997
@@ -352,7 +385,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.8499993
     criticalChance: 0.37999994
     pickupRange: 11.599994
-    moveSpeedMultiplier: 8.599997
+    moveSpeedMultiplier: 13.300013
+    killPoint: 4.2999983
   - requiredXpForNextLevel: 1800
     health: 990
     regenHealth: 7.799997
@@ -362,7 +396,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.8999993
     criticalChance: 0.38999993
     pickupRange: 11.7999935
-    moveSpeedMultiplier: 8.799996
+    moveSpeedMultiplier: 13.400013
+    killPoint: 4.399998
   - requiredXpForNextLevel: 1850
     health: 1010
     regenHealth: 7.9999967
@@ -372,7 +407,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.9499992
     criticalChance: 0.39999992
     pickupRange: 11.999993
-    moveSpeedMultiplier: 8.999996
+    moveSpeedMultiplier: 13.500013
+    killPoint: 4.499998
   - requiredXpForNextLevel: 1900
     health: 1030
     regenHealth: 8.199997
@@ -382,7 +418,8 @@ MonoBehaviour:
     critDamageMultiplier: 1.9999992
     criticalChance: 0.4099999
     pickupRange: 12.199993
-    moveSpeedMultiplier: 9.199996
+    moveSpeedMultiplier: 13.600014
+    killPoint: 4.599998
   - requiredXpForNextLevel: 1950
     health: 1050
     regenHealth: 8.399997
@@ -392,7 +429,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.0499992
     criticalChance: 0.4199999
     pickupRange: 12.399993
-    moveSpeedMultiplier: 9.399996
+    moveSpeedMultiplier: 13.700014
+    killPoint: 4.699998
   - requiredXpForNextLevel: 2000
     health: 1070
     regenHealth: 8.599997
@@ -402,7 +440,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.0999992
     criticalChance: 0.4299999
     pickupRange: 12.599993
-    moveSpeedMultiplier: 9.599996
+    moveSpeedMultiplier: 13.8000145
+    killPoint: 4.799998
   - requiredXpForNextLevel: 2050
     health: 1090
     regenHealth: 8.799996
@@ -412,7 +451,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.1499991
     criticalChance: 0.43999988
     pickupRange: 12.799993
-    moveSpeedMultiplier: 9.799995
+    moveSpeedMultiplier: 13.900015
+    killPoint: 4.8999977
   - requiredXpForNextLevel: 2100
     health: 1110
     regenHealth: 8.999996
@@ -422,7 +462,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.199999
     criticalChance: 0.44999987
     pickupRange: 12.999992
-    moveSpeedMultiplier: 9.999995
+    moveSpeedMultiplier: 14.000015
+    killPoint: 4.9999976
   - requiredXpForNextLevel: 2150
     health: 1130
     regenHealth: 9.199996
@@ -432,7 +473,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.249999
     criticalChance: 0.45999986
     pickupRange: 13.199992
-    moveSpeedMultiplier: 10.199995
+    moveSpeedMultiplier: 14.100016
+    killPoint: 5.0999975
   - requiredXpForNextLevel: 2200
     health: 1150
     regenHealth: 9.399996
@@ -442,7 +484,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.299999
     criticalChance: 0.46999985
     pickupRange: 13.399992
-    moveSpeedMultiplier: 10.399995
+    moveSpeedMultiplier: 14.200016
+    killPoint: 5.1999974
   - requiredXpForNextLevel: 2250
     health: 1170
     regenHealth: 9.599996
@@ -452,7 +495,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.349999
     criticalChance: 0.47999984
     pickupRange: 13.599992
-    moveSpeedMultiplier: 10.599995
+    moveSpeedMultiplier: 14.300016
+    killPoint: 5.2999973
   - requiredXpForNextLevel: 2300
     health: 1190
     regenHealth: 9.799995
@@ -462,7 +506,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.399999
     criticalChance: 0.48999983
     pickupRange: 13.799992
-    moveSpeedMultiplier: 10.799994
+    moveSpeedMultiplier: 14.400017
+    killPoint: 5.399997
   - requiredXpForNextLevel: 2350
     health: 1210
     regenHealth: 9.999995
@@ -472,7 +517,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.4499989
     criticalChance: 0.49999982
     pickupRange: 13.999991
-    moveSpeedMultiplier: 10.999994
+    moveSpeedMultiplier: 14.500017
+    killPoint: 5.499997
   - requiredXpForNextLevel: 2400
     health: 1230
     regenHealth: 10.199995
@@ -482,7 +528,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.4999988
     criticalChance: 0.5099998
     pickupRange: 14.199991
-    moveSpeedMultiplier: 11.199994
+    moveSpeedMultiplier: 14.600018
+    killPoint: 5.599997
   - requiredXpForNextLevel: 2450
     health: 1250
     regenHealth: 10.399995
@@ -492,7 +539,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.5499988
     criticalChance: 0.5199998
     pickupRange: 14.399991
-    moveSpeedMultiplier: 11.399994
+    moveSpeedMultiplier: 14.700018
+    killPoint: 5.699997
   - requiredXpForNextLevel: 2500
     health: 1270
     regenHealth: 10.599995
@@ -502,7 +550,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.5999987
     criticalChance: 0.5299998
     pickupRange: 14.599991
-    moveSpeedMultiplier: 11.599994
+    moveSpeedMultiplier: 14.800018
+    killPoint: 5.799997
   - requiredXpForNextLevel: 2550
     health: 1290
     regenHealth: 10.799994
@@ -512,7 +561,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.6499987
     criticalChance: 0.5399998
     pickupRange: 14.799991
-    moveSpeedMultiplier: 11.7999935
+    moveSpeedMultiplier: 14.900019
+    killPoint: 5.8999968
   - requiredXpForNextLevel: 2600
     health: 1310
     regenHealth: 10.999994
@@ -522,7 +572,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.6999986
     criticalChance: 0.5499998
     pickupRange: 14.99999
-    moveSpeedMultiplier: 11.999993
+    moveSpeedMultiplier: 15.000019
+    killPoint: 5.9999967
   - requiredXpForNextLevel: 2650
     health: 1330
     regenHealth: 11.199994
@@ -532,7 +583,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.7499986
     criticalChance: 0.55999976
     pickupRange: 15.19999
-    moveSpeedMultiplier: 12.199993
+    moveSpeedMultiplier: 15.100019
+    killPoint: 6.0999966
   - requiredXpForNextLevel: 2700
     health: 1350
     regenHealth: 11.399994
@@ -542,7 +594,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.7999985
     criticalChance: 0.56999975
     pickupRange: 15.39999
-    moveSpeedMultiplier: 12.399993
+    moveSpeedMultiplier: 15.20002
+    killPoint: 6.1999965
   - requiredXpForNextLevel: 2750
     health: 1370
     regenHealth: 11.599994
@@ -552,7 +605,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.8499985
     criticalChance: 0.57999974
     pickupRange: 15.59999
-    moveSpeedMultiplier: 12.599993
+    moveSpeedMultiplier: 15.30002
+    killPoint: 6.2999964
   - requiredXpForNextLevel: 2800
     health: 1390
     regenHealth: 11.7999935
@@ -562,7 +616,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.8999984
     criticalChance: 0.58999974
     pickupRange: 15.79999
-    moveSpeedMultiplier: 12.799993
+    moveSpeedMultiplier: 15.400021
+    killPoint: 6.3999963
   - requiredXpForNextLevel: 2850
     health: 1410
     regenHealth: 11.999993
@@ -572,7 +627,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.9499984
     criticalChance: 0.5999997
     pickupRange: 15.9999895
-    moveSpeedMultiplier: 12.999992
+    moveSpeedMultiplier: 15.500021
+    killPoint: 6.499996
   - requiredXpForNextLevel: 2900
     health: 1430
     regenHealth: 12.199993
@@ -582,7 +638,8 @@ MonoBehaviour:
     critDamageMultiplier: 2.9999983
     criticalChance: 0.6099997
     pickupRange: 16.19999
-    moveSpeedMultiplier: 13.199992
+    moveSpeedMultiplier: 15.600021
+    killPoint: 6.599996
   - requiredXpForNextLevel: 2950
     health: 1450
     regenHealth: 12.399993
@@ -592,7 +649,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.0499983
     criticalChance: 0.6199997
     pickupRange: 16.39999
-    moveSpeedMultiplier: 13.399992
+    moveSpeedMultiplier: 15.700022
+    killPoint: 6.699996
   - requiredXpForNextLevel: 3000
     health: 1470
     regenHealth: 12.599993
@@ -602,7 +660,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.0999982
     criticalChance: 0.6299997
     pickupRange: 16.59999
-    moveSpeedMultiplier: 13.599992
+    moveSpeedMultiplier: 15.800022
+    killPoint: 6.799996
   - requiredXpForNextLevel: 3050
     health: 1490
     regenHealth: 12.799993
@@ -612,7 +671,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.1499982
     criticalChance: 0.6399997
     pickupRange: 16.799992
-    moveSpeedMultiplier: 13.799992
+    moveSpeedMultiplier: 15.9000225
+    killPoint: 6.899996
   - requiredXpForNextLevel: 3100
     health: 1510
     regenHealth: 12.999992
@@ -622,7 +682,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.1999981
     criticalChance: 0.6499997
     pickupRange: 16.999992
-    moveSpeedMultiplier: 13.999991
+    moveSpeedMultiplier: 16.000023
+    killPoint: 6.9999957
   - requiredXpForNextLevel: 3150
     health: 1530
     regenHealth: 13.199992
@@ -632,7 +693,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.249998
     criticalChance: 0.65999967
     pickupRange: 17.199993
-    moveSpeedMultiplier: 14.199991
+    moveSpeedMultiplier: 16.100023
+    killPoint: 7.0999956
   - requiredXpForNextLevel: 3200
     health: 1550
     regenHealth: 13.399992
@@ -642,7 +704,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.299998
     criticalChance: 0.66999966
     pickupRange: 17.399994
-    moveSpeedMultiplier: 14.399991
+    moveSpeedMultiplier: 16.200024
+    killPoint: 7.1999955
   - requiredXpForNextLevel: 3250
     health: 1570
     regenHealth: 13.599992
@@ -652,7 +715,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.349998
     criticalChance: 0.67999965
     pickupRange: 17.599995
-    moveSpeedMultiplier: 14.599991
+    moveSpeedMultiplier: 16.300024
+    killPoint: 7.2999954
   - requiredXpForNextLevel: 3300
     health: 1590
     regenHealth: 13.799992
@@ -662,7 +726,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.399998
     criticalChance: 0.68999964
     pickupRange: 17.799995
-    moveSpeedMultiplier: 14.799991
+    moveSpeedMultiplier: 16.400024
+    killPoint: 7.3999953
   - requiredXpForNextLevel: 3350
     health: 1610
     regenHealth: 13.999991
@@ -672,7 +737,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.449998
     criticalChance: 0.69999963
     pickupRange: 17.999996
-    moveSpeedMultiplier: 14.99999
+    moveSpeedMultiplier: 16.500025
+    killPoint: 7.499995
   - requiredXpForNextLevel: 3400
     health: 1630
     regenHealth: 14.199991
@@ -682,7 +748,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.4999979
     criticalChance: 0.7099996
     pickupRange: 18.199997
-    moveSpeedMultiplier: 15.19999
+    moveSpeedMultiplier: 16.600025
+    killPoint: 7.599995
   - requiredXpForNextLevel: 3450
     health: 1650
     regenHealth: 14.399991
@@ -692,7 +759,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.5499978
     criticalChance: 0.7199996
     pickupRange: 18.399998
-    moveSpeedMultiplier: 15.39999
+    moveSpeedMultiplier: 16.700026
+    killPoint: 7.699995
   - requiredXpForNextLevel: 3500
     health: 1670
     regenHealth: 14.599991
@@ -702,7 +770,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.5999978
     criticalChance: 0.7299996
     pickupRange: 18.599998
-    moveSpeedMultiplier: 15.59999
+    moveSpeedMultiplier: 16.800026
+    killPoint: 7.799995
   - requiredXpForNextLevel: 3550
     health: 1690
     regenHealth: 14.799991
@@ -712,7 +781,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.6499977
     criticalChance: 0.7399996
     pickupRange: 18.8
-    moveSpeedMultiplier: 15.79999
+    moveSpeedMultiplier: 16.900026
+    killPoint: 7.899995
   - requiredXpForNextLevel: 3600
     health: 1710
     regenHealth: 14.99999
@@ -722,7 +792,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.6999977
     criticalChance: 0.7499996
     pickupRange: 19
-    moveSpeedMultiplier: 15.9999895
+    moveSpeedMultiplier: 17.000027
+    killPoint: 7.9999948
   - requiredXpForNextLevel: 3650
     health: 1730
     regenHealth: 15.19999
@@ -732,7 +803,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.7499976
     criticalChance: 0.7599996
     pickupRange: 19.2
-    moveSpeedMultiplier: 16.19999
+    moveSpeedMultiplier: 17.100027
+    killPoint: 8.099995
   - requiredXpForNextLevel: 3700
     health: 1750
     regenHealth: 15.39999
@@ -742,7 +814,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.7999976
     criticalChance: 0.76999956
     pickupRange: 19.400002
-    moveSpeedMultiplier: 16.39999
+    moveSpeedMultiplier: 17.200027
+    killPoint: 8.199995
   - requiredXpForNextLevel: 3750
     health: 1770
     regenHealth: 15.59999
@@ -752,7 +825,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.8499975
     criticalChance: 0.77999955
     pickupRange: 19.600002
-    moveSpeedMultiplier: 16.59999
+    moveSpeedMultiplier: 17.300028
+    killPoint: 8.299995
   - requiredXpForNextLevel: 3800
     health: 1790
     regenHealth: 15.79999
@@ -762,7 +836,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.8999975
     criticalChance: 0.78999954
     pickupRange: 19.800003
-    moveSpeedMultiplier: 16.799992
+    moveSpeedMultiplier: 17.400028
+    killPoint: 8.399996
   - requiredXpForNextLevel: 3850
     health: 1810
     regenHealth: 15.9999895
@@ -772,7 +847,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.9499974
     criticalChance: 0.79999954
     pickupRange: 20.000004
-    moveSpeedMultiplier: 16.999992
+    moveSpeedMultiplier: 17.500029
+    killPoint: 8.499996
   - requiredXpForNextLevel: 3900
     health: 1830
     regenHealth: 16.19999
@@ -782,7 +858,8 @@ MonoBehaviour:
     critDamageMultiplier: 3.9999974
     criticalChance: 0.8099995
     pickupRange: 20.200005
-    moveSpeedMultiplier: 17.199993
+    moveSpeedMultiplier: 17.600029
+    killPoint: 8.599997
   - requiredXpForNextLevel: 3950
     health: 1850
     regenHealth: 16.39999
@@ -792,7 +869,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.0499973
     criticalChance: 0.8199995
     pickupRange: 20.400005
-    moveSpeedMultiplier: 17.399994
+    moveSpeedMultiplier: 17.70003
+    killPoint: 8.699997
   - requiredXpForNextLevel: 4000
     health: 1870
     regenHealth: 16.59999
@@ -802,7 +880,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.0999975
     criticalChance: 0.8299995
     pickupRange: 20.600006
-    moveSpeedMultiplier: 17.599995
+    moveSpeedMultiplier: 17.80003
+    killPoint: 8.799997
   - requiredXpForNextLevel: 4050
     health: 1890
     regenHealth: 16.799992
@@ -812,7 +891,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.1499977
     criticalChance: 0.8399995
     pickupRange: 20.800007
-    moveSpeedMultiplier: 17.799995
+    moveSpeedMultiplier: 17.90003
+    killPoint: 8.899998
   - requiredXpForNextLevel: 4100
     health: 1910
     regenHealth: 16.999992
@@ -822,7 +902,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.199998
     criticalChance: 0.8499995
     pickupRange: 21.000008
-    moveSpeedMultiplier: 17.999996
+    moveSpeedMultiplier: 18.00003
+    killPoint: 8.999998
   - requiredXpForNextLevel: 4150
     health: 1930
     regenHealth: 17.199993
@@ -832,7 +913,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.249998
     criticalChance: 0.8599995
     pickupRange: 21.200008
-    moveSpeedMultiplier: 18.199997
+    moveSpeedMultiplier: 18.10003
+    killPoint: 9.099998
   - requiredXpForNextLevel: 4200
     health: 1950
     regenHealth: 17.399994
@@ -842,7 +924,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.2999983
     criticalChance: 0.86999947
     pickupRange: 21.40001
-    moveSpeedMultiplier: 18.399998
+    moveSpeedMultiplier: 18.200031
+    killPoint: 9.199999
   - requiredXpForNextLevel: 4250
     health: 1970
     regenHealth: 17.599995
@@ -852,7 +935,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.3499985
     criticalChance: 0.87999946
     pickupRange: 21.60001
-    moveSpeedMultiplier: 18.599998
+    moveSpeedMultiplier: 18.300032
+    killPoint: 9.299999
   - requiredXpForNextLevel: 4300
     health: 1990
     regenHealth: 17.799995
@@ -862,7 +946,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.3999987
     criticalChance: 0.88999945
     pickupRange: 21.80001
-    moveSpeedMultiplier: 18.8
+    moveSpeedMultiplier: 18.400032
+    killPoint: 9.4
   - requiredXpForNextLevel: 4350
     health: 2010
     regenHealth: 17.999996
@@ -872,7 +957,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.449999
     criticalChance: 0.89999944
     pickupRange: 22.000011
-    moveSpeedMultiplier: 19
+    moveSpeedMultiplier: 18.500032
+    killPoint: 9.5
   - requiredXpForNextLevel: 4400
     health: 2030
     regenHealth: 18.199997
@@ -882,7 +968,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.499999
     criticalChance: 0.90999943
     pickupRange: 22.200012
-    moveSpeedMultiplier: 19.2
+    moveSpeedMultiplier: 18.600033
+    killPoint: 9.6
   - requiredXpForNextLevel: 4450
     health: 2050
     regenHealth: 18.399998
@@ -892,7 +979,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.549999
     criticalChance: 0.9199994
     pickupRange: 22.400013
-    moveSpeedMultiplier: 19.400002
+    moveSpeedMultiplier: 18.700033
+    killPoint: 9.700001
   - requiredXpForNextLevel: 4500
     health: 2070
     regenHealth: 18.599998
@@ -902,7 +990,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.5999994
     criticalChance: 0.9299994
     pickupRange: 22.600014
-    moveSpeedMultiplier: 19.600002
+    moveSpeedMultiplier: 18.800034
+    killPoint: 9.800001
   - requiredXpForNextLevel: 4550
     health: 2090
     regenHealth: 18.8
@@ -912,7 +1001,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.6499996
     criticalChance: 0.9399994
     pickupRange: 22.800014
-    moveSpeedMultiplier: 19.800003
+    moveSpeedMultiplier: 18.900034
+    killPoint: 9.900002
   - requiredXpForNextLevel: 4600
     health: 2110
     regenHealth: 19
@@ -922,7 +1012,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.7
     criticalChance: 0.9499994
     pickupRange: 23.000015
-    moveSpeedMultiplier: 20.000004
+    moveSpeedMultiplier: 19.000034
+    killPoint: 10.000002
   - requiredXpForNextLevel: 4650
     health: 2130
     regenHealth: 19.2
@@ -932,7 +1023,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.75
     criticalChance: 0.9599994
     pickupRange: 23.200016
-    moveSpeedMultiplier: 20.200005
+    moveSpeedMultiplier: 19.100035
+    killPoint: 10.100002
   - requiredXpForNextLevel: 4700
     health: 2150
     regenHealth: 19.400002
@@ -942,7 +1034,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.8
     criticalChance: 0.9699994
     pickupRange: 23.400017
-    moveSpeedMultiplier: 20.400005
+    moveSpeedMultiplier: 19.200035
+    killPoint: 10.200003
   - requiredXpForNextLevel: 4750
     health: 2170
     regenHealth: 19.600002
@@ -952,7 +1045,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.8500004
     criticalChance: 0.97999936
     pickupRange: 23.600018
-    moveSpeedMultiplier: 20.600006
+    moveSpeedMultiplier: 19.300035
+    killPoint: 10.300003
   - requiredXpForNextLevel: 4800
     health: 2190
     regenHealth: 19.800003
@@ -962,7 +1056,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.9000006
     criticalChance: 0.98999935
     pickupRange: 23.800018
-    moveSpeedMultiplier: 20.800007
+    moveSpeedMultiplier: 19.400036
+    killPoint: 10.400003
   - requiredXpForNextLevel: 4850
     health: 2210
     regenHealth: 20.000004
@@ -972,7 +1067,8 @@ MonoBehaviour:
     critDamageMultiplier: 4.950001
     criticalChance: 0.99999934
     pickupRange: 24.00002
-    moveSpeedMultiplier: 21.000008
+    moveSpeedMultiplier: 19.500036
+    killPoint: 10.500004
   - requiredXpForNextLevel: 4900
     health: 2230
     regenHealth: 20.200005
@@ -982,7 +1078,8 @@ MonoBehaviour:
     critDamageMultiplier: 5.000001
     criticalChance: 1.0099994
     pickupRange: 24.20002
-    moveSpeedMultiplier: 21.200008
+    moveSpeedMultiplier: 19.600037
+    killPoint: 10.600004
   - requiredXpForNextLevel: 4950
     health: 2250
     regenHealth: 20.400005
@@ -992,7 +1089,8 @@ MonoBehaviour:
     critDamageMultiplier: 5.050001
     criticalChance: 1.0199994
     pickupRange: 24.40002
-    moveSpeedMultiplier: 21.40001
+    moveSpeedMultiplier: 19.700037
+    killPoint: 10.700005
   - requiredXpForNextLevel: 5000
     health: 2270
     regenHealth: 20.600006
@@ -1002,7 +1100,8 @@ MonoBehaviour:
     critDamageMultiplier: 5.1000013
     criticalChance: 1.0299994
     pickupRange: 24.600021
-    moveSpeedMultiplier: 21.60001
+    moveSpeedMultiplier: 19.800037
+    killPoint: 10.800005
   - requiredXpForNextLevel: 5050
     health: 2290
     regenHealth: 20.800007
@@ -1012,7 +1111,8 @@ MonoBehaviour:
     critDamageMultiplier: 5.1500015
     criticalChance: 1.0399994
     pickupRange: 24.800022
-    moveSpeedMultiplier: 21.80001
+    moveSpeedMultiplier: 19.900038
+    killPoint: 10.900005
   - requiredXpForNextLevel: 5100
     health: 2310
     regenHealth: 21.000008
@@ -1022,4 +1122,5 @@ MonoBehaviour:
     critDamageMultiplier: 5.2000017
     criticalChance: 1.0499994
     pickupRange: 25.000023
-    moveSpeedMultiplier: 22.000011
+    moveSpeedMultiplier: 20.000038
+    killPoint: 11.000006

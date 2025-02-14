@@ -3,7 +3,27 @@ guid: cdbd74cee9a1f234383bd408156184f4
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Metal_win
+    second: {fileID: 2100000, guid: 8567aa99ae5931240adcf9a9a06911f1, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: ambientCG_Facade001_2K-JPG
+    second: {fileID: 2100000, guid: 607ed700369c76242806d9ae6ffbfec2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: win
+    second: {fileID: 2100000, guid: 607ed700369c76242806d9ae6ffbfec2, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: win.test
+    second: {fileID: 2100000, guid: 8567aa99ae5931240adcf9a9a06911f1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

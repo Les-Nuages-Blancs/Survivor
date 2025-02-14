@@ -11,7 +11,14 @@ public class EntityLevelStatistiquesSO : ScriptableObject
 
     public EntityBaseStatistiques GetStatsOfLevel(int levelIndex)
     {
-        return levelStatistiques[levelIndex].Clone();
+        if (levelStatistiques.Count > levelIndex)
+        {
+            return levelStatistiques[levelIndex].Clone();
+        }
+        else
+        {
+            return levelStatistiques[levelStatistiques.Count - 1];
+        }
     }
 
     public int GetXpRequiredFromLevelToLevel(int startLevel, int endLevel)

@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 3531678559
+  GlobalObjectIdHash: 1288926588
   InScenePlacedSourceGlobalObjectIdHash: 1641838367
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -138,7 +138,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 2879a164905cad14e8017f5169a623a6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  killNumberRequired: 10
+  killNumberRequired: 30
   onUpgrade:
     m_PersistentCalls:
       m_Calls:

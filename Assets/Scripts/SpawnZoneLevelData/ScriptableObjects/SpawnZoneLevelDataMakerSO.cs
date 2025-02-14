@@ -84,6 +84,10 @@ public class SpawnZoneLevelDataMakerSO : ScriptableObject
                 }
                 generatedSpawnZoneLevelDatas.levelDatas.Add(levelDatas);
             }
+
+            // Mark the ScriptableObject as dirty so Unity knows it has changed
+            EditorUtility.SetDirty(generatedSpawnZoneLevelDatas);
+            AssetDatabase.SaveAssets();  // Ensure it's saved to disk
         }
     }
 

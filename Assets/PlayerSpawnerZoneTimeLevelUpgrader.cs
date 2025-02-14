@@ -1,5 +1,4 @@
 using System.Collections;
-using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
@@ -7,33 +6,55 @@ using UnityEngine.Events;
 public class PlayerSpawnerZoneTimeLevelUpgrader : NetworkBehaviour
 {
     [SerializeField] private float surviveTime = 10;
-
     [SerializeField] public UnityEvent onUpgrade;
 
-    private Coroutine upgradeCoroutine;
+    private float elapsedTime = 0f;
+    private bool isPaused = false;
+    private float lastTime;
+    private bool isRunning = false;
 
     public override void OnNetworkSpawn()
     {
         if (!IsOwner) return;
-
-        upgradeCoroutine = StartCoroutine(LaunchUpgrade());
+        lastTime = Time.time;
+        isRunning = true;
     }
 
-    public void StopUpgrade()
+    private void Update()
     {
-        if (upgradeCoroutine != null)
-        {
-            StopCoroutine(upgradeCoroutine);
-        }
-    }
+        if (!isRunning || isPaused) return;
 
-    private IEnumerator LaunchUpgrade()
-    {
-        while (true)
-        {
-            yield return new WaitForSeconds(surviveTime);
+        elapsedTime += Time.deltaTime;
 
+        if (elapsedTime >= surviveTime)
+        {
             onUpgrade.Invoke();
+            elapsedTime = 0f;
         }
+    }
+
+    public void ResumeBasedOnPresence(bool isHere)
+    {
+        if (isHere)
+        {
+            ResumeUpgrade();
+        }
+        else
+        {
+            PauseUpgrade();
+        }
+    }
+
+    public void PauseUpgrade()
+    {
+        if (isPaused) return;
+        isPaused = true;
+    }
+
+    public void ResumeUpgrade()
+    {
+        if (!isPaused) return;
+        isPaused = false;
+        lastTime = Time.time;
     }
 }

@@ -99,7 +99,7 @@ public class AutoAttackSystem : NetworkBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(1f / AttackSpeed);
+            yield return new WaitForSeconds(1f / (AttackSpeed * LevelStateManager.Instance.PlayerFireRateMultiplier));
 
             ShootServerRPC();
         }
