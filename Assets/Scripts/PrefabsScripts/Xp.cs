@@ -14,7 +14,7 @@ public class Xp : Pickable
         StatistiquesLevelSystem statistiquesLevelSystem = target.GetComponent<StatistiquesLevelSystem>();
         if (statistiquesLevelSystem)
         {
-            statistiquesLevelSystem.AddXpServerRPC((int)(xp * LevelStateManager.Instance.PlayerXpMultiplier));
+            statistiquesLevelSystem.AddXpServerRPC((int)(xp * LevelStateManager.Instance.PlayerXpMultiplier * PlayerBonusManager.Instance.PlayerXpMultiplier.Value));
         }
 
         base.Pickup(target);
