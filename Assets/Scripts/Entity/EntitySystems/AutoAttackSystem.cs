@@ -45,7 +45,7 @@ public class AutoAttackSystem : NetworkBehaviour
 
     public void UpdateAttackStats()
     {
-        if (!IsServer) return;
+        //if (!IsServer) return;
 
         AttackSpeed = statsLevelSystem.BaseStatistiques.AttackSpeed;
 
@@ -98,13 +98,13 @@ public class AutoAttackSystem : NetworkBehaviour
 
     private void StartAttacks()
     {
-        if (!IsServer) return;
+        //if (!IsServer) return;
         attackCoroutine = StartCoroutine(LaunchAttack());
     }
 
     private void StopAttacks()
     {
-        if (!IsServer) return;
+        //if (!IsServer) return;
 
         if (attackCoroutine != null)
         {
@@ -125,7 +125,8 @@ public class AutoAttackSystem : NetworkBehaviour
         {
             yield return new WaitForSeconds(1f / (AttackSpeed * LevelStateManager.Instance.PlayerFireRateMultiplier));
 
-            ShootServerRPC();
+            //ShootServerRPC();
+            Shoot();
         }
     }
 
@@ -138,5 +139,11 @@ public class AutoAttackSystem : NetworkBehaviour
         go.GetComponent<NetworkObject>().Spawn();
         go.transform.SetParent(LevelStateManager.Instance.ProjectileParent);
         go.GetComponent<DamageDealerSystem>().damage = AttackDamage * LevelStateManager.Instance.PlayerDamageMultiplier;
+    }
+
+    private void Shoot(){
+        GameObject go = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation, LevelStateManager.Instance.LocalParent);
+        go.GetComponent<Projectile>().isReal = IsOwner;
+        //update LocalDamageSystem
     }
 }

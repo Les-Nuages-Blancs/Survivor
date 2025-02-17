@@ -1,12 +1,17 @@
 using Unity.Netcode;
 using UnityEngine;
 
-public class Projectile : NetworkBehaviour
+public class Projectile : MonoBehaviour
 {
     public float speed = 10f; // Vitesse du projectile
+    public bool isReal; //Will the projectil deal damage on collision with ennemy ?
 
-    void Update()
+    
+    void FixedUpdate()
     {
-        transform.Translate(Vector3.forward * speed * Time.deltaTime); // Déplacer vers l'avant
+        float fac = isReal ? 0.3f : 0.1f; //tmp debug to see if isreal is correctly set up
+        transform.Translate(fac * Vector3.forward * speed * Time.deltaTime); // Dï¿½placer vers l'avant
     }
+
+    //collider venant du dmg system
 }
