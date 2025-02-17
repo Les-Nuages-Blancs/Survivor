@@ -42,7 +42,7 @@ public class Projectile : MonoBehaviour
             if (includeDamageTags.Contains(target.tag))
             {
                 //Debug.Log("hit step 3");
-                //if(!isReal) return; //only the machine of the player who fired solve collision
+                if(!isReal) return; //only the machine of the player who fired solve collision
 
                 //Debug.Log("hit step 4");
                 HealthSystem healthSystem = target.GetComponent<HealthSystem>();
