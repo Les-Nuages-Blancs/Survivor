@@ -17,6 +17,7 @@ public class LevelStateManager : NetworkBehaviour
     [SerializeField] private Transform xpParent;
     [SerializeField] private Transform bonusParent;
     [SerializeField] private Transform otherParent;
+    [SerializeField] private Transform localParent; //a local GO is requiered to prevent warning when closing app
 
     [Header("Debug Tools")]
     [SerializeField] private NetworkVariable<bool> spawnEntity = new NetworkVariable<bool>(true, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
@@ -37,6 +38,7 @@ public class LevelStateManager : NetworkBehaviour
     public Transform XpParent => xpParent != null ? xpParent : transform;
     public Transform BonusParent => bonusParent != null ? bonusParent : transform;
     public Transform OtherParent => otherParent != null ? otherParent : transform;
+    public Transform LocalParent => localParent != null ? localParent : transform;
 
     public bool SpawnEntity => spawnEntity.Value;
     public bool EnableAutoAttack => enableAutoAttack.Value;
