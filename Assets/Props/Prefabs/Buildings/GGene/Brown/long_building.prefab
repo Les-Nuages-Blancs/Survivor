@@ -93,6 +93,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: long_building
       objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a7aea025552183048bca4753f1947f1a,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects:
@@ -170,6 +175,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: long_building
+      objectReference: {fileID: 0}
+    - target: {fileID: 5880265777424579154, guid: a2b5175e7408f9e428555da02c8d553e,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

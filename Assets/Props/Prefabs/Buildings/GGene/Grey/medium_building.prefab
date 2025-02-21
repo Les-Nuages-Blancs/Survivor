@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 958817433070476634}
   m_Layer: 7
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 6044798458300802116}
   m_Layer: 7
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 2872269535831976391}
   m_Layer: 7
   m_Name: GameObject (2)
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 8671099353054083937}
   m_Layer: 7
   m_Name: GameObject (3)
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -415,6 +415,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: medium_building
+      objectReference: {fileID: 0}
+    - target: {fileID: 7807102863010346367, guid: 3913e07a96401214a872f8c5c04484fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
