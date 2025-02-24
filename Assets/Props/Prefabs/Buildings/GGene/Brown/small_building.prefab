@@ -13,6 +13,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: small_building
       objectReference: {fileID: 0}
+    - target: {fileID: 240769500166616105, guid: 6518467a6cfacca4cb07b4d4a9635c3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     - target: {fileID: 9181363187678824764, guid: 6518467a6cfacca4cb07b4d4a9635c3b,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -166,6 +171,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: small_building
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 8b3dcf3be5f6c164cb35c1b41a9b6fc5,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

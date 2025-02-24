@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 642088537437903903}
   m_Layer: 7
   m_Name: GameObject (3)
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -60,7 +60,7 @@ GameObject:
   - component: {fileID: 5006655803803540526}
   m_Layer: 7
   m_Name: GameObject (2)
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -108,7 +108,7 @@ GameObject:
   - component: {fileID: 5798528424007802333}
   m_Layer: 7
   m_Name: GameObject (4)
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -156,7 +156,7 @@ GameObject:
   - component: {fileID: 623552749338937924}
   m_Layer: 7
   m_Name: GameObject (1)
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -204,7 +204,7 @@ GameObject:
   - component: {fileID: 1328016816429549605}
   m_Layer: 7
   m_Name: GameObject
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -482,6 +482,16 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: GGene_GN_Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 6080768905959370758, guid: 22b61aa2d4b654646b7a2e1bd7518839,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
+    - target: {fileID: 7132170756878728261, guid: 22b61aa2d4b654646b7a2e1bd7518839,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

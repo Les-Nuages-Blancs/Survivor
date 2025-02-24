@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 5472286169287414295}
   m_Layer: 7
   m_Name: NavMeshVolume
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -79,7 +79,7 @@ GameObject:
   - component: {fileID: 3996633218272756083}
   m_Layer: 7
   m_Name: Plane
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -183,7 +183,7 @@ GameObject:
   - component: {fileID: 8953431443861449314}
   m_Layer: 7
   m_Name: NavMeshVolume (1)
-  m_TagString: Untagged
+  m_TagString: Building
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -236,6 +236,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Layer
       value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 240769500166616105, guid: 6518467a6cfacca4cb07b4d4a9635c3b,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     - target: {fileID: 9181363187678824764, guid: 6518467a6cfacca4cb07b4d4a9635c3b,
         type: 3}

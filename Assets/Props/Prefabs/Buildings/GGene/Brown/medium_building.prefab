@@ -463,6 +463,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: medium_building
       objectReference: {fileID: 0}
+    - target: {fileID: 7807102863010346367, guid: 3913e07a96401214a872f8c5c04484fc,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
@@ -566,6 +571,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: medium_building
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: 817a1d66182fc1d44a53bfb2ded3dd65,
+        type: 3}
+      propertyPath: m_TagString
+      value: Building
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
