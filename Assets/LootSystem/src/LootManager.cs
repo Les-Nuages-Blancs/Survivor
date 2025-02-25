@@ -110,8 +110,8 @@ public class LootManager : NetworkBehaviour
     }
     
     //Il faut une référence vers le joueur qui prend le kill si on veut des bonus de drop individuel. C'est du mauvais game design de faire ça mais on se ferme pas la porte
-    public void ProcessLootTable(LootTable lootTable, GameObject killed/*, Player killer*/)    {
-        Vector3 position = killed.transform.position;
+    public void ProcessLootTable(LootTable lootTable, GameObject killed/*, Player killer*/, Transform killedTransform)    {
+        Vector3 position = killedTransform.position;
         foreach (LootEntry entry in lootTable.lootEntries)
         {
             if (DropAttempt(entry/*, killer*/)){
