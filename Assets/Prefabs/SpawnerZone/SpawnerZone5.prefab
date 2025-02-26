@@ -48,7 +48,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2947894393
+  GlobalObjectIdHash: 3966372770
   InScenePlacedSourceGlobalObjectIdHash: 2308946454
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -69,12 +69,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 293d1b1e3639466489d3af8d58bbae66, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  condition: {fileID: 1763383186600963394}
+  conditions:
+  - {fileID: 1763383186600963394}
   prefabSpawnerEntity: {fileID: 59509305123399142, guid: 844bbaa3b8a329d4280e248ebfa80d06,
     type: 3}
   spawnerZoneLevelData: {fileID: 11400000, guid: 2f1f30f554698ac4a84db06eec9a529c,
     type: 2}
   baseSpawnZoneLevelDatas: []
+  ParentZone: {fileID: 0}
   playerZoneLevel:
     m_InternalValue: 0
   onPlayerZoneLevelChange:

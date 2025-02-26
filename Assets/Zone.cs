@@ -8,9 +8,33 @@ using UnityEngine.Events;
 
 public class Zone : NetworkBehaviour
 {
+    [SerializeField] private List<SpawnCondition> conditions;
+
     [SerializeField] private GameObject prefabPlayerSpawner;
+    [SerializeField] private int MaxEnemyCount = 100;
 
     private List<GameObject> spawnedPrefabs = new List<GameObject>();
+    private int enemyCount = 0;
+
+    public int EnemyCount
+    {
+        get => enemyCount;
+        set
+        {
+            if (enemyCount != value)
+            {
+                enemyCount = value;
+                onEnemyCountChange.Invoke();
+            }
+        }
+    }
+
+    [SerializeField] private UnityEvent onEnemyCountChange;
+
+    public bool CanSpawnEnemyInZone()
+    {
+        return EnemyCount < MaxEnemyCount;
+    }
 
     public override void OnNetworkSpawn()
     {
@@ -30,6 +54,16 @@ public class Zone : NetworkBehaviour
 
         newSpawnedPrefab.transform.SetParent(transform);
         newSpawnedPrefab.GetComponent<OwnerZonePresence>().Zone = this;
+
+        SpawnerZone spawnerZone = newSpawnedPrefab.GetComponent<SpawnerZone>();
+        spawnerZone.ParentZone = this;
+
+        // add condition;
+        Debug.Log("add zone condition to spawnerZone");
+        foreach (SpawnCondition condition in conditions)
+        {
+            spawnerZone.AddCondition(condition);
+        }
     }
 
     public override void OnNetworkDespawn()

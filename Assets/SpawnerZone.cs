@@ -8,12 +8,13 @@ using static Cinemachine.DocumentationSortingAttribute;
 
 public class SpawnerZone : NetworkBehaviour
 {
-    [SerializeField] private SpawnCondition condition;
+    [SerializeField] private List<SpawnCondition> conditions;
     [SerializeField] private GameObject prefabSpawnerEntity;
     [SerializeField] private SpawnZoneLevelDataSO spawnerZoneLevelData;
     [SerializeField] private List<BaseSpawnZoneLevelData> baseSpawnZoneLevelDatas = new List<BaseSpawnZoneLevelData>();
     private List<GameObject> spawnedSpawner = new List<GameObject>();
     private bool levelMaxIsReached = false;
+    public Zone ParentZone;
 
     [SerializeField] private NetworkVariable<int> playerZoneLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
@@ -33,6 +34,15 @@ public class SpawnerZone : NetworkBehaviour
 
     [SerializeField] public UnityEvent onPlayerZoneLevelChange;
     [SerializeField] public UnityEvent onLevelMaxReached;
+
+    public void AddCondition(SpawnCondition condition)
+    {
+        conditions.Add(condition);
+        foreach (GameObject spawnerGo in spawnedSpawner)
+        {
+            spawnerGo.GetComponent<EntitySpawner>().spawnConditions.Add(condition);
+        }
+    }
 
     public override void OnNetworkSpawn()
     {
@@ -116,10 +126,26 @@ public class SpawnerZone : NetworkBehaviour
             // Initialize the spawner with the data
             EntitySpawner entitySpawner = spawner.GetComponent<EntitySpawner>();
             entitySpawner.Initialize(baseSpawnZoneLevelData.SpawnAtLevel, baseSpawnZoneLevelData.Prefab, baseSpawnZoneLevelData.SpawnCooldown);
+            entitySpawner.OnIsSpawn.AddListener(RegisterEnemy);
+            // add condition;
+            Debug.Log("add spawnerZone condition to spawner");
 
-            // add is inside condition;
-            entitySpawner.spawnConditions.Add(condition);
+            foreach (SpawnCondition condition in conditions)
+            {
+                entitySpawner.spawnConditions.Add(condition);
+            }
         }
+    }
+
+    public void RegisterEnemy(GameObject go)
+    {
+        ParentZone.EnemyCount += 1;
+        go.GetComponent<HealthSystem>().onDeath.AddListener(() => UnregisterEnemy(go));
+    }
+
+    public void UnregisterEnemy(GameObject go)
+    {
+        ParentZone.EnemyCount -= 1;
     }
 
     private void DestroyEntitySpawner()
@@ -129,6 +155,10 @@ public class SpawnerZone : NetworkBehaviour
             GameObject spawner = spawnedSpawner[0];
             spawnedSpawner.Remove(spawner);
             spawner.GetComponent<NetworkObject>().Despawn();
+
+            EntitySpawner entitySpawner = spawner.GetComponent<EntitySpawner>();
+            entitySpawner.OnIsSpawn.RemoveListener(RegisterEnemy);
+            
             Destroy(spawner);
         }
     }
