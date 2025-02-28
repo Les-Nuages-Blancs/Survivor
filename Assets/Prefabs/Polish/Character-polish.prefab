@@ -535,7 +535,7 @@ MonoBehaviour:
   deathCanvasPrefab: {fileID: 3470483107669858619, guid: 1aa7502c1f8b28f4aa7082bd8d6b930d,
     type: 3}
   respawnCooldownSeconds: 15
-  healthSystem: {fileID: 6348382219916510936}
+  player: {fileID: 0}
 --- !u!114 &6047560052955884051
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -664,7 +664,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   deathCanvasPrefab: {fileID: 4591988912664972448}
   respawnCooldownSeconds: 15
-  healthSystem: {fileID: 6348382219916510936}
+  player: {fileID: 1881956038346639823}
 --- !u!1 &1896168135251810572
 GameObject:
   m_ObjectHideFlags: 0

@@ -32,6 +32,8 @@ public class LevelStateManager : NetworkBehaviour
 
     public Zone FirstZone => firstZone;
 
+    public int totalNumberOfEnemy = 0;
+
     public Transform EnemyParent => enemyParent != null ? enemyParent : transform;
     public Transform ProjectileParent => projectileParent != null ? projectileParent : transform;
     public Transform PlayerParent => playerParent != null ? playerParent : transform;

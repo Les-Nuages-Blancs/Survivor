@@ -23,6 +23,9 @@ public class Zone : NetworkBehaviour
         {
             if (enemyCount != value)
             {
+                int difference = value - enemyCount;
+                LevelStateManager.Instance.totalNumberOfEnemy += difference;
+
                 enemyCount = value;
                 onEnemyCountChange.Invoke();
             }

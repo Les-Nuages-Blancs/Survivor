@@ -9,23 +9,17 @@ public class PlayerDeathSystem : MonoBehaviour
 {
     [SerializeField] private GameObject deathCanvasPrefab;
     [SerializeField] private int respawnCooldownSeconds = 15;
-    [SerializeField] private HealthSystem healthSystem;
-    private MonoBehaviour camMono;     
+    [SerializeField] private GameObject player;
     
-    private void Start()
-    {
-        camMono = Camera.main?.GetComponent<MonoBehaviour>();
-    }
-
     public void KillPlayer()
     {
-        camMono.StartCoroutine(DeathCooldown());
+        StartCoroutine(DeathCooldown());
     }
 
     private IEnumerator DeathCooldown()
     {
-        // TODO: Despawn player
-        healthSystem.CurrentHealth = healthSystem.MaxHealth;
+        // todo disable player
+
         var canvas = Instantiate(deathCanvasPrefab, transform.position, Quaternion.identity);
         var deathText = canvas.transform.Find("Respawn Timer").GetComponent<TextMeshProUGUI>();
         for (var i = 0; i < respawnCooldownSeconds; i++)
@@ -34,6 +28,7 @@ public class PlayerDeathSystem : MonoBehaviour
             yield return new WaitForSeconds(1f);
         }
         Destroy(canvas);
-        // TODO: Spawn player
+        
+        // todo enable player
     }
 }

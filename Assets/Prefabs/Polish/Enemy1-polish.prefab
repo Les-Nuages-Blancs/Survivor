@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 7584252854140367330}
   - component: {fileID: 2752167026106060208}
   - component: {fileID: 3716657269123435109}
+  - component: {fileID: 502197623364507428}
   m_Layer: 0
   m_Name: Enemy1-polish
   m_TagString: Enemy
@@ -58,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1011325193
+  GlobalObjectIdHash: 179796429
   InScenePlacedSourceGlobalObjectIdHash: 3009944485
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 4583465241725346298}
-  takeDamageCooldown: 0.1
+  takeDamageCooldown: 0.001
   onNetworkSpawn:
     m_PersistentCalls:
       m_Calls:
@@ -373,7 +374,30 @@ MonoBehaviour:
     m_InternalValue: 0
   onMoveSpeedChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 502197623364507428}
+        m_TargetAssemblyTypeName: AnimationSpeedScale, Assembly-CSharp
+        m_MethodName: ScaleAnimationSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  minSpeedDistance: 10
+  maxSpeedDistance: 50
+  minSpeedMultiplier: 1
+  maxSpeedMultiplier: 3
+  lerpCurrentSpeedTime: 0.1
+  lerpSpeedPercentage: 0
+  distanceToTarget: 0
+  minUpdateDistance: 5
+  maxUpdateDistance: 50
+  minUpdateInterval: 0.1
+  maxUpdateInterval: 2
 --- !u!114 &3122691239759015784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 0}
   lootTable: {fileID: 11400000, guid: 3a0670cf29df7e248843d3dadcc1d4d1, type: 2}
   destroyOnProcessLoot: 0
 --- !u!114 &7584252854140367330
@@ -455,6 +480,22 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &502197623364507428
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1173583750492586891}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74f4162afd6cf84480f12ff755e67d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3051498780068018880}
+  speedScaleMultiplier: 1.8
+  useLinearScale: 1
+  movementSystem: {fileID: 7054994076444672627}
 --- !u!1 &3964795842181045602
 GameObject:
   m_ObjectHideFlags: 0

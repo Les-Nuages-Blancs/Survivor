@@ -370,7 +370,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 8407031624915708307}
-  takeDamageCooldown: 0.1
+  takeDamageCooldown: 0.001
   onNetworkSpawn:
     m_PersistentCalls:
       m_Calls:

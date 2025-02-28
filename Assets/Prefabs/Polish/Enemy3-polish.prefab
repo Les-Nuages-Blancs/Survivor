@@ -21,6 +21,7 @@ GameObject:
   - component: {fileID: 7427241238132367231}
   - component: {fileID: 101357507438607518}
   - component: {fileID: 5543811900512728423}
+  - component: {fileID: 6017841810880141434}
   m_Layer: 0
   m_Name: Enemy3-polish
   m_TagString: Enemy
@@ -197,7 +198,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   statsLevelSystem: {fileID: 493513646800194269}
-  takeDamageCooldown: 0.1
+  takeDamageCooldown: 0.001
   onNetworkSpawn:
     m_PersistentCalls:
       m_Calls:
@@ -373,7 +374,30 @@ MonoBehaviour:
     m_InternalValue: 0
   onMoveSpeedChange:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 6017841810880141434}
+        m_TargetAssemblyTypeName: AnimationSpeedScale, Assembly-CSharp
+        m_MethodName: ScaleAnimationSpeed
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+  minSpeedDistance: 10
+  maxSpeedDistance: 50
+  minSpeedMultiplier: 1
+  maxSpeedMultiplier: 3
+  lerpCurrentSpeedTime: 0.1
+  lerpSpeedPercentage: 0
+  distanceToTarget: 0
+  minUpdateDistance: 5
+  maxUpdateDistance: 50
+  minUpdateInterval: 0.1
+  maxUpdateInterval: 2
 --- !u!114 &4118953202877361317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -400,6 +424,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 0}
   lootTable: {fileID: 11400000, guid: 2fa415258e20d4b4eb98f2fec12aa46c, type: 2}
   destroyOnProcessLoot: 0
 --- !u!114 &7427241238132367231
@@ -455,6 +480,21 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &6017841810880141434
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411272012990478587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b74f4162afd6cf84480f12ff755e67d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animator: {fileID: 3187754187513498419}
+  speedScaleMultiplier: 0.2
+  movementSystem: {fileID: 5985484077433941392}
 --- !u!1 &5201517612746499730
 GameObject:
   m_ObjectHideFlags: 0
