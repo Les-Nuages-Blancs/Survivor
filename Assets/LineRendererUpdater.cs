@@ -16,6 +16,19 @@ public class LineRendererUpdater : MonoBehaviour
 
     [SerializeField] private bool autoUpdate = false;
 
+    public float WindStrength
+    {
+        get => windStrength;
+        set
+        {
+            if (windStrength != value)
+            {
+                windStrength = value;
+                UpdateLine();
+            }
+        }
+    }
+
     private void OnValidate()
     {
         // Automatically update the line if autoUpdate is enabled
@@ -82,8 +95,6 @@ public class LineRendererUpdater : MonoBehaviour
                 }
             }
         }
-
-        Debug.Log("Line Renderer Updated!");
     }
 
 
