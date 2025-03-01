@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 0}
   lootTable: {fileID: 11400000, guid: 3a0670cf29df7e248843d3dadcc1d4d1, type: 2}
   destroyOnProcessLoot: 1
 --- !u!1 &274472373
@@ -497,7 +498,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -890,8 +892,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 526731168}
-  offset: {x: 0, y: 20, z: -15}
   smoothSpeed: 5
+  horizontalAngle: -90
+  verticalAngle: 56
+  distance: 25
 --- !u!1 &340550830
 GameObject:
   m_ObjectHideFlags: 0
@@ -1501,7 +1505,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2462,7 +2467,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -2572,6 +2578,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 0}
   lootTable: {fileID: 11400000, guid: 3a0670cf29df7e248843d3dadcc1d4d1, type: 2}
   destroyOnProcessLoot: 1
 --- !u!1001 &943548840
@@ -3541,7 +3548,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -4078,7 +4086,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -4200,6 +4209,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 0}
   lootTable: {fileID: 11400000, guid: 3a0670cf29df7e248843d3dadcc1d4d1, type: 2}
   destroyOnProcessLoot: 1
 --- !u!1 &1552389740
@@ -4840,6 +4850,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 0}
   lootTable: {fileID: 11400000, guid: 3a0670cf29df7e248843d3dadcc1d4d1, type: 2}
   destroyOnProcessLoot: 1
 --- !u!1 &1651029266
@@ -5157,6 +5168,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 0}
   lootTable: {fileID: 11400000, guid: 3a0670cf29df7e248843d3dadcc1d4d1, type: 2}
   destroyOnProcessLoot: 1
 --- !u!1 &1720218155 stripped
@@ -5177,6 +5189,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 0}
   lootTable: {fileID: 11400000, guid: 3a0670cf29df7e248843d3dadcc1d4d1, type: 2}
   destroyOnProcessLoot: 1
 --- !u!1 &1756252958
@@ -5422,6 +5435,17 @@ MonoBehaviour:
   - {fileID: 5223959951191603647, guid: f2bbff292e48a8f43bd90a8243f5cb36, type: 3}
   - {fileID: 5349583729817840966, guid: 13f09eb9aca7a2047b2a48fdf34d744a, type: 3}
   - {fileID: 6941535106888646788, guid: 4976d7851ab82244dab8688ca8fbeaff, type: 3}
+  xpScaling:
+    serializedVersion: 2
+    m_Curve: []
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  xpScalingMapRange:
+    fromMin: 0
+    fromMax: 0
+    toMin: 0
+    toMax: 0
 --- !u!114 &1899060134
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5775,6 +5799,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 9f32e8b6aa7ee4c499759bf7b309421c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  targetGameObject: {fileID: 0}
   lootTable: {fileID: 11400000, guid: 3a0670cf29df7e248843d3dadcc1d4d1, type: 2}
   destroyOnProcessLoot: 1
 --- !u!1 &2088704751
@@ -5965,7 +5990,8 @@ MonoBehaviour:
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
-  m_fontSharedMaterials: []
+  m_fontSharedMaterials:
+  - {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
   m_fontColor32:
@@ -6109,6 +6135,7 @@ MonoBehaviour:
   playerSpawnTransforms:
   - {fileID: 1469036482}
   - {fileID: 531742564}
+  playerTransformIndex: 0
 --- !u!1001 &5909007469536305125
 PrefabInstance:
   m_ObjectHideFlags: 0

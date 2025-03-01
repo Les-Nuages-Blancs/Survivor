@@ -187,8 +187,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 10
-  damageDealedEffectPrefab: {fileID: 4762360838216595935, guid: 319a3d0518e60074b95d8be3df9d017b,
-    type: 3}
+  EffectsPrefab: []
   includeTriggerLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -277,7 +276,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1609119643
+  GlobalObjectIdHash: 3009944485
   InScenePlacedSourceGlobalObjectIdHash: 3009944485
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -314,6 +313,7 @@ MonoBehaviour:
       criticalChance: 0
       pickupRange: 0
       moveSpeedMultiplier: 0
+      killPoint: 0
   onBaseStatsChange:
     m_PersistentCalls:
       m_Calls:

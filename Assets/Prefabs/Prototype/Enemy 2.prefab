@@ -68,8 +68,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   damage: 100
-  damageDealedEffectPrefab: {fileID: 4762360838216595935, guid: 319a3d0518e60074b95d8be3df9d017b,
-    type: 3}
+  EffectsPrefab: []
   includeTriggerLayers:
     serializedVersion: 2
     m_Bits: 0
@@ -162,7 +161,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 4178785504
+  GlobalObjectIdHash: 3314818267
   InScenePlacedSourceGlobalObjectIdHash: 3524285387
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -230,6 +229,7 @@ MonoBehaviour:
       criticalChance: 0
       pickupRange: 0
       moveSpeedMultiplier: 0
+      killPoint: 0
   onBaseStatsChange:
     m_PersistentCalls:
       m_Calls:
@@ -417,6 +417,20 @@ MonoBehaviour:
   onMoveSpeedChange:
     m_PersistentCalls:
       m_Calls: []
+  minSpeedDistance: 10
+  maxSpeedDistance: 50
+  minSpeedMultiplier: 1
+  maxSpeedMultiplier: 2
+  lerpCurrentSpeedTime: 0.1
+  lerpSpeedPercentage: 0
+  distanceToTarget: 1
+  minUpdateDistance: 5
+  maxUpdateDistance: 50
+  minUpdateInterval: 1
+  maxUpdateInterval: 2
+  hasPath: 0
+  isPending: 0
+  remainingDistance: 0
 --- !u!114 &3655037453384215697
 MonoBehaviour:
   m_ObjectHideFlags: 0

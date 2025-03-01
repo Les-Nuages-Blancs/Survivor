@@ -235,7 +235,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2635205369
+  GlobalObjectIdHash: 960258783
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -360,6 +360,20 @@ MonoBehaviour:
   onMoveSpeedChange:
     m_PersistentCalls:
       m_Calls: []
+  minSpeedDistance: 10
+  maxSpeedDistance: 50
+  minSpeedMultiplier: 1
+  maxSpeedMultiplier: 2
+  lerpCurrentSpeedTime: 0.1
+  lerpSpeedPercentage: 0
+  distanceToTarget: 1
+  minUpdateDistance: 5
+  maxUpdateDistance: 50
+  minUpdateInterval: 1
+  maxUpdateInterval: 2
+  hasPath: 0
+  isPending: 0
+  remainingDistance: 0
 --- !u!114 &3750472086688114561
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -402,6 +416,7 @@ MonoBehaviour:
       criticalChance: 0
       pickupRange: 0
       moveSpeedMultiplier: 0
+      killPoint: 0
   onBaseStatsChange:
     m_PersistentCalls:
       m_Calls:
@@ -664,7 +679,12 @@ MonoBehaviour:
   projectileSpawnPoint: {fileID: 4496023209353763732}
   attackSpeed:
     m_InternalValue: 0
+  attackDamage:
+    m_InternalValue: 0
   onAttackSpeedChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onAttackDamageChange:
     m_PersistentCalls:
       m_Calls: []
 --- !u!95 &7748928738805558556
@@ -700,6 +720,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c70397867b2940248af17bcfa8f91476, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  cameraFollowPoint: {fileID: 0}
 --- !u!114 &1975227727989819792
 MonoBehaviour:
   m_ObjectHideFlags: 0

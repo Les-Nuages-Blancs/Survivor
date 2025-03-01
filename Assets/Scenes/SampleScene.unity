@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.18028331, g: 0.2257133, b: 0.3069217, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -634,8 +634,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   target: {fileID: 526731168}
-  offset: {x: 0, y: 20, z: -15}
   smoothSpeed: 5
+  horizontalAngle: -90
+  verticalAngle: 56
+  distance: 25
 --- !u!1001 &338604564
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -2119,6 +2121,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   prefab: {fileID: 5223959951191603647, guid: f2bbff292e48a8f43bd90a8243f5cb36, type: 3}
   spawnCooldown: 2
+  OnWillSpawn:
+    m_PersistentCalls:
+      m_Calls: []
+  spawnConditions: []
 --- !u!1 &1302344489
 GameObject:
   m_ObjectHideFlags: 0
@@ -2544,8 +2550,13 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cdb2ba9512a54ae4b9543897c19b76aa, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  conditions: []
   prefabPlayerSpawner: {fileID: 8060539036442655882, guid: e2a8c7dcadbec504f94a6a5985a31bdc,
     type: 3}
+  MaxEnemyCount: 100
+  onEnemyCountChange:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &1525392765
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -3318,6 +3329,7 @@ MonoBehaviour:
   playerSpawnTransforms:
   - {fileID: 1469036482}
   - {fileID: 531742564}
+  playerTransformIndex: 0
 --- !u!1001 &1095922901910787205
 PrefabInstance:
   m_ObjectHideFlags: 0

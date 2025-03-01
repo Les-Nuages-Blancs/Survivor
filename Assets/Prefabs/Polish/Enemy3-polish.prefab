@@ -59,7 +59,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 702314078
+  GlobalObjectIdHash: 1105420886
   InScenePlacedSourceGlobalObjectIdHash: 3314818267
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -398,6 +398,9 @@ MonoBehaviour:
   maxUpdateDistance: 50
   minUpdateInterval: 0.1
   maxUpdateInterval: 2
+  hasPath: 0
+  isPending: 0
+  remainingDistance: 0
 --- !u!114 &4118953202877361317
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -494,6 +497,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   animator: {fileID: 3187754187513498419}
   speedScaleMultiplier: 0.2
+  useLinearScale: 0
   movementSystem: {fileID: 5985484077433941392}
 --- !u!1 &5201517612746499730
 GameObject:
