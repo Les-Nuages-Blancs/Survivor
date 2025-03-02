@@ -60,21 +60,21 @@ public class Projectile : MonoBehaviour
 
             if (includeDamageTags.Contains(target.tag))
             {
-                //Debug.Log("hit step 3");
+
+                float dmg = damage * LevelStateManager.Instance.PlayerDamageMultiplier;
+                //Spawn effect client side
+                HitEffects(dmg);
+
                 if(!isReal) return; //only the machine of the player who fired solve collision
 
-                //Debug.Log("hit step 4");
                 HealthSystem healthSystem = target.GetComponent<HealthSystem>();
                 if (healthSystem)
-                {
-                    //Debug.Log("hit step 5");
-                    float dmg = damage * LevelStateManager.Instance.PlayerDamageMultiplier;
+                {                    
                     GameNetworkManager.Instance.RequestDamage(healthSystem, dmg);
                     //with a small delay because collider are big
                     Destroy(gameObject, 0.05f); 
 
-                    //Spawn effect client side
-                    HitEffects(dmg);
+                    
                 }
             }
         }
