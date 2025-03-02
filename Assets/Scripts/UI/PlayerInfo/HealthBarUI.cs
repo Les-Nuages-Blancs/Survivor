@@ -1,57 +1,54 @@
-//using UnityEngine;
-//using UnityEngine.UI;
-//using Unity.Netcode;
+using UnityEngine;
+using UnityEngine.UI;
+using Unity.Netcode;
 
-//public class HealthBarUI : MonoBehaviour
-//{
-//    [SerializeField] private Slider healthSlider; // Référence au Slider de l'UI
-//    private HealthSystem healthSystem;
+public class HealthBarUI : MonoBehaviour
+{
+    [SerializeField] private Slider healthSlider;
+    private HealthSystem healthSystem;
 
-//    private void Start()
-//    {
-//        // Trouver automatiquement le joueur local avec Netcode
-//        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
-//    }
+    private void Start()
+    {
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+    }
 
-//    private void OnDestroy()
-//    {
-//        NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+    private void OnDestroy()
+    {
+        NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
 
-//        if (healthSystem != null)
-//        {
-//            healthSystem.OnHealthChanged -= UpdateHealthUI;
-//        }
-//    }
+        if (healthSystem != null)
+        {
+            healthSystem.onHealthChange.RemoveListener(UpdateHealthUI);
+        }
+    }
 
-//    private void OnClientConnected(ulong clientId)
-//    {
-//        if (!IsLocalPlayer(clientId)) return;
+    private void OnClientConnected(ulong clientId)
+    {
+        if (!IsLocalPlayer(clientId)) return;
 
-//        // Trouver le HealthSystem du joueur local
-//        healthSystem = FindObjectOfType<HealthSystem>();
+        healthSystem = FindObjectOfType<HealthSystem>();
 
-//        if (healthSystem != null)
-//        {
-//            // Abonnement aux changements de vie
-//            healthSystem.currentHealth.OnValueChanged += OnHealthChanged;
+        if (healthSystem != null)
+        {
+            // Utiliser l'événement public onHealthChange
+            healthSystem.onHealthChange.AddListener(UpdateHealthUI);
 
-//            // Initialiser la barre de vie
-//            healthSlider.maxValue = healthSystem.MaxHealth;
-//            healthSlider.value = healthSystem.CurrentHealth;
-//        }
-//    }
+            // Mettre à jour la barre de vie avec les valeurs actuelles
+            healthSlider.maxValue = healthSystem.MaxHealth;
+            healthSlider.value = healthSystem.CurrentHealth;
+        }
+    }
 
-//    private void OnHealthChanged(float oldValue, float newValue)
-//    {
-//        if (healthSlider != null)
-//        {
-//            healthSlider.value = newValue;
-//        }
-//    }
+    private void UpdateHealthUI()
+    {
+        if (healthSlider != null && healthSystem != null)
+        {
+            healthSlider.value = healthSystem.CurrentHealth;
+        }
+    }
 
-//    private bool IsLocalPlayer(ulong clientId)
-//    {
-//        return NetworkManager.Singleton.LocalClientId == clientId;
-//    }
-//}
-
+    private bool IsLocalPlayer(ulong clientId)
+    {
+        return NetworkManager.Singleton.LocalClientId == clientId;
+    }
+}
