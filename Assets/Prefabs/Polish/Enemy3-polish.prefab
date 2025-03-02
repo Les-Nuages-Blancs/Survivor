@@ -22,6 +22,7 @@ GameObject:
   - component: {fileID: 101357507438607518}
   - component: {fileID: 5543811900512728423}
   - component: {fileID: 6017841810880141434}
+  - component: {fileID: -4910960638487195168}
   m_Layer: 0
   m_Name: Enemy3-polish
   m_TagString: Enemy
@@ -499,6 +500,19 @@ MonoBehaviour:
   speedScaleMultiplier: 0.2
   useLinearScale: 0
   movementSystem: {fileID: 5985484077433941392}
+--- !u!114 &-4910960638487195168
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 411272012990478587}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c3130ce1f0c968c4db9cc9683c311325, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updtFrequency: 0.2
 --- !u!1 &5201517612746499730
 GameObject:
   m_ObjectHideFlags: 0
