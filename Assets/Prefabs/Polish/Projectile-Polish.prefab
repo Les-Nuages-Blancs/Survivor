@@ -331,6 +331,9 @@ MonoBehaviour:
   speed: 20
   isReal: 0
   damage: 5
+  EffectsPrefab:
+  - {fileID: 4762360838216595935, guid: 319a3d0518e60074b95d8be3df9d017b, type: 3}
+  - {fileID: 362261158077530393, guid: 20fda529c996a334da7fd65b48ea40df, type: 3}
   includeTriggerLayers:
     serializedVersion: 2
     m_Bits: 128

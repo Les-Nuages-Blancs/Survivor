@@ -790,6 +790,8 @@ GameObject:
   m_Component:
   - component: {fileID: 436751822296368075}
   - component: {fileID: 2266252585971222360}
+  - component: {fileID: 1320235569113396870}
+  - component: {fileID: 1294738877431821682}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -837,3 +839,33 @@ MonoBehaviour:
   - {fileID: 4608222059566577415}
   - {fileID: 3390076937598222303}
   - {fileID: 993336031954699486}
+--- !u!208 &1320235569113396870
+NavMeshObstacle:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123477308181319124}
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Shape: 1
+  m_Extents: {x: 0.56, y: 3.605, z: 6.125}
+  m_MoveThreshold: 0.1
+  m_Carve: 1
+  m_CarveOnlyStationary: 0
+  m_Center: {x: 0, y: 3.13, z: 0}
+  m_TimeToStationary: 0
+--- !u!114 &1294738877431821682
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123477308181319124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f59909e058c5ca84ca6770bcc5fd62d7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  updtFrequency: 1
+  unlockLvl: 10
