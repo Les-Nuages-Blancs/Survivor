@@ -49,7 +49,8 @@ public class Projectile : MonoBehaviour
                 if (healthSystem)
                 {
                     //Debug.Log("hit step 5");
-                    GameNetworkManager.Instance.RequestDamage(healthSystem, damage);
+                    float dmg = damage * LevelStateManager.Instance.PlayerDamageMultiplier;
+                    GameNetworkManager.Instance.RequestDamage(healthSystem, dmg);
                     Destroy(gameObject, 0.1f); //with a small delay because collider are big
                 }
             }
