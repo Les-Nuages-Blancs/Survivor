@@ -148,9 +148,8 @@ GameObject:
   - component: {fileID: 2530154678455095593}
   - component: {fileID: 9069785192260872667}
   - component: {fileID: 6432335429833076326}
-  - component: {fileID: 5504048452922734099}
   - component: {fileID: -773139850193281448}
-  - component: {fileID: 5412384318386616537}
+  - component: {fileID: 2774928365647295243}
   m_Layer: 5
   m_Name: DamageIndicator
   m_TagString: Untagged
@@ -275,27 +274,6 @@ Animator:
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorStateOnDisable: 0
   m_WriteDefaultValuesOnDisable: 0
---- !u!114 &5504048452922734099
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4762360838216595935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 735045570
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
 --- !u!114 &-773139850193281448
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -310,7 +288,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   damageValueText: {fileID: 1948663555202984705}
   damageValue: 0
---- !u!114 &5412384318386616537
+--- !u!114 &2774928365647295243
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -319,7 +297,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 4762360838216595935}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5cf6e006170b0934ba90bda5fa3af077, type: 3}
+  m_Script: {fileID: 11500000, guid: 8b6a81bb0b07fd7498e3ff06bae474f6, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxLifeTime: 1
+  delay: 1
