@@ -1,11 +1,13 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.AI;
 
 public class Gate : MonoBehaviour
 {
     [SerializeField] private float gateScale = 1.0f;
     [SerializeField] private List<GameObject> gatePlanes = new List<GameObject>();
+    [SerializeField] private List<NavMeshObstacle> gateObstacle = new List<NavMeshObstacle>();
 
     private void OnValidate()
     {
@@ -28,6 +30,16 @@ public class Gate : MonoBehaviour
 
             // Apply the updated scale back to the GameObject
             go.transform.localScale = currentScale;
+        }
+
+        foreach (NavMeshObstacle navObs in gateObstacle)
+        {
+            Vector3 currentScale = navObs.size;
+
+            currentScale.z = 10 * gateScale;
+
+            navObs.size = currentScale;
+
         }
     }
 }

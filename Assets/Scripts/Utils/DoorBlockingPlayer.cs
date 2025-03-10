@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using TMPro;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.AI;
@@ -10,6 +11,8 @@ public class DoorBlockingPlayer : MonoBehaviour
     private List<StatistiquesLevelSystem> playersStats;
     [SerializeField] private float updtFrequency = 5.0f;
     [SerializeField] private float unlockLvl = 10.0f;
+
+    [SerializeField] private TextMeshProUGUI unlockLabel;
 
     
     void Awake(){
@@ -34,7 +37,7 @@ public class DoorBlockingPlayer : MonoBehaviour
     }
 
     void TryToOpen(){
-        if(GetAvgPlayerLvl() > unlockLvl){
+        if(GetAvgPlayerLvl() >= unlockLvl){
             gameObject.SetActive(false);
         }
         else{
@@ -42,8 +45,19 @@ public class DoorBlockingPlayer : MonoBehaviour
         }
     }
 
+    void UpdateLabel()
+    {
+        unlockLabel.text = "Unlock at Level " + unlockLvl;
+    }
+
+    private void OnValidate()
+    {
+        UpdateLabel();
+    }
+
     // Update is called once per frame
     void Start(){
+        UpdateLabel();
         Invoke("TryToOpen", updtFrequency);
     }
 }

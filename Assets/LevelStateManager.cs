@@ -42,7 +42,14 @@ public class LevelStateManager : NetworkBehaviour
     public Transform OtherParent => otherParent != null ? otherParent : transform;
     public Transform LocalParent => localParent != null ? localParent : transform;
 
-    public bool SpawnEntity => spawnEntity.Value;
+    public bool SpawnEntity
+    {
+        get => spawnEntity.Value;
+        set
+        {
+            spawnEntity.Value = value;
+        }
+    }
     public bool EnableAutoAttack => enableAutoAttack.Value;
 
     public float PlayerSpeedMultiplier => playerSpeedMultiplier.Value;
