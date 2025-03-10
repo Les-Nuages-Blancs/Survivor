@@ -2,23 +2,15 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 
-public class DamageValueForward : NetworkBehaviour
+public class DamageValueForward : MonoBehaviour
 {
     [SerializeField] private TextMeshProUGUI damageValueText;
     public float damageValue;
-
-    public override void OnNetworkSpawn()
-    {
-        if (!IsServer) return;
-        SetDamageClientRPC(damageValue);
-    }
-
-    [ClientRpc(RequireOwnership = false)]
-    private void SetDamageClientRPC(float damage)
-    {
-        damageValue = damage;
+    
+    private void Start() {
         damageValueText.text = $"-{damageValue}";
     }
 }

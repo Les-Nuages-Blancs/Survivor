@@ -143,7 +143,10 @@ public class AutoAttackSystem : NetworkBehaviour
 
     private void Shoot(){
         GameObject go = Instantiate(projectilePrefab, projectileSpawnPoint.position, projectileSpawnPoint.rotation, LevelStateManager.Instance.LocalParent);
-        go.GetComponent<Projectile>().isReal = IsOwner;
+        Projectile proj = go.GetComponent<Projectile>();
+        proj.isReal = IsOwner;
+        proj.damage = AttackDamage;
+
         //update LocalDamageSystem
     }
 }

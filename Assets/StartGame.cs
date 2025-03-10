@@ -1,9 +1,10 @@
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 
-public class StartGame : MonoBehaviour
+public class StartGame : NetworkBehaviour
 {
     [SerializeField] private TriggerStayEvent triggerEvent;
     [SerializeField] private TextMeshProUGUI timerText; // UI Text to update
@@ -14,6 +15,14 @@ public class StartGame : MonoBehaviour
         triggerEvent.OnStayTimeReached += TimeReached;
         triggerEvent.OnExit += () => { timerText.gameObject.SetActive(false); };
         triggerEvent.OnEnter += () => { timerText.gameObject.SetActive(true); };
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        if (!IsServer)
+        {
+            gameObject.SetActive(false);
+        }
     }
 
     private void UpdateText(float time)

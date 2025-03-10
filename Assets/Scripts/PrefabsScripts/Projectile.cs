@@ -4,6 +4,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Events;
+using UnityEngine.VFX;
 
 /*
 Note : very little abstraction in this class because we only needed one projectiles
@@ -24,12 +25,17 @@ public class Projectile : MonoBehaviour
     [SerializeField] private LayerMask includeTriggerLayers;
     [TagField]
     [SerializeField] private List<string> includeDamageTags = new List<string>();
+    [SerializeField] private VisualEffect vfx;
+    [SerializeField] private LerpLightIntensity lightLerp;
 
     private bool fadingAway = false;
+    private bool isDestroyed = false; // Flag to stop movement when destroying
 
-    
+
     void FixedUpdate()
     {
+        if (isDestroyed) return; // Prevent movement when destroying
+
         //float fac = isReal ? .5f : 0.25f; //tmp debug to see if isreal is correctly set up todo remove
         transform.Translate(/*fac */ Vector3.forward * speed * Time.deltaTime); // D�placer vers l'avant
     }
@@ -45,11 +51,28 @@ public class Projectile : MonoBehaviour
         }
     }
 
+    public void DestroyProjectile()
+    {
+        if (isDestroyed) return;
+
+        isDestroyed = true;
+        if (vfx != null)
+        {
+            vfx.Stop(); // Stop spawning new particles
+        }
+        if (lightLerp != null)
+        {
+            lightLerp.StartLerp();
+        }
+        Destroy(gameObject, 3f);
+    }
+
     //collider venant du dmg system
     private void OnTriggerEnter(Collider other)
     {
         //Debug.Log("hit step 0");
         if(fadingAway) return;
+        if (isDestroyed) return; // Prevent hit when destroying
 
         //Debug.Log("hit step 1");
         OnTriggerEnterForwarder forwarder = other.GetComponent<OnTriggerEnterForwarder>();
@@ -72,18 +95,16 @@ public class Projectile : MonoBehaviour
                 {                    
                     GameNetworkManager.Instance.RequestDamage(healthSystem, dmg);
                     //with a small delay because collider are big
-                    Destroy(gameObject, 0.05f); 
 
-                    
+                    DestroyProjectile();
                 }
             }
         }
 
         //destroy projectile when hitting a wall
         else if ((includeTriggerLayers.value & (1 << other.gameObject.layer)) != 0) 
-        { 
-            Destroy(gameObject);
+        {
+            DestroyProjectile();
         }
-
     }
 }

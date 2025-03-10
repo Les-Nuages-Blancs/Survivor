@@ -2,10 +2,11 @@ using System;
 using System.Collections;
 using System.Collections.Generic;
 using TMPro;
+using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Serialization;
 
-public class PlayerDeathSystem : MonoBehaviour
+public class PlayerDeathSystem : NetworkBehaviour
 {
     [SerializeField] private GameObject deathCanvasPrefab;
     [SerializeField] private int respawnCooldownSeconds = 15;
@@ -13,6 +14,7 @@ public class PlayerDeathSystem : MonoBehaviour
     
     public void KillPlayer()
     {
+        if (!IsOwner) return;
         StartCoroutine(DeathCooldown());
     }
 

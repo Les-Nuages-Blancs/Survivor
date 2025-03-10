@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 2924030779068528038}
   - component: {fileID: 5010679525126631650}
   - component: {fileID: 8293291934673385426}
+  - component: {fileID: 4775979583058409063}
   m_Layer: 0
   m_Name: Point Light
   m_TagString: Untagged
@@ -118,6 +119,20 @@ MonoBehaviour:
   m_LightCookieSize: {x: 1, y: 1}
   m_LightCookieOffset: {x: 0, y: 0}
   m_SoftShadowQuality: 0
+--- !u!114 &4775979583058409063
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3455978422090131995}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ecd7c0f1f675dfe4997a5a2bd6f59301, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  lightToDim: {fileID: 5010679525126631650}
+  dimDuration: 0.5
 --- !u!1 &3706493052391077798
 GameObject:
   m_ObjectHideFlags: 0
@@ -339,6 +354,8 @@ MonoBehaviour:
     m_Bits: 128
   includeDamageTags:
   - Enemy
+  vfx: {fileID: 5531280229552133161}
+  lightLerp: {fileID: 4775979583058409063}
 --- !u!114 &-4843494326829774817
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -352,6 +369,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   delay: 5
+  callDestroy:
+    m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 1095133894363754904}
+        m_TargetAssemblyTypeName: Projectile, Assembly-CSharp
+        m_MethodName: DestroyProjectile
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!1 &6840659432797509895
 GameObject:
   m_ObjectHideFlags: 0
@@ -429,7 +461,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 1
-  m_Time: 1
+  m_Time: 0.35
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
@@ -565,7 +597,7 @@ TrailRenderer:
   m_SortingLayerID: 0
   m_SortingLayer: 0
   m_SortingOrder: 0
-  m_Time: 1.5
+  m_Time: 0.5
   m_PreviewTimeScale: 1
   m_Parameters:
     serializedVersion: 3
