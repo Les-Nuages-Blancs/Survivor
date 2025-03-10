@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 6890010075926297651}
   - component: {fileID: 6589688484748927683}
   - component: {fileID: 1802423971976730684}
+  - component: {fileID: 4988521108697214203}
   m_Layer: 0
   m_Name: Xp-polish
   m_TagString: Untagged
@@ -80,6 +81,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: bcc3223f215dd464182f73a22a7613d9, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &4988521108697214203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5223959951191603647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8660f59776f6543b7c88c08447b8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetMultiplier: 1
 --- !u!1 &6120223442554012910
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +153,7 @@ GameObject:
   - component: {fileID: 1829124658723665812}
   - component: {fileID: 8957006487943038208}
   - component: {fileID: 624343396866737192}
+  - component: {fileID: 3936083285293506875}
   m_Layer: 0
   m_Name: PickupZone
   m_TagString: Untagged
@@ -240,6 +255,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   xp: 50
+--- !u!114 &3936083285293506875
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8330517525875140146}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a921021ede87f7d43a0a7e18afa764fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardedGameObject: {fileID: 5223959951191603647}
 --- !u!1001 &1189483970404872868
 PrefabInstance:
   m_ObjectHideFlags: 0

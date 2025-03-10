@@ -59,6 +59,7 @@ GameObject:
   - component: {fileID: 3995167369477031185}
   - component: {fileID: 5865385989241194261}
   - component: {fileID: 2121637069382737566}
+  - component: {fileID: 7507008318726469680}
   m_Layer: 0
   m_Name: LevelUpBonus
   m_TagString: Untagged
@@ -127,6 +128,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28986b46a0a877d438ed0d00c4883879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7507008318726469680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696255971976460481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8660f59776f6543b7c88c08447b8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetMultiplier: 0.5
 --- !u!1 &4813733999944885624
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +153,7 @@ GameObject:
   - component: {fileID: 5914811021536516822}
   - component: {fileID: 1825586866337142439}
   - component: {fileID: 1921601166733686714}
+  - component: {fileID: 771788279137446606}
   m_Layer: 0
   m_Name: PickupZone
   m_TagString: Untagged
@@ -240,6 +255,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   level: 1
+--- !u!114 &771788279137446606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4813733999944885624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a921021ede87f7d43a0a7e18afa764fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardedGameObject: {fileID: 1696255971976460481}
 --- !u!1001 &2936847641462713615
 PrefabInstance:
   m_ObjectHideFlags: 0

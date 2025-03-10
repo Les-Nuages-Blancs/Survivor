@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 3604469115220826432}
   - component: {fileID: 7360273697656429155}
   - component: {fileID: 7080458431544738537}
+  - component: {fileID: 1414077689047482145}
   m_Layer: 0
   m_Name: HealthBonus
   m_TagString: Untagged
@@ -80,6 +81,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28986b46a0a877d438ed0d00c4883879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &1414077689047482145
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2947476394515406775}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8660f59776f6543b7c88c08447b8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetMultiplier: 0.5
 --- !u!1 &6092987917459212682
 GameObject:
   m_ObjectHideFlags: 0
@@ -139,6 +153,7 @@ GameObject:
   - component: {fileID: 2331271749138371123}
   - component: {fileID: 7116695400913217117}
   - component: {fileID: 21261318191222632}
+  - component: {fileID: 1583521829023307647}
   m_Layer: 0
   m_Name: PickupZone
   m_TagString: Untagged
@@ -240,6 +255,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   healthPercent: 0.3
+--- !u!114 &1583521829023307647
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6891605457350589111}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a921021ede87f7d43a0a7e18afa764fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardedGameObject: {fileID: 2947476394515406775}
 --- !u!1001 &5942785437541757826
 PrefabInstance:
   m_ObjectHideFlags: 0

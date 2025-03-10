@@ -112,6 +112,7 @@ GameObject:
   - component: {fileID: 4126310049224978574}
   - component: {fileID: 5753929551707895505}
   - component: {fileID: 6978006276453047173}
+  - component: {fileID: 3268694500573081399}
   m_Layer: 0
   m_Name: Character-polish
   m_TagString: Player
@@ -367,6 +368,18 @@ MonoBehaviour:
       - m_Target: {fileID: 8937119194813453510}
         m_TargetAssemblyTypeName: XpBar, Assembly-CSharp
         m_MethodName: SetXp
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3268694500573081399}
+        m_TargetAssemblyTypeName: MagnetPlayer, Assembly-CSharp
+        m_MethodName: UpdateMagnetStats
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -664,6 +677,22 @@ MonoBehaviour:
   deathCanvasPrefab: {fileID: 4591988912664972448}
   respawnCooldownSeconds: 15
   player: {fileID: 1881956038346639823}
+--- !u!114 &3268694500573081399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881956038346639823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 031044c0f2d8c4f4f9d690276b993f99, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetRange: 5
+  attractionSpeed: 10
+  magnetCollider: {fileID: 0}
+  statsLevelSystem: {fileID: 7663633407509845089}
 --- !u!1 &1896168135251810572
 GameObject:
   m_ObjectHideFlags: 0
