@@ -186,7 +186,7 @@ public class LootManager : NetworkBehaviour
                 Mathf.Sin(lmd.alpha) * Mathf.Cos(theta),
                 Mathf.Cos(lmd.alpha),
                 Mathf.Sin(lmd.alpha) * MathF.Sin(theta)
-            ).normalized * lmd.strenght * 1.7f; //1.7f is a magic value it was faster to edit here than to change every anim curve
+            ).normalized * lmd.strenght; 
             Debug.Log($"coucou  angle :{lmd.alpha}, str :  {lmd.strenght}");
             
             Rigidbody rgb = go.GetComponent<Rigidbody>();
