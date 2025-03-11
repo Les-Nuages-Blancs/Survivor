@@ -179,8 +179,7 @@ public class LootManager : NetworkBehaviour
 
         
 
-        //todo only on bitflag impulse
-        {
+        if ((lmd.lootCategory & LootCategory.JumpOnBirth) != 0){
             float theta = Random.Range(0.0f, 2.0f*Mathf.PI);
             Vector3 impDir = new Vector3(
                 Mathf.Sin(lmd.alpha) * Mathf.Cos(theta),

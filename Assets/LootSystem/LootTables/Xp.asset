@@ -16,7 +16,7 @@ MonoBehaviour:
   - prefab: {fileID: 5223959951191603647, guid: a2d31c057a71e094d8e1e57025fa41ac,
       type: 3}
     dropChance: 1
-    category: 1
+    category: 9
     angle:
       serializedVersion: 2
       m_Curve:

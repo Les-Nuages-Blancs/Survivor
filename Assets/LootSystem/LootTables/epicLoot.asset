@@ -16,7 +16,7 @@ MonoBehaviour:
   - prefab: {fileID: 5223959951191603647, guid: a2d31c057a71e094d8e1e57025fa41ac,
       type: 3}
     dropChance: 1
-    category: 1
+    category: 9
     angle:
       serializedVersion: 2
       m_Curve:
@@ -77,7 +77,7 @@ MonoBehaviour:
   - prefab: {fileID: 2947476394515406775, guid: 53c60c1623d51b247be42e270c8ff6e7,
       type: 3}
     dropChance: 0.04
-    category: 2
+    category: 10
     angle:
       serializedVersion: 2
       m_Curve:
@@ -138,7 +138,7 @@ MonoBehaviour:
   - prefab: {fileID: 7335081419306091233, guid: 04531b606c1ea23449dd1feeb6fe749f,
       type: 3}
     dropChance: 0.04
-    category: 2
+    category: 10
     angle:
       serializedVersion: 2
       m_Curve:
@@ -199,7 +199,7 @@ MonoBehaviour:
   - prefab: {fileID: 1696255971976460481, guid: 7dbaa3481d6bb2946a2858aa81a7ad8f,
       type: 3}
     dropChance: 0.0066
-    category: 2
+    category: 10
     angle:
       serializedVersion: 2
       m_Curve:

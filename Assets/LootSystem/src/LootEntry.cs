@@ -11,6 +11,7 @@ public enum LootCategory
     XP = 1 << 0,        // 1
     RareDrop = 1 << 1,  // 2
     LootEvent = 1 << 2, // 4
+    JumpOnBirth = 1<<3, //8
     //...
 }
 
