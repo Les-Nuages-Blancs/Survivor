@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Netcode;
 using UnityEngine;
 
 
@@ -18,9 +19,9 @@ Thus I'm going with it
 This script store Y coordinate at start and turns the rigid body kinematic after
 */
 
-public class StopLootFalling : MonoBehaviour
+public class StopLootFalling : NetworkBehaviour
 {
-
+    public NetworkVariable<Vector3> impulse;
     private float startY =-9999;
     private Rigidbody rgb;
 
@@ -28,6 +29,7 @@ public class StopLootFalling : MonoBehaviour
     void Start(){
         startY = transform.position.y;
         rgb = GetComponent<Rigidbody>();
+        rgb.AddForce(impulse.Value, ForceMode.Impulse);
     }
 
     // Update is called once per frame

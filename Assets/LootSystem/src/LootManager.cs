@@ -179,7 +179,7 @@ public class LootManager : NetworkBehaviour
 
         
 
-        //Impulse on spawn :
+        //todo only on bitflag impulse
         {
             float theta = Random.Range(0.0f, 2.0f*Mathf.PI);
             Vector3 impDir = new Vector3(
@@ -188,10 +188,7 @@ public class LootManager : NetworkBehaviour
                 Mathf.Sin(lmd.alpha) * MathF.Sin(theta)
             ).normalized * lmd.strenght; 
             Debug.Log($"coucou  angle :{lmd.alpha}, str :  {lmd.strenght}");
-            
-            Rigidbody rgb = go.GetComponent<Rigidbody>();
-            // if(rgb == null) Debug.Log($"pas e rgb trouvé !");
-            rgb.AddForce(impDir,ForceMode.Impulse);
+            go.GetComponent<StopLootFalling>().impulse.Value = impDir;
         }
 
         go.GetComponent<NetworkObject>().Spawn();
