@@ -17,3 +17,5 @@ MonoBehaviour:
       type: 3}
     dropChance: 1
     category: 1
+    angle: 0.7853982
+    str: 1

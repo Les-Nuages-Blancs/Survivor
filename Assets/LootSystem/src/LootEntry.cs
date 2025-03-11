@@ -56,4 +56,9 @@ public class LootEntry
     public float dropChance;
     [Tooltip("bitflags. Used for specific pre-drop processing in LootManager")]
     public LootCategory category;
+
+    [Tooltip("randomly picks a value inside the curve (uniform distrib btw min and max). Image values should be between 0 and pi/4")]
+    public AnimationCurve angle;
+    [Tooltip("randomly picks a value inside the curve (uniform distrib btw min and max)./ Image values should be arround 1 and 10")]
+    public AnimationCurve strength;
 }

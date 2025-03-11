@@ -1,6 +1,9 @@
+using System;
 using System.Collections.Generic;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
+using Random = UnityEngine.Random;
 
 
 [System.Serializable]
@@ -15,6 +18,9 @@ public struct MapRange{
 public struct LootMetaData : INetworkSerializeByMemcpy{
     public LootCategory lootCategory;
     public int killedLevel;
+    public float alpha; //angle to throw the object
+    public float strenght; //strenght to trhow the loot with
+
     //other metadata ...
     //beware : if for some reason you need to add supports for complex type then must implement InetworkSerializable but int / float / enum are fine implementing ByMemcpy
 }
@@ -117,6 +123,9 @@ public class LootManager : NetworkBehaviour
             if (DropAttempt(entry/*, killer*/)){
                 LootMetaData lmd = new LootMetaData();
                 lmd.lootCategory = entry.category;
+                //get a random value in the curve
+                lmd.alpha = entry.angle.Evaluate(Random.Range(entry.angle.keys[0].time, entry.angle.keys[entry.angle.keys.Length-1].time));
+                lmd.strenght = entry.strength.Evaluate(Random.Range(entry.strength.keys[0].time, entry.strength.keys[entry.strength.keys.Length-1].time));
                 lmd.killedLevel = killed.GetComponent<StatistiquesLevelSystem>().CurrentLevel;
 
 
@@ -169,8 +178,25 @@ public class LootManager : NetworkBehaviour
         }
 
         
+
+        //Impulse on spawn :
+        {
+            float theta = Random.Range(0.0f, 2.0f*Mathf.PI);
+            Vector3 impDir = new Vector3(
+                Mathf.Sin(lmd.alpha) * Mathf.Cos(theta),
+                Mathf.Cos(lmd.alpha),
+                Mathf.Sin(lmd.alpha) * MathF.Sin(theta)
+            ).normalized * lmd.strenght * 1.7f; //1.7f is a magic value it was faster to edit here than to change every anim curve
+            Debug.Log($"coucou  angle :{lmd.alpha}, str :  {lmd.strenght}");
+            
+            Rigidbody rgb = go.GetComponent<Rigidbody>();
+            // if(rgb == null) Debug.Log($"pas e rgb trouvé !");
+            rgb.AddForce(impDir,ForceMode.Impulse);
+        }
+
         go.GetComponent<NetworkObject>().Spawn();
     }
+
 
     
 
