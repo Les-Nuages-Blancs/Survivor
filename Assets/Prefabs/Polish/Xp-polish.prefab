@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 1802423971976730684}
   - component: {fileID: 4988521108697214203}
   - component: {fileID: 8211452645545006905}
+  - component: {fileID: 2462993598646407773}
+  - component: {fileID: 2725406677486404218}
   m_Layer: 0
   m_Name: Xp-polish
   m_TagString: Untagged
@@ -96,6 +98,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   magnetMultiplier: 1
+  speedIncreaseRate: 1
 --- !u!114 &8211452645545006905
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -124,6 +127,47 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   delayTime: 1
+--- !u!54 &2462993598646407773
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5223959951191603647}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &2725406677486404218
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5223959951191603647}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d98a537a3e72744d8d678f317b2a037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  impulse:
+    m_InternalValue: {x: 0, y: 0, z: 0}
 --- !u!1 &5574307203742587425
 GameObject:
   m_ObjectHideFlags: 0
@@ -326,7 +370,6 @@ GameObject:
   m_Component:
   - component: {fileID: 3514771195020057826}
   - component: {fileID: 1829124658723665812}
-  - component: {fileID: 8957006487943038208}
   - component: {fileID: 624343396866737192}
   - component: {fileID: 3936083285293506875}
   m_Layer: 0
@@ -372,33 +415,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7568106, y: 1.6993968, z: 0.6516174}
   m_Center: {x: -0.005213529, y: 0.016612768, z: 0.021359205}
---- !u!54 &8957006487943038208
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8330517525875140146}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &624343396866737192
 MonoBehaviour:
   m_ObjectHideFlags: 0
