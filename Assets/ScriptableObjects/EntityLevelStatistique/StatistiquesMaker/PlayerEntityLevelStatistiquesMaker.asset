@@ -36,8 +36,8 @@ MonoBehaviour:
           health: 20
           regenHealth: 0.2
           armor: 2
-          damage: 5
-          attackSpeed: 3
+          damage: 2
+          attackSpeed: 1
           critDamageMultiplier: 0.05
           criticalChance: 0.01
           pickupRange: 0.2
@@ -53,8 +53,8 @@ MonoBehaviour:
           health: 50
           regenHealth: 0.4
           armor: 2
-          damage: 15
-          attackSpeed: 1
+          damage: 3
+          attackSpeed: 0.5
           critDamageMultiplier: 0.05
           criticalChance: 0.01
           pickupRange: 0.2
@@ -70,7 +70,7 @@ MonoBehaviour:
           health: 100
           regenHealth: 0.5
           armor: 2
-          damage: 40
+          damage: 5
           attackSpeed: 0.2
           critDamageMultiplier: 0.05
           criticalChance: 0.01

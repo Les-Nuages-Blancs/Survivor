@@ -6,6 +6,7 @@ public class TriggerStayEvent : NetworkBehaviour
 {
     [SerializeField] private float requiredStayTime = 2f; // Time required to trigger event
     [SerializeField] private float updateTime = 0.1f; // Interval to emit time updates
+    [SerializeField] private bool requireHost = true; // Interval to emit time updates
 
     private float timeInside = 0f;
     private bool isInside = false;
@@ -16,9 +17,23 @@ public class TriggerStayEvent : NetworkBehaviour
     public event Action OnExit;
     public event Action OnEnter;
 
+    public Gate gate;
+
+    private bool checkIsServer()
+    {
+        if (gate != null)
+        {
+            return gate.IsServer;
+        }
+        else
+        {
+            return IsServer;
+        }
+    }
+
     private void OnTriggerEnter(Collider other)
     {
-        if (!IsServer) return;
+        if (!checkIsServer()) return;
 
         if (IsHostPlayer(other))
         {
@@ -31,7 +46,7 @@ public class TriggerStayEvent : NetworkBehaviour
 
     private void OnTriggerExit(Collider other)
     {
-        if (!IsServer) return;
+        if (!checkIsServer()) return;
 
         if (IsHostPlayer(other))
         {
@@ -43,7 +58,7 @@ public class TriggerStayEvent : NetworkBehaviour
 
     private void Update()
     {
-        if (!IsServer) return;
+        if (!checkIsServer()) return;
 
         if (isInside)
         {
@@ -73,7 +88,7 @@ public class TriggerStayEvent : NetworkBehaviour
             if (target != null)
             {
                 GameObject localPlayer = NetworkManager.Singleton.SpawnManager.GetLocalPlayerObject()?.gameObject;
-                if (localPlayer == target)
+                if (localPlayer == target || !requireHost)
                 {
                     return true;
                 }

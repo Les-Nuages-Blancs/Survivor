@@ -2,10 +2,14 @@ using UnityEngine;
 
 public class MagnetObject : MonoBehaviour
 {
-    [Range(0f, 1f)] public float magnetMultiplier = 1f; // Facteur de réduction de la range
+    [Range(0f, 1f)] public float magnetMultiplier = 1f; // Reduction factor for range
+    [SerializeField] private float speedIncreaseRate = 1f; // How fast the speed increases over time
+
     private bool isBeingMagnetized = false;
     private Transform target;
-    private float attractionSpeed;
+    private float baseAttractionSpeed;
+    private float currentAttractionSpeed;
+    private float timeBeingMagnetized = 0f;
 
     public bool IsBeingMagnetized => isBeingMagnetized;
     public float MagnetMultiplier => magnetMultiplier;
@@ -16,14 +20,23 @@ public class MagnetObject : MonoBehaviour
 
         isBeingMagnetized = true;
         target = player.transform;
-        attractionSpeed = speed;
+        baseAttractionSpeed = speed;
+        currentAttractionSpeed = speed;
+        timeBeingMagnetized = 0f; // Reset time counter
     }
 
     private void Update()
     {
         if (isBeingMagnetized && target != null)
         {
-            transform.position = Vector3.MoveTowards(transform.position, target.position, attractionSpeed * Time.deltaTime);
+            // Increase time being magnetized
+            timeBeingMagnetized += Time.deltaTime;
+
+            // Gradually increase attraction speed
+            currentAttractionSpeed = baseAttractionSpeed + (speedIncreaseRate * timeBeingMagnetized);
+
+            // Move object towards target
+            transform.position = Vector3.MoveTowards(transform.position, target.position, currentAttractionSpeed * Time.deltaTime);
         }
     }
 }

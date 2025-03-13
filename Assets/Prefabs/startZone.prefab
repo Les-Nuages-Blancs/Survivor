@@ -9,8 +9,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7154852573130926437}
-  - component: {fileID: 5334311889595976702}
   - component: {fileID: 1033469203183966061}
+  - component: {fileID: 5334311889595976702}
   - component: {fileID: 3900737062900188080}
   - component: {fileID: 2760397053964394661}
   m_Layer: 0
@@ -37,20 +37,6 @@ Transform:
   - {fileID: 6525433319147202316}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &5334311889595976702
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2879651840062044457}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 69b6c58993509e84fa115228fed91511, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  triggerEvent: {fileID: 3900737062900188080}
-  timerText: {fileID: 1724872257563332192}
 --- !u!114 &1033469203183966061
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,6 +58,20 @@ MonoBehaviour:
   SpawnWithObservers: 1
   DontDestroyWithOwner: 0
   AutoObjectParentSync: 1
+--- !u!114 &5334311889595976702
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2879651840062044457}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 69b6c58993509e84fa115228fed91511, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  triggerEvent: {fileID: 3900737062900188080}
+  timerText: {fileID: 1724872257563332192}
 --- !u!114 &3900737062900188080
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -86,6 +86,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   requiredStayTime: 3
   updateTime: 0.1
+  requireHost: 1
+  gate: {fileID: 0}
 --- !u!64 &2760397053964394661
 MeshCollider:
   m_ObjectHideFlags: 0
@@ -1117,7 +1119,7 @@ MonoBehaviour:
   m_PreserveMeshAssetOnDestroy: 0
   assetGuid: 
   m_Mesh: {fileID: 0}
-  m_VersionIndex: 979
+  m_VersionIndex: 982
   m_IsSelectable: 1
   m_SelectedFaces: 
   m_SelectedEdges: []

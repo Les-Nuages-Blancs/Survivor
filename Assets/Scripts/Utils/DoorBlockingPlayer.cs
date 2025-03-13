@@ -13,8 +13,8 @@ public class DoorBlockingPlayer : MonoBehaviour
     [SerializeField] private float unlockLvl = 10.0f;
 
     [SerializeField] private TextMeshProUGUI unlockLabel;
+    [SerializeField] private Gate gate;
 
-    
     void Awake(){
         playersStats = new List<StatistiquesLevelSystem>();
     }
@@ -38,7 +38,7 @@ public class DoorBlockingPlayer : MonoBehaviour
 
     void TryToOpen(){
         if(GetAvgPlayerLvl() >= unlockLvl){
-            gameObject.SetActive(false);
+            gate.UnlockGate();
         }
         else{
             Invoke("TryToOpen", updtFrequency);
