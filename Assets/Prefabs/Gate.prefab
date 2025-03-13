@@ -2158,11 +2158,12 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 436751822296368075}
+  - component: {fileID: 419942795039286027}
   - component: {fileID: 2266252585971222360}
   - component: {fileID: 1320235569113396870}
   - component: {fileID: 1294738877431821682}
   - component: {fileID: 312776875743091084}
-  - component: {fileID: 419942795039286027}
+  - component: {fileID: 6727353920807185700}
   m_Layer: 0
   m_Name: Gate
   m_TagString: Untagged
@@ -2193,6 +2194,27 @@ Transform:
   - {fileID: 9097496732341829614}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &419942795039286027
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7123477308181319124}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  GlobalObjectIdHash: 890294449
+  InScenePlacedSourceGlobalObjectIdHash: 0
+  AlwaysReplicateAsRoot: 0
+  SynchronizeTransform: 1
+  ActiveSceneSynchronization: 0
+  SceneMigrationSynchronization: 1
+  SpawnWithObservers: 1
+  DontDestroyWithOwner: 0
+  AutoObjectParentSync: 1
 --- !u!114 &2266252585971222360
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -2218,6 +2240,7 @@ MonoBehaviour:
   unlockZoneLeft: {fileID: 122277255642790360}
   unlockZoneLeftVisible: 0
   unlockZoneRightVisible: 1
+  activateComponentIfPlayerIsFar: {fileID: 0}
 --- !u!208 &1320235569113396870
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2266,7 +2289,7 @@ MonoBehaviour:
   triggerEvent2: {fileID: 715271547494061298}
   timerText1: {fileID: 6128098435706326149}
   timerText2: {fileID: 5264722094889731074}
---- !u!114 &419942795039286027
+--- !u!114 &6727353920807185700
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -2275,18 +2298,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 7123477308181319124}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
+  m_Script: {fileID: 11500000, guid: 2ae562434e8b3944a88b1dd561be5216, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 890294449
-  InScenePlacedSourceGlobalObjectIdHash: 0
-  AlwaysReplicateAsRoot: 0
-  SynchronizeTransform: 1
-  ActiveSceneSynchronization: 0
-  SceneMigrationSynchronization: 1
-  SpawnWithObservers: 1
-  DontDestroyWithOwner: 0
-  AutoObjectParentSync: 1
+  farDistance: 8
+  componentToActivate: {fileID: 1320235569113396870}
+  multiplier: 1
 --- !u!1 &8036116456167490396
 GameObject:
   m_ObjectHideFlags: 0

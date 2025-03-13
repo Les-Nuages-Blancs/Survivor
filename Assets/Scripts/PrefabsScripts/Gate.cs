@@ -13,6 +13,7 @@ public class Gate : NetworkBehaviour
     [SerializeField] private GameObject unlockZoneLeft;
     [SerializeField] private bool unlockZoneLeftVisible = true;
     [SerializeField] private bool unlockZoneRightVisible = true;
+    [SerializeField] private ActivateComponentIfPlayerIsFar activateComponentIfPlayerIsFar;
 
     private bool canBeUnlocked = false;
 
@@ -81,5 +82,7 @@ public class Gate : NetworkBehaviour
             navObs.size = currentScale;
 
         }
+
+        activateComponentIfPlayerIsFar.multiplier = gateScale;
     }
 }

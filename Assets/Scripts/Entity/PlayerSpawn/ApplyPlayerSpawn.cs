@@ -7,9 +7,15 @@ using UnityEngine;
 public class ApplyPlayerSpawn : NetworkBehaviour
 {
     [SerializeField] private Transform cameraFollowPoint;
-    
+    [SerializeField] private List<GameObject> visualsGo = new List<GameObject>();
+
     public override void OnNetworkSpawn()
     {
+        foreach (GameObject go in visualsGo)
+        {
+            go.SetActive(false);
+        }
+
         if (!IsOwner) return;
 
         Camera.main.GetComponent<CameraFollowSystem>().target = cameraFollowPoint != null ? cameraFollowPoint : transform;
@@ -21,6 +27,11 @@ public class ApplyPlayerSpawn : NetworkBehaviour
     private void ApplyPlayerSpawnServerRPC()
     {
         PlayerSpawnManager.Instance.ApplyPlayerSpawn(this);
+
+        foreach (GameObject go in visualsGo)
+        {
+            go.SetActive(true);
+        }
     }
 
     [ClientRpc]
@@ -28,5 +39,10 @@ public class ApplyPlayerSpawn : NetworkBehaviour
     {
         transform.position = position;
         transform.eulerAngles = eulerAngles;
+
+        foreach (GameObject go in visualsGo)
+        {
+            go.SetActive(true);
+        }
     }
 }

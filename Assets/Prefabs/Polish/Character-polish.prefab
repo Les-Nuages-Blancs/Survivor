@@ -659,6 +659,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   cameraFollowPoint: {fileID: 7450864716680855169}
+  visualsGo:
+  - {fileID: 6236515315802109340}
+  - {fileID: 4833908451186216875}
 --- !u!114 &4126310049224978574
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -1346,6 +1349,12 @@ PrefabInstance:
 --- !u!224 &2672306731340932911 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 175313995628643416, guid: 73a3abdd232dd5d4ba642a26b1672b58,
+    type: 3}
+  m_PrefabInstance: {fileID: 2844911528169153399}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &4833908451186216875 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7236820427699989724, guid: 73a3abdd232dd5d4ba642a26b1672b58,
     type: 3}
   m_PrefabInstance: {fileID: 2844911528169153399}
   m_PrefabAsset: {fileID: 0}
