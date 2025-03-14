@@ -5,7 +5,7 @@ using TMPro;
 using Unity.Netcode;
 using UnityEngine;
 
-public class UnlockGate : MonoBehaviour
+public class UnlockGate : NetworkBehaviour
 {
     [SerializeField] private TriggerStayEvent triggerEvent1;
     [SerializeField] private TriggerStayEvent triggerEvent2;
@@ -34,6 +34,20 @@ public class UnlockGate : MonoBehaviour
     private void TimeReached(TextMeshProUGUI timerText)
     {
         timerText.text = "Unlocking ...";
+        UnlockGateServerRpc();
+    }
+
+    [ServerRpc]
+    private void UnlockGateServerRpc()
+    {
+        gameObject.SetActive(false);
+    
+        UnlockGateClientRpc();
+    }
+
+    [ClientRpc]
+    private void UnlockGateClientRpc()
+    {
         gameObject.SetActive(false);
     }
 }

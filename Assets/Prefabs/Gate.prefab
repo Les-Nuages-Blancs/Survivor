@@ -2240,7 +2240,7 @@ MonoBehaviour:
   unlockZoneLeft: {fileID: 122277255642790360}
   unlockZoneLeftVisible: 0
   unlockZoneRightVisible: 1
-  activateComponentIfPlayerIsFar: {fileID: 0}
+  activateComponentIfPlayerIsFar: {fileID: 6727353920807185700}
 --- !u!208 &1320235569113396870
 NavMeshObstacle:
   m_ObjectHideFlags: 0
@@ -2303,7 +2303,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   farDistance: 8
   componentToActivate: {fileID: 1320235569113396870}
-  multiplier: 1
+  multiplier: 1.2
 --- !u!1 &8036116456167490396
 GameObject:
   m_ObjectHideFlags: 0

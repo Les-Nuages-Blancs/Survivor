@@ -1331,6 +1331,11 @@ PrefabInstance:
       propertyPath: m_Name
       value: Canvas
       objectReference: {fileID: 0}
+    - target: {fileID: 7236820427699989724, guid: 73a3abdd232dd5d4ba642a26b1672b58,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     m_RemovedComponents:
     - {fileID: 6343078056394647781, guid: 73a3abdd232dd5d4ba642a26b1672b58, type: 3}
     m_RemovedGameObjects:
@@ -1425,6 +1430,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: kayle_correction
+      objectReference: {fileID: 0}
+    - target: {fileID: 7951178540967508706, guid: 25cd985bba4bec148b03b299e43bae16,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7951178540967508706, guid: 25cd985bba4bec148b03b299e43bae16,
         type: 3}

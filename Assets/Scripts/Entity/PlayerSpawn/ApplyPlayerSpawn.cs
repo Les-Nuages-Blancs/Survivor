@@ -9,29 +9,41 @@ public class ApplyPlayerSpawn : NetworkBehaviour
     [SerializeField] private Transform cameraFollowPoint;
     [SerializeField] private List<GameObject> visualsGo = new List<GameObject>();
 
+    private void Awake()
+    {
+        SetVisuals(false);
+    }
+
     public override void OnNetworkSpawn()
+    {
+
+        if (IsOwner)
+        {
+            Camera.main.GetComponent<CameraFollowSystem>().target = cameraFollowPoint != null ? cameraFollowPoint : transform;
+
+            ApplyPlayerSpawnServerRPC();
+        }
+        else 
+        {
+            SetVisuals(true);
+        }
+
+    }
+
+    public void SetVisuals(bool state)
     {
         foreach (GameObject go in visualsGo)
         {
-            go.SetActive(false);
+            go.SetActive(state);
         }
-
-        if (!IsOwner) return;
-
-        Camera.main.GetComponent<CameraFollowSystem>().target = cameraFollowPoint != null ? cameraFollowPoint : transform;
-
-        ApplyPlayerSpawnServerRPC();
     }
-    
+
     [ServerRpc]
     private void ApplyPlayerSpawnServerRPC()
     {
         PlayerSpawnManager.Instance.ApplyPlayerSpawn(this);
 
-        foreach (GameObject go in visualsGo)
-        {
-            go.SetActive(true);
-        }
+        SetVisuals(true);
     }
 
     [ClientRpc]
@@ -40,9 +52,6 @@ public class ApplyPlayerSpawn : NetworkBehaviour
         transform.position = position;
         transform.eulerAngles = eulerAngles;
 
-        foreach (GameObject go in visualsGo)
-        {
-            go.SetActive(true);
-        }
+        SetVisuals(true);
     }
 }
