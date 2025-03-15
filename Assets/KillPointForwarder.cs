@@ -8,6 +8,6 @@ public class KillPointForwarder : NetworkBehaviour
     [SerializeField] private StatistiquesLevelSystem statistiqueLevelSystem;
     public void ForwardKillPoint()
     {
-        PlayerSpawnerZoneKillPointLevelUpgrader.AddKillPoint(OwnerClientId, statistiqueLevelSystem.BaseStatistiques.KillPoint);
+        PlayerSpawnerZoneKillPointLevelUpgrader.AddKillPoint(OwnerClientId, statistiqueLevelSystem.CurrentStatistiques.KillPoint);
     }
 }

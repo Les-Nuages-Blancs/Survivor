@@ -23,7 +23,7 @@ public class MagnetPlayer : NetworkBehaviour
     {
         if (!IsServer) return;
 
-        float newMagnetRange = statsLevelSystem.BaseStatistiques.PickupRange;
+        float newMagnetRange = statsLevelSystem.CurrentStatistiques.PickupRange;
 
         if (magnetRange != newMagnetRange)
         {

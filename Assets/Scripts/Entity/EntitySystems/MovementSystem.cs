@@ -76,7 +76,7 @@ public class MovementSystem : NetworkBehaviour
     {
         if (!IsServer) return;
 
-        float baseSpeed = statsLevelSystem.BaseStatistiques.MoveSpeedMultiplier;
+        float baseSpeed = statsLevelSystem.CurrentStatistiques.MoveSpeedMultiplier;
         float targetSpeed = baseSpeed;
 
         if (targetPosition.HasValue && agent.hasPath)

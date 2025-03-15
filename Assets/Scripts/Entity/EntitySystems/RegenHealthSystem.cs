@@ -24,7 +24,7 @@ public class RegenHealthSystem : NetworkBehaviour
     public void UpdateRegenStats()
     {
         if (!IsServer) return;
-        regenHealthValue.Value = statsLevelSystem.BaseStatistiques.RegenHealth;
+        regenHealthValue.Value = statsLevelSystem.CurrentStatistiques.RegenHealth;
     }
 
     public override void OnNetworkSpawn()

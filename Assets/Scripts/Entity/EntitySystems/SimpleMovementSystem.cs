@@ -50,7 +50,7 @@ public class SimpleMovementSystem : NetworkBehaviour
     public void UpdateMoveStats()
     {
         if (!IsServer) return;
-        var newValue = statsLevelSystem.BaseStatistiques.MoveSpeedMultiplier;
+        var newValue = statsLevelSystem.CurrentStatistiques.MoveSpeedMultiplier;
         moveSpeed.Value = newValue;
     }
 

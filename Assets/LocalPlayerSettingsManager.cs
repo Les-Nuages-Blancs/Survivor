@@ -25,8 +25,8 @@ public class LocalPlayerSettingsManager : MonoBehaviour
 
                 if (newValue != null && newValue != "")
                 {
-                    onPlayerNameChange.Invoke(newValue);
                     playerName = newValue;
+                    onPlayerNameChange.Invoke(newValue);
                 }
             }
         }

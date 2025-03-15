@@ -1,3 +1,4 @@
+using Unity.Collections;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
@@ -11,14 +12,24 @@ public class StatistiquesLevelSystem : NetworkBehaviour
 
     [SerializeField] private NetworkVariable<EntityBaseStatistiques> baseStatistiques = new NetworkVariable<EntityBaseStatistiques>(
         new EntityBaseStatistiques(), NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Server);
+    [SerializeField] private NetworkVariable<EntityBaseStatistiques> baseStatistiquesMultiplier = new NetworkVariable<EntityBaseStatistiques>(
+        new EntityBaseStatistiques(1, 1.0f, 1.0f, 0.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f, 1.0f), NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [SerializeField] private NetworkVariable<EntityBaseStatistiques> baseStatistiquesAdditiveBonus = new NetworkVariable<EntityBaseStatistiques>(
+        new EntityBaseStatistiques(), NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     [SerializeField] public UnityEvent onBaseStatsChange;
+    [SerializeField] public UnityEvent onBaseStatistiquesMultiplierChange;
+    [SerializeField] public UnityEvent onBaseStatistiquesAdditiveBonusChange;
+    [SerializeField] public UnityEvent onCurrentStatistiquesChange;
+
     [SerializeField] public UnityEvent onCurrentLevelChange;
     [SerializeField] public UnityEvent onCurrentXpChange;
 
     public EntityBaseStatistiques BaseStatistiques => baseStatistiques.Value;
+    public EntityBaseStatistiques BaseStatistiquesMultiplier => baseStatistiquesMultiplier.Value;
+    public EntityBaseStatistiques BaseStatistiquesAdditiveBonus => baseStatistiquesAdditiveBonus.Value;
+    public EntityBaseStatistiques CurrentStatistiques => (baseStatistiques.Value + baseStatistiquesAdditiveBonus.Value) * baseStatistiquesMultiplier.Value;
     public EntityLevelStatistiquesSO EntityLevelStatistiques => entityLevelStatistiques;
-
 
     public int CurrentLevel
     {
@@ -48,11 +59,25 @@ public class StatistiquesLevelSystem : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         baseStatistiques.OnValueChanged += OnBaseStatsChange;
+        baseStatistiquesAdditiveBonus.OnValueChanged += OnBaseStatsAdditiveBonusChange;
+        baseStatistiquesMultiplier.OnValueChanged += OnBaseStatsMultiplierChange;
         currentLevel.OnValueChanged += OnCurrentLevelChange;
         currentXp.OnValueChanged += OnCurrentXpChange;
 
+        if (IsOwner)
+        {
+            UpdateUpgrader(LocalPlayerUpgradeManager.Instance.GetCurrentStatsMultiplier(), LocalPlayerUpgradeManager.Instance.GetCurrentStatsAdditiveBonus());
+            LocalPlayerUpgradeManager.Instance.onStatsUpgraderLevelChange.AddListener(UpdateUpgrader);
+        }
+
         UpdateLevelStat();
         TryLevelUp();
+    }
+
+    private void UpdateUpgrader(EntityBaseStatistiques newMultiplier, EntityBaseStatistiques newAdditiveBonus)
+    {
+        baseStatistiquesMultiplier.Value = newMultiplier;
+        baseStatistiquesAdditiveBonus.Value = newAdditiveBonus;
     }
 
     public override void OnDestroy()
@@ -60,15 +85,35 @@ public class StatistiquesLevelSystem : NetworkBehaviour
         base.OnDestroy();
 
         baseStatistiques.OnValueChanged -= OnBaseStatsChange;
+        baseStatistiquesAdditiveBonus.OnValueChanged -= OnBaseStatsAdditiveBonusChange;
+        baseStatistiquesMultiplier.OnValueChanged -= OnBaseStatsMultiplierChange;
         currentLevel.OnValueChanged -= OnCurrentLevelChange;
         currentXp.OnValueChanged -= OnCurrentXpChange;
+
+        if (IsOwner)
+        {
+            LocalPlayerUpgradeManager.Instance.onStatsUpgraderLevelChange.RemoveListener(UpdateUpgrader);
+        }
     }
 
     private void OnBaseStatsChange(EntityBaseStatistiques oldValue, EntityBaseStatistiques newValue)
     {
         onBaseStatsChange.Invoke();
+        onCurrentStatistiquesChange.Invoke();
         // TODO see why changing health from health system update base stats
         // Debug.Log("base stats change - " + gameObject.name);
+    }
+
+    private void OnBaseStatsAdditiveBonusChange(EntityBaseStatistiques oldValue, EntityBaseStatistiques newValue)
+    {
+        onBaseStatistiquesAdditiveBonusChange.Invoke();
+        onCurrentStatistiquesChange.Invoke();
+    }
+
+    private void OnBaseStatsMultiplierChange(EntityBaseStatistiques oldValue, EntityBaseStatistiques newValue)
+    {
+        onBaseStatistiquesMultiplierChange.Invoke();
+        onCurrentStatistiquesChange.Invoke();
     }
 
     private void OnCurrentLevelChange(int oldValue, int newValue)

@@ -60,7 +60,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 1105420886
+  GlobalObjectIdHash: 702314078
   InScenePlacedSourceGlobalObjectIdHash: 3314818267
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -129,7 +129,42 @@ MonoBehaviour:
       pickupRange: 0
       moveSpeedMultiplier: 0
       killPoint: 0
+  baseStatistiquesMultiplier:
+    m_InternalValue:
+      requiredXpForNextLevel: 1
+      health: 1
+      regenHealth: 1
+      armor: 1
+      damage: 1
+      attackSpeed: 1
+      critDamageMultiplier: 1
+      criticalChance: 1
+      pickupRange: 1
+      moveSpeedMultiplier: 1
+      killPoint: 1
+  baseStatistiquesAdditiveBonus:
+    m_InternalValue:
+      requiredXpForNextLevel: 0
+      health: 0
+      regenHealth: 0
+      armor: 0
+      damage: 0
+      attackSpeed: 0
+      critDamageMultiplier: 0
+      criticalChance: 0
+      pickupRange: 0
+      moveSpeedMultiplier: 0
+      killPoint: 0
   onBaseStatsChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onBaseStatistiquesMultiplierChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onBaseStatistiquesAdditiveBonusChange:
+    m_PersistentCalls:
+      m_Calls: []
+  onCurrentStatistiquesChange:
     m_PersistentCalls:
       m_Calls:
       - m_Target: {fileID: 5519420698432557919}

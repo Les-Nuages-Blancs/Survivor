@@ -73,7 +73,7 @@ public class HealthSystem : NetworkBehaviour
     {
         if (!IsServer) return;
 
-        float newMaxHealth = statsLevelSystem.BaseStatistiques.Health;
+        float newMaxHealth = statsLevelSystem.CurrentStatistiques.Health;
 
         if (MaxHealth != newMaxHealth)
         {

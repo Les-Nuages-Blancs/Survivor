@@ -47,9 +47,9 @@ public class AutoAttackSystem : NetworkBehaviour
     {
         //if (!IsServer) return;
 
-        AttackSpeed = statsLevelSystem.BaseStatistiques.AttackSpeed;
+        AttackSpeed = statsLevelSystem.CurrentStatistiques.AttackSpeed;
 
-        AttackDamage = statsLevelSystem.BaseStatistiques.Damage;
+        AttackDamage = statsLevelSystem.CurrentStatistiques.Damage;
 
         if (Application.isPlaying )
         {
