@@ -7,17 +7,18 @@ public class RelayUI : MonoBehaviour
     [SerializeField] private List<GameObject> hostUIComponents = new List<GameObject>();
     [SerializeField] private List<GameObject> joinUIComponents = new List<GameObject>();
     [SerializeField] private List<GameObject> defaultUIComponents = new List<GameObject>();
+    [SerializeField] private List<GameObject> allUIComponents = new List<GameObject>();
 
     private void Start()
     {
         ShowDefaultUI();
     }
 
-    public void DisableAllChildren()
+    public void DisableAllUI()
     {
-        foreach (Transform child in transform)
+        foreach (GameObject uiComponent in allUIComponents)
         {
-            child.gameObject.SetActive(false);
+            uiComponent.SetActive(false);
         }
     }
 
@@ -31,19 +32,19 @@ public class RelayUI : MonoBehaviour
 
     public void ShowJoinUI()
     {
-        DisableAllChildren();
+        DisableAllUI();
         EnableAllUIComponents(joinUIComponents);
     }
 
     public void ShowHostUI()
     {
-        DisableAllChildren();
+        DisableAllUI();
         EnableAllUIComponents(hostUIComponents);
     }
 
     public void ShowDefaultUI()
     {
-        DisableAllChildren();
+        DisableAllUI();
         EnableAllUIComponents(defaultUIComponents);
     }
 }
