@@ -96,6 +96,11 @@ public class AutoAttackSystem : NetworkBehaviour
         StopAttacks();
     }
 
+    private void OnEnable()
+    {
+        RestartAttacks();
+    }
+
     private void StartAttacks()
     {
         //if (!IsServer) return;
