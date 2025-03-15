@@ -41,6 +41,8 @@ public class PlayerDeathSystem : NetworkBehaviour
         {
             playerRenderer.enabled = false;
         }
+        transform.position = applyPlayerSpawn.spawnPosition;
+        yield return new WaitForSeconds(0.1f);
 
         foreach (var playerCollider in playerColliders)
         {
@@ -79,7 +81,6 @@ public class PlayerDeathSystem : NetworkBehaviour
             playerCollider.enabled = true;
         }
         healthSystem.CurrentHealth = healthSystem.MaxHealth;
-        transform.position = applyPlayerSpawn.spawnPosition;
         IsDead = false;
 
     }

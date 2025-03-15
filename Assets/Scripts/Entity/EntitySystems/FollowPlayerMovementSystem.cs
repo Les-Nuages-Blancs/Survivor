@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Globalization;
 using Unity.Netcode;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class FollowPlayerMovementSystem : NetworkBehaviour
@@ -42,7 +43,7 @@ public class FollowPlayerMovementSystem : NetworkBehaviour
         {
             float distance = Vector3.Distance(transform.position, player.transform.position);
 
-            if (distance < closestDistance)
+            if (distance < closestDistance && !player.GetComponent<PlayerDeathSystem>().IsDead)
             {
                 closestDistance = distance;
                 closestTransform = player.transform;
