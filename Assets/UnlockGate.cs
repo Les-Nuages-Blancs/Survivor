@@ -11,11 +11,31 @@ public class UnlockGate : NetworkBehaviour
     [SerializeField] private TriggerStayEvent triggerEvent2;
     [SerializeField] private TextMeshProUGUI timerText1; // UI Text to update
     [SerializeField] private TextMeshProUGUI timerText2; // UI Text to update
+    [SerializeField] private Zone zone;
 
     private void Start()
     {
         SetupTriggerEvent(triggerEvent1, timerText1);
         SetupTriggerEvent(triggerEvent2, timerText2);
+        if (zone != null )
+        {
+            zone.onUnlock.AddListener(HideGate);
+        }
+    }
+
+    public override void OnDestroy()
+    {
+        base.OnDestroy();
+        
+        if (zone != null )
+        {
+            zone.onUnlock.RemoveListener(HideGate);
+        }
+    }
+
+    private void HideGate()
+    {
+        gameObject.SetActive(false);
     }
 
     private void SetupTriggerEvent(TriggerStayEvent triggerEvent, TextMeshProUGUI timerText)
@@ -40,14 +60,17 @@ public class UnlockGate : NetworkBehaviour
     [ServerRpc]
     private void UnlockGateServerRpc()
     {
-        gameObject.SetActive(false);
-    
-        UnlockGateClientRpc();
+        if (zone != null)
+        {
+            zone.IsUnlock = true;
+
+            UnlockGateClientRpc();
+        }
     }
 
     [ClientRpc]
     private void UnlockGateClientRpc()
     {
-        gameObject.SetActive(false);
+        zone.IsUnlock = true;
     }
 }

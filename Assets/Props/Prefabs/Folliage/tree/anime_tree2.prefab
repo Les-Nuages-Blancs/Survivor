@@ -74,17 +74,17 @@ PrefabInstance:
     - target: {fileID: -8679921383154817045, guid: fcf46e5003dd33748b5ea336cd43a919,
         type: 3}
       propertyPath: m_LocalScale.x
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fcf46e5003dd33748b5ea336cd43a919,
         type: 3}
       propertyPath: m_LocalScale.y
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fcf46e5003dd33748b5ea336cd43a919,
         type: 3}
       propertyPath: m_LocalScale.z
-      value: 3
+      value: 6
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: fcf46e5003dd33748b5ea336cd43a919,
         type: 3}
@@ -657,6 +657,11 @@ PrefabInstance:
       propertyPath: m_VersionIndex
       value: 944
       objectReference: {fileID: 0}
+    - target: {fileID: 844793773766795879, guid: 5aa6d65d40bab9747bf05422f22f6a57,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 4377936417360131745, guid: 5aa6d65d40bab9747bf05422f22f6a57,
         type: 3}
       propertyPath: m_LocalPosition.x
@@ -716,6 +721,11 @@ PrefabInstance:
         type: 3}
       propertyPath: m_Name
       value: anime_tree2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8059036303398430945, guid: 5aa6d65d40bab9747bf05422f22f6a57,
+        type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8097280056449131205, guid: 5aa6d65d40bab9747bf05422f22f6a57,
         type: 3}

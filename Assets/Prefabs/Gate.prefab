@@ -2289,6 +2289,7 @@ MonoBehaviour:
   triggerEvent2: {fileID: 715271547494061298}
   timerText1: {fileID: 6128098435706326149}
   timerText2: {fileID: 5264722094889731074}
+  zone: {fileID: 0}
 --- !u!114 &6727353920807185700
 MonoBehaviour:
   m_ObjectHideFlags: 0
