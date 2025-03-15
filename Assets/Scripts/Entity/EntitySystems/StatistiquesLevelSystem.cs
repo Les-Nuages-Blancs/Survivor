@@ -17,6 +17,8 @@ public class StatistiquesLevelSystem : NetworkBehaviour
     [SerializeField] public UnityEvent onCurrentXpChange;
 
     public EntityBaseStatistiques BaseStatistiques => baseStatistiques.Value;
+    public EntityLevelStatistiquesSO EntityLevelStatistiques => entityLevelStatistiques;
+
 
     public int CurrentLevel
     {

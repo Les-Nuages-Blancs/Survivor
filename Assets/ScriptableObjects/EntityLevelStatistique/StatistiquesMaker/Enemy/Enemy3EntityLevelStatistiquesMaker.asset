@@ -15,7 +15,7 @@ MonoBehaviour:
   updateOnChange: 1
   baseStatistiques:
     requiredXpForNextLevel: 100
-    health: 200
+    health: 700
     regenHealth: 1
     armor: 20
     damage: 70
@@ -33,7 +33,7 @@ MonoBehaviour:
         levelUpgraderMode: 0
         entityOperationStatistiques:
           requiredXpForNextLevel: 50
-          health: 60
+          health: 80
           regenHealth: 0.2
           armor: 2
           damage: 15

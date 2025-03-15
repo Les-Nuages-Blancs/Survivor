@@ -12,6 +12,7 @@ public class Zone : NetworkBehaviour
 
     [SerializeField] private GameObject prefabPlayerSpawner;
     [SerializeField] private int MaxEnemyCount = 100;
+    [SerializeField] private bool isUnlock = false;
 
     private List<GameObject> spawnedPrefabs = new List<GameObject>();
     private int enemyCount = 0;
@@ -32,7 +33,21 @@ public class Zone : NetworkBehaviour
         }
     }
 
+    public bool IsUnlock
+    {
+        get => isUnlock;
+        set
+        {
+            if (isUnlock != value)
+            {
+                isUnlock = value;
+                onUnlock.Invoke();
+            }
+        }
+    }
+
     [SerializeField] private UnityEvent onEnemyCountChange;
+    [SerializeField] public UnityEvent onUnlock;
 
     public bool CanSpawnEnemyInZone()
     {

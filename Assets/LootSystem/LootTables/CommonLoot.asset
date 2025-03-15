@@ -16,16 +16,244 @@ MonoBehaviour:
   - prefab: {fileID: 5223959951191603647, guid: a2d31c057a71e094d8e1e57025fa41ac,
       type: 3}
     dropChance: 1
-    category: 1
+    category: 9
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.1308997
+        inSlope: 0.5235988
+        outSlope: 0.5235988
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.50967413
+        value: 0.39776444
+        inSlope: 1.4928019
+        outSlope: 1.4928019
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.13322946
+      - serializedVersion: 3
+        time: 1
+        value: 0.65449846
+        inSlope: 0.52359873
+        outSlope: 0.52359873
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    strength:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 5
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 15
+        inSlope: 3.6167977
+        outSlope: 3.6167977
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.0412591
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 2947476394515406775, guid: 53c60c1623d51b247be42e270c8ff6e7,
       type: 3}
     dropChance: 0.03
-    category: 2
+    category: 10
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.1308997
+        inSlope: 0.5235988
+        outSlope: 0.5235988
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.50967413
+        value: 0.39776444
+        inSlope: 1.4928019
+        outSlope: 1.4928019
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.13322946
+      - serializedVersion: 3
+        time: 1
+        value: 0.65449846
+        inSlope: 0.52359873
+        outSlope: 0.52359873
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    strength:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 5
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 15
+        inSlope: 3.6167977
+        outSlope: 3.6167977
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.0412591
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 7335081419306091233, guid: 04531b606c1ea23449dd1feeb6fe749f,
       type: 3}
     dropChance: 0.03
-    category: 2
+    category: 10
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.1308997
+        inSlope: 0.5235988
+        outSlope: 0.5235988
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.50967413
+        value: 0.39776444
+        inSlope: 1.4928019
+        outSlope: 1.4928019
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.13322946
+      - serializedVersion: 3
+        time: 1
+        value: 0.65449846
+        inSlope: 0.52359873
+        outSlope: 0.52359873
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    strength:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 5
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 15
+        inSlope: 3.6167977
+        outSlope: 3.6167977
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.0412591
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
   - prefab: {fileID: 1696255971976460481, guid: 7dbaa3481d6bb2946a2858aa81a7ad8f,
       type: 3}
     dropChance: 0.005
-    category: 2
+    category: 10
+    angle:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0.1308997
+        inSlope: 0.5235988
+        outSlope: 0.5235988
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 0.50967413
+        value: 0.39776444
+        inSlope: 1.4928019
+        outSlope: 1.4928019
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 1
+        outWeight: 0.13322946
+      - serializedVersion: 3
+        time: 1
+        value: 0.65449846
+        inSlope: 0.52359873
+        outSlope: 0.52359873
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0.33333334
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    strength:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 5
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 34
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0.33333334
+      - serializedVersion: 3
+        time: 10
+        value: 15
+        inSlope: 3.6167977
+        outSlope: 3.6167977
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0.0412591
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4

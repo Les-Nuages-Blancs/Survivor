@@ -28,8 +28,8 @@ MonoBehaviour:
     health: 330
     regenHealth: 1.2
     armor: 22
-    damage: 20
-    attackSpeed: 5
+    damage: 17
+    attackSpeed: 3
     critDamageMultiplier: 0.25
     criticalChance: 0.060000002
     pickupRange: 5.2
@@ -39,8 +39,8 @@ MonoBehaviour:
     health: 350
     regenHealth: 1.4000001
     armor: 24
-    damage: 25
-    attackSpeed: 8
+    damage: 19
+    attackSpeed: 4
     critDamageMultiplier: 0.3
     criticalChance: 0.07
     pickupRange: 5.3999996
@@ -50,8 +50,8 @@ MonoBehaviour:
     health: 370
     regenHealth: 1.6000001
     armor: 26
-    damage: 30
-    attackSpeed: 11
+    damage: 21
+    attackSpeed: 5
     critDamageMultiplier: 0.35000002
     criticalChance: 0.08
     pickupRange: 5.5999994
@@ -61,8 +61,8 @@ MonoBehaviour:
     health: 390
     regenHealth: 1.8000002
     armor: 28
-    damage: 35
-    attackSpeed: 14
+    damage: 23
+    attackSpeed: 6
     critDamageMultiplier: 0.40000004
     criticalChance: 0.089999996
     pickupRange: 5.799999
@@ -72,8 +72,8 @@ MonoBehaviour:
     health: 410
     regenHealth: 2.0000002
     armor: 30
-    damage: 40
-    attackSpeed: 17
+    damage: 25
+    attackSpeed: 7
     critDamageMultiplier: 0.45000005
     criticalChance: 0.099999994
     pickupRange: 5.999999
@@ -83,8 +83,8 @@ MonoBehaviour:
     health: 460
     regenHealth: 2.4000003
     armor: 32
-    damage: 55
-    attackSpeed: 18
+    damage: 28
+    attackSpeed: 7.5
     critDamageMultiplier: 0.50000006
     criticalChance: 0.10999999
     pickupRange: 6.199999
@@ -94,8 +94,8 @@ MonoBehaviour:
     health: 510
     regenHealth: 2.8000004
     armor: 34
-    damage: 70
-    attackSpeed: 19
+    damage: 31
+    attackSpeed: 8
     critDamageMultiplier: 0.5500001
     criticalChance: 0.11999999
     pickupRange: 6.3999987
@@ -105,8 +105,8 @@ MonoBehaviour:
     health: 560
     regenHealth: 3.2000005
     armor: 36
-    damage: 85
-    attackSpeed: 20
+    damage: 34
+    attackSpeed: 8.5
     critDamageMultiplier: 0.6000001
     criticalChance: 0.13
     pickupRange: 6.5999985
@@ -116,8 +116,8 @@ MonoBehaviour:
     health: 610
     regenHealth: 3.6000006
     armor: 38
-    damage: 100
-    attackSpeed: 21
+    damage: 37
+    attackSpeed: 9
     critDamageMultiplier: 0.6500001
     criticalChance: 0.14
     pickupRange: 6.7999983
@@ -127,8 +127,8 @@ MonoBehaviour:
     health: 660
     regenHealth: 4.0000005
     armor: 40
-    damage: 115
-    attackSpeed: 22
+    damage: 40
+    attackSpeed: 9.5
     critDamageMultiplier: 0.7000001
     criticalChance: 0.15
     pickupRange: 6.999998
@@ -138,8 +138,8 @@ MonoBehaviour:
     health: 760
     regenHealth: 4.5000005
     armor: 42
-    damage: 155
-    attackSpeed: 22.2
+    damage: 45
+    attackSpeed: 9.7
     critDamageMultiplier: 0.7500001
     criticalChance: 0.16000001
     pickupRange: 7.199998
@@ -149,8 +149,8 @@ MonoBehaviour:
     health: 860
     regenHealth: 5.0000005
     armor: 44
-    damage: 195
-    attackSpeed: 22.400002
+    damage: 50
+    attackSpeed: 9.9
     critDamageMultiplier: 0.80000013
     criticalChance: 0.17000002
     pickupRange: 7.3999977
@@ -160,8 +160,8 @@ MonoBehaviour:
     health: 960
     regenHealth: 5.5000005
     armor: 46
-    damage: 235
-    attackSpeed: 22.600002
+    damage: 55
+    attackSpeed: 10.099999
     critDamageMultiplier: 0.85000014
     criticalChance: 0.18000002
     pickupRange: 7.5999975
@@ -171,8 +171,8 @@ MonoBehaviour:
     health: 1060
     regenHealth: 6.0000005
     armor: 48
-    damage: 275
-    attackSpeed: 22.800003
+    damage: 60
+    attackSpeed: 10.299999
     critDamageMultiplier: 0.90000015
     criticalChance: 0.19000003
     pickupRange: 7.7999973
@@ -182,8 +182,8 @@ MonoBehaviour:
     health: 1160
     regenHealth: 6.5000005
     armor: 50
-    damage: 315
-    attackSpeed: 23.000004
+    damage: 65
+    attackSpeed: 10.499999
     critDamageMultiplier: 0.95000017
     criticalChance: 0.20000003
     pickupRange: 7.999997
@@ -193,8 +193,8 @@ MonoBehaviour:
     health: 1260
     regenHealth: 7.0000005
     armor: 52
-    damage: 355
-    attackSpeed: 23.200005
+    damage: 70
+    attackSpeed: 10.699999
     critDamageMultiplier: 1.0000001
     criticalChance: 0.21000004
     pickupRange: 8.199997
@@ -204,8 +204,8 @@ MonoBehaviour:
     health: 1360
     regenHealth: 7.5000005
     armor: 54
-    damage: 395
-    attackSpeed: 23.400005
+    damage: 75
+    attackSpeed: 10.899999
     critDamageMultiplier: 1.0500001
     criticalChance: 0.22000004
     pickupRange: 8.399997
@@ -215,8 +215,8 @@ MonoBehaviour:
     health: 1460
     regenHealth: 8
     armor: 56
-    damage: 435
-    attackSpeed: 23.600006
+    damage: 80
+    attackSpeed: 11.099998
     critDamageMultiplier: 1.1
     criticalChance: 0.23000005
     pickupRange: 8.599997
@@ -226,8 +226,8 @@ MonoBehaviour:
     health: 1560
     regenHealth: 8.5
     armor: 58
-    damage: 475
-    attackSpeed: 23.800007
+    damage: 85
+    attackSpeed: 11.299998
     critDamageMultiplier: 1.15
     criticalChance: 0.24000005
     pickupRange: 8.799996
@@ -237,8 +237,8 @@ MonoBehaviour:
     health: 1660
     regenHealth: 9
     armor: 60
-    damage: 515
-    attackSpeed: 24.000008
+    damage: 90
+    attackSpeed: 11.499998
     critDamageMultiplier: 1.1999999
     criticalChance: 0.25000006
     pickupRange: 8.999996
@@ -248,8 +248,8 @@ MonoBehaviour:
     health: 1760
     regenHealth: 9.5
     armor: 62
-    damage: 555
-    attackSpeed: 24.200008
+    damage: 95
+    attackSpeed: 11.699998
     critDamageMultiplier: 1.2499999
     criticalChance: 0.26000005
     pickupRange: 9.199996
@@ -259,8 +259,8 @@ MonoBehaviour:
     health: 1860
     regenHealth: 10
     armor: 64
-    damage: 595
-    attackSpeed: 24.40001
+    damage: 100
+    attackSpeed: 11.899998
     critDamageMultiplier: 1.2999998
     criticalChance: 0.27000004
     pickupRange: 9.399996
@@ -270,8 +270,8 @@ MonoBehaviour:
     health: 1960
     regenHealth: 10.5
     armor: 66
-    damage: 635
-    attackSpeed: 24.60001
+    damage: 105
+    attackSpeed: 12.0999975
     critDamageMultiplier: 1.3499998
     criticalChance: 0.28000003
     pickupRange: 9.599996
@@ -281,8 +281,8 @@ MonoBehaviour:
     health: 2060
     regenHealth: 11
     armor: 68
-    damage: 675
-    attackSpeed: 24.80001
+    damage: 110
+    attackSpeed: 12.299997
     critDamageMultiplier: 1.3999997
     criticalChance: 0.29000002
     pickupRange: 9.799995
@@ -292,8 +292,8 @@ MonoBehaviour:
     health: 2160
     regenHealth: 11.5
     armor: 70
-    damage: 715
-    attackSpeed: 25.000011
+    damage: 115
+    attackSpeed: 12.499997
     critDamageMultiplier: 1.4499997
     criticalChance: 0.3
     pickupRange: 9.999995
@@ -303,8 +303,8 @@ MonoBehaviour:
     health: 2260
     regenHealth: 12
     armor: 72
-    damage: 755
-    attackSpeed: 25.200012
+    damage: 120
+    attackSpeed: 12.699997
     critDamageMultiplier: 1.4999996
     criticalChance: 0.31
     pickupRange: 10.199995
@@ -314,8 +314,8 @@ MonoBehaviour:
     health: 2360
     regenHealth: 12.5
     armor: 74
-    damage: 795
-    attackSpeed: 25.400013
+    damage: 125
+    attackSpeed: 12.899997
     critDamageMultiplier: 1.5499996
     criticalChance: 0.32
     pickupRange: 10.399995
@@ -325,8 +325,8 @@ MonoBehaviour:
     health: 2460
     regenHealth: 13
     armor: 76
-    damage: 835
-    attackSpeed: 25.600014
+    damage: 130
+    attackSpeed: 13.099997
     critDamageMultiplier: 1.5999995
     criticalChance: 0.32999998
     pickupRange: 10.599995
@@ -336,8 +336,8 @@ MonoBehaviour:
     health: 2560
     regenHealth: 13.5
     armor: 78
-    damage: 875
-    attackSpeed: 25.800014
+    damage: 135
+    attackSpeed: 13.299996
     critDamageMultiplier: 1.6499995
     criticalChance: 0.33999997
     pickupRange: 10.799994
@@ -347,8 +347,8 @@ MonoBehaviour:
     health: 2660
     regenHealth: 14
     armor: 80
-    damage: 915
-    attackSpeed: 26.000015
+    damage: 140
+    attackSpeed: 13.499996
     critDamageMultiplier: 1.6999995
     criticalChance: 0.34999996
     pickupRange: 10.999994
@@ -358,8 +358,8 @@ MonoBehaviour:
     health: 2760
     regenHealth: 14.5
     armor: 82
-    damage: 955
-    attackSpeed: 26.200016
+    damage: 145
+    attackSpeed: 13.699996
     critDamageMultiplier: 1.7499994
     criticalChance: 0.35999995
     pickupRange: 11.199994
@@ -369,8 +369,8 @@ MonoBehaviour:
     health: 2860
     regenHealth: 15
     armor: 84
-    damage: 995
-    attackSpeed: 26.400017
+    damage: 150
+    attackSpeed: 13.899996
     critDamageMultiplier: 1.7999994
     criticalChance: 0.36999995
     pickupRange: 11.399994
@@ -380,8 +380,8 @@ MonoBehaviour:
     health: 2960
     regenHealth: 15.5
     armor: 86
-    damage: 1035
-    attackSpeed: 26.600018
+    damage: 155
+    attackSpeed: 14.099996
     critDamageMultiplier: 1.8499993
     criticalChance: 0.37999994
     pickupRange: 11.599994
@@ -391,8 +391,8 @@ MonoBehaviour:
     health: 3060
     regenHealth: 16
     armor: 88
-    damage: 1075
-    attackSpeed: 26.800018
+    damage: 160
+    attackSpeed: 14.299995
     critDamageMultiplier: 1.8999993
     criticalChance: 0.38999993
     pickupRange: 11.7999935
@@ -402,8 +402,8 @@ MonoBehaviour:
     health: 3160
     regenHealth: 16.5
     armor: 90
-    damage: 1115
-    attackSpeed: 27.00002
+    damage: 165
+    attackSpeed: 14.499995
     critDamageMultiplier: 1.9499992
     criticalChance: 0.39999992
     pickupRange: 11.999993
@@ -413,8 +413,8 @@ MonoBehaviour:
     health: 3260
     regenHealth: 17
     armor: 92
-    damage: 1155
-    attackSpeed: 27.20002
+    damage: 170
+    attackSpeed: 14.699995
     critDamageMultiplier: 1.9999992
     criticalChance: 0.4099999
     pickupRange: 12.199993
@@ -424,8 +424,8 @@ MonoBehaviour:
     health: 3360
     regenHealth: 17.5
     armor: 94
-    damage: 1195
-    attackSpeed: 27.40002
+    damage: 175
+    attackSpeed: 14.899995
     critDamageMultiplier: 2.0499992
     criticalChance: 0.4199999
     pickupRange: 12.399993
@@ -435,8 +435,8 @@ MonoBehaviour:
     health: 3460
     regenHealth: 18
     armor: 96
-    damage: 1235
-    attackSpeed: 27.600021
+    damage: 180
+    attackSpeed: 15.099995
     critDamageMultiplier: 2.0999992
     criticalChance: 0.4299999
     pickupRange: 12.599993
@@ -446,8 +446,8 @@ MonoBehaviour:
     health: 3560
     regenHealth: 18.5
     armor: 98
-    damage: 1275
-    attackSpeed: 27.800022
+    damage: 185
+    attackSpeed: 15.299994
     critDamageMultiplier: 2.1499991
     criticalChance: 0.43999988
     pickupRange: 12.799993
@@ -457,8 +457,8 @@ MonoBehaviour:
     health: 3660
     regenHealth: 19
     armor: 100
-    damage: 1315
-    attackSpeed: 28.000023
+    damage: 190
+    attackSpeed: 15.499994
     critDamageMultiplier: 2.199999
     criticalChance: 0.44999987
     pickupRange: 12.999992
@@ -468,8 +468,8 @@ MonoBehaviour:
     health: 3760
     regenHealth: 19.5
     armor: 102
-    damage: 1355
-    attackSpeed: 28.200024
+    damage: 195
+    attackSpeed: 15.699994
     critDamageMultiplier: 2.249999
     criticalChance: 0.45999986
     pickupRange: 13.199992
@@ -479,8 +479,8 @@ MonoBehaviour:
     health: 3860
     regenHealth: 20
     armor: 104
-    damage: 1395
-    attackSpeed: 28.400024
+    damage: 200
+    attackSpeed: 15.899994
     critDamageMultiplier: 2.299999
     criticalChance: 0.46999985
     pickupRange: 13.399992
@@ -490,8 +490,8 @@ MonoBehaviour:
     health: 3960
     regenHealth: 20.5
     armor: 106
-    damage: 1435
-    attackSpeed: 28.600025
+    damage: 205
+    attackSpeed: 16.099995
     critDamageMultiplier: 2.349999
     criticalChance: 0.47999984
     pickupRange: 13.599992
@@ -501,8 +501,8 @@ MonoBehaviour:
     health: 4060
     regenHealth: 21
     armor: 108
-    damage: 1475
-    attackSpeed: 28.800026
+    damage: 210
+    attackSpeed: 16.299995
     critDamageMultiplier: 2.399999
     criticalChance: 0.48999983
     pickupRange: 13.799992
@@ -512,8 +512,8 @@ MonoBehaviour:
     health: 4160
     regenHealth: 21.5
     armor: 110
-    damage: 1515
-    attackSpeed: 29.000027
+    damage: 215
+    attackSpeed: 16.499996
     critDamageMultiplier: 2.4499989
     criticalChance: 0.49999982
     pickupRange: 13.999991
@@ -523,8 +523,8 @@ MonoBehaviour:
     health: 4260
     regenHealth: 22
     armor: 112
-    damage: 1555
-    attackSpeed: 29.200027
+    damage: 220
+    attackSpeed: 16.699997
     critDamageMultiplier: 2.4999988
     criticalChance: 0.5099998
     pickupRange: 14.199991
@@ -534,8 +534,8 @@ MonoBehaviour:
     health: 4360
     regenHealth: 22.5
     armor: 114
-    damage: 1595
-    attackSpeed: 29.400028
+    damage: 225
+    attackSpeed: 16.899998
     critDamageMultiplier: 2.5499988
     criticalChance: 0.5199998
     pickupRange: 14.399991
@@ -545,8 +545,8 @@ MonoBehaviour:
     health: 4460
     regenHealth: 23
     armor: 116
-    damage: 1635
-    attackSpeed: 29.600029
+    damage: 230
+    attackSpeed: 17.099998
     critDamageMultiplier: 2.5999987
     criticalChance: 0.5299998
     pickupRange: 14.599991
@@ -556,8 +556,8 @@ MonoBehaviour:
     health: 4560
     regenHealth: 23.5
     armor: 118
-    damage: 1675
-    attackSpeed: 29.80003
+    damage: 235
+    attackSpeed: 17.3
     critDamageMultiplier: 2.6499987
     criticalChance: 0.5399998
     pickupRange: 14.799991
@@ -567,8 +567,8 @@ MonoBehaviour:
     health: 4660
     regenHealth: 24
     armor: 120
-    damage: 1715
-    attackSpeed: 30.00003
+    damage: 240
+    attackSpeed: 17.5
     critDamageMultiplier: 2.6999986
     criticalChance: 0.5499998
     pickupRange: 14.99999
@@ -578,8 +578,8 @@ MonoBehaviour:
     health: 4760
     regenHealth: 24.5
     armor: 122
-    damage: 1755
-    attackSpeed: 30.200031
+    damage: 245
+    attackSpeed: 17.7
     critDamageMultiplier: 2.7499986
     criticalChance: 0.55999976
     pickupRange: 15.19999
@@ -589,8 +589,8 @@ MonoBehaviour:
     health: 4860
     regenHealth: 25
     armor: 124
-    damage: 1795
-    attackSpeed: 30.400032
+    damage: 250
+    attackSpeed: 17.900002
     critDamageMultiplier: 2.7999985
     criticalChance: 0.56999975
     pickupRange: 15.39999
@@ -600,8 +600,8 @@ MonoBehaviour:
     health: 4960
     regenHealth: 25.5
     armor: 126
-    damage: 1835
-    attackSpeed: 30.600033
+    damage: 255
+    attackSpeed: 18.100002
     critDamageMultiplier: 2.8499985
     criticalChance: 0.57999974
     pickupRange: 15.59999
@@ -611,8 +611,8 @@ MonoBehaviour:
     health: 5060
     regenHealth: 26
     armor: 128
-    damage: 1875
-    attackSpeed: 30.800034
+    damage: 260
+    attackSpeed: 18.300003
     critDamageMultiplier: 2.8999984
     criticalChance: 0.58999974
     pickupRange: 15.79999
@@ -622,8 +622,8 @@ MonoBehaviour:
     health: 5160
     regenHealth: 26.5
     armor: 130
-    damage: 1915
-    attackSpeed: 31.000034
+    damage: 265
+    attackSpeed: 18.500004
     critDamageMultiplier: 2.9499984
     criticalChance: 0.5999997
     pickupRange: 15.9999895
@@ -633,8 +633,8 @@ MonoBehaviour:
     health: 5260
     regenHealth: 27
     armor: 132
-    damage: 1955
-    attackSpeed: 31.200035
+    damage: 270
+    attackSpeed: 18.700005
     critDamageMultiplier: 2.9999983
     criticalChance: 0.6099997
     pickupRange: 16.19999
@@ -644,8 +644,8 @@ MonoBehaviour:
     health: 5360
     regenHealth: 27.5
     armor: 134
-    damage: 1995
-    attackSpeed: 31.400036
+    damage: 275
+    attackSpeed: 18.900005
     critDamageMultiplier: 3.0499983
     criticalChance: 0.6199997
     pickupRange: 16.39999
@@ -655,8 +655,8 @@ MonoBehaviour:
     health: 5460
     regenHealth: 28
     armor: 136
-    damage: 2035
-    attackSpeed: 31.600037
+    damage: 280
+    attackSpeed: 19.100006
     critDamageMultiplier: 3.0999982
     criticalChance: 0.6299997
     pickupRange: 16.59999
@@ -666,8 +666,8 @@ MonoBehaviour:
     health: 5560
     regenHealth: 28.5
     armor: 138
-    damage: 2075
-    attackSpeed: 31.800037
+    damage: 285
+    attackSpeed: 19.300007
     critDamageMultiplier: 3.1499982
     criticalChance: 0.6399997
     pickupRange: 16.799992
@@ -677,8 +677,8 @@ MonoBehaviour:
     health: 5660
     regenHealth: 29
     armor: 140
-    damage: 2115
-    attackSpeed: 32.00004
+    damage: 290
+    attackSpeed: 19.500008
     critDamageMultiplier: 3.1999981
     criticalChance: 0.6499997
     pickupRange: 16.999992
@@ -688,8 +688,8 @@ MonoBehaviour:
     health: 5760
     regenHealth: 29.5
     armor: 142
-    damage: 2155
-    attackSpeed: 32.20004
+    damage: 295
+    attackSpeed: 19.700008
     critDamageMultiplier: 3.249998
     criticalChance: 0.65999967
     pickupRange: 17.199993
@@ -699,8 +699,8 @@ MonoBehaviour:
     health: 5860
     regenHealth: 30
     armor: 144
-    damage: 2195
-    attackSpeed: 32.40004
+    damage: 300
+    attackSpeed: 19.90001
     critDamageMultiplier: 3.299998
     criticalChance: 0.66999966
     pickupRange: 17.399994
@@ -710,8 +710,8 @@ MonoBehaviour:
     health: 5960
     regenHealth: 30.5
     armor: 146
-    damage: 2235
-    attackSpeed: 32.60004
+    damage: 305
+    attackSpeed: 20.10001
     critDamageMultiplier: 3.349998
     criticalChance: 0.67999965
     pickupRange: 17.599995
@@ -721,8 +721,8 @@ MonoBehaviour:
     health: 6060
     regenHealth: 31
     armor: 148
-    damage: 2275
-    attackSpeed: 32.80004
+    damage: 310
+    attackSpeed: 20.30001
     critDamageMultiplier: 3.399998
     criticalChance: 0.68999964
     pickupRange: 17.799995
@@ -732,8 +732,8 @@ MonoBehaviour:
     health: 6160
     regenHealth: 31.5
     armor: 150
-    damage: 2315
-    attackSpeed: 33.000042
+    damage: 315
+    attackSpeed: 20.500011
     critDamageMultiplier: 3.449998
     criticalChance: 0.69999963
     pickupRange: 17.999996
@@ -743,8 +743,8 @@ MonoBehaviour:
     health: 6260
     regenHealth: 32
     armor: 152
-    damage: 2355
-    attackSpeed: 33.200043
+    damage: 320
+    attackSpeed: 20.700012
     critDamageMultiplier: 3.4999979
     criticalChance: 0.7099996
     pickupRange: 18.199997
@@ -754,8 +754,8 @@ MonoBehaviour:
     health: 6360
     regenHealth: 32.5
     armor: 154
-    damage: 2395
-    attackSpeed: 33.400043
+    damage: 325
+    attackSpeed: 20.900013
     critDamageMultiplier: 3.5499978
     criticalChance: 0.7199996
     pickupRange: 18.399998
@@ -765,8 +765,8 @@ MonoBehaviour:
     health: 6460
     regenHealth: 33
     armor: 156
-    damage: 2435
-    attackSpeed: 33.600044
+    damage: 330
+    attackSpeed: 21.100014
     critDamageMultiplier: 3.5999978
     criticalChance: 0.7299996
     pickupRange: 18.599998
@@ -776,8 +776,8 @@ MonoBehaviour:
     health: 6560
     regenHealth: 33.5
     armor: 158
-    damage: 2475
-    attackSpeed: 33.800045
+    damage: 335
+    attackSpeed: 21.300014
     critDamageMultiplier: 3.6499977
     criticalChance: 0.7399996
     pickupRange: 18.8
@@ -787,8 +787,8 @@ MonoBehaviour:
     health: 6660
     regenHealth: 34
     armor: 160
-    damage: 2515
-    attackSpeed: 34.000046
+    damage: 340
+    attackSpeed: 21.500015
     critDamageMultiplier: 3.6999977
     criticalChance: 0.7499996
     pickupRange: 19
@@ -798,8 +798,8 @@ MonoBehaviour:
     health: 6760
     regenHealth: 34.5
     armor: 162
-    damage: 2555
-    attackSpeed: 34.200047
+    damage: 345
+    attackSpeed: 21.700016
     critDamageMultiplier: 3.7499976
     criticalChance: 0.7599996
     pickupRange: 19.2
@@ -809,8 +809,8 @@ MonoBehaviour:
     health: 6860
     regenHealth: 35
     armor: 164
-    damage: 2595
-    attackSpeed: 34.400047
+    damage: 350
+    attackSpeed: 21.900017
     critDamageMultiplier: 3.7999976
     criticalChance: 0.76999956
     pickupRange: 19.400002
@@ -820,8 +820,8 @@ MonoBehaviour:
     health: 6960
     regenHealth: 35.5
     armor: 166
-    damage: 2635
-    attackSpeed: 34.600048
+    damage: 355
+    attackSpeed: 22.100018
     critDamageMultiplier: 3.8499975
     criticalChance: 0.77999955
     pickupRange: 19.600002
@@ -831,8 +831,8 @@ MonoBehaviour:
     health: 7060
     regenHealth: 36
     armor: 168
-    damage: 2675
-    attackSpeed: 34.80005
+    damage: 360
+    attackSpeed: 22.300018
     critDamageMultiplier: 3.8999975
     criticalChance: 0.78999954
     pickupRange: 19.800003
@@ -842,8 +842,8 @@ MonoBehaviour:
     health: 7160
     regenHealth: 36.5
     armor: 170
-    damage: 2715
-    attackSpeed: 35.00005
+    damage: 365
+    attackSpeed: 22.50002
     critDamageMultiplier: 3.9499974
     criticalChance: 0.79999954
     pickupRange: 20.000004
@@ -853,8 +853,8 @@ MonoBehaviour:
     health: 7260
     regenHealth: 37
     armor: 172
-    damage: 2755
-    attackSpeed: 35.20005
+    damage: 370
+    attackSpeed: 22.70002
     critDamageMultiplier: 3.9999974
     criticalChance: 0.8099995
     pickupRange: 20.200005
@@ -864,8 +864,8 @@ MonoBehaviour:
     health: 7360
     regenHealth: 37.5
     armor: 174
-    damage: 2795
-    attackSpeed: 35.40005
+    damage: 375
+    attackSpeed: 22.90002
     critDamageMultiplier: 4.0499973
     criticalChance: 0.8199995
     pickupRange: 20.400005
@@ -875,8 +875,8 @@ MonoBehaviour:
     health: 7460
     regenHealth: 38
     armor: 176
-    damage: 2835
-    attackSpeed: 35.60005
+    damage: 380
+    attackSpeed: 23.100021
     critDamageMultiplier: 4.0999975
     criticalChance: 0.8299995
     pickupRange: 20.600006
@@ -886,8 +886,8 @@ MonoBehaviour:
     health: 7560
     regenHealth: 38.5
     armor: 178
-    damage: 2875
-    attackSpeed: 35.800053
+    damage: 385
+    attackSpeed: 23.300022
     critDamageMultiplier: 4.1499977
     criticalChance: 0.8399995
     pickupRange: 20.800007
@@ -897,8 +897,8 @@ MonoBehaviour:
     health: 7660
     regenHealth: 39
     armor: 180
-    damage: 2915
-    attackSpeed: 36.000053
+    damage: 390
+    attackSpeed: 23.500023
     critDamageMultiplier: 4.199998
     criticalChance: 0.8499995
     pickupRange: 21.000008
@@ -908,8 +908,8 @@ MonoBehaviour:
     health: 7760
     regenHealth: 39.5
     armor: 182
-    damage: 2955
-    attackSpeed: 36.200054
+    damage: 395
+    attackSpeed: 23.700024
     critDamageMultiplier: 4.249998
     criticalChance: 0.8599995
     pickupRange: 21.200008
@@ -919,8 +919,8 @@ MonoBehaviour:
     health: 7860
     regenHealth: 40
     armor: 184
-    damage: 2995
-    attackSpeed: 36.400055
+    damage: 400
+    attackSpeed: 23.900024
     critDamageMultiplier: 4.2999983
     criticalChance: 0.86999947
     pickupRange: 21.40001
@@ -930,8 +930,8 @@ MonoBehaviour:
     health: 7960
     regenHealth: 40.5
     armor: 186
-    damage: 3035
-    attackSpeed: 36.600056
+    damage: 405
+    attackSpeed: 24.100025
     critDamageMultiplier: 4.3499985
     criticalChance: 0.87999946
     pickupRange: 21.60001
@@ -941,8 +941,8 @@ MonoBehaviour:
     health: 8060
     regenHealth: 41
     armor: 188
-    damage: 3075
-    attackSpeed: 36.800056
+    damage: 410
+    attackSpeed: 24.300026
     critDamageMultiplier: 4.3999987
     criticalChance: 0.88999945
     pickupRange: 21.80001
@@ -952,8 +952,8 @@ MonoBehaviour:
     health: 8160
     regenHealth: 41.5
     armor: 190
-    damage: 3115
-    attackSpeed: 37.000057
+    damage: 415
+    attackSpeed: 24.500027
     critDamageMultiplier: 4.449999
     criticalChance: 0.89999944
     pickupRange: 22.000011
@@ -963,8 +963,8 @@ MonoBehaviour:
     health: 8260
     regenHealth: 42
     armor: 192
-    damage: 3155
-    attackSpeed: 37.200058
+    damage: 420
+    attackSpeed: 24.700027
     critDamageMultiplier: 4.499999
     criticalChance: 0.90999943
     pickupRange: 22.200012
@@ -974,8 +974,8 @@ MonoBehaviour:
     health: 8360
     regenHealth: 42.5
     armor: 194
-    damage: 3195
-    attackSpeed: 37.40006
+    damage: 425
+    attackSpeed: 24.900028
     critDamageMultiplier: 4.549999
     criticalChance: 0.9199994
     pickupRange: 22.400013
@@ -985,8 +985,8 @@ MonoBehaviour:
     health: 8460
     regenHealth: 43
     armor: 196
-    damage: 3235
-    attackSpeed: 37.60006
+    damage: 430
+    attackSpeed: 25.100029
     critDamageMultiplier: 4.5999994
     criticalChance: 0.9299994
     pickupRange: 22.600014
@@ -996,8 +996,8 @@ MonoBehaviour:
     health: 8560
     regenHealth: 43.5
     armor: 198
-    damage: 3275
-    attackSpeed: 37.80006
+    damage: 435
+    attackSpeed: 25.30003
     critDamageMultiplier: 4.6499996
     criticalChance: 0.9399994
     pickupRange: 22.800014
@@ -1007,8 +1007,8 @@ MonoBehaviour:
     health: 8660
     regenHealth: 44
     armor: 200
-    damage: 3315
-    attackSpeed: 38.00006
+    damage: 440
+    attackSpeed: 25.50003
     critDamageMultiplier: 4.7
     criticalChance: 0.9499994
     pickupRange: 23.000015
@@ -1018,8 +1018,8 @@ MonoBehaviour:
     health: 8760
     regenHealth: 44.5
     armor: 202
-    damage: 3355
-    attackSpeed: 38.20006
+    damage: 445
+    attackSpeed: 25.700031
     critDamageMultiplier: 4.75
     criticalChance: 0.9599994
     pickupRange: 23.200016
@@ -1029,8 +1029,8 @@ MonoBehaviour:
     health: 8860
     regenHealth: 45
     armor: 204
-    damage: 3395
-    attackSpeed: 38.400063
+    damage: 450
+    attackSpeed: 25.900032
     critDamageMultiplier: 4.8
     criticalChance: 0.9699994
     pickupRange: 23.400017
@@ -1040,8 +1040,8 @@ MonoBehaviour:
     health: 8960
     regenHealth: 45.5
     armor: 206
-    damage: 3435
-    attackSpeed: 38.600063
+    damage: 455
+    attackSpeed: 26.100033
     critDamageMultiplier: 4.8500004
     criticalChance: 0.97999936
     pickupRange: 23.600018
@@ -1051,8 +1051,8 @@ MonoBehaviour:
     health: 9060
     regenHealth: 46
     armor: 208
-    damage: 3475
-    attackSpeed: 38.800064
+    damage: 460
+    attackSpeed: 26.300034
     critDamageMultiplier: 4.9000006
     criticalChance: 0.98999935
     pickupRange: 23.800018
@@ -1062,8 +1062,8 @@ MonoBehaviour:
     health: 9160
     regenHealth: 46.5
     armor: 210
-    damage: 3515
-    attackSpeed: 39.000065
+    damage: 465
+    attackSpeed: 26.500034
     critDamageMultiplier: 4.950001
     criticalChance: 0.99999934
     pickupRange: 24.00002
@@ -1073,8 +1073,8 @@ MonoBehaviour:
     health: 9260
     regenHealth: 47
     armor: 212
-    damage: 3555
-    attackSpeed: 39.200066
+    damage: 470
+    attackSpeed: 26.700035
     critDamageMultiplier: 5.000001
     criticalChance: 1.0099994
     pickupRange: 24.20002
@@ -1084,8 +1084,8 @@ MonoBehaviour:
     health: 9360
     regenHealth: 47.5
     armor: 214
-    damage: 3595
-    attackSpeed: 39.400066
+    damage: 475
+    attackSpeed: 26.900036
     critDamageMultiplier: 5.050001
     criticalChance: 1.0199994
     pickupRange: 24.40002
@@ -1095,8 +1095,8 @@ MonoBehaviour:
     health: 9460
     regenHealth: 48
     armor: 216
-    damage: 3635
-    attackSpeed: 39.600067
+    damage: 480
+    attackSpeed: 27.100037
     critDamageMultiplier: 5.1000013
     criticalChance: 1.0299994
     pickupRange: 24.600021
@@ -1106,8 +1106,8 @@ MonoBehaviour:
     health: 9560
     regenHealth: 48.5
     armor: 218
-    damage: 3675
-    attackSpeed: 39.800068
+    damage: 485
+    attackSpeed: 27.300037
     critDamageMultiplier: 5.1500015
     criticalChance: 1.0399994
     pickupRange: 24.800022
@@ -1117,8 +1117,8 @@ MonoBehaviour:
     health: 9660
     regenHealth: 49
     armor: 220
-    damage: 3715
-    attackSpeed: 40.00007
+    damage: 490
+    attackSpeed: 27.500038
     critDamageMultiplier: 5.2000017
     criticalChance: 1.0499994
     pickupRange: 25.000023

@@ -59,6 +59,9 @@ GameObject:
   - component: {fileID: 3995167369477031185}
   - component: {fileID: 5865385989241194261}
   - component: {fileID: 2121637069382737566}
+  - component: {fileID: 7507008318726469680}
+  - component: {fileID: 6555864381921126841}
+  - component: {fileID: 5876596912710598296}
   m_Layer: 0
   m_Name: LevelUpBonus
   m_TagString: Untagged
@@ -127,6 +130,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 28986b46a0a877d438ed0d00c4883879, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+--- !u!114 &7507008318726469680
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696255971976460481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6b8660f59776f6543b7c88c08447b8cf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  magnetMultiplier: 0.5
+--- !u!54 &6555864381921126841
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696255971976460481}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 112
+  m_CollisionDetection: 0
+--- !u!114 &5876596912710598296
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1696255971976460481}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3d98a537a3e72744d8d678f317b2a037, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &4813733999944885624
 GameObject:
   m_ObjectHideFlags: 0
@@ -137,8 +192,8 @@ GameObject:
   m_Component:
   - component: {fileID: 2078168371235960414}
   - component: {fileID: 5914811021536516822}
-  - component: {fileID: 1825586866337142439}
   - component: {fileID: 1921601166733686714}
+  - component: {fileID: 771788279137446606}
   m_Layer: 0
   m_Name: PickupZone
   m_TagString: Untagged
@@ -182,33 +237,6 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.7568106, y: 1.6993968, z: 0.6516174}
   m_Center: {x: -0.005213529, y: 0.016612768, z: 0.021359205}
---- !u!54 &1825586866337142439
-Rigidbody:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 4813733999944885624}
-  serializedVersion: 4
-  m_Mass: 1
-  m_Drag: 0
-  m_AngularDrag: 0.05
-  m_CenterOfMass: {x: 0, y: 0, z: 0}
-  m_InertiaTensor: {x: 1, y: 1, z: 1}
-  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ImplicitCom: 1
-  m_ImplicitTensor: 1
-  m_UseGravity: 1
-  m_IsKinematic: 1
-  m_Interpolate: 0
-  m_Constraints: 126
-  m_CollisionDetection: 0
 --- !u!114 &1921601166733686714
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -240,6 +268,19 @@ MonoBehaviour:
           m_BoolArgument: 0
         m_CallState: 2
   level: 1
+--- !u!114 &771788279137446606
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4813733999944885624}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a921021ede87f7d43a0a7e18afa764fe, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  forwardedGameObject: {fileID: 1696255971976460481}
 --- !u!1001 &2936847641462713615
 PrefabInstance:
   m_ObjectHideFlags: 0
