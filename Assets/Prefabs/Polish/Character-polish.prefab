@@ -247,6 +247,7 @@ GameObject:
   - component: {fileID: 5753929551707895505}
   - component: {fileID: 3268694500573081399}
   - component: {fileID: 1331281257067896638}
+  - component: {fileID: 2544187917320455131}
   m_Layer: 0
   m_Name: Character-polish
   m_TagString: Player
@@ -274,6 +275,7 @@ Transform:
   - {fileID: 2574644758195368881}
   - {fileID: 6316659769592981654}
   - {fileID: 6580537815539213610}
+  - {fileID: 5971082532885632810}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2556248727017404669
@@ -288,7 +290,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 917001087
+  GlobalObjectIdHash: 2385815935
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -908,6 +910,47 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerName: {fileID: 2232403170711739435}
+--- !u!114 &2544187917320455131
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881956038346639823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: ea3902d6d2025784b85b0112f4bfca2e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  cooldown: 5
+  DmgPerLevel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: -0.045764923
+      value: 40.1727
+      inSlope: 6.7829127
+      outSlope: 6.7829127
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.7314875
+    - serializedVersion: 3
+      time: 10.735038
+      value: 150.39316
+      inSlope: 10.223771
+      outSlope: 10.223771
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  railgunPrefab: {fileID: 1049994460209366735, guid: 16285c906d7c6fe48a9d0b29ece15fa2,
+    type: 3}
+  projectileSpawnPoint: {fileID: 5971082532885632810}
 --- !u!1 &1896168135251810572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1245,6 +1288,37 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!1 &7246390196961981184
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 5971082532885632810}
+  m_Layer: 0
+  m_Name: RailgunSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &5971082532885632810
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7246390196961981184}
+  serializedVersion: 2
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.05, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8074594457512944862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1001 &1122421505444697499
 PrefabInstance:
   m_ObjectHideFlags: 0
