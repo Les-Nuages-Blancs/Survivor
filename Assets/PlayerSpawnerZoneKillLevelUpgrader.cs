@@ -5,13 +5,12 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerSpawnerZoneKillLevelUpgrader : NetworkBehaviour
+public class PlayerSpawnerZoneKillLevelUpgrader : TaskZone
 {
     [SerializeField] private int killNumberRequired = 100;
     private int killNumber = 0;
 
     [SerializeField] public UnityEvent onUpgrade;
-    [SerializeField] public UnityEvent onUpgraderChange;
 
     static private Dictionary<ulong, List<PlayerSpawnerZoneKillLevelUpgrader>> instanceDictionary = new();
 
@@ -60,6 +59,8 @@ public class PlayerSpawnerZoneKillLevelUpgrader : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        base.OnNetworkSpawn();
+
         if (!instanceDictionary.ContainsKey(OwnerClientId))
         {
             instanceDictionary[OwnerClientId] = new List<PlayerSpawnerZoneKillLevelUpgrader>();
@@ -69,6 +70,8 @@ public class PlayerSpawnerZoneKillLevelUpgrader : NetworkBehaviour
 
     public override void OnNetworkDespawn()
     {
+        base.OnNetworkDespawn();
+        
         instanceDictionary[OwnerClientId].Remove(this);
         if (instanceDictionary[OwnerClientId].Count == 0)
         {
@@ -90,5 +93,10 @@ public class PlayerSpawnerZoneKillLevelUpgrader : NetworkBehaviour
         }
 
         return canSpawn;
+    }
+
+    public override string ToTaskZoneString()
+    {
+        return $"Kill a total of {killNumberRequired} monsters to upgrade zone to next level ({KillNumber} / {killNumberRequired})";
     }
 }

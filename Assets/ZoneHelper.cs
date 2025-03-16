@@ -8,6 +8,7 @@ public class ZoneHelper : NetworkBehaviour
 {
     [SerializeField] private Zone zone;
     [SerializeField] public UnityEvent onZoneChange;
+    public UnityEvent<Zone, Zone> onZoneChangeDetails;
 
     public Zone Zone
     {
@@ -16,7 +17,9 @@ public class ZoneHelper : NetworkBehaviour
         {
             if (zone != value)
             {
+                Zone oldZone = zone;
                 zone = value;
+                onZoneChangeDetails.Invoke(oldZone, value);
                 onZoneChange.Invoke();
             }
         }

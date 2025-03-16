@@ -76,7 +76,9 @@ MonoBehaviour:
   spawnerZoneLevelData: {fileID: 11400000, guid: baeee9ae512ef0941b444c039c5eed21,
     type: 2}
   baseSpawnZoneLevelDatas: []
-  ParentZone: {fileID: 0}
+  OnParentZoneChanged:
+    m_PersistentCalls:
+      m_Calls: []
   playerZoneLevel:
     m_InternalValue: 0
   onPlayerZoneLevelChange:
@@ -97,6 +99,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d029935c2e164a44eaa5aabb442dab1d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  spawnerZone: {fileID: 2297610778018481996}
+  onUpgraderChange:
+    m_PersistentCalls:
+      m_Calls: []
   surviveTime: 30
   onUpgrade:
     m_PersistentCalls:

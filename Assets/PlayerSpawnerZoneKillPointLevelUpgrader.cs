@@ -5,13 +5,12 @@ using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
 
-public class PlayerSpawnerZoneKillPointLevelUpgrader : NetworkBehaviour
+public class PlayerSpawnerZoneKillPointLevelUpgrader : TaskZone
 {
     [SerializeField] private float killPointRequired = 100;
     private float killPoint = 0;
 
     [SerializeField] public UnityEvent onUpgrade;
-    [SerializeField] public UnityEvent onUpgraderChange;
 
     static private Dictionary<ulong, List<PlayerSpawnerZoneKillPointLevelUpgrader>> instanceDictionary = new();
 
@@ -60,6 +59,8 @@ public class PlayerSpawnerZoneKillPointLevelUpgrader : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
+        base.OnNetworkSpawn();
+
         if (!instanceDictionary.ContainsKey(OwnerClientId))
         {
             instanceDictionary[OwnerClientId] = new List<PlayerSpawnerZoneKillPointLevelUpgrader>();
@@ -69,6 +70,8 @@ public class PlayerSpawnerZoneKillPointLevelUpgrader : NetworkBehaviour
 
     public override void OnNetworkDespawn()
     {
+        base.OnNetworkDespawn();
+
         instanceDictionary[OwnerClientId].Remove(this);
         if (instanceDictionary[OwnerClientId].Count == 0)
         {
@@ -90,5 +93,10 @@ public class PlayerSpawnerZoneKillPointLevelUpgrader : NetworkBehaviour
         }
 
         return canSpawn;
+    }
+
+    public override string ToTaskZoneString()
+    {
+        return $"Collect a total of {Mathf.Ceil(killPointRequired)} kill point (obtain by killing monsters) to upgrade zone to next level ({Mathf.Floor(killPoint)} / {Mathf.Ceil(killPointRequired)})";
     }
 }

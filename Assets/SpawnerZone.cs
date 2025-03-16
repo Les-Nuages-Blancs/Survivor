@@ -14,7 +14,25 @@ public class SpawnerZone : NetworkBehaviour
     [SerializeField] private List<BaseSpawnZoneLevelData> baseSpawnZoneLevelDatas = new List<BaseSpawnZoneLevelData>();
     private List<GameObject> spawnedSpawner = new List<GameObject>();
     private bool levelMaxIsReached = false;
-    public Zone ParentZone;
+    private Zone parentZone;
+
+    [SerializeField] public UnityEvent<Zone, Zone> OnParentZoneChanged;
+
+    public SpawnZoneLevelDataSO SpawnerZoneLevelData => spawnerZoneLevelData;
+
+    public Zone ParentZone
+    {
+        get => parentZone;
+        set
+        {
+            if (parentZone != value)
+            {
+                Zone oldZone = parentZone;
+                parentZone = value;
+                OnParentZoneChanged.Invoke(oldZone, value);
+            }
+        }
+    }
 
     [SerializeField] private NetworkVariable<int> playerZoneLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
@@ -127,8 +145,6 @@ public class SpawnerZone : NetworkBehaviour
             EntitySpawner entitySpawner = spawner.GetComponent<EntitySpawner>();
             entitySpawner.Initialize(baseSpawnZoneLevelData.SpawnAtLevel, baseSpawnZoneLevelData.Prefab, baseSpawnZoneLevelData.SpawnCooldown);
             entitySpawner.OnIsSpawn.AddListener(RegisterEnemy);
-            // add condition;
-            Debug.Log("add spawnerZone condition to spawner");
 
             foreach (SpawnCondition condition in conditions)
             {

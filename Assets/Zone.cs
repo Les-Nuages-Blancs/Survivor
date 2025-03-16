@@ -9,10 +9,40 @@ using UnityEngine.Events;
 public class Zone : NetworkBehaviour
 {
     [SerializeField] private List<SpawnCondition> conditions;
+    [SerializeField] private string zoneName = "default name";
 
     [SerializeField] private GameObject prefabPlayerSpawner;
     [SerializeField] private int MaxEnemyCount = 100;
     [SerializeField] private bool isUnlock = false;
+
+    [SerializeField] private List<TaskZone> zoneTasks = new List<TaskZone>();
+
+    [SerializeField] public UnityEvent<TaskZone> OnTaskAdded;
+    [SerializeField] public UnityEvent<TaskZone> OnTaskRemove;
+
+    private Dictionary<ulong, SpawnerZone> playerSpawners = new Dictionary<ulong, SpawnerZone>();
+
+
+    public List<TaskZone> ZoneTasks => zoneTasks; // Read-only access to prevent direct modification
+    public string ZoneName => zoneName; // Read-only access to prevent direct modification
+    public Dictionary<ulong, SpawnerZone> PlayerSpawners => playerSpawners; // Read-only access to prevent direct modification
+
+    public void AddTask(TaskZone task)
+    {
+        if (!zoneTasks.Contains(task))
+        {
+            zoneTasks.Add(task);
+            OnTaskAdded?.Invoke(task);
+        }
+    }
+
+    public void RemoveTask(TaskZone task)
+    {
+        if (zoneTasks.Remove(task)) // Returns true if removed
+        {
+            OnTaskRemove?.Invoke(task);
+        }
+    }
 
     private List<GameObject> spawnedPrefabs = new List<GameObject>();
     private int enemyCount = 0;
@@ -76,12 +106,12 @@ public class Zone : NetworkBehaviour
         SpawnerZone spawnerZone = newSpawnedPrefab.GetComponent<SpawnerZone>();
         spawnerZone.ParentZone = this;
 
-        // add condition;
-        Debug.Log("add zone condition to spawnerZone");
         foreach (SpawnCondition condition in conditions)
         {
             spawnerZone.AddCondition(condition);
         }
+
+        playerSpawners[clientId] = spawnerZone;
     }
 
     public override void OnNetworkDespawn()
