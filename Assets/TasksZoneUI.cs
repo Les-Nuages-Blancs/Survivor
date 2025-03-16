@@ -17,6 +17,12 @@ public class TasksZoneUI : NetworkBehaviour
     private void Start()
     {
         NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        LevelStateManager.Instance.onSpawnEntityChanged.AddListener(InitCallback);
+    }
+
+    private void InitCallback()
+    {
+        AddCallback(zoneHelper.Zone);
     }
 
     private void OnClientConnected(ulong clientId)
@@ -30,11 +36,6 @@ public class TasksZoneUI : NetworkBehaviour
         }
     }
 
-    public override void OnNetworkSpawn()
-    {
-        // InitTasksZoneUI();
-    }
-
     private void InitTasksZoneUI()
     {
         ulong localClientId = NetworkManager.Singleton.LocalClientId; // Get local player's client ID
@@ -46,7 +47,7 @@ public class TasksZoneUI : NetworkBehaviour
             if (zoneHelper != null)
             {
                 zoneHelper.onZoneChangeDetails.AddListener(onZoneChange);
-                AddCallback(zoneHelper.Zone);
+                UpdateTitleWithCurrentZone();
             }
             else
             {
@@ -147,7 +148,7 @@ public class TasksZoneUI : NetworkBehaviour
             Debug.Log($"No spawner found for client {localClientId}");
         }
 
-        zoneTitle.text = $"{zone.ZoneName} - Stage {spawnerLevel} / {spawnerMaxLevel}";
+        zoneTitle.text = $"{zone.ZoneName}" + (spawnerMaxLevel == 0 ? "" : $" - Stage {spawnerLevel} / {spawnerMaxLevel}");
     }
 
     private void onTaskAdded(TaskZone taskZone)

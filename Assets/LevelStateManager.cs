@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class LevelStateManager : NetworkBehaviour
 {
@@ -42,12 +43,15 @@ public class LevelStateManager : NetworkBehaviour
     public Transform OtherParent => otherParent != null ? otherParent : transform;
     public Transform LocalParent => localParent != null ? localParent : transform;
 
+    public UnityEvent onSpawnEntityChanged;
+
     public bool SpawnEntity
     {
         get => spawnEntity.Value;
         set
         {
             spawnEntity.Value = value;
+            onSpawnEntityChanged.Invoke();
         }
     }
     public bool EnableAutoAttack => enableAutoAttack.Value;

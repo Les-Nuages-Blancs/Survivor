@@ -3044,6 +3044,7 @@ GameObject:
   - component: {fileID: 7557506651709847407}
   - component: {fileID: 8862056354166274426}
   - component: {fileID: 7842143205995174664}
+  - component: {fileID: 3472246684286964418}
   m_Layer: 5
   m_Name: Quit UI Button
   m_TagString: Untagged
@@ -3165,6 +3166,20 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!114 &3472246684286964418
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4729946517186031689}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f6d980130bdeb49448bc36d6e905fc34, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  components:
+  - {fileID: 7842143205995174664}
 --- !u!1 &4936727419515702552
 GameObject:
   m_ObjectHideFlags: 0
@@ -6751,7 +6766,7 @@ PrefabInstance:
     - target: {fileID: 853680943528749577, guid: b5510e8bdde01514094860324dff8295,
         type: 3}
       propertyPath: m_Size
-      value: 0.9986032
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 853680943528749577, guid: b5510e8bdde01514094860324dff8295,
         type: 3}
@@ -7076,7 +7091,7 @@ PrefabInstance:
     - target: {fileID: 5514616841365860527, guid: b5510e8bdde01514094860324dff8295,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 88.99976
+      value: 88.99918
       objectReference: {fileID: 0}
     - target: {fileID: 5691857016257418873, guid: b5510e8bdde01514094860324dff8295,
         type: 3}
@@ -7755,7 +7770,7 @@ PrefabInstance:
     - target: {fileID: 4104207883047172019, guid: 29ba2efbeed9dd441b16ec80f0d2e36e,
         type: 3}
       propertyPath: m_Size
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 4104207883047172019, guid: 29ba2efbeed9dd441b16ec80f0d2e36e,
         type: 3}
@@ -8160,7 +8175,7 @@ PrefabInstance:
     - target: {fileID: 9199213379364908309, guid: 29ba2efbeed9dd441b16ec80f0d2e36e,
         type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 83.45076
+      value: 88.999176
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
