@@ -248,6 +248,7 @@ GameObject:
   - component: {fileID: 3268694500573081399}
   - component: {fileID: 1331281257067896638}
   - component: {fileID: 2544187917320455131}
+  - component: {fileID: 3596165338594987425}
   m_Layer: 0
   m_Name: Character-polish
   m_TagString: Player
@@ -276,6 +277,7 @@ Transform:
   - {fileID: 6316659769592981654}
   - {fileID: 6580537815539213610}
   - {fileID: 5971082532885632810}
+  - {fileID: 3484334813963217797}
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!114 &2556248727017404669
@@ -290,7 +292,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d5a57f767e5e46a458fc5d3c628d0cbb, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  GlobalObjectIdHash: 2385815935
+  GlobalObjectIdHash: 917001087
   InScenePlacedSourceGlobalObjectIdHash: 0
   AlwaysReplicateAsRoot: 0
   SynchronizeTransform: 1
@@ -881,6 +883,9 @@ MonoBehaviour:
   onZoneChange:
     m_PersistentCalls:
       m_Calls: []
+  onZoneChangeDetails:
+    m_PersistentCalls:
+      m_Calls: []
 --- !u!114 &3268694500573081399
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -923,7 +928,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  cooldown: 5
+  cooldown: 6
   DmgPerLevel:
     serializedVersion: 2
     m_Curve:
@@ -951,6 +956,73 @@ MonoBehaviour:
   railgunPrefab: {fileID: 1049994460209366735, guid: 16285c906d7c6fe48a9d0b29ece15fa2,
     type: 3}
   projectileSpawnPoint: {fileID: 5971082532885632810}
+--- !u!114 &3596165338594987425
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1881956038346639823}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2d6c9be8d2567db45b8fc2964a4880de, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  level: 1
+  cooldown: 10
+  DmgPerLevel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 9.946899
+      inSlope: 1.509174
+      outSlope: 1.509174
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 9.921243
+      value: 24.91978
+      inSlope: 1.509174
+      outSlope: 1.509174
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0.33333334
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  sizePerLevel:
+    serializedVersion: 2
+    m_Curve:
+    - serializedVersion: 3
+      time: 0
+      value: 2
+      inSlope: 0.4
+      outSlope: 0.4
+      tangentMode: 34
+      weightedMode: 0
+      inWeight: 0
+      outWeight: 0.33333334
+    - serializedVersion: 3
+      time: 10
+      value: 6
+      inSlope: 1.0885979
+      outSlope: 1.0885979
+      tangentMode: 0
+      weightedMode: 0
+      inWeight: 0.07348738
+      outWeight: 0
+    m_PreInfinity: 2
+    m_PostInfinity: 2
+    m_RotationOrder: 4
+  tickCount: 6
+  tickDelay: 0.4
+  lavaflaskPrefab: {fileID: 5195839148248337386, guid: 1b3335b5ca6941e4a8239242cbb55d5c,
+    type: 3}
+  projectileSpawnPoint: {fileID: 3484334813963217797}
 --- !u!1 &1896168135251810572
 GameObject:
   m_ObjectHideFlags: 0
@@ -1314,6 +1386,37 @@ Transform:
   serializedVersion: 2
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 2.05, z: 20}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 8074594457512944862}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &7976637551607589334
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 3484334813963217797}
+  m_Layer: 0
+  m_Name: LavaFlaskSpawnPosition
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &3484334813963217797
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7976637551607589334}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0.25, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
