@@ -20,7 +20,7 @@ public class Railgun : MonoBehaviour
             //10, 10, 40
             transform.localScale.x * hitBoxEase,
             transform.localScale.y * hitBoxEase,
-            transform.localScale.z
+            transform.localScale.z / 2 //it's half size of the box
             ),
             transform.rotation);
         foreach(Collider other in colliders){
