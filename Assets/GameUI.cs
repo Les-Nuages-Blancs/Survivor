@@ -40,4 +40,16 @@ public class GameUI : MonoBehaviour
         DisableAllUI();
         EnableUI(globalMenuUIs);
     }
+
+    public void ToggleGlobalMenuWithInGameUI()
+    {
+        if (globalMenuUIs[0].activeInHierarchy)
+        {
+            ShowInGameUI();
+        }
+        else
+        {
+            ShowGlobalMenuUI();
+        }
+    }
 }

@@ -1,11 +1,15 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class GlobalMenu : MonoBehaviour
 {
     [SerializeField] private List<GameObject> categoriesDetailsGameObject = new List<GameObject>();
+    [SerializeField] private List<Button> accordingButtonForCategories = new List<Button>();
     [SerializeField] private GameObject currentCategory;
+    [SerializeField] private Color normalColor;
+    [SerializeField] private Color activeColor;
 
     private void Start()
     {
@@ -20,6 +24,25 @@ public class GlobalMenu : MonoBehaviour
         }
 
         currentCategory.SetActive(true);
+
+        UpdateButtons();
+    }
+
+    private void UpdateButtons()
+    {
+        foreach (Button button in accordingButtonForCategories)
+        {
+            ColorBlock colorBlock = button.colors; // Get the current color block
+            colorBlock.normalColor = normalColor; // Modify the normalColor
+            button.colors = colorBlock; // Assign the modified color block back
+        }
+
+        // Now modify the color for the selected category
+        int index = categoriesDetailsGameObject.IndexOf(currentCategory);
+
+        ColorBlock activeColorBlock = accordingButtonForCategories[index].colors;
+        activeColorBlock.normalColor = activeColor;
+        accordingButtonForCategories[index].colors = activeColorBlock;
     }
 
     public GameObject CurrentCategory
@@ -34,6 +57,8 @@ public class GlobalMenu : MonoBehaviour
                 currentCategory = value;
                 
                 currentCategory.SetActive(true);
+
+                UpdateButtons();
             }
         }
     }

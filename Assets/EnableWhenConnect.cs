@@ -9,9 +9,23 @@ public class EnableWhenConnect : MonoBehaviour
 
     private void OnEnable()
     {
-        // Listen for when the client connects to the server
-        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        StartCoroutine(WaitForNetworkManagerInitialization());
+    }
 
+    private IEnumerator WaitForNetworkManagerInitialization()
+    {
+        // Wait until the end of the frame to allow NetworkManager to be initialized
+        yield return new WaitForEndOfFrame();
+
+        // Check if the NetworkManager is available
+        if (NetworkManager.Singleton == null)
+        {
+            Debug.LogError("NetworkManager.Singleton is not assigned. Ensure the NetworkManager is in the scene.");
+            yield break;
+        }
+
+        // Now safely access NetworkManager.Singleton
+        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
         UpdateVisibility();
     }
 

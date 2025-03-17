@@ -2,7 +2,6 @@ using System.Collections;
 using System.Collections.Generic;
 using TMPro;
 using Unity.Netcode;
-using UnityEditor.PackageManager;
 using UnityEngine;
 
 public class TasksZoneUI : NetworkBehaviour
@@ -14,7 +13,7 @@ public class TasksZoneUI : NetworkBehaviour
 
     private Dictionary<TaskZone, GameObject> taskZoneToPrefab = new Dictionary<TaskZone, GameObject>();
 
-    private void Start()
+    public void Init()
     {
         NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
         LevelStateManager.Instance.onSpawnEntityChanged.AddListener(InitCallback);
@@ -22,7 +21,14 @@ public class TasksZoneUI : NetworkBehaviour
 
     private void InitCallback()
     {
-        AddCallback(zoneHelper.Zone);
+        if (zoneHelper == null)
+        {
+            Debug.LogWarning("zoneHelper is null");
+        }
+        else
+        {
+            AddCallback(zoneHelper.Zone);
+        }
     }
 
     private void OnClientConnected(ulong clientId)
