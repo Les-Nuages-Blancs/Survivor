@@ -9,6 +9,8 @@ public class ToggleInfoBox : MonoBehaviour
     [SerializeField] private float slideSpeed = 0.5f;
     [SerializeField] private bool startClosed = true;
     [SerializeField] private UnityEvent<bool> onVisibilityChanged;
+    [SerializeField] private bool useInitPosX = false;
+    [SerializeField] private float initPosX = 0.0f;
 
     private Vector2 hiddenPosition;
     private Vector2 visiblePosition;
@@ -31,6 +33,11 @@ public class ToggleInfoBox : MonoBehaviour
         yield return new WaitForEndOfFrame(); // Wait for UI layout calculations
 
         visiblePosition = targetObject.anchoredPosition;
+
+        if (useInitPosX)
+        {
+            visiblePosition.x = initPosX;
+        }
 
         hiddenPosition = new Vector2(visiblePosition.x + widthReference.rect.width, visiblePosition.y);
 
