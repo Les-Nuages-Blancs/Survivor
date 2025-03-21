@@ -20,7 +20,6 @@ public class AddProjectileAudioSource : MonoBehaviour
         if (projectileAudioSource != null)
         {
             AudioManager.Instance.RemoveProjectileAudioSource(projectileAudioSource);
-            Debug.Log("Projectile AudioSource removed.");
         }
     }
 
@@ -29,7 +28,6 @@ public class AddProjectileAudioSource : MonoBehaviour
         if (projectileAudioSource != null)
         {
             AudioManager.Instance.AddProjectileAudioSource(projectileAudioSource);
-            Debug.Log("Projectile AudioSource added.");
         }
         else
         {

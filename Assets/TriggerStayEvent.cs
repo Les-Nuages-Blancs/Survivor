@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Unity.Netcode;
+using System.Collections.Generic;
 
 public class TriggerStayEvent : NetworkBehaviour
 {
@@ -18,6 +19,8 @@ public class TriggerStayEvent : NetworkBehaviour
     public event Action OnEnter;
 
     public Gate gate;
+
+    private List<Collider> activater = new List<Collider>();
 
     private bool checkIsServer()
     {
@@ -37,10 +40,15 @@ public class TriggerStayEvent : NetworkBehaviour
 
         if (IsHostPlayer(other))
         {
+            if (activater.Count == 0)
+            {
+                timeInside = 0f; // Reset timer
+                nextUpdate = 0f; // Reset update time
+                OnEnter?.Invoke();
+            }
+
             isInside = true;
-            timeInside = 0f; // Reset timer
-            nextUpdate = 0f; // Reset update time
-            OnEnter?.Invoke();
+            activater.Add(other);
         }
     }
 
@@ -50,9 +58,17 @@ public class TriggerStayEvent : NetworkBehaviour
 
         if (IsHostPlayer(other))
         {
-            isInside = false;
-            timeInside = 0f; // Reset timer
-            OnExit?.Invoke();
+            activater.Remove(other);
+
+            if (activater.Count == 0)
+            {
+                isInside = false;
+                timeInside = 0f; // Reset timer
+                OnExit?.Invoke();
+            } else
+            {
+                isInside = true;
+            }
         }
     }
 

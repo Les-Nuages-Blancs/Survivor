@@ -20,7 +20,6 @@ public class AddSoundAudioSource : MonoBehaviour
         if (soundAudioSource != null)
         {
             AudioManager.Instance.RemoveSoundAudioSource(soundAudioSource);
-            Debug.Log("Sound AudioSource removed.");
         }
     }
 
@@ -29,7 +28,6 @@ public class AddSoundAudioSource : MonoBehaviour
         if (soundAudioSource != null)
         {
             AudioManager.Instance.AddSoundAudioSource(soundAudioSource);
-            Debug.Log("Sound AudioSource added.");
         }
         else
         {

@@ -13,8 +13,10 @@ public class CardUI : MonoBehaviour
 
     public void Setup(Card card, DeckManager deckManager)
     {
+
         this.card = card;
         this.deckManager = deckManager;
+        Debug.Log($"Carte setup : {card.title} ({card.type})");
 
         cardTitle.text = card.title;
         cardImage.sprite = card.image;
