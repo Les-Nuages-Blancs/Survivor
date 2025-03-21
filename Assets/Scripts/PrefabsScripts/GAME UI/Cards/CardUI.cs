@@ -16,7 +16,6 @@ public class CardUI : MonoBehaviour
 
         this.card = card;
         this.deckManager = deckManager;
-        Debug.Log($"Carte setup : {card.title} ({card.type})");
 
         cardTitle.text = card.title;
         cardImage.sprite = card.image;
@@ -27,8 +26,8 @@ public class CardUI : MonoBehaviour
 
     public void OnCardClicked()
     {
-        Debug.Log($"Carte cliquée : {card.title} ({card.type})");
-        deckManager.RemoveCard(card);
+        card.ApplyEffect();
+        deckManager.RemoveAndRefresh(card);
         Destroy(gameObject);
     }
 }
