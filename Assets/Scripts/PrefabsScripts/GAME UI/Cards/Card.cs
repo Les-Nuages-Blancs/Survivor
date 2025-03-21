@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class Card
 {
-    public enum CardType { Armor, Damage, Health }
+    public enum CardType { Armor, Damage, Health, AttackSpeed, HealthRegen }
 
     public string title;
     public Sprite image;
@@ -19,4 +19,36 @@ public class Card
     {
         this.type = type;
     }
+
+    public void ApplyEffect()
+    {
+        if (LocalPlayerUpgradeManager.Instance == null)
+        {
+            Debug.LogError("LocalPlayerUpgradeManager instance is missing!");
+            return;
+        }
+
+        switch (type)
+        {
+            case CardType.Armor:
+                LocalPlayerUpgradeManager.Instance.UpgradeArmor();
+                break;
+            case CardType.Damage:
+                LocalPlayerUpgradeManager.Instance.UpgradeDamage();
+                break;
+            case CardType.Health:
+                LocalPlayerUpgradeManager.Instance.UpgradeHealth();
+                break;
+            case CardType.AttackSpeed:
+                LocalPlayerUpgradeManager.Instance.UpgradeAttackSpeed();
+                break;
+            case CardType.HealthRegen:
+                LocalPlayerUpgradeManager.Instance.UpgradeHealthRegen();
+                break;
+            default:
+                Debug.LogWarning("Unknown card type!");
+                break;
+        }
+    }
+
 }
