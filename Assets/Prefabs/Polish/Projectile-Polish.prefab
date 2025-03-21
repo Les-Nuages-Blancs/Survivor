@@ -396,6 +396,7 @@ GameObject:
   - component: {fileID: 8655966516354261460}
   - component: {fileID: 4393266263332500661}
   - component: {fileID: 4303245286955145169}
+  - component: {fileID: 2344290374194021891}
   m_Layer: 0
   m_Name: mixkit-short-laser-gun-shot-1670
   m_TagString: Untagged
@@ -530,6 +531,19 @@ MonoBehaviour:
   minPitch: 0.8
   maxPitch: 1.2
   playOnStart: 1
+--- !u!114 &2344290374194021891
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6819027686500321883}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 924e0bdd02d100944bad17f1a954c728, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  projectileAudioSource: {fileID: 4393266263332500661}
 --- !u!1 &6840659432797509895
 GameObject:
   m_ObjectHideFlags: 0

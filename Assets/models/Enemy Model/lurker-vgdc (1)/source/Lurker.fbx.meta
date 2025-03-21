@@ -3,7 +3,12 @@ guid: d10b15832ecbce9498028f22c21544bd
 ModelImporter:
   serializedVersion: 22200
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Lurker
+    second: {fileID: 2100000, guid: abf5cb959f131534e95a5caa607468c1, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0

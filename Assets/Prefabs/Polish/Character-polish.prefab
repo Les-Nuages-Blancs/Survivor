@@ -1065,6 +1065,7 @@ GameObject:
   - component: {fileID: 385781391777923194}
   - component: {fileID: 2252086028091161}
   - component: {fileID: 8698242801923982894}
+  - component: {fileID: 8244748322413291103}
   m_Layer: 0
   m_Name: take damage
   m_TagString: Untagged
@@ -1199,6 +1200,19 @@ MonoBehaviour:
   minPitch: 0.8
   maxPitch: 1.2
   playOnStart: 0
+--- !u!114 &8244748322413291103
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2967046097686620651}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bab2f5bf9d20f24b996bef67621a379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAudioSource: {fileID: 2252086028091161}
 --- !u!1 &4524692610408090487
 GameObject:
   m_ObjectHideFlags: 0
@@ -1242,6 +1256,7 @@ GameObject:
   m_Component:
   - component: {fileID: 1895472191005162140}
   - component: {fileID: 6882511287071652244}
+  - component: {fileID: 4672789605729270888}
   m_Layer: 0
   m_Name: level up
   m_TagString: Untagged
@@ -1360,6 +1375,19 @@ AudioSource:
     m_PreInfinity: 2
     m_PostInfinity: 2
     m_RotationOrder: 4
+--- !u!114 &4672789605729270888
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5425383283665293432}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bab2f5bf9d20f24b996bef67621a379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAudioSource: {fileID: 6882511287071652244}
 --- !u!1 &7246390196961981184
 GameObject:
   m_ObjectHideFlags: 0

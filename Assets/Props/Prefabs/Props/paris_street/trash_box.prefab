@@ -185,6 +185,11 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -8548706531335985072, guid: b8a757c3217129244a58975f484ca48f,
+        type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 18
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: b8a757c3217129244a58975f484ca48f,
         type: 3}
       propertyPath: m_Name

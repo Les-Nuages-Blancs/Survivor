@@ -223,7 +223,7 @@ MonoBehaviour:
   m_FallbackScreenDPI: 96
   m_DefaultSpriteDPI: 96
   m_DynamicPixelsPerUnit: 1
-  m_PresetInfoIsWorld: 1
+  m_PresetInfoIsWorld: 0
 --- !u!114 &2530154678455095593
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -328,6 +328,7 @@ GameObject:
   - component: {fileID: 1295518964493989266}
   - component: {fileID: 8757790837919274906}
   - component: {fileID: 7778455240219039387}
+  - component: {fileID: 1319890375570297772}
   m_Layer: 0
   m_Name: mixkit-hard-and-quick-punch-2143
   m_TagString: Untagged
@@ -462,3 +463,16 @@ MonoBehaviour:
   minPitch: 0.8
   maxPitch: 1.2
   playOnStart: 1
+--- !u!114 &1319890375570297772
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6983102320099437244}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 2bab2f5bf9d20f24b996bef67621a379, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  soundAudioSource: {fileID: 8757790837919274906}
