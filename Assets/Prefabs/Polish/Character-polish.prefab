@@ -748,6 +748,33 @@ MonoBehaviour:
   scripts:
   - {fileID: 6833407096566969320}
   - {fileID: 4401972516784374418}
+  TogglesOnDeath:
+  - m_PersistentCalls:
+      m_Calls:
+      - m_Target: {fileID: 2544187917320455131}
+        m_TargetAssemblyTypeName: RailgunSystem, Assembly-CSharp
+        m_MethodName: ToggleAlive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 3596165338594987425}
+        m_TargetAssemblyTypeName: LavaFlaskSystem, Assembly-CSharp
+        m_MethodName: ToggleAlive
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
   playerRenderers:
   - {fileID: 394446380799507208}
   - {fileID: 997583461936488434}
@@ -928,7 +955,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  cooldown: 6
+  cooldown: 3
   DmgPerLevel:
     serializedVersion: 2
     m_Curve:
@@ -969,7 +996,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  cooldown: 10
+  cooldown: 5
   DmgPerLevel:
     serializedVersion: 2
     m_Curve:

@@ -19,8 +19,13 @@ public class LavaFlaskSystem : NetworkBehaviour
     [SerializeField] private GameObject lavaflaskPrefab;
     [SerializeField] private Transform projectileSpawnPoint;
 
-
+    private bool blockShoot = false; //used to block firing without desyncronising fire timing between players
     private Coroutine railgunCoroutine;
+
+
+    public void ToggleAlive(){
+        blockShoot = !blockShoot;
+    }
 
     private void StartAttacks(){
         railgunCoroutine = StartCoroutine(LaunchAttack());
@@ -30,7 +35,8 @@ public class LavaFlaskSystem : NetworkBehaviour
     {
         while (true)
         {
-            yield return new WaitForSeconds(cooldown /*plug cheat here ?*/); 
+            yield return new WaitForSeconds(cooldown /*plug cheat here ?*/);
+            if(blockShoot) continue;
             if(level > 0) Shoot();
         }
     }
