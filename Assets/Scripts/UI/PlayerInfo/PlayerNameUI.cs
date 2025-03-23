@@ -44,7 +44,7 @@ public class PlayerNameUI : MonoBehaviour
 
             if (playerSettings != null)
             {
-                playerNameText.text = playerSettings.GetPlayerName();
+                UpdatePlayerName(playerSettings.GetPlayerName());
 
                 playerSettings.OnPlayerNameChanged += UpdatePlayerName;
             }
@@ -58,4 +58,5 @@ public class PlayerNameUI : MonoBehaviour
             playerNameText.text = newName;
         }
     }
+
 }
