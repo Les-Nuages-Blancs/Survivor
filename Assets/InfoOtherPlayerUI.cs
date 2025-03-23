@@ -30,7 +30,7 @@ public class InfoOtherPlayerUI : NetworkBehaviour
 
     private void OnClientConnected(ulong newClientId)
     {
-        if (IsLocalPlayer(newClientId)) return;
+        if (NetworkManager.Singleton.LocalClientId == newClientId) return;
 
         GameObject newPlayerInfo = Instantiate(playerInfoPrefab, transform);
 
@@ -39,12 +39,5 @@ public class InfoOtherPlayerUI : NetworkBehaviour
         {
             infoUI.Setup(newClientId); 
         }
-    }
-
-    private bool IsLocalPlayer(ulong clientId)
-    {
-        return NetworkManager.Singl
-eton.LocalClientId
-== clientId;
     }
 }
