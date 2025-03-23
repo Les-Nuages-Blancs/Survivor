@@ -50,10 +50,8 @@ public class XpBarUI : MonoBehaviour
 
         if (statLevelSystem != null)
         {
-            // Utiliser l'événement public onCurrentXpChange
             statLevelSystem.onCurrentXpChange.AddListener(UpdateXpUI);
 
-            // Mettre à jour la barre d'XP avec les valeurs actuelles
             xpSlider.maxValue = statLevelSystem.BaseStatistiques.RequiredXpForNextLevel;
             xpSlider.value = statLevelSystem.CurrentXp;
         }

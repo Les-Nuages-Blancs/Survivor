@@ -1,5 +1,4 @@
-using System.Collections;
-using System.Collections.Generic;
+using System;
 using TMPro;
 using Unity.Collections;
 using Unity.Netcode;
@@ -9,7 +8,14 @@ public class PlayerSettings : NetworkBehaviour
 {
     [SerializeField] private TextMeshProUGUI playerName;
 
-    NetworkVariable<FixedString32Bytes> networkPlayerName = new NetworkVariable<FixedString32Bytes>("Unknown", NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    // Ajout de l'événement pour notifier les changements de nom
+    public event Action<string> OnPlayerNameChanged;
+
+    private NetworkVariable<FixedString32Bytes> networkPlayerName = new NetworkVariable<FixedString32Bytes>(
+        "Unknown",
+        NetworkVariableReadPermission.Everyone,
+        NetworkVariableWritePermission.Owner
+    );
 
     public override void OnNetworkSpawn()
     {
@@ -20,8 +26,11 @@ public class PlayerSettings : NetworkBehaviour
         }
 
         UpdatePlayerNameLabel(networkPlayerName.Value.ToString());
+
         networkPlayerName.OnValueChanged += OnNetworkPlayerValueChanged;
     }
+
+
 
     public override void OnNetworkDespawn()
     {
@@ -40,11 +49,23 @@ public class PlayerSettings : NetworkBehaviour
 
     private void OnNetworkPlayerValueChanged(FixedString32Bytes previousValue, FixedString32Bytes newValue)
     {
-        UpdatePlayerNameLabel(newValue.ToString());
+        string name = newValue.ToString();
+        UpdatePlayerNameLabel(name);
+
+        // Déclencher l'événement lorsqu'il y a un changement de nom
+        OnPlayerNameChanged?.Invoke(name);
     }
 
     private void UpdatePlayerNameLabel(string newValue)
     {
-        playerName.text = newValue;
+        if (playerName != null)
+        {
+            playerName.text = newValue;
+        }
+    }
+
+    public string GetPlayerName()
+    {
+        return networkPlayerName.Value.ToString();
     }
 }
