@@ -39,14 +39,16 @@ public class FollowPlayerMovementSystem : NetworkBehaviour
         Transform closestTransform = null;
         float closestDistance = float.MaxValue;
 
-        foreach (GameObject player in Player.playerList)
+        foreach (Player player in Player.playerList)
         {
-            float distance = Vector3.Distance(transform.position, player.transform.position);
+            GameObject playerGo = player.gameObject;
 
-            if (distance < closestDistance && !player.GetComponent<PlayerDeathSystem>().IsDead)
+            float distance = Vector3.Distance(transform.position, playerGo.transform.position);
+
+            if (distance < closestDistance && !playerGo.GetComponent<PlayerDeathSystem>().IsDead)
             {
                 closestDistance = distance;
-                closestTransform = player.transform;
+                closestTransform = playerGo.transform;
             }
         }
 

@@ -12,7 +12,11 @@ public class HealthBarUI : MonoBehaviour
     {
         if (forceOwnerInfo)
         {
-            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+            foreach (Player player in Player.playerList)
+            {
+                SetupOwner(player.OwnerClientId);
+            }
+            Player.onPlayerAdded += SetupOwner;
         }
     }
 
@@ -20,7 +24,7 @@ public class HealthBarUI : MonoBehaviour
     {
         if (forceOwnerInfo)
         {
-            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+            Player.onPlayerAdded -= SetupOwner;
         }
 
         if (healthSystem != null)
@@ -29,19 +33,21 @@ public class HealthBarUI : MonoBehaviour
         }
     }
 
-    private void OnClientConnected(ulong clientId)
+    private void SetupOwner(ulong clientId)
     {
-        if (!IsLocalPlayer(clientId)) return;
+        if (clientId != NetworkManager.Singleton.LocalClientId) return;
 
         Setup(clientId);
     }
 
     public void Setup(ulong clientId)
     {
+        Player player = Player.GetPlayerByClientId(clientId);
 
-        if (NetworkManager.Singleton.ConnectedClients.TryGetValue(clientId, out var networkClient))
+        if (player != null)
         {
-            GameObject playerGo = networkClient.PlayerObject.gameObject;
+
+            GameObject playerGo = player.gameObject;
 
             healthSystem = playerGo.GetComponent<HealthSystem>();
 
@@ -55,6 +61,10 @@ public class HealthBarUI : MonoBehaviour
                 healthSlider.value = healthSystem.CurrentHealth;
             }
         }
+        else
+        {
+            Debug.Log("player " + clientId + " not found");
+        }
     }
 
     private void UpdateHealthUI()
@@ -63,10 +73,5 @@ public class HealthBarUI : MonoBehaviour
         {
             healthSlider.value = healthSystem.CurrentHealth;
         }
-    }
-
-    private bool IsLocalPlayer(ulong clientId)
-    {
-        return NetworkManager.Singleton.LocalClientId == clientId;
     }
 }
