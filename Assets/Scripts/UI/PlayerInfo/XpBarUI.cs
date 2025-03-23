@@ -12,7 +12,11 @@ public class XpBarUI : MonoBehaviour
     {
         if (forceOwnerInfo)
         {
-            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+            foreach (Player player in Player.playerList)
+            {
+                SetupOwner(player.OwnerClientId);
+            }
+            Player.onPlayerAdded += SetupOwner;
         }
     }
 
@@ -20,7 +24,7 @@ public class XpBarUI : MonoBehaviour
     {
         if (forceOwnerInfo)
         {
-            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+            Player.onPlayerAdded -= SetupOwner;
         }
 
         if (statLevelSystem != null)
@@ -29,30 +33,29 @@ public class XpBarUI : MonoBehaviour
         }
     }
 
-    private void OnClientConnected(ulong clientId)
+    private void SetupOwner(ulong clientId)
     {
-        if (!IsLocalPlayer(clientId)) return;
+        if (clientId != NetworkManager.Singleton.LocalClientId) return;
 
         Setup(clientId);
     }
 
     public void Setup(ulong clientId)
     {
-        if (NetworkManager.Singleton.ConnectedClients.TryGetValue(clientId, out var networkClient))
+        Player player = Player.GetPlayerByClientId(clientId);
+
+        GameObject playerGo = player.gameObject;
+
+        statLevelSystem = playerGo.GetComponent<StatistiquesLevelSystem>();
+
+        if (statLevelSystem != null)
         {
-            GameObject playerGo = networkClient.PlayerObject.gameObject;
+            // Utiliser l'événement public onCurrentXpChange
+            statLevelSystem.onCurrentXpChange.AddListener(UpdateXpUI);
 
-            statLevelSystem = playerGo.GetComponent<StatistiquesLevelSystem>();
-
-            if (statLevelSystem != null)
-            {
-                // Utiliser l'événement public onCurrentXpChange
-                statLevelSystem.onCurrentXpChange.AddListener(UpdateXpUI);
-
-                // Mettre à jour la barre d'XP avec les valeurs actuelles
-                xpSlider.maxValue = statLevelSystem.BaseStatistiques.RequiredXpForNextLevel;
-                xpSlider.value = statLevelSystem.CurrentXp;
-            }
+            // Mettre à jour la barre d'XP avec les valeurs actuelles
+            xpSlider.maxValue = statLevelSystem.BaseStatistiques.RequiredXpForNextLevel;
+            xpSlider.value = statLevelSystem.CurrentXp;
         }
     }
 
@@ -63,10 +66,5 @@ public class XpBarUI : MonoBehaviour
             xpSlider.maxValue = statLevelSystem.EntityLevelStatistiques.GetXpRequiredForNextLevel(statLevelSystem.CurrentLevel);
             xpSlider.value = statLevelSystem.CurrentXp;
         }
-    }
-
-    private bool IsLocalPlayer(ulong clientId)
-    {
-        return NetworkManager.Singleton.LocalClientId == clientId;
     }
 }

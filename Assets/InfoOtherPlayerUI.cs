@@ -4,28 +4,24 @@ using Unity.Netcode;
 using Unity.Services.Authentication;
 using UnityEngine;
 
-public class InfoOtherPlayerUI : NetworkBehaviour
+public class InfoOtherPlayerUI : MonoBehaviour
 {
     [SerializeField] private GameObject playerInfoPrefab;
 
     private void Start()
     {
-        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
-    }
-
-    public override void OnDestroy()
-    {
-        base.OnDestroy();
-
-        NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
-    }
-
-    public override void OnNetworkSpawn()
-    {
-        foreach (ulong key in NetworkManager.Singleton.ConnectedClients.Keys)
+        foreach (Player player in Player.playerList)
         {
-            OnClientConnected(key);
+            ulong playerId = player.OwnerClientId;
+
+            OnClientConnected(playerId);
         }
+        Player.onPlayerAdded += OnClientConnected;
+    }
+
+    private void OnDestroy()
+    {
+        Player.onPlayerAdded -= OnClientConnected;
     }
 
     private void OnClientConnected(ulong newClientId)
