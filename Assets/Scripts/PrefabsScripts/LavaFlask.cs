@@ -61,7 +61,7 @@ public class LavaFlask : MonoBehaviour
                     //Spawn effect client side : currently no effect on railgun
                     //HitEffects(dmg);
 
-                    if(!isReal) return; //only the machine of the player who fired solve collision
+                    if(!isReal) break; //only the machine of the player who fired solve collision
 
                     HealthSystem healthSystem = target.GetComponent<HealthSystem>();
                     if (healthSystem){         

@@ -4,7 +4,9 @@ using System.Collections.Generic;
 using TMPro;
 using UI.Camera;
 using Unity.Netcode;
+//using UnityEditor.EditorTools;
 using UnityEngine;
+using UnityEngine.Events;
 using UnityEngine.Serialization;
 
 public class PlayerDeathSystem : NetworkBehaviour
@@ -13,6 +15,8 @@ public class PlayerDeathSystem : NetworkBehaviour
     [SerializeField] private int respawnCooldownSeconds = 15;
     
     [SerializeField] private MonoBehaviour[] scripts;
+    [Tooltip("below function that will be called on death and on revive. Note that is different from scripts above that are disabled / enabled. The reason is that it may cause desyncronisation issues should we disabled script wwith long cooldown over time")]
+    [SerializeField] private UnityEvent[] TogglesOnDeath;
     [SerializeField] private Renderer[] playerRenderers;
     [SerializeField] private Collider[] playerColliders;
     [SerializeField] private Canvas[] playerCanvases;
@@ -35,6 +39,9 @@ public class PlayerDeathSystem : NetworkBehaviour
         foreach (var script in scripts)
         {
             script.enabled = false;
+        }
+        foreach(UnityEvent e in TogglesOnDeath){
+            e?.Invoke();
         }
 
         foreach (var playerRenderer in playerRenderers)
@@ -67,6 +74,9 @@ public class PlayerDeathSystem : NetworkBehaviour
         foreach (var script in scripts)
         {
             script.enabled = true;
+        }
+        foreach(UnityEvent e in TogglesOnDeath){
+            e?.Invoke();
         }
         foreach (var playerRenderer in playerRenderers)
         {
