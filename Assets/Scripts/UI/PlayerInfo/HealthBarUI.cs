@@ -6,15 +6,22 @@ public class HealthBarUI : MonoBehaviour
 {
     [SerializeField] private Slider healthSlider;
     private HealthSystem healthSystem;
+    [SerializeField] private bool forceOwnerInfo = false;
 
     private void Start()
     {
-        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        if (forceOwnerInfo)
+        {
+            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        }
     }
 
     private void OnDestroy()
     {
-        NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+        if (forceOwnerInfo)
+        {
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+        }
 
         if (healthSystem != null)
         {
@@ -26,16 +33,27 @@ public class HealthBarUI : MonoBehaviour
     {
         if (!IsLocalPlayer(clientId)) return;
 
-        healthSystem = FindObjectOfType<HealthSystem>();
+        Setup(clientId);
+    }
 
-        if (healthSystem != null)
+    public void Setup(ulong clientId)
+    {
+
+        if (NetworkManager.Singleton.ConnectedClients.TryGetValue(clientId, out var networkClient))
         {
-            // Utiliser l'événement public onHealthChange
-            healthSystem.onHealthChange.AddListener(UpdateHealthUI);
+            GameObject playerGo = networkClient.PlayerObject.gameObject;
 
-            // Mettre à jour la barre de vie avec les valeurs actuelles
-            healthSlider.maxValue = healthSystem.MaxHealth;
-            healthSlider.value = healthSystem.CurrentHealth;
+            healthSystem = playerGo.GetComponent<HealthSystem>();
+
+            if (healthSystem != null)
+            {
+                // Utiliser l'événement public onHealthChange
+                healthSystem.onHealthChange.AddListener(UpdateHealthUI);
+
+                // Mettre à jour la barre de vie avec les valeurs actuelles
+                healthSlider.maxValue = healthSystem.MaxHealth;
+                healthSlider.value = healthSystem.CurrentHealth;
+            }
         }
     }
 

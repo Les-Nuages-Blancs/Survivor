@@ -1,15 +1,14 @@
 ﻿using UnityEngine;
 using System.Collections.Generic;
 using System.Linq;
+using Unity.Netcode;
 
-public class DeckManager : MonoBehaviour
+public class DeckManager : NetworkBehaviour
 {
     [SerializeField] private GameObject cardPrefab; 
     [SerializeField] private Transform cardContainer;
     [SerializeField] private List<Sprite> cardImages;
     [SerializeField] private int nbCards = 5 ;
-    private StatistiquesLevelSystem statLevelSystem;
-
 
     private List<Card> deck = new List<Card>();
 
@@ -17,11 +16,20 @@ public class DeckManager : MonoBehaviour
     {
         InitDeck();
         DrawCards();
-        //statLevelSystem = FindObjectOfType<StatistiquesLevelSystem>();
-        //if (statLevelSystem != null)
-        //{
-        //    statLevelSystem.onLevelUp.AddListener(DrawCards);
-        //}
+        
+    }
+
+    public override void OnNetworkSpawn()
+    {
+        ulong ownerClientId = OwnerClientId; // Get the owner ID
+        if (NetworkManager.Singleton.ConnectedClients.TryGetValue(ownerClientId, out var networkClient))
+        {
+            GameObject playerGo = networkClient.PlayerObject.gameObject;
+
+            StatistiquesLevelSystem statsLevelSystem = playerGo.GetComponent<StatistiquesLevelSystem>();
+
+            statsLevelSystem.onCurrentLevelChange.AddListener(DrawCards);
+        }
     }
 
     void InitDeck()
@@ -120,8 +128,6 @@ public class DeckManager : MonoBehaviour
         {
             Destroy(child.gameObject);
         }
-
-        DrawCards();
 
         DebugDeck("Deck après DrawCards");
 

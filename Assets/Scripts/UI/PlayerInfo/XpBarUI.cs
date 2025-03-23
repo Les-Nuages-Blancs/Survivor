@@ -6,15 +6,22 @@ public class XpBarUI : MonoBehaviour
 {
     [SerializeField] private Slider xpSlider;
     private StatistiquesLevelSystem statLevelSystem;
+    [SerializeField] private bool forceOwnerInfo = false;
 
     private void Start()
     {
-        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        if (forceOwnerInfo)
+        {
+            NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
+        }
     }
 
     private void OnDestroy()
     {
-        NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+        if (forceOwnerInfo)
+        {
+            NetworkManager.Singleton.OnClientConnectedCallback -= OnClientConnected;
+        }
 
         if (statLevelSystem != null)
         {
@@ -26,16 +33,26 @@ public class XpBarUI : MonoBehaviour
     {
         if (!IsLocalPlayer(clientId)) return;
 
-        statLevelSystem = FindObjectOfType<StatistiquesLevelSystem>();
+        Setup(clientId);
+    }
 
-        if (statLevelSystem != null)
+    public void Setup(ulong clientId)
+    {
+        if (NetworkManager.Singleton.ConnectedClients.TryGetValue(clientId, out var networkClient))
         {
-            // Utiliser l'événement public onCurrentXpChange
-            statLevelSystem.onCurrentXpChange.AddListener(UpdateXpUI);
+            GameObject playerGo = networkClient.PlayerObject.gameObject;
 
-            // Mettre à jour la barre d'XP avec les valeurs actuelles
-            xpSlider.maxValue = statLevelSystem.BaseStatistiques.RequiredXpForNextLevel;
-            xpSlider.value = statLevelSystem.CurrentXp;
+            statLevelSystem = playerGo.GetComponent<StatistiquesLevelSystem>();
+
+            if (statLevelSystem != null)
+            {
+                // Utiliser l'événement public onCurrentXpChange
+                statLevelSystem.onCurrentXpChange.AddListener(UpdateXpUI);
+
+                // Mettre à jour la barre d'XP avec les valeurs actuelles
+                xpSlider.maxValue = statLevelSystem.BaseStatistiques.RequiredXpForNextLevel;
+                xpSlider.value = statLevelSystem.CurrentXp;
+            }
         }
     }
 
