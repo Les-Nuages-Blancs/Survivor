@@ -20,8 +20,8 @@ public class LavaFlask : MonoBehaviour
     private MeshRenderer meshRenderer;
     private Color originalColor;
     [Tooltip("the color in witch the lava flashes when dealing dmg")]
-    [SerializeField] private Color flashColor;
-    [SerializeField] private float flashDuration = 0.15f;
+    // [SerializeField] private Color flashColor;
+    // [SerializeField] private float flashDuration = 0.15f;
     
     //[SerializeField] private List<GameObject> EffectsPrefab = new List<GameObject>();
     //[SerializeField] private LayerMask includeTriggerLayers;
@@ -31,13 +31,15 @@ public class LavaFlask : MonoBehaviour
     // Start is called before the first frame update
     void Start(){
         //init ref
+        /* used in a previous version
         meshRenderer = GetComponent<MeshRenderer>();
         originalColor = meshRenderer.material.GetColor("_LavaColor");
 
         //grow lava flask
-        StartCoroutine(GrowScaleOverTime());
+        StartCoroutine(GrowScaleOverTime());*/
 
         //after growth, tick every 1s
+        GetComponent<LavaFlask>().transform.localScale = Vector3.Scale(transform.localScale, new Vector3(size, 1, size));
         Invoke("TickDamage", tickDelay);
     }
 
@@ -71,31 +73,32 @@ public class LavaFlask : MonoBehaviour
                 }
             }
         }
-
+        // -- used previously in a debug animation
         //animation to indicate it ticks
         //Note that this is probably borken if multiples persons has different CD for lava flask. Idk if unity uses material reference or unique so hum ...
         //well this is poor way to indicated dmg dealth anyways so it should be replaced by smth else in the end
-        SetColorFlash();
-        Invoke("SetColorOriginal", flashDuration);
+        //SetColorFlash();
+        //Invoke("SetColorOriginal", flashDuration);
 
 
         //check for final ticks. Destroy after a small delay so we see color.
         if(++tick == tickCount){
-            Destroy(gameObject,flashDuration+0.07f);
+            Destroy(gameObject,0.07f);
             return;
         }
 
         Invoke("TickDamage", tickDelay);
     }
 
-    void SetColorFlash(){
+    /*void SetColorFlash(){
         meshRenderer.material.SetColor("_LavaColor", flashColor);
     }
     void SetColorOriginal(){
         meshRenderer.material.SetColor("_LavaColor", originalColor);
-    }
+    }*/
 
 
+    //previously used when it was a cylinder
      private IEnumerator GrowScaleOverTime()
     {
         float duration = tickDelay;
