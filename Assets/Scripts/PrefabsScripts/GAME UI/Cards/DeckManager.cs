@@ -1,7 +1,9 @@
 ﻿using UnityEngine;
+using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Netcode;
+
 
 public class DeckManager : NetworkBehaviour
 {
@@ -11,6 +13,10 @@ public class DeckManager : NetworkBehaviour
     [SerializeField] private int nbCards = 5 ;
 
     private List<Card> deck = new List<Card>();
+    private int pendingLevelUps = 0;
+    private bool isDrawingCards = false;
+
+
 
     void Start()
     {
@@ -82,29 +88,54 @@ public class DeckManager : NetworkBehaviour
 
     void DrawCards()
     {
-        List<Card.CardType> displayedCardTypes = new List<Card.CardType>();
+        pendingLevelUps++; // Ajoute un niveau en attente
 
-        for (int i = 0; i < 3 && deck.Count > 0; i++)
+        if (isDrawingCards) return; // Si une sélection est déjà en cours, ne rien faire
+
+        StartCoroutine(HandleDrawCards()); // Lance la gestion des tirages
+    }
+
+    IEnumerator HandleDrawCards()
+    {
+        isDrawingCards = true;
+
+        while (pendingLevelUps > 0)
         {
-            Card cardToDraw = null;
+            pendingLevelUps--; // Consomme un niveau en attente
 
-            foreach (Card card in deck)
+            List<Card.CardType> displayedCardTypes = new List<Card.CardType>();
+
+            for (int i = 0; i < 3 && deck.Count > 0; i++)
             {
-                if (!displayedCardTypes.Contains(card.type))
+                Card cardToDraw = null;
+
+                foreach (Card card in deck)
                 {
-                    cardToDraw = card;
-                    break; 
+                    if (!displayedCardTypes.Contains(card.type))
+                    {
+                        cardToDraw = card;
+                        break;
+                    }
+                }
+
+                if (cardToDraw != null)
+                {
+                    displayedCardTypes.Add(cardToDraw.type);
+                    CreateCardUI(cardToDraw);
                 }
             }
 
-            if (cardToDraw != null)
+            // Attendre que le joueur choisisse une carte avant de continuer
+            while (cardContainer.childCount > 0)
             {
-                displayedCardTypes.Add(cardToDraw.type);
-
-                CreateCardUI(cardToDraw);
+                yield return null; // Attend le prochain frame tant qu'il y a des cartes affichées
             }
         }
+
+        isDrawingCards = false;
     }
+
+
 
 
     void CreateCardUI(Card card)
@@ -129,9 +160,19 @@ public class DeckManager : NetworkBehaviour
             Destroy(child.gameObject);
         }
 
-        DebugDeck("Deck après DrawCards");
+        // Si d'autres niveaux sont en attente, continuer à afficher des cartes
+        if (pendingLevelUps > 0)
+        {
+            StartCoroutine(HandleDrawCards());
+        }
+        else
+        {
+            isDrawingCards = false; // Sinon, libérer le flag
+        }
 
+        DebugDeck("Deck après DrawCards");
     }
+
 
     void DebugDeck(string message)
     {
