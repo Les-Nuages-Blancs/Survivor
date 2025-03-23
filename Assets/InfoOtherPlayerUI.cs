@@ -43,8 +43,6 @@ public class InfoOtherPlayerUI : NetworkBehaviour
 
     private bool IsLocalPlayer(ulong clientId)
     {
-        return NetworkManager.Singl
-eton.LocalClientId
-== clientId;
+        return NetworkManager.Singleton.LocalClientId == clientId;
     }
 }
