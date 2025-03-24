@@ -28,14 +28,14 @@ public class PlayerDeathSystem : NetworkBehaviour
 
     public void KillPlayer()
     {
-        if (!IsOwner || IsDead) return;
+        //if (!IsOwner || IsDead) return;
+        if (IsDead) return;
         Camera.main.gameObject.GetComponent<CameraFollowSystem>().StartCoroutine(DeathCooldown());
     }
 
     private IEnumerator DeathCooldown()
     {
         IsDead = true;
-
         foreach (var script in scripts)
         {
             script.enabled = false;
@@ -60,16 +60,19 @@ public class PlayerDeathSystem : NetworkBehaviour
         {
             playerCanvas.enabled = false;
         }
-        
-        var canvas = Instantiate(deathCanvasPrefab, transform.position, Quaternion.identity);
-        var deathText = canvas.transform.Find("Respawn Timer").GetComponent<TextMeshProUGUI>();
-        
-        for (var i = 0; i < respawnCooldownSeconds; i++)
-        {
-            deathText.text = "Respawn in: " + (respawnCooldownSeconds - i - 1);
-            yield return new WaitForSeconds(1f);
+        if(IsOwner){
+            var canvas = Instantiate(deathCanvasPrefab, transform.position, Quaternion.identity);
+            var deathText = canvas.transform.Find("Respawn Timer").GetComponent<TextMeshProUGUI>();
+            
+            for (var i = 0; i < respawnCooldownSeconds; i++)
+            {
+                deathText.text = "Respawn in: " + (respawnCooldownSeconds - i - 1);
+                yield return new WaitForSeconds(1f);
+            }
+            Destroy(canvas);
+        } else{
+            yield return new WaitForSeconds(respawnCooldownSeconds);
         }
-        Destroy(canvas);
         
         foreach (var script in scripts)
         {
@@ -90,7 +93,8 @@ public class PlayerDeathSystem : NetworkBehaviour
         {
             playerCollider.enabled = true;
         }
-        healthSystem.CurrentHealth = healthSystem.MaxHealth;
+        //healthSystem.CurrentHealth = healthSystem.MaxHealth;
+        healthSystem.AddHpServerRPC(healthSystem.MaxHealth);
         IsDead = false;
 
     }

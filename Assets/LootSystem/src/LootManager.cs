@@ -186,7 +186,7 @@ public class LootManager : NetworkBehaviour
                 Mathf.Cos(lmd.alpha),
                 Mathf.Sin(lmd.alpha) * MathF.Sin(theta)
             ).normalized * lmd.strenght; 
-            Debug.Log($"coucou  angle :{lmd.alpha}, str :  {lmd.strenght}");
+            //Debug.Log($"coucou  angle :{lmd.alpha}, str :  {lmd.strenght}");
             go.GetComponent<StopLootFalling>().impulse.Value = impDir;
         }
 
