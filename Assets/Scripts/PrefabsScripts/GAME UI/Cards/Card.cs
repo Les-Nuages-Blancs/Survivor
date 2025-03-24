@@ -47,10 +47,10 @@ public class Card
                 LocalPlayerUpgradeManager.Instance.UpgradeHealthRegen();
                 break;
             case CardType.Railgun:
-                GameNetworkManager.Instance.LvlUpRailgunSystemClientRpc(NetworkManager.Singleton.LocalClientId);
+                GameNetworkManager.Instance.LvlUpRailgunSystemServerRpc(NetworkManager.Singleton.LocalClientId);
                 break;
             case CardType.LavaFlask:
-                GameNetworkManager.Instance.LvlUpLavaFlaskSystemClientRpc(NetworkManager.Singleton.LocalClientId);
+                GameNetworkManager.Instance.LvlUpLavaFlaskSystemServerRpc(NetworkManager.Singleton.LocalClientId);
                 break;
             default:
                 Debug.LogWarning("Unknown card type!");
