@@ -58,10 +58,20 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6058629849428305747, guid: 283dcd1ceb507c242834fef27dfa95d2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 8776920236994186966, guid: 283dcd1ceb507c242834fef27dfa95d2,
         type: 3}
       propertyPath: m_Name
       value: roof_water_tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 8776920236994186966, guid: 283dcd1ceb507c242834fef27dfa95d2,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -152,10 +162,40 @@ PrefabInstance:
       propertyPath: m_ConstrainProportionsScale
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: -7097180469102552897, guid: a0050f23c8bb7b4498bd348db6d2d6eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: -884141888327968124, guid: a0050f23c8bb7b4498bd348db6d2d6eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: a0050f23c8bb7b4498bd348db6d2d6eb,
         type: 3}
       propertyPath: m_Name
       value: roof_water_tower
+      objectReference: {fileID: 0}
+    - target: {fileID: 919132149155446097, guid: a0050f23c8bb7b4498bd348db6d2d6eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 925575962717157498, guid: a0050f23c8bb7b4498bd348db6d2d6eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 2519501694249930427, guid: a0050f23c8bb7b4498bd348db6d2d6eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
+      objectReference: {fileID: 0}
+    - target: {fileID: 6438137906193696944, guid: a0050f23c8bb7b4498bd348db6d2d6eb,
+        type: 3}
+      propertyPath: m_Layer
+      value: 7
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -164,8 +204,34 @@ PrefabInstance:
         type: 3}
       insertIndex: -1
       addedObject: {fileID: 1689436395943812006}
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 919132149155446097, guid: a0050f23c8bb7b4498bd348db6d2d6eb,
+        type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 7588798716752784190}
   m_SourcePrefab: {fileID: 100100000, guid: a0050f23c8bb7b4498bd348db6d2d6eb, type: 3}
+--- !u!1 &8260385781156472542 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 919132149155446097, guid: a0050f23c8bb7b4498bd348db6d2d6eb,
+    type: 3}
+  m_PrefabInstance: {fileID: 9107299667989355407}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &7588798716752784190
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8260385781156472542}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 35e95dc5ff2b64380880dd7ac5922847, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  m_Size: {x: 0.6938629, y: 3.521401, z: 0.68569946}
+  m_Center: {x: 0.011383891, y: -1.6301916, z: 0.0073006153}
+  m_Area: 1
+  m_AffectedAgents: ffffffff
 --- !u!4 &8784580821315271780 stripped
 Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: a0050f23c8bb7b4498bd348db6d2d6eb,
