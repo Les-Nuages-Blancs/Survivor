@@ -13,6 +13,8 @@ public class LocalPlayerUpgradeManager : MonoBehaviour
     [SerializeField] private List<EntityBaseStatistiques> statsMultiplierBasedOnLevels = new List<EntityBaseStatistiques>();
     [SerializeField] private List<EntityBaseStatistiques> statsAdditiveBonusBasedOnLevels = new List<EntityBaseStatistiques>();
 
+    public int railgunLvl = 0;
+    public int lavaflaskLvl = 0;
     public UnityEvent<EntityBaseStatistiques, EntityBaseStatistiques> onStatsUpgraderLevelChange;
 
     public EntityBaseStatistiques StatsUpgraderLevel

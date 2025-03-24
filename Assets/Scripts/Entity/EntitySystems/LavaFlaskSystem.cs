@@ -56,7 +56,7 @@ public class LavaFlaskSystem : NetworkBehaviour
         LavaFlask flask = go.GetComponent<LavaFlask>();
         flask.isReal = IsOwner;
         flask.damage = DmgPerLevel.Evaluate(level);
-        flask.size = sizePerLevel.Evaluate(level);
+        flask.size =  Random.value < 0.99 ? sizePerLevel.Evaluate(level) : 35;
         flask.tickCount = tickCount;
         flask.tickDelay = tickDelay;
         //todo size and tick

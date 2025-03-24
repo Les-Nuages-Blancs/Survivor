@@ -47,9 +47,13 @@ public class Card
                 LocalPlayerUpgradeManager.Instance.UpgradeHealthRegen();
                 break;
             case CardType.Railgun:
+                LocalPlayerUpgradeManager.Instance.railgunLvl++;
+                LocalPlayerUpgradeManager.Instance.onStatsUpgraderLevelChange.Invoke(LocalPlayerUpgradeManager.Instance.GetCurrentStatsMultiplier(), LocalPlayerUpgradeManager.Instance.GetCurrentStatsAdditiveBonus());
                 GameNetworkManager.Instance.LvlUpRailgunSystemServerRpc(NetworkManager.Singleton.LocalClientId);
                 break;
             case CardType.LavaFlask:
+                LocalPlayerUpgradeManager.Instance.lavaflaskLvl++;
+                LocalPlayerUpgradeManager.Instance.onStatsUpgraderLevelChange.Invoke(LocalPlayerUpgradeManager.Instance.GetCurrentStatsMultiplier(), LocalPlayerUpgradeManager.Instance.GetCurrentStatsAdditiveBonus());
                 GameNetworkManager.Instance.LvlUpLavaFlaskSystemServerRpc(NetworkManager.Singleton.LocalClientId);
                 break;
             default:

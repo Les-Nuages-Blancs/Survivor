@@ -11,7 +11,9 @@ public class StatsBar : MonoBehaviour
         Damage,
         AttackSpeed,
         PickupRange,
-        MoveSpeedMultiplier
+        MoveSpeedMultiplier,
+        Railgun,
+        LavaFlask
     }
 
     [SerializeField] private Image[] rectangles;
@@ -62,6 +64,12 @@ public class StatsBar : MonoBehaviour
                 break;
             case UpgradeType.MoveSpeedMultiplier:
                 newProgress = (int)upgraderLevel.MoveSpeedMultiplier;
+                break;
+            case UpgradeType.Railgun:
+                newProgress = LocalPlayerUpgradeManager.Instance.railgunLvl;
+                break;
+            case UpgradeType.LavaFlask:
+                newProgress = LocalPlayerUpgradeManager.Instance.lavaflaskLvl;
                 break;
         }
 
