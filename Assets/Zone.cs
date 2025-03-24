@@ -20,6 +20,8 @@ public class Zone : NetworkBehaviour
     [SerializeField] public UnityEvent<TaskZone> OnTaskAdded;
     [SerializeField] public UnityEvent<TaskZone> OnTaskRemove;
 
+    public UnityEvent<ulong> OnEnemySpawnerAdded;
+
     private Dictionary<ulong, SpawnerZone> playerSpawners = new Dictionary<ulong, SpawnerZone>();
 
     public List<TaskZone> ZoneTasks => zoneTasks; // Read-only access to prevent direct modification
@@ -111,6 +113,7 @@ public class Zone : NetworkBehaviour
         }
 
         playerSpawners[clientId] = spawnerZone;
+        OnEnemySpawnerAdded.Invoke(clientId);
     }
 
     public override void OnNetworkDespawn()

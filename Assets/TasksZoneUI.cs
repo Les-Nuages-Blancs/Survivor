@@ -111,6 +111,7 @@ public class TasksZoneUI : NetworkBehaviour
             }
             else
             {
+                zone.OnEnemySpawnerAdded.RemoveListener(tryListenZoneLevelChange);
                 Debug.Log($"No spawner found for client {localClientId}");
             }
         }
@@ -139,9 +140,26 @@ public class TasksZoneUI : NetworkBehaviour
             else
             {
                 Debug.Log($"No spawner found for client {localClientId}");
+                zone.OnEnemySpawnerAdded.AddListener(tryListenZoneLevelChange);
             }
 
             UpdateTitle(zone);
+        }
+    }
+
+    private void tryListenZoneLevelChange(ulong clientId)
+    {
+        ulong localClientId = NetworkManager.Singleton.LocalClientId;
+
+        if (clientId == localClientId)
+        {
+            zoneHelper.Zone.OnEnemySpawnerAdded.RemoveListener(tryListenZoneLevelChange);
+
+            if (zoneHelper.Zone.PlayerSpawners.TryGetValue(localClientId, out SpawnerZone spawner))
+            {
+                // TODO fix start zone that throw warning instead of finding the local client id spawner
+                spawner.onPlayerZoneLevelChange.AddListener(UpdateTitleWithCurrentZone);
+            }
         }
     }
 
