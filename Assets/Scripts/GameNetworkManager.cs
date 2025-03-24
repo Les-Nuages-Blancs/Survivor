@@ -36,5 +36,15 @@ public class GameNetworkManager : NetworkBehaviour
         }
     }
 
+    [ClientRpc]
+    public void LvlUpRailgunSystemClientRpc(ulong id){
+        Player.GetPlayerByClientId(id).GetComponent<RailgunSystem>().LvlUp();
+    }
+
+    [ClientRpc]
+    public void LvlUpLavaFlaskSystemClientRpc(ulong id){
+        Player.GetPlayerByClientId(id).GetComponent<LavaFlaskSystem>().LvlUp();
+    }
+
 
 }

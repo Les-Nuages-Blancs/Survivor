@@ -48,6 +48,10 @@ public class RailgunSystem : NetworkBehaviour
         
     }
 
+    public void LvlUp(){
+        level++;
+    }
+
 
     private void Shoot(){
         GameObject go = Instantiate(railgunPrefab, projectileSpawnPoint.position, transform.rotation, LevelStateManager.Instance.LocalParent);

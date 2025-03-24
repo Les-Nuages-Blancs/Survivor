@@ -46,6 +46,10 @@ public class LavaFlaskSystem : NetworkBehaviour
         //StartAttacks(); called when the game starts
     }
 
+    public void LvlUp(){
+        level++;
+    }
+
 
     private void Shoot(){
         GameObject go = Instantiate(lavaflaskPrefab, projectileSpawnPoint.position, Quaternion.identity, LevelStateManager.Instance.LocalParent);

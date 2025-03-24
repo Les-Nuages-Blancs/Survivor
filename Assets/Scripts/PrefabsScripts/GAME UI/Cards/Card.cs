@@ -1,3 +1,4 @@
+using Unity.Netcode;
 using UnityEngine;
 
 [System.Serializable]
@@ -46,10 +47,10 @@ public class Card
                 LocalPlayerUpgradeManager.Instance.UpgradeHealthRegen();
                 break;
             case CardType.Railgun:
-                //todo
+                GameNetworkManager.Instance.LvlUpRailgunSystemClientRpc(NetworkManager.Singleton.LocalClientId);
                 break;
             case CardType.LavaFlask:
-                //todo
+                GameNetworkManager.Instance.LvlUpLavaFlaskSystemClientRpc(NetworkManager.Singleton.LocalClientId);
                 break;
             default:
                 Debug.LogWarning("Unknown card type!");
