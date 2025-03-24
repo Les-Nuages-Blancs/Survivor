@@ -64,7 +64,7 @@ public class StatistiquesLevelSystem : NetworkBehaviour
         currentLevel.OnValueChanged += OnCurrentLevelChange;
         currentXp.OnValueChanged += OnCurrentXpChange;
 
-        if (IsOwner)
+        if (IsOwner && GetComponent<Player>() != null)
         {
             UpdateUpgrader(LocalPlayerUpgradeManager.Instance.GetCurrentStatsMultiplier(), LocalPlayerUpgradeManager.Instance.GetCurrentStatsAdditiveBonus());
             LocalPlayerUpgradeManager.Instance.onStatsUpgraderLevelChange.AddListener(UpdateUpgrader);
