@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Netcode;
+using System;
 
 
 public class DeckManager : NetworkBehaviour
@@ -52,48 +53,20 @@ public class DeckManager : NetworkBehaviour
     {
         deck.Clear();
 
-        deck.AddRange(Enumerable.Repeat(new Card(), nbCards).Select(card =>
-        {
-            card.SetTitleAndImage("Armor", cardImages[0]);
-            card.SetCardType(Card.CardType.Armor);
+        string[] names = Enum.GetNames(typeof(Card.CardType));
+        Array typeArray = Enum.GetValues(typeof(Card.CardType));
+        for(int i=0; i< nbCards; i++){
+            deck.AddRange(Enumerable.Repeat(new Card(), nbCards).Select(card =>
+            {
+                card.SetTitleAndImage(names[i], cardImages[i]);
+                card.SetCardType( (Card.CardType) typeArray.GetValue(i));
 
-            return card;
-        }));
-
-        deck.AddRange(Enumerable.Repeat(new Card(), nbCards).Select(card =>
-        {
-            card.SetTitleAndImage("Damage", cardImages[1]);
-            card.SetCardType(Card.CardType.Damage);
-
-            return card;
-        }));
-
-        deck.AddRange(Enumerable.Repeat(new Card(), nbCards).Select(card =>
-        {
-            card.SetTitleAndImage("Health", cardImages[2]);
-            card.SetCardType(Card.CardType.Health);
-
-            return card;
-        }));
-
-        deck.AddRange(Enumerable.Repeat(new Card(), nbCards).Select(card =>
-        {
-            card.SetTitleAndImage("HealthRegen", cardImages[3]);
-            card.SetCardType(Card.CardType.HealthRegen);
-
-            return card;
-        }));
-
-        deck.AddRange(Enumerable.Repeat(new Card(), nbCards).Select(card =>
-        {
-            card.SetTitleAndImage("AttackSpeed", cardImages[4]);
-            card.SetCardType(Card.CardType.AttackSpeed);
-
-            return card;
-        }));
+                return card;
+            }));
+        }
 
 
-        deck = deck.OrderBy(c => Random.value).ToList(); 
+        deck = deck.OrderBy(c => UnityEngine.Random.value).ToList(); 
     }
 
     void DrawCards()

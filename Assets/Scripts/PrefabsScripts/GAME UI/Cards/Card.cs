@@ -3,7 +3,7 @@ using UnityEngine;
 [System.Serializable]
 public class Card
 {
-    public enum CardType { Armor, Damage, Health, AttackSpeed, HealthRegen }
+    public enum CardType { Armor, Damage, Health, AttackSpeed, HealthRegen, Railgun, LavaFlask }
 
     public string title;
     public Sprite image;
@@ -44,6 +44,12 @@ public class Card
                 break;
             case CardType.HealthRegen:
                 LocalPlayerUpgradeManager.Instance.UpgradeHealthRegen();
+                break;
+            case CardType.Railgun:
+                //todo
+                break;
+            case CardType.LavaFlask:
+                //todo
                 break;
             default:
                 Debug.LogWarning("Unknown card type!");
