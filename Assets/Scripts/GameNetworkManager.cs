@@ -20,4 +20,21 @@ public class GameNetworkManager : NetworkBehaviour
     }
 
 
+
+    //when a single object exist.
+    //[ServerRpc(RequireOwnership = false)]
+    [ClientRpc]
+    public void SyncrhoniseLocalShootSystemsClientRpc(){
+        Transform playerParent = LevelStateManager.Instance.PlayerParent;
+        //Debug.Log("coucou !");
+        //Debug.Log(playerParent.childCount);
+        foreach(Transform player in playerParent){
+            //warning : need to be manually hardcoded
+            player.GetComponent<LavaFlaskSystem>().StartAttacks();
+            player.GetComponent<RailgunSystem>().StartAttacks();
+            //player.GetComponent<AutoAttackSystem>().RestartAttacks();
+        }
+    }
+
+
 }

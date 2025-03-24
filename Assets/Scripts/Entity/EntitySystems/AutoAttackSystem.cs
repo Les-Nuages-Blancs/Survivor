@@ -117,7 +117,7 @@ public class AutoAttackSystem : NetworkBehaviour
         }
     }
 
-    private void RestartAttacks()
+    public void RestartAttacks()
     {
         StopAttacks();
 
