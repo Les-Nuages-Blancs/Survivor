@@ -23,7 +23,7 @@ public class RailgunSystem : NetworkBehaviour
         blockShoot = !blockShoot;
     }
 
-    private void StartAttacks(){
+    public void StartAttacks(){
         railgunCoroutine = StartCoroutine(LaunchAttack());
     }
 
@@ -39,7 +39,7 @@ public class RailgunSystem : NetworkBehaviour
 
     // Start is called before the first frame update
     void Start(){
-        StartAttacks();
+        //StartAttacks(); //called when game starts with the starts zone
     }
 
     // Update is called once per frame

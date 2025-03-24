@@ -34,6 +34,9 @@ public class StartGame : NetworkBehaviour
     {
         timerText.text = "Starting ...";
         gameObject.SetActive(false);
+        GameNetworkManager.Instance.SyncrhoniseLocalShootSystemsClientRpc(); //error?
         LevelStateManager.Instance.SpawnEntity = true;
     }
+
+    
 }

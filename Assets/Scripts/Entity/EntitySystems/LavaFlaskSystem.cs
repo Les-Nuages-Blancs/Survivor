@@ -27,7 +27,7 @@ public class LavaFlaskSystem : NetworkBehaviour
         blockShoot = !blockShoot;
     }
 
-    private void StartAttacks(){
+    public void StartAttacks(){
         railgunCoroutine = StartCoroutine(LaunchAttack());
     }
 
@@ -43,7 +43,7 @@ public class LavaFlaskSystem : NetworkBehaviour
 
     // Start is called before the first frame update
     void Start(){
-        StartAttacks();
+        //StartAttacks(); called when the game starts
     }
 
 
