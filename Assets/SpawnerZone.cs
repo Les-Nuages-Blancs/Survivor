@@ -4,7 +4,6 @@ using Unity.Netcode;
 using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Events;
-using static Cinemachine.DocumentationSortingAttribute;
 
 public class SpawnerZone : NetworkBehaviour
 {
@@ -14,27 +13,41 @@ public class SpawnerZone : NetworkBehaviour
     [SerializeField] private List<BaseSpawnZoneLevelData> baseSpawnZoneLevelDatas = new List<BaseSpawnZoneLevelData>();
     private List<GameObject> spawnedSpawner = new List<GameObject>();
     private bool levelMaxIsReached = false;
-    private Zone parentZone;
+
+    [SerializeField]
+    private NetworkVariable<NetworkObjectReference> parentZoneRef =
+        new NetworkVariable<NetworkObjectReference>(new NetworkObjectReference(), NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     [SerializeField] public UnityEvent<Zone, Zone> OnParentZoneChanged;
+    [SerializeField] public UnityEvent onPlayerZoneLevelChange;
+    [SerializeField] public UnityEvent onLevelMaxReached;
 
     public SpawnZoneLevelDataSO SpawnerZoneLevelData => spawnerZoneLevelData;
 
     public Zone ParentZone
     {
-        get => parentZone;
+        get
+        {
+            if (parentZoneRef.Value.TryGet(out NetworkObject parentObj))
+            {
+                return parentObj.GetComponent<Zone>();
+            }
+            return null;
+        }
         set
         {
-            if (parentZone != value)
+            if (value != ParentZone)
             {
-                Zone oldZone = parentZone;
-                parentZone = value;
+                Zone oldZone = ParentZone;
+                parentZoneRef.Value = new NetworkObjectReference(value.GetComponent<NetworkObject>());
                 OnParentZoneChanged.Invoke(oldZone, value);
             }
         }
     }
 
-    [SerializeField] private NetworkVariable<int> playerZoneLevel = new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
+    [SerializeField]
+    private NetworkVariable<int> playerZoneLevel =
+        new NetworkVariable<int>(0, NetworkVariableReadPermission.Everyone, NetworkVariableWritePermission.Owner);
 
     public int PlayerZoneLevel
     {
@@ -44,14 +57,10 @@ public class SpawnerZone : NetworkBehaviour
             if (playerZoneLevel.Value != value)
             {
                 playerZoneLevel.Value = value;
-
                 UpdateSpawnerZone();
             }
         }
     }
-
-    [SerializeField] public UnityEvent onPlayerZoneLevelChange;
-    [SerializeField] public UnityEvent onLevelMaxReached;
 
     public void AddCondition(SpawnCondition condition)
     {
@@ -65,11 +74,18 @@ public class SpawnerZone : NetworkBehaviour
     public override void OnNetworkSpawn()
     {
         playerZoneLevel.OnValueChanged += OnPlayerZoneLevelChange;
+        parentZoneRef.OnValueChanged += OnParentZoneChange;
 
         if (IsOwner)
         {
             UpdateSpawnerZone();
         }
+    }
+
+    private void OnParentZoneChange(NetworkObjectReference oldRef, NetworkObjectReference newRef)
+    {
+        OnParentZoneChanged.Invoke(oldRef.TryGet(out NetworkObject oldObj) ? oldObj.GetComponent<Zone>() : null,
+                                   newRef.TryGet(out NetworkObject newObj) ? newObj.GetComponent<Zone>() : null);
     }
 
     public void LevelUp()
@@ -89,10 +105,9 @@ public class SpawnerZone : NetworkBehaviour
 
         UpdateSpawnerZone();
 
-        if (levelMaxReached) 
+        if (levelMaxReached)
         {
             levelMaxIsReached = true;
-
             onLevelMaxReached.Invoke();
         }
     }
@@ -100,8 +115,8 @@ public class SpawnerZone : NetworkBehaviour
     public override void OnDestroy()
     {
         base.OnDestroy();
-
         playerZoneLevel.OnValueChanged -= OnPlayerZoneLevelChange;
+        parentZoneRef.OnValueChanged -= OnParentZoneChange;
     }
 
     private void OnPlayerZoneLevelChange(int oldValue, int newValue)
@@ -113,35 +128,27 @@ public class SpawnerZone : NetworkBehaviour
     public void UpdateSpawnerZone()
     {
         if (!IsOwner) return;
-
         UpdateSpawnerZoneServerRpc(NetworkManager.Singleton.LocalClientId);
     }
 
     [ServerRpc]
     public void UpdateSpawnerZoneServerRpc(ulong localClientId)
     {
-        // update base spawn zone level datas based on level
         baseSpawnZoneLevelDatas = spawnerZoneLevelData.GetDatasOfLevel(playerZoneLevel.Value);
 
-        // Clean children
         DestroyEntitySpawner();
 
-        // create spawners as children
         for (int i = 0; i < baseSpawnZoneLevelDatas.Count; i++)
         {
             BaseSpawnZoneLevelData baseSpawnZoneLevelData = baseSpawnZoneLevelDatas[i];
 
-            // Instantiate the prefab as a NetworkObject
             GameObject spawner = Instantiate(prefabSpawnerEntity, transform.position, Quaternion.identity, transform);
             spawnedSpawner.Add(spawner);
 
-            // Ensure the NetworkObject is spawned
             NetworkObject networkObjectTarget = spawner.GetComponent<NetworkObject>();
             networkObjectTarget.SpawnWithOwnership(localClientId);
             networkObjectTarget.transform.SetParent(transform);
 
-
-            // Initialize the spawner with the data
             EntitySpawner entitySpawner = spawner.GetComponent<EntitySpawner>();
             entitySpawner.Initialize(baseSpawnZoneLevelData.SpawnAtLevel, baseSpawnZoneLevelData.Prefab, baseSpawnZoneLevelData.SpawnCooldown);
             entitySpawner.OnIsSpawn.AddListener(RegisterEnemy);
@@ -155,18 +162,24 @@ public class SpawnerZone : NetworkBehaviour
 
     public void RegisterEnemy(GameObject go)
     {
-        ParentZone.EnemyCount += 1;
-        go.GetComponent<HealthSystem>().onDeath.AddListener(() => UnregisterEnemy(go));
+        if (ParentZone != null)
+        {
+            ParentZone.EnemyCount += 1;
+            go.GetComponent<HealthSystem>().onDeath.AddListener(() => UnregisterEnemy(go));
+        }
     }
 
     public void UnregisterEnemy(GameObject go)
     {
-        ParentZone.EnemyCount -= 1;
+        if (ParentZone != null)
+        {
+            ParentZone.EnemyCount -= 1;
+        }
     }
 
     private void DestroyEntitySpawner()
     {
-        while (spawnedSpawner.Count > 0) 
+        while (spawnedSpawner.Count > 0)
         {
             GameObject spawner = spawnedSpawner[0];
             spawnedSpawner.Remove(spawner);
@@ -174,7 +187,7 @@ public class SpawnerZone : NetworkBehaviour
 
             EntitySpawner entitySpawner = spawner.GetComponent<EntitySpawner>();
             entitySpawner.OnIsSpawn.RemoveListener(RegisterEnemy);
-            
+
             Destroy(spawner);
         }
     }
@@ -182,7 +195,6 @@ public class SpawnerZone : NetworkBehaviour
     public override void OnNetworkDespawn()
     {
         if (!IsOwner) return;
-
         DestroyEntitySpawner();
     }
 }

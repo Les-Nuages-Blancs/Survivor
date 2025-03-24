@@ -17,8 +17,19 @@ public abstract class TaskZone : NetworkBehaviour
         spawnerZone.OnParentZoneChanged.AddListener(onParentZoneChanged);
         if (spawnerZone.ParentZone != null)
         {
-            spawnerZone.ParentZone.AddTask(this);
+            OnParentZoneChanged();
         }
+        else
+        {
+            spawnerZone.OnParentZoneChanged.AddListener(OnParentZoneChanged);
+            Debug.Log("task listener on parent zone change added");
+        }
+    }
+
+    private void OnParentZoneChanged(Zone zone = null, Zone zone2 = null)
+    {
+        spawnerZone.ParentZone.AddTask(this);
+        Debug.Log("task added");
     }
 
     public override void OnNetworkDespawn()
@@ -35,5 +46,10 @@ public abstract class TaskZone : NetworkBehaviour
         }
 
         spawnerZone.ParentZone.AddTask(this);
+    }
+
+    protected void triggerUpdate()
+    {
+        onUpgraderChange.Invoke();
     }
 }

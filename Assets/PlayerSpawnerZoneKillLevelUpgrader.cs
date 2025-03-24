@@ -27,7 +27,7 @@ public class PlayerSpawnerZoneKillLevelUpgrader : TaskZone
                 {
                     killNumber = value;
 
-                    onUpgraderChange.Invoke();
+                    triggerUpdate();
 
                     Debug.Log("kill Number : " + killNumber);
 
