@@ -29,6 +29,8 @@ public class DamageDealerSystem : NetworkBehaviour
     private void ApplyDamageToHealthSystems()
     {
         if (!IsServer) return;
+        
+        healthSystemsInTrigger.RemoveAll(x => x.GetComponent<PlayerDeathSystem>().IsDead);
 
         foreach (HealthSystem healthSystem in healthSystemsInTrigger)
         {
