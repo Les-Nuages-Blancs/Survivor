@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using Unity.Netcode;
 using UnityEngine;
 using UnityEngine.Events;
+using static UnityEngine.Rendering.DebugUI;
 
 public class ZoneHelper : NetworkBehaviour
 {
@@ -27,7 +28,6 @@ public class ZoneHelper : NetworkBehaviour
 
     public override void OnNetworkSpawn()
     {
-        zone = LevelStateManager.Instance.FirstZone;
-        onZoneChange.Invoke();
+        Zone = LevelStateManager.Instance.FirstZone;
     }
 }

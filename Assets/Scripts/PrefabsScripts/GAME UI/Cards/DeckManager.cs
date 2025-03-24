@@ -16,21 +16,31 @@ public class DeckManager : NetworkBehaviour
     private int pendingLevelUps = 0;
     private bool isDrawingCards = false;
 
-
-
     void Start()
     {
         InitDeck();
         DrawCards();
-        
+        foreach (Player player in Player.playerList)
+        {
+            OnClientConnected(player.OwnerClientId);
+        }
+        Player.onPlayerAdded += OnClientConnected;
     }
 
-    public override void OnNetworkSpawn()
+    public override void OnDestroy()
     {
-        ulong ownerClientId = OwnerClientId; // Get the owner ID
-        if (NetworkManager.Singleton.ConnectedClients.TryGetValue(ownerClientId, out var networkClient))
+        Player.onPlayerAdded -= OnClientConnected;
+    }
+
+    private void OnClientConnected(ulong newClientId)
+    {
+        ulong ownerClientId = NetworkManager.Singleton.LocalClientId; // Get the owner ID
+
+        if (newClientId == ownerClientId)
         {
-            GameObject playerGo = networkClient.PlayerObject.gameObject;
+            Player player = Player.GetPlayerByClientId(ownerClientId);
+
+            GameObject playerGo = player.gameObject;
 
             StatistiquesLevelSystem statsLevelSystem = playerGo.GetComponent<StatistiquesLevelSystem>();
 
