@@ -13,10 +13,26 @@ public class TasksZoneUI : NetworkBehaviour
 
     private Dictionary<TaskZone, GameObject> taskZoneToPrefab = new Dictionary<TaskZone, GameObject>();
 
+    public ZoneHelper ZoneHelper
+    {
+        get => zoneHelper;
+        set { 
+            ZoneHelper previousZone = zoneHelper;
+            zoneHelper = value;
+            if (previousZone == null && zoneHelper != null)
+            {
+                InitCallback();
+            }
+        }
+    }
+
     public void Init()
     {
-        NetworkManager.Singleton.OnClientConnectedCallback += OnClientConnected;
-        LevelStateManager.Instance.onSpawnEntityChanged.AddListener(InitCallback);
+        foreach (Player player in Player.playerList)
+        {
+            OnClientConnected(player.OwnerClientId);
+        }
+        Player.onPlayerAdded += OnClientConnected;
     }
 
     private void InitCallback()
@@ -46,23 +62,18 @@ public class TasksZoneUI : NetworkBehaviour
     {
         ulong localClientId = NetworkManager.Singleton.LocalClientId; // Get local player's client ID
 
-        if (NetworkManager.Singleton.ConnectedClients.TryGetValue(localClientId, out NetworkClient localClient))
-        {
-            zoneHelper = localClient.PlayerObject.GetComponent<ZoneHelper>();
+        Player localPlayer = Player.GetPlayerByClientId(localClientId);
+        
+        zoneHelper = localPlayer.GetComponent<ZoneHelper>();
 
-            if (zoneHelper != null)
-            {
-                zoneHelper.onZoneChangeDetails.AddListener(onZoneChange);
-                UpdateTitleWithCurrentZone();
-            }
-            else
-            {
-                Debug.LogWarning("Local player instance does not have a PlayerController component!");
-            }
+        if (zoneHelper != null)
+        {
+            zoneHelper.onZoneChangeDetails.AddListener(onZoneChange);
+            UpdateTitleWithCurrentZone();
         }
         else
         {
-            Debug.LogWarning("Local player not found in ConnectedClients!");
+            Debug.LogWarning("Local player instance does not have a PlayerController component!");
         }
     }
 
@@ -82,6 +93,8 @@ public class TasksZoneUI : NetworkBehaviour
     {
         if (zone != null)
         {
+            Debug.Log("tasks remove callback");
+
             zone.OnTaskAdded.RemoveListener(onTaskAdded);
             zone.OnTaskRemove.RemoveListener(onTaskRemove);
 
@@ -107,7 +120,7 @@ public class TasksZoneUI : NetworkBehaviour
     {
         if (zone != null)
         {
-
+            Debug.Log("tasks add callback");
             zone.OnTaskAdded.AddListener(onTaskAdded);
             zone.OnTaskRemove.AddListener(onTaskRemove);
 
@@ -139,22 +152,29 @@ public class TasksZoneUI : NetworkBehaviour
 
     private void UpdateTitle(Zone zone)
     {
-        ulong localClientId = NetworkManager.Singleton.LocalClientId;
-
-        int spawnerLevel = 0;
-        int spawnerMaxLevel = 0;
-
-        if (zone.PlayerSpawners.TryGetValue(localClientId, out SpawnerZone spawner))
+        if (zone != null)
         {
-            spawnerLevel = spawner.PlayerZoneLevel;
-            spawnerMaxLevel = spawner.SpawnerZoneLevelData.levelDatas[0].baseSpawnZoneLevelDatas.Count;
+            ulong localClientId = NetworkManager.Singleton.LocalClientId;
+
+            int spawnerLevel = 0;
+            int spawnerMaxLevel = 0;
+
+            if (zone.PlayerSpawners.TryGetValue(localClientId, out SpawnerZone spawner))
+            {
+                spawnerLevel = spawner.PlayerZoneLevel;
+                spawnerMaxLevel = spawner.SpawnerZoneLevelData.levelDatas[0].baseSpawnZoneLevelDatas.Count - 1;
+            }
+            else
+            {
+                Debug.Log($"No spawner found for client {localClientId}");
+            }
+
+            zoneTitle.text = $"{zone.ZoneName}" + (spawnerMaxLevel == 0 ? "" : $" - Stage {spawnerLevel} / {spawnerMaxLevel}");
         }
         else
         {
-            Debug.Log($"No spawner found for client {localClientId}");
+            Debug.LogWarning($"Zone is null atm");
         }
-
-        zoneTitle.text = $"{zone.ZoneName}" + (spawnerMaxLevel == 0 ? "" : $" - Stage {spawnerLevel} / {spawnerMaxLevel}");
     }
 
     private void onTaskAdded(TaskZone taskZone)

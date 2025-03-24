@@ -22,7 +22,6 @@ public class Zone : NetworkBehaviour
 
     private Dictionary<ulong, SpawnerZone> playerSpawners = new Dictionary<ulong, SpawnerZone>();
 
-
     public List<TaskZone> ZoneTasks => zoneTasks; // Read-only access to prevent direct modification
     public string ZoneName => zoneName; // Read-only access to prevent direct modification
     public Dictionary<ulong, SpawnerZone> PlayerSpawners => playerSpawners; // Read-only access to prevent direct modification
