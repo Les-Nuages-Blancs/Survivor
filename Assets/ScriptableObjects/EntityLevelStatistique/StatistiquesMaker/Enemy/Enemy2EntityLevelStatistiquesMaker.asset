@@ -36,7 +36,7 @@ MonoBehaviour:
           health: 30
           regenHealth: 0.2
           armor: 2
-          damage: 8
+          damage: 10
           attackSpeed: 0.2
           critDamageMultiplier: 0.05
           criticalChance: 0.01

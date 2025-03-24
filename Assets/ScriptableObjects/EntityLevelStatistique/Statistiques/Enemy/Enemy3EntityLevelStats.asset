@@ -28,7 +28,7 @@ MonoBehaviour:
     health: 780
     regenHealth: 1.2
     armor: 22
-    damage: 85
+    damage: 105
     attackSpeed: 2.2
     critDamageMultiplier: 0.25
     criticalChance: 0.060000002
@@ -39,7 +39,7 @@ MonoBehaviour:
     health: 860
     regenHealth: 1.4000001
     armor: 24
-    damage: 100
+    damage: 140
     attackSpeed: 2.4
     critDamageMultiplier: 0.3
     criticalChance: 0.07
@@ -50,7 +50,7 @@ MonoBehaviour:
     health: 940
     regenHealth: 1.6000001
     armor: 26
-    damage: 115
+    damage: 175
     attackSpeed: 2.6000001
     critDamageMultiplier: 0.35000002
     criticalChance: 0.08
@@ -61,7 +61,7 @@ MonoBehaviour:
     health: 1020
     regenHealth: 1.8000002
     armor: 28
-    damage: 130
+    damage: 210
     attackSpeed: 2.8000002
     critDamageMultiplier: 0.40000004
     criticalChance: 0.089999996
@@ -72,7 +72,7 @@ MonoBehaviour:
     health: 1100
     regenHealth: 2.0000002
     armor: 30
-    damage: 145
+    damage: 245
     attackSpeed: 3.0000002
     critDamageMultiplier: 0.45000005
     criticalChance: 0.099999994
@@ -83,7 +83,7 @@ MonoBehaviour:
     health: 1180
     regenHealth: 2.2000003
     armor: 32
-    damage: 160
+    damage: 280
     attackSpeed: 3.2000003
     critDamageMultiplier: 0.50000006
     criticalChance: 0.10999999
@@ -94,7 +94,7 @@ MonoBehaviour:
     health: 1260
     regenHealth: 2.4000003
     armor: 34
-    damage: 175
+    damage: 315
     attackSpeed: 3.4000003
     critDamageMultiplier: 0.5500001
     criticalChance: 0.11999999
@@ -105,7 +105,7 @@ MonoBehaviour:
     health: 1340
     regenHealth: 2.6000004
     armor: 36
-    damage: 190
+    damage: 350
     attackSpeed: 3.6000004
     critDamageMultiplier: 0.6000001
     criticalChance: 0.13
@@ -116,7 +116,7 @@ MonoBehaviour:
     health: 1420
     regenHealth: 2.8000004
     armor: 38
-    damage: 205
+    damage: 385
     attackSpeed: 3.8000004
     critDamageMultiplier: 0.6500001
     criticalChance: 0.14
@@ -127,7 +127,7 @@ MonoBehaviour:
     health: 1500
     regenHealth: 3.0000005
     armor: 40
-    damage: 220
+    damage: 420
     attackSpeed: 4.0000005
     critDamageMultiplier: 0.7000001
     criticalChance: 0.15
@@ -138,7 +138,7 @@ MonoBehaviour:
     health: 1580
     regenHealth: 3.2000005
     armor: 42
-    damage: 235
+    damage: 455
     attackSpeed: 4.2000003
     critDamageMultiplier: 0.7500001
     criticalChance: 0.16000001
@@ -149,7 +149,7 @@ MonoBehaviour:
     health: 1660
     regenHealth: 3.4000006
     armor: 44
-    damage: 250
+    damage: 490
     attackSpeed: 4.4
     critDamageMultiplier: 0.80000013
     criticalChance: 0.17000002
@@ -160,7 +160,7 @@ MonoBehaviour:
     health: 1740
     regenHealth: 3.6000006
     armor: 46
-    damage: 265
+    damage: 525
     attackSpeed: 4.6
     critDamageMultiplier: 0.85000014
     criticalChance: 0.18000002
@@ -171,7 +171,7 @@ MonoBehaviour:
     health: 1820
     regenHealth: 3.8000007
     armor: 48
-    damage: 280
+    damage: 560
     attackSpeed: 4.7999997
     critDamageMultiplier: 0.90000015
     criticalChance: 0.19000003
@@ -182,7 +182,7 @@ MonoBehaviour:
     health: 1900
     regenHealth: 4.0000005
     armor: 50
-    damage: 295
+    damage: 595
     attackSpeed: 4.9999995
     critDamageMultiplier: 0.95000017
     criticalChance: 0.20000003
@@ -193,7 +193,7 @@ MonoBehaviour:
     health: 1980
     regenHealth: 4.2000003
     armor: 52
-    damage: 310
+    damage: 630
     attackSpeed: 5.1999993
     critDamageMultiplier: 1.0000001
     criticalChance: 0.21000004
@@ -204,7 +204,7 @@ MonoBehaviour:
     health: 2060
     regenHealth: 4.4
     armor: 54
-    damage: 325
+    damage: 665
     attackSpeed: 5.399999
     critDamageMultiplier: 1.0500001
     criticalChance: 0.22000004
@@ -215,7 +215,7 @@ MonoBehaviour:
     health: 2140
     regenHealth: 4.6
     armor: 56
-    damage: 340
+    damage: 700
     attackSpeed: 5.599999
     critDamageMultiplier: 1.1
     criticalChance: 0.23000005
@@ -226,7 +226,7 @@ MonoBehaviour:
     health: 2220
     regenHealth: 4.7999997
     armor: 58
-    damage: 355
+    damage: 735
     attackSpeed: 5.7999988
     critDamageMultiplier: 1.15
     criticalChance: 0.24000005
@@ -237,7 +237,7 @@ MonoBehaviour:
     health: 2300
     regenHealth: 4.9999995
     armor: 60
-    damage: 370
+    damage: 770
     attackSpeed: 5.9999986
     critDamageMultiplier: 1.1999999
     criticalChance: 0.25000006
@@ -248,7 +248,7 @@ MonoBehaviour:
     health: 2380
     regenHealth: 5.1999993
     armor: 62
-    damage: 385
+    damage: 805
     attackSpeed: 6.1999984
     critDamageMultiplier: 1.2499999
     criticalChance: 0.26000005
@@ -259,7 +259,7 @@ MonoBehaviour:
     health: 2460
     regenHealth: 5.399999
     armor: 64
-    damage: 400
+    damage: 840
     attackSpeed: 6.399998
     critDamageMultiplier: 1.2999998
     criticalChance: 0.27000004
@@ -270,7 +270,7 @@ MonoBehaviour:
     health: 2540
     regenHealth: 5.599999
     armor: 66
-    damage: 415
+    damage: 875
     attackSpeed: 6.599998
     critDamageMultiplier: 1.3499998
     criticalChance: 0.28000003
@@ -281,7 +281,7 @@ MonoBehaviour:
     health: 2620
     regenHealth: 5.7999988
     armor: 68
-    damage: 430
+    damage: 910
     attackSpeed: 6.799998
     critDamageMultiplier: 1.3999997
     criticalChance: 0.29000002
@@ -292,7 +292,7 @@ MonoBehaviour:
     health: 2700
     regenHealth: 5.9999986
     armor: 70
-    damage: 445
+    damage: 945
     attackSpeed: 6.9999976
     critDamageMultiplier: 1.4499997
     criticalChance: 0.3
@@ -303,7 +303,7 @@ MonoBehaviour:
     health: 2780
     regenHealth: 6.1999984
     armor: 72
-    damage: 460
+    damage: 980
     attackSpeed: 7.1999974
     critDamageMultiplier: 1.4999996
     criticalChance: 0.31
@@ -314,7 +314,7 @@ MonoBehaviour:
     health: 2860
     regenHealth: 6.399998
     armor: 74
-    damage: 475
+    damage: 1015
     attackSpeed: 7.399997
     critDamageMultiplier: 1.5499996
     criticalChance: 0.32
@@ -325,7 +325,7 @@ MonoBehaviour:
     health: 2940
     regenHealth: 6.599998
     armor: 76
-    damage: 490
+    damage: 1050
     attackSpeed: 7.599997
     critDamageMultiplier: 1.5999995
     criticalChance: 0.32999998
@@ -336,7 +336,7 @@ MonoBehaviour:
     health: 3020
     regenHealth: 6.799998
     armor: 78
-    damage: 505
+    damage: 1085
     attackSpeed: 7.799997
     critDamageMultiplier: 1.6499995
     criticalChance: 0.33999997
@@ -347,7 +347,7 @@ MonoBehaviour:
     health: 3100
     regenHealth: 6.9999976
     armor: 80
-    damage: 520
+    damage: 1120
     attackSpeed: 7.9999967
     critDamageMultiplier: 1.6999995
     criticalChance: 0.34999996
@@ -358,7 +358,7 @@ MonoBehaviour:
     health: 3180
     regenHealth: 7.1999974
     armor: 82
-    damage: 535
+    damage: 1155
     attackSpeed: 8.199997
     critDamageMultiplier: 1.7499994
     criticalChance: 0.35999995
@@ -369,7 +369,7 @@ MonoBehaviour:
     health: 3260
     regenHealth: 7.399997
     armor: 84
-    damage: 550
+    damage: 1190
     attackSpeed: 8.399997
     critDamageMultiplier: 1.7999994
     criticalChance: 0.36999995
@@ -380,7 +380,7 @@ MonoBehaviour:
     health: 3340
     regenHealth: 7.599997
     armor: 86
-    damage: 565
+    damage: 1225
     attackSpeed: 8.599997
     critDamageMultiplier: 1.8499993
     criticalChance: 0.37999994
@@ -391,7 +391,7 @@ MonoBehaviour:
     health: 3420
     regenHealth: 7.799997
     armor: 88
-    damage: 580
+    damage: 1260
     attackSpeed: 8.799996
     critDamageMultiplier: 1.8999993
     criticalChance: 0.38999993
@@ -402,7 +402,7 @@ MonoBehaviour:
     health: 3500
     regenHealth: 7.9999967
     armor: 90
-    damage: 595
+    damage: 1295
     attackSpeed: 8.999996
     critDamageMultiplier: 1.9499992
     criticalChance: 0.39999992
@@ -413,7 +413,7 @@ MonoBehaviour:
     health: 3580
     regenHealth: 8.199997
     armor: 92
-    damage: 610
+    damage: 1330
     attackSpeed: 9.199996
     critDamageMultiplier: 1.9999992
     criticalChance: 0.4099999
@@ -424,7 +424,7 @@ MonoBehaviour:
     health: 3660
     regenHealth: 8.399997
     armor: 94
-    damage: 625
+    damage: 1365
     attackSpeed: 9.399996
     critDamageMultiplier: 2.0499992
     criticalChance: 0.4199999
@@ -435,7 +435,7 @@ MonoBehaviour:
     health: 3740
     regenHealth: 8.599997
     armor: 96
-    damage: 640
+    damage: 1400
     attackSpeed: 9.599996
     critDamageMultiplier: 2.0999992
     criticalChance: 0.4299999
@@ -446,7 +446,7 @@ MonoBehaviour:
     health: 3820
     regenHealth: 8.799996
     armor: 98
-    damage: 655
+    damage: 1435
     attackSpeed: 9.799995
     critDamageMultiplier: 2.1499991
     criticalChance: 0.43999988
@@ -457,7 +457,7 @@ MonoBehaviour:
     health: 3900
     regenHealth: 8.999996
     armor: 100
-    damage: 670
+    damage: 1470
     attackSpeed: 9.999995
     critDamageMultiplier: 2.199999
     criticalChance: 0.44999987
@@ -468,7 +468,7 @@ MonoBehaviour:
     health: 3980
     regenHealth: 9.199996
     armor: 102
-    damage: 685
+    damage: 1505
     attackSpeed: 10.199995
     critDamageMultiplier: 2.249999
     criticalChance: 0.45999986
@@ -479,7 +479,7 @@ MonoBehaviour:
     health: 4060
     regenHealth: 9.399996
     armor: 104
-    damage: 700
+    damage: 1540
     attackSpeed: 10.399995
     critDamageMultiplier: 2.299999
     criticalChance: 0.46999985
@@ -490,7 +490,7 @@ MonoBehaviour:
     health: 4140
     regenHealth: 9.599996
     armor: 106
-    damage: 715
+    damage: 1575
     attackSpeed: 10.599995
     critDamageMultiplier: 2.349999
     criticalChance: 0.47999984
@@ -501,7 +501,7 @@ MonoBehaviour:
     health: 4220
     regenHealth: 9.799995
     armor: 108
-    damage: 730
+    damage: 1610
     attackSpeed: 10.799994
     critDamageMultiplier: 2.399999
     criticalChance: 0.48999983
@@ -512,7 +512,7 @@ MonoBehaviour:
     health: 4300
     regenHealth: 9.999995
     armor: 110
-    damage: 745
+    damage: 1645
     attackSpeed: 10.999994
     critDamageMultiplier: 2.4499989
     criticalChance: 0.49999982
@@ -523,7 +523,7 @@ MonoBehaviour:
     health: 4380
     regenHealth: 10.199995
     armor: 112
-    damage: 760
+    damage: 1680
     attackSpeed: 11.199994
     critDamageMultiplier: 2.4999988
     criticalChance: 0.5099998
@@ -534,7 +534,7 @@ MonoBehaviour:
     health: 4460
     regenHealth: 10.399995
     armor: 114
-    damage: 775
+    damage: 1715
     attackSpeed: 11.399994
     critDamageMultiplier: 2.5499988
     criticalChance: 0.5199998
@@ -545,7 +545,7 @@ MonoBehaviour:
     health: 4540
     regenHealth: 10.599995
     armor: 116
-    damage: 790
+    damage: 1750
     attackSpeed: 11.599994
     critDamageMultiplier: 2.5999987
     criticalChance: 0.5299998
@@ -556,7 +556,7 @@ MonoBehaviour:
     health: 4620
     regenHealth: 10.799994
     armor: 118
-    damage: 805
+    damage: 1785
     attackSpeed: 11.7999935
     critDamageMultiplier: 2.6499987
     criticalChance: 0.5399998
@@ -567,7 +567,7 @@ MonoBehaviour:
     health: 4700
     regenHealth: 10.999994
     armor: 120
-    damage: 820
+    damage: 1820
     attackSpeed: 11.999993
     critDamageMultiplier: 2.6999986
     criticalChance: 0.5499998
@@ -578,7 +578,7 @@ MonoBehaviour:
     health: 4780
     regenHealth: 11.199994
     armor: 122
-    damage: 835
+    damage: 1855
     attackSpeed: 12.199993
     critDamageMultiplier: 2.7499986
     criticalChance: 0.55999976
@@ -589,7 +589,7 @@ MonoBehaviour:
     health: 4860
     regenHealth: 11.399994
     armor: 124
-    damage: 850
+    damage: 1890
     attackSpeed: 12.399993
     critDamageMultiplier: 2.7999985
     criticalChance: 0.56999975
@@ -600,7 +600,7 @@ MonoBehaviour:
     health: 4940
     regenHealth: 11.599994
     armor: 126
-    damage: 865
+    damage: 1925
     attackSpeed: 12.599993
     critDamageMultiplier: 2.8499985
     criticalChance: 0.57999974
@@ -611,7 +611,7 @@ MonoBehaviour:
     health: 5020
     regenHealth: 11.7999935
     armor: 128
-    damage: 880
+    damage: 1960
     attackSpeed: 12.799993
     critDamageMultiplier: 2.8999984
     criticalChance: 0.58999974
@@ -622,7 +622,7 @@ MonoBehaviour:
     health: 5100
     regenHealth: 11.999993
     armor: 130
-    damage: 895
+    damage: 1995
     attackSpeed: 12.999992
     critDamageMultiplier: 2.9499984
     criticalChance: 0.5999997
@@ -633,7 +633,7 @@ MonoBehaviour:
     health: 5180
     regenHealth: 12.199993
     armor: 132
-    damage: 910
+    damage: 2030
     attackSpeed: 13.199992
     critDamageMultiplier: 2.9999983
     criticalChance: 0.6099997
@@ -644,7 +644,7 @@ MonoBehaviour:
     health: 5260
     regenHealth: 12.399993
     armor: 134
-    damage: 925
+    damage: 2065
     attackSpeed: 13.399992
     critDamageMultiplier: 3.0499983
     criticalChance: 0.6199997
@@ -655,7 +655,7 @@ MonoBehaviour:
     health: 5340
     regenHealth: 12.599993
     armor: 136
-    damage: 940
+    damage: 2100
     attackSpeed: 13.599992
     critDamageMultiplier: 3.0999982
     criticalChance: 0.6299997
@@ -666,7 +666,7 @@ MonoBehaviour:
     health: 5420
     regenHealth: 12.799993
     armor: 138
-    damage: 955
+    damage: 2135
     attackSpeed: 13.799992
     critDamageMultiplier: 3.1499982
     criticalChance: 0.6399997
@@ -677,7 +677,7 @@ MonoBehaviour:
     health: 5500
     regenHealth: 12.999992
     armor: 140
-    damage: 970
+    damage: 2170
     attackSpeed: 13.999991
     critDamageMultiplier: 3.1999981
     criticalChance: 0.6499997
@@ -688,7 +688,7 @@ MonoBehaviour:
     health: 5580
     regenHealth: 13.199992
     armor: 142
-    damage: 985
+    damage: 2205
     attackSpeed: 14.199991
     critDamageMultiplier: 3.249998
     criticalChance: 0.65999967
@@ -699,7 +699,7 @@ MonoBehaviour:
     health: 5660
     regenHealth: 13.399992
     armor: 144
-    damage: 1000
+    damage: 2240
     attackSpeed: 14.399991
     critDamageMultiplier: 3.299998
     criticalChance: 0.66999966
@@ -710,7 +710,7 @@ MonoBehaviour:
     health: 5740
     regenHealth: 13.599992
     armor: 146
-    damage: 1015
+    damage: 2275
     attackSpeed: 14.599991
     critDamageMultiplier: 3.349998
     criticalChance: 0.67999965
@@ -721,7 +721,7 @@ MonoBehaviour:
     health: 5820
     regenHealth: 13.799992
     armor: 148
-    damage: 1030
+    damage: 2310
     attackSpeed: 14.799991
     critDamageMultiplier: 3.399998
     criticalChance: 0.68999964
@@ -732,7 +732,7 @@ MonoBehaviour:
     health: 5900
     regenHealth: 13.999991
     armor: 150
-    damage: 1045
+    damage: 2345
     attackSpeed: 14.99999
     critDamageMultiplier: 3.449998
     criticalChance: 0.69999963
@@ -743,7 +743,7 @@ MonoBehaviour:
     health: 5980
     regenHealth: 14.199991
     armor: 152
-    damage: 1060
+    damage: 2380
     attackSpeed: 15.19999
     critDamageMultiplier: 3.4999979
     criticalChance: 0.7099996
@@ -754,7 +754,7 @@ MonoBehaviour:
     health: 6060
     regenHealth: 14.399991
     armor: 154
-    damage: 1075
+    damage: 2415
     attackSpeed: 15.39999
     critDamageMultiplier: 3.5499978
     criticalChance: 0.7199996
@@ -765,7 +765,7 @@ MonoBehaviour:
     health: 6140
     regenHealth: 14.599991
     armor: 156
-    damage: 1090
+    damage: 2450
     attackSpeed: 15.59999
     critDamageMultiplier: 3.5999978
     criticalChance: 0.7299996
@@ -776,7 +776,7 @@ MonoBehaviour:
     health: 6220
     regenHealth: 14.799991
     armor: 158
-    damage: 1105
+    damage: 2485
     attackSpeed: 15.79999
     critDamageMultiplier: 3.6499977
     criticalChance: 0.7399996
@@ -787,7 +787,7 @@ MonoBehaviour:
     health: 6300
     regenHealth: 14.99999
     armor: 160
-    damage: 1120
+    damage: 2520
     attackSpeed: 15.9999895
     critDamageMultiplier: 3.6999977
     criticalChance: 0.7499996
@@ -798,7 +798,7 @@ MonoBehaviour:
     health: 6380
     regenHealth: 15.19999
     armor: 162
-    damage: 1135
+    damage: 2555
     attackSpeed: 16.19999
     critDamageMultiplier: 3.7499976
     criticalChance: 0.7599996
@@ -809,7 +809,7 @@ MonoBehaviour:
     health: 6460
     regenHealth: 15.39999
     armor: 164
-    damage: 1150
+    damage: 2590
     attackSpeed: 16.39999
     critDamageMultiplier: 3.7999976
     criticalChance: 0.76999956
@@ -820,7 +820,7 @@ MonoBehaviour:
     health: 6540
     regenHealth: 15.59999
     armor: 166
-    damage: 1165
+    damage: 2625
     attackSpeed: 16.59999
     critDamageMultiplier: 3.8499975
     criticalChance: 0.77999955
@@ -831,7 +831,7 @@ MonoBehaviour:
     health: 6620
     regenHealth: 15.79999
     armor: 168
-    damage: 1180
+    damage: 2660
     attackSpeed: 16.799992
     critDamageMultiplier: 3.8999975
     criticalChance: 0.78999954
@@ -842,7 +842,7 @@ MonoBehaviour:
     health: 6700
     regenHealth: 15.9999895
     armor: 170
-    damage: 1195
+    damage: 2695
     attackSpeed: 16.999992
     critDamageMultiplier: 3.9499974
     criticalChance: 0.79999954
@@ -853,7 +853,7 @@ MonoBehaviour:
     health: 6780
     regenHealth: 16.19999
     armor: 172
-    damage: 1210
+    damage: 2730
     attackSpeed: 17.199993
     critDamageMultiplier: 3.9999974
     criticalChance: 0.8099995
@@ -864,7 +864,7 @@ MonoBehaviour:
     health: 6860
     regenHealth: 16.39999
     armor: 174
-    damage: 1225
+    damage: 2765
     attackSpeed: 17.399994
     critDamageMultiplier: 4.0499973
     criticalChance: 0.8199995
@@ -875,7 +875,7 @@ MonoBehaviour:
     health: 6940
     regenHealth: 16.59999
     armor: 176
-    damage: 1240
+    damage: 2800
     attackSpeed: 17.599995
     critDamageMultiplier: 4.0999975
     criticalChance: 0.8299995
@@ -886,7 +886,7 @@ MonoBehaviour:
     health: 7020
     regenHealth: 16.799992
     armor: 178
-    damage: 1255
+    damage: 2835
     attackSpeed: 17.799995
     critDamageMultiplier: 4.1499977
     criticalChance: 0.8399995
@@ -897,7 +897,7 @@ MonoBehaviour:
     health: 7100
     regenHealth: 16.999992
     armor: 180
-    damage: 1270
+    damage: 2870
     attackSpeed: 17.999996
     critDamageMultiplier: 4.199998
     criticalChance: 0.8499995
@@ -908,7 +908,7 @@ MonoBehaviour:
     health: 7180
     regenHealth: 17.199993
     armor: 182
-    damage: 1285
+    damage: 2905
     attackSpeed: 18.199997
     critDamageMultiplier: 4.249998
     criticalChance: 0.8599995
@@ -919,7 +919,7 @@ MonoBehaviour:
     health: 7260
     regenHealth: 17.399994
     armor: 184
-    damage: 1300
+    damage: 2940
     attackSpeed: 18.399998
     critDamageMultiplier: 4.2999983
     criticalChance: 0.86999947
@@ -930,7 +930,7 @@ MonoBehaviour:
     health: 7340
     regenHealth: 17.599995
     armor: 186
-    damage: 1315
+    damage: 2975
     attackSpeed: 18.599998
     critDamageMultiplier: 4.3499985
     criticalChance: 0.87999946
@@ -941,7 +941,7 @@ MonoBehaviour:
     health: 7420
     regenHealth: 17.799995
     armor: 188
-    damage: 1330
+    damage: 3010
     attackSpeed: 18.8
     critDamageMultiplier: 4.3999987
     criticalChance: 0.88999945
@@ -952,7 +952,7 @@ MonoBehaviour:
     health: 7500
     regenHealth: 17.999996
     armor: 190
-    damage: 1345
+    damage: 3045
     attackSpeed: 19
     critDamageMultiplier: 4.449999
     criticalChance: 0.89999944
@@ -963,7 +963,7 @@ MonoBehaviour:
     health: 7580
     regenHealth: 18.199997
     armor: 192
-    damage: 1360
+    damage: 3080
     attackSpeed: 19.2
     critDamageMultiplier: 4.499999
     criticalChance: 0.90999943
@@ -974,7 +974,7 @@ MonoBehaviour:
     health: 7660
     regenHealth: 18.399998
     armor: 194
-    damage: 1375
+    damage: 3115
     attackSpeed: 19.400002
     critDamageMultiplier: 4.549999
     criticalChance: 0.9199994
@@ -985,7 +985,7 @@ MonoBehaviour:
     health: 7740
     regenHealth: 18.599998
     armor: 196
-    damage: 1390
+    damage: 3150
     attackSpeed: 19.600002
     critDamageMultiplier: 4.5999994
     criticalChance: 0.9299994
@@ -996,7 +996,7 @@ MonoBehaviour:
     health: 7820
     regenHealth: 18.8
     armor: 198
-    damage: 1405
+    damage: 3185
     attackSpeed: 19.800003
     critDamageMultiplier: 4.6499996
     criticalChance: 0.9399994
@@ -1007,7 +1007,7 @@ MonoBehaviour:
     health: 7900
     regenHealth: 19
     armor: 200
-    damage: 1420
+    damage: 3220
     attackSpeed: 20.000004
     critDamageMultiplier: 4.7
     criticalChance: 0.9499994
@@ -1018,7 +1018,7 @@ MonoBehaviour:
     health: 7980
     regenHealth: 19.2
     armor: 202
-    damage: 1435
+    damage: 3255
     attackSpeed: 20.200005
     critDamageMultiplier: 4.75
     criticalChance: 0.9599994
@@ -1029,7 +1029,7 @@ MonoBehaviour:
     health: 8060
     regenHealth: 19.400002
     armor: 204
-    damage: 1450
+    damage: 3290
     attackSpeed: 20.400005
     critDamageMultiplier: 4.8
     criticalChance: 0.9699994
@@ -1040,7 +1040,7 @@ MonoBehaviour:
     health: 8140
     regenHealth: 19.600002
     armor: 206
-    damage: 1465
+    damage: 3325
     attackSpeed: 20.600006
     critDamageMultiplier: 4.8500004
     criticalChance: 0.97999936
@@ -1051,7 +1051,7 @@ MonoBehaviour:
     health: 8220
     regenHealth: 19.800003
     armor: 208
-    damage: 1480
+    damage: 3360
     attackSpeed: 20.800007
     critDamageMultiplier: 4.9000006
     criticalChance: 0.98999935
@@ -1062,7 +1062,7 @@ MonoBehaviour:
     health: 8300
     regenHealth: 20.000004
     armor: 210
-    damage: 1495
+    damage: 3395
     attackSpeed: 21.000008
     critDamageMultiplier: 4.950001
     criticalChance: 0.99999934
@@ -1073,7 +1073,7 @@ MonoBehaviour:
     health: 8380
     regenHealth: 20.200005
     armor: 212
-    damage: 1510
+    damage: 3430
     attackSpeed: 21.200008
     critDamageMultiplier: 5.000001
     criticalChance: 1.0099994
@@ -1084,7 +1084,7 @@ MonoBehaviour:
     health: 8460
     regenHealth: 20.400005
     armor: 214
-    damage: 1525
+    damage: 3465
     attackSpeed: 21.40001
     critDamageMultiplier: 5.050001
     criticalChance: 1.0199994
@@ -1095,7 +1095,7 @@ MonoBehaviour:
     health: 8540
     regenHealth: 20.600006
     armor: 216
-    damage: 1540
+    damage: 3500
     attackSpeed: 21.60001
     critDamageMultiplier: 5.1000013
     criticalChance: 1.0299994
@@ -1106,7 +1106,7 @@ MonoBehaviour:
     health: 8620
     regenHealth: 20.800007
     armor: 218
-    damage: 1555
+    damage: 3535
     attackSpeed: 21.80001
     critDamageMultiplier: 5.1500015
     criticalChance: 1.0399994
@@ -1117,7 +1117,7 @@ MonoBehaviour:
     health: 8700
     regenHealth: 21.000008
     armor: 220
-    damage: 1570
+    damage: 3570
     attackSpeed: 22.000011
     critDamageMultiplier: 5.2000017
     criticalChance: 1.0499994

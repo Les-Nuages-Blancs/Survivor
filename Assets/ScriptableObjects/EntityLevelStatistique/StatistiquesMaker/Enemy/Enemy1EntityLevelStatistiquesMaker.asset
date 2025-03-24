@@ -24,6 +24,7 @@ MonoBehaviour:
     criticalChance: 0.05
     pickupRange: 5
     moveSpeedMultiplier: 4
+    killPoint: 1
   levelRangeUpgrader:
   - numberOfLevel: 100
     levelUpgrader:
@@ -35,11 +36,12 @@ MonoBehaviour:
           health: 15
           regenHealth: 0.2
           armor: 2
-          damage: 5
+          damage: 7.5
           attackSpeed: 0.2
           critDamageMultiplier: 0.05
           criticalChance: 0.01
           pickupRange: 0.2
           moveSpeedMultiplier: 0.1
+          killPoint: 0.1
   generatedEntityLevelStats: {fileID: 11400000, guid: cfab55db8938f224ba2c7e7c6dc7a3db,
     type: 2}
